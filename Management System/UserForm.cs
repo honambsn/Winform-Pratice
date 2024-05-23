@@ -10,18 +10,12 @@ using System.Windows.Forms;
 
 namespace Management_System
 {
-	public partial class MainForm : Form
+	public partial class UserForm : Form
 	{
-		public MainForm()
+		public UserForm()
 		{
 			InitializeComponent();
 		}
 
-		
-
-		//private void customerButton1_Click(object sender, EventArgs e)
-		//{
-
-		//}
 	}
 }
