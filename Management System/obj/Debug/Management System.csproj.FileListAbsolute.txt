@@ -11,3 +11,4 @@ D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Management System\obj\Debug\Ma
 D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Management System\obj\Debug\Management_System.LoginForm.resources
 D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Management System\obj\Debug\Management_System.MainForm.resources
 D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Management System\obj\Debug\Management_System.UserForm.resources
+D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Management System\obj\Debug\Management_System.UserModuleForm.resources
