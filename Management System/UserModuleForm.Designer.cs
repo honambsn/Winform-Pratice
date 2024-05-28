@@ -30,6 +30,7 @@
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserModuleForm));
 			this.panel1 = new System.Windows.Forms.Panel();
+			this.pictureBoxClose = new System.Windows.Forms.PictureBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
 			this.txtUserName = new System.Windows.Forms.TextBox();
@@ -42,7 +43,8 @@
 			this.btnSave = new System.Windows.Forms.Button();
 			this.btnUpdate = new System.Windows.Forms.Button();
 			this.btnClear = new System.Windows.Forms.Button();
-			this.pictureBoxClose = new System.Windows.Forms.PictureBox();
+			this.txtRepass = new System.Windows.Forms.TextBox();
+			this.label6 = new System.Windows.Forms.Label();
 			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose)).BeginInit();
 			this.SuspendLayout();
@@ -58,6 +60,17 @@
 			this.panel1.Size = new System.Drawing.Size(515, 40);
 			this.panel1.TabIndex = 0;
 			// 
+			// pictureBoxClose
+			// 
+			this.pictureBoxClose.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxClose.Image")));
+			this.pictureBoxClose.Location = new System.Drawing.Point(490, 0);
+			this.pictureBoxClose.Name = "pictureBoxClose";
+			this.pictureBoxClose.Size = new System.Drawing.Size(25, 22);
+			this.pictureBoxClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+			this.pictureBoxClose.TabIndex = 9;
+			this.pictureBoxClose.TabStop = false;
+			this.pictureBoxClose.Click += new System.EventHandler(this.pictureBoxClose_Click);
+			// 
 			// label1
 			// 
 			this.label1.AutoSize = true;
@@ -72,7 +85,7 @@
 			// label2
 			// 
 			this.label2.AutoSize = true;
-			this.label2.Location = new System.Drawing.Point(23, 62);
+			this.label2.Location = new System.Drawing.Point(30, 73);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(65, 13);
 			this.label2.TabIndex = 1;
@@ -80,22 +93,22 @@
 			// 
 			// txtUserName
 			// 
-			this.txtUserName.Location = new System.Drawing.Point(117, 59);
+			this.txtUserName.Location = new System.Drawing.Point(149, 70);
 			this.txtUserName.Name = "txtUserName";
-			this.txtUserName.Size = new System.Drawing.Size(361, 20);
+			this.txtUserName.Size = new System.Drawing.Size(329, 20);
 			this.txtUserName.TabIndex = 2;
 			// 
 			// txtFullName
 			// 
-			this.txtFullName.Location = new System.Drawing.Point(117, 108);
+			this.txtFullName.Location = new System.Drawing.Point(149, 107);
 			this.txtFullName.Name = "txtFullName";
-			this.txtFullName.Size = new System.Drawing.Size(361, 20);
+			this.txtFullName.Size = new System.Drawing.Size(329, 20);
 			this.txtFullName.TabIndex = 4;
 			// 
 			// label3
 			// 
 			this.label3.AutoSize = true;
-			this.label3.Location = new System.Drawing.Point(23, 111);
+			this.label3.Location = new System.Drawing.Point(30, 110);
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(57, 13);
 			this.label3.TabIndex = 3;
@@ -103,15 +116,15 @@
 			// 
 			// txtPhone
 			// 
-			this.txtPhone.Location = new System.Drawing.Point(117, 196);
+			this.txtPhone.Location = new System.Drawing.Point(149, 218);
 			this.txtPhone.Name = "txtPhone";
-			this.txtPhone.Size = new System.Drawing.Size(361, 20);
+			this.txtPhone.Size = new System.Drawing.Size(329, 20);
 			this.txtPhone.TabIndex = 8;
 			// 
 			// label4
 			// 
 			this.label4.AutoSize = true;
-			this.label4.Location = new System.Drawing.Point(23, 199);
+			this.label4.Location = new System.Drawing.Point(30, 221);
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(41, 13);
 			this.label4.TabIndex = 7;
@@ -119,15 +132,15 @@
 			// 
 			// txtPass
 			// 
-			this.txtPass.Location = new System.Drawing.Point(117, 147);
+			this.txtPass.Location = new System.Drawing.Point(149, 144);
 			this.txtPass.Name = "txtPass";
-			this.txtPass.Size = new System.Drawing.Size(361, 20);
+			this.txtPass.Size = new System.Drawing.Size(329, 20);
 			this.txtPass.TabIndex = 6;
 			// 
 			// label5
 			// 
 			this.label5.AutoSize = true;
-			this.label5.Location = new System.Drawing.Point(23, 150);
+			this.label5.Location = new System.Drawing.Point(30, 147);
 			this.label5.Name = "label5";
 			this.label5.Size = new System.Drawing.Size(56, 13);
 			this.label5.TabIndex = 5;
@@ -139,7 +152,7 @@
 			this.btnSave.FlatAppearance.BorderSize = 0;
 			this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.btnSave.ForeColor = System.Drawing.Color.White;
-			this.btnSave.Location = new System.Drawing.Point(210, 257);
+			this.btnSave.Location = new System.Drawing.Point(210, 270);
 			this.btnSave.Name = "btnSave";
 			this.btnSave.Size = new System.Drawing.Size(75, 29);
 			this.btnSave.TabIndex = 9;
@@ -153,12 +166,13 @@
 			this.btnUpdate.FlatAppearance.BorderSize = 0;
 			this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.btnUpdate.ForeColor = System.Drawing.Color.White;
-			this.btnUpdate.Location = new System.Drawing.Point(306, 257);
+			this.btnUpdate.Location = new System.Drawing.Point(306, 270);
 			this.btnUpdate.Name = "btnUpdate";
 			this.btnUpdate.Size = new System.Drawing.Size(75, 29);
 			this.btnUpdate.TabIndex = 10;
 			this.btnUpdate.Text = "Update";
 			this.btnUpdate.UseVisualStyleBackColor = false;
+			this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
 			// 
 			// btnClear
 			// 
@@ -166,7 +180,7 @@
 			this.btnClear.FlatAppearance.BorderSize = 0;
 			this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.btnClear.ForeColor = System.Drawing.Color.White;
-			this.btnClear.Location = new System.Drawing.Point(403, 257);
+			this.btnClear.Location = new System.Drawing.Point(402, 270);
 			this.btnClear.Name = "btnClear";
 			this.btnClear.Size = new System.Drawing.Size(75, 29);
 			this.btnClear.TabIndex = 11;
@@ -174,22 +188,29 @@
 			this.btnClear.UseVisualStyleBackColor = false;
 			this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
 			// 
-			// pictureBoxClose
+			// txtRepass
 			// 
-			this.pictureBoxClose.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxClose.Image")));
-			this.pictureBoxClose.Location = new System.Drawing.Point(490, 0);
-			this.pictureBoxClose.Name = "pictureBoxClose";
-			this.pictureBoxClose.Size = new System.Drawing.Size(25, 22);
-			this.pictureBoxClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-			this.pictureBoxClose.TabIndex = 9;
-			this.pictureBoxClose.TabStop = false;
-			this.pictureBoxClose.Click += new System.EventHandler(this.pictureBoxClose_Click);
+			this.txtRepass.Location = new System.Drawing.Point(149, 181);
+			this.txtRepass.Name = "txtRepass";
+			this.txtRepass.Size = new System.Drawing.Size(329, 20);
+			this.txtRepass.TabIndex = 13;
+			// 
+			// label6
+			// 
+			this.label6.AutoSize = true;
+			this.label6.Location = new System.Drawing.Point(30, 184);
+			this.label6.Name = "label6";
+			this.label6.Size = new System.Drawing.Size(96, 13);
+			this.label6.TabIndex = 12;
+			this.label6.Text = "Re-type Password:";
 			// 
 			// UserModuleForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(515, 311);
+			this.Controls.Add(this.txtRepass);
+			this.Controls.Add(this.label6);
 			this.Controls.Add(this.btnClear);
 			this.Controls.Add(this.btnUpdate);
 			this.Controls.Add(this.btnSave);
@@ -219,16 +240,18 @@
 		private System.Windows.Forms.Panel panel1;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Label label2;
-		private System.Windows.Forms.TextBox txtUserName;
-		private System.Windows.Forms.TextBox txtFullName;
 		private System.Windows.Forms.Label label3;
-		private System.Windows.Forms.TextBox txtPhone;
 		private System.Windows.Forms.Label label4;
-		private System.Windows.Forms.TextBox txtPass;
 		private System.Windows.Forms.Label label5;
-		private System.Windows.Forms.Button btnSave;
-		private System.Windows.Forms.Button btnUpdate;
-		private System.Windows.Forms.Button btnClear;
 		private System.Windows.Forms.PictureBox pictureBoxClose;
+		public System.Windows.Forms.Button btnSave;
+		public System.Windows.Forms.Button btnUpdate;
+		public System.Windows.Forms.Button btnClear;
+		public System.Windows.Forms.TextBox txtUserName;
+		public System.Windows.Forms.TextBox txtFullName;
+		public System.Windows.Forms.TextBox txtPhone;
+		public System.Windows.Forms.TextBox txtPass;
+		public System.Windows.Forms.TextBox txtRepass;
+		private System.Windows.Forms.Label label6;
 	}
 }
