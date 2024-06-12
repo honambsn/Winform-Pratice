@@ -32,19 +32,20 @@
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.pictureBoxClose = new System.Windows.Forms.PictureBox();
 			this.label1 = new System.Windows.Forms.Label();
-			this.txtRepass = new System.Windows.Forms.TextBox();
+			this.txtPDescription = new System.Windows.Forms.TextBox();
 			this.label6 = new System.Windows.Forms.Label();
 			this.btnClear = new System.Windows.Forms.Button();
 			this.btnUpdate = new System.Windows.Forms.Button();
 			this.btnSave = new System.Windows.Forms.Button();
 			this.label4 = new System.Windows.Forms.Label();
-			this.txtPass = new System.Windows.Forms.TextBox();
+			this.txtPPrice = new System.Windows.Forms.TextBox();
 			this.label5 = new System.Windows.Forms.Label();
-			this.txtFullName = new System.Windows.Forms.TextBox();
+			this.txtPQty = new System.Windows.Forms.TextBox();
 			this.label3 = new System.Windows.Forms.Label();
-			this.txtUserName = new System.Windows.Forms.TextBox();
+			this.txtPName = new System.Windows.Forms.TextBox();
 			this.label2 = new System.Windows.Forms.Label();
-			this.comboBox1 = new System.Windows.Forms.ComboBox();
+			this.comboCat = new System.Windows.Forms.ComboBox();
+			this.lblPid = new System.Windows.Forms.Label();
 			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose)).BeginInit();
 			this.SuspendLayout();
@@ -69,6 +70,7 @@
 			this.pictureBoxClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.pictureBoxClose.TabIndex = 9;
 			this.pictureBoxClose.TabStop = false;
+			this.pictureBoxClose.Click += new System.EventHandler(this.pictureBoxClose_Click);
 			// 
 			// label1
 			// 
@@ -81,12 +83,12 @@
 			this.label1.TabIndex = 0;
 			this.label1.Text = "Product Module";
 			// 
-			// txtRepass
+			// txtPDescription
 			// 
-			this.txtRepass.Location = new System.Drawing.Point(149, 235);
-			this.txtRepass.Name = "txtRepass";
-			this.txtRepass.Size = new System.Drawing.Size(329, 22);
-			this.txtRepass.TabIndex = 27;
+			this.txtPDescription.Location = new System.Drawing.Point(149, 235);
+			this.txtPDescription.Name = "txtPDescription";
+			this.txtPDescription.Size = new System.Drawing.Size(329, 22);
+			this.txtPDescription.TabIndex = 27;
 			// 
 			// label6
 			// 
@@ -109,6 +111,7 @@
 			this.btnClear.TabIndex = 25;
 			this.btnClear.Text = "Clear";
 			this.btnClear.UseVisualStyleBackColor = false;
+			this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
 			// 
 			// btnUpdate
 			// 
@@ -122,6 +125,7 @@
 			this.btnUpdate.TabIndex = 24;
 			this.btnUpdate.Text = "Update";
 			this.btnUpdate.UseVisualStyleBackColor = false;
+			this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
 			// 
 			// btnSave
 			// 
@@ -135,6 +139,7 @@
 			this.btnSave.TabIndex = 23;
 			this.btnSave.Text = "Save";
 			this.btnSave.UseVisualStyleBackColor = false;
+			this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
 			// 
 			// label4
 			// 
@@ -145,12 +150,12 @@
 			this.label4.TabIndex = 21;
 			this.label4.Text = "Category";
 			// 
-			// txtPass
+			// txtPPrice
 			// 
-			this.txtPass.Location = new System.Drawing.Point(149, 198);
-			this.txtPass.Name = "txtPass";
-			this.txtPass.Size = new System.Drawing.Size(329, 22);
-			this.txtPass.TabIndex = 20;
+			this.txtPPrice.Location = new System.Drawing.Point(149, 198);
+			this.txtPPrice.Name = "txtPPrice";
+			this.txtPPrice.Size = new System.Drawing.Size(329, 22);
+			this.txtPPrice.TabIndex = 20;
 			// 
 			// label5
 			// 
@@ -161,12 +166,12 @@
 			this.label5.TabIndex = 19;
 			this.label5.Text = "Price";
 			// 
-			// txtFullName
+			// txtPQty
 			// 
-			this.txtFullName.Location = new System.Drawing.Point(149, 161);
-			this.txtFullName.Name = "txtFullName";
-			this.txtFullName.Size = new System.Drawing.Size(329, 22);
-			this.txtFullName.TabIndex = 18;
+			this.txtPQty.Location = new System.Drawing.Point(149, 161);
+			this.txtPQty.Name = "txtPQty";
+			this.txtPQty.Size = new System.Drawing.Size(329, 22);
+			this.txtPQty.TabIndex = 18;
 			// 
 			// label3
 			// 
@@ -177,12 +182,12 @@
 			this.label3.TabIndex = 17;
 			this.label3.Text = "Quantity";
 			// 
-			// txtUserName
+			// txtPName
 			// 
-			this.txtUserName.Location = new System.Drawing.Point(149, 124);
-			this.txtUserName.Name = "txtUserName";
-			this.txtUserName.Size = new System.Drawing.Size(329, 22);
-			this.txtUserName.TabIndex = 16;
+			this.txtPName.Location = new System.Drawing.Point(149, 124);
+			this.txtPName.Name = "txtPName";
+			this.txtPName.Size = new System.Drawing.Size(329, 22);
+			this.txtPName.TabIndex = 16;
 			// 
 			// label2
 			// 
@@ -193,32 +198,44 @@
 			this.label2.TabIndex = 15;
 			this.label2.Text = "Product Name:";
 			// 
-			// comboBox1
+			// comboCat
 			// 
-			this.comboBox1.FormattingEnabled = true;
-			this.comboBox1.Location = new System.Drawing.Point(149, 274);
-			this.comboBox1.Name = "comboBox1";
-			this.comboBox1.Size = new System.Drawing.Size(329, 25);
-			this.comboBox1.TabIndex = 10;
+			this.comboCat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.comboCat.FormattingEnabled = true;
+			this.comboCat.Location = new System.Drawing.Point(149, 274);
+			this.comboCat.Name = "comboCat";
+			this.comboCat.Size = new System.Drawing.Size(329, 25);
+			this.comboCat.TabIndex = 10;
+			// 
+			// lblPid
+			// 
+			this.lblPid.AutoSize = true;
+			this.lblPid.Location = new System.Drawing.Point(52, 332);
+			this.lblPid.Name = "lblPid";
+			this.lblPid.Size = new System.Drawing.Size(74, 17);
+			this.lblPid.TabIndex = 28;
+			this.lblPid.Text = "product ID:";
+			this.lblPid.Visible = false;
 			// 
 			// ProductModuleForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(601, 407);
-			this.Controls.Add(this.comboBox1);
+			this.Controls.Add(this.lblPid);
+			this.Controls.Add(this.comboCat);
 			this.Controls.Add(this.panel1);
-			this.Controls.Add(this.txtRepass);
+			this.Controls.Add(this.txtPDescription);
 			this.Controls.Add(this.label6);
 			this.Controls.Add(this.btnClear);
 			this.Controls.Add(this.btnUpdate);
 			this.Controls.Add(this.btnSave);
 			this.Controls.Add(this.label4);
-			this.Controls.Add(this.txtPass);
+			this.Controls.Add(this.txtPPrice);
 			this.Controls.Add(this.label5);
-			this.Controls.Add(this.txtFullName);
+			this.Controls.Add(this.txtPQty);
 			this.Controls.Add(this.label3);
-			this.Controls.Add(this.txtUserName);
+			this.Controls.Add(this.txtPName);
 			this.Controls.Add(this.label2);
 			this.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -239,18 +256,19 @@
 		private System.Windows.Forms.Panel panel1;
 		private System.Windows.Forms.PictureBox pictureBoxClose;
 		private System.Windows.Forms.Label label1;
-		public System.Windows.Forms.TextBox txtRepass;
+		public System.Windows.Forms.TextBox txtPDescription;
 		private System.Windows.Forms.Label label6;
 		public System.Windows.Forms.Button btnClear;
 		public System.Windows.Forms.Button btnUpdate;
 		public System.Windows.Forms.Button btnSave;
 		private System.Windows.Forms.Label label4;
-		public System.Windows.Forms.TextBox txtPass;
+		public System.Windows.Forms.TextBox txtPPrice;
 		private System.Windows.Forms.Label label5;
-		public System.Windows.Forms.TextBox txtFullName;
+		public System.Windows.Forms.TextBox txtPQty;
 		private System.Windows.Forms.Label label3;
-		public System.Windows.Forms.TextBox txtUserName;
+		public System.Windows.Forms.TextBox txtPName;
 		private System.Windows.Forms.Label label2;
-		public System.Windows.Forms.ComboBox comboBox1;
+		public System.Windows.Forms.ComboBox comboCat;
+		public System.Windows.Forms.Label lblPid;
 	}
 }
