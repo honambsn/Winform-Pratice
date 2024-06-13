@@ -90,5 +90,6 @@ namespace Management_System
 		{
 			LoadProduct();
 		}
+
 	}
 }

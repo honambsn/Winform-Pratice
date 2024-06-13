@@ -18,3 +18,5 @@ D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Management System\obj\Debug\Ma
 D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Management System\obj\Debug\Management_System.CategoryModuleForm.resources
 D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Management System\obj\Debug\Management_System.ProductForm.resources
 D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Management System\obj\Debug\Management_System.ProductModuleForm.resources
+D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Management System\obj\Debug\Management_System.OrderForm.resources
+D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Management System\obj\Debug\Management_System.OrderModuleForm.resources
