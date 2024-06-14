@@ -71,5 +71,33 @@ namespace Management_System
 			LoadProduct();
 		}
 
+
+		int qty = 0;
+
+
+		private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+		{
+			if (Convert.ToInt16(numericUpDown1.Value) > qty) 
+			{
+				MessageBox.Show("Instock quatity is not enough!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning );
+				return;
+			}
+			int total = Convert.ToInt16(txtPrice.Text) * Convert.ToInt16(numericUpDown1.Value);
+			txtTotal.Text = total.ToString();
+		}
+
+		private void dgvCustomer_CellClick(object sender, DataGridViewCellEventArgs e)
+		{
+			txtCId.Text = dgvCustomer.Rows[e.RowIndex].Cells[1].Value.ToString();
+			txtCName.Text = dgvCustomer.Rows[e.RowIndex].Cells[2].Value.ToString();
+		}
+
+		private void dgvProduct_CellClick(object sender, DataGridViewCellEventArgs e)
+		{
+			txtPId.Text = dgvProduct.Rows[e.RowIndex].Cells[1].Value.ToString();
+			txtPName.Text = dgvProduct.Rows[e.RowIndex].Cells[2].Value.ToString();
+			txtPrice.Text = dgvProduct.Rows[e.RowIndex].Cells[4].Value.ToString();
+			qty = Convert.ToInt16(dgvProduct.Rows[e.RowIndex].Cells[3].Value.ToString());
+		}
 	}
 }
