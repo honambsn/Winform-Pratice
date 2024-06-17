@@ -77,18 +77,18 @@ namespace Management_System
 
 		private void numericUpDown1_ValueChanged(object sender, EventArgs e)
 		{
-			if (Convert.ToInt16(numericUpDown1.Value) > qty) 
+			if (Convert.ToInt16(UDQty.Value) > qty) 
 			{
 				MessageBox.Show("Instock quatity is not enough!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning );
 				return;
 			}
-			int total = Convert.ToInt16(txtPrice.Text) * Convert.ToInt16(numericUpDown1.Value);
+			int total = Convert.ToInt16(txtPrice.Text) * Convert.ToInt16(UDQty.Value);
 			txtTotal.Text = total.ToString();
 		}
 
 		private void dgvCustomer_CellClick(object sender, DataGridViewCellEventArgs e)
 		{
-			txtCId.Text = dgvCustomer.Rows[e.RowIndex].Cells[1].Value.ToString();
+			textCid.Text = dgvCustomer.Rows[e.RowIndex].Cells[1].Value.ToString();
 			txtCName.Text = dgvCustomer.Rows[e.RowIndex].Cells[2].Value.ToString();
 		}
 
@@ -98,6 +98,61 @@ namespace Management_System
 			txtPName.Text = dgvProduct.Rows[e.RowIndex].Cells[2].Value.ToString();
 			txtPrice.Text = dgvProduct.Rows[e.RowIndex].Cells[4].Value.ToString();
 			qty = Convert.ToInt16(dgvProduct.Rows[e.RowIndex].Cells[3].Value.ToString());
+		}
+
+		private void btnInsert_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				if (textCid.Text == "")
+				{
+					MessageBox.Show("Please select customer", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+					return;
+				}
+				if (txtPId.Text == "")
+				{
+					MessageBox.Show("Please select product", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+					return;
+				}
+				if (MessageBox.Show("Are u sure to insert this order?", "Saving Record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+				{
+					cm = new SqlCommand("INSERT INTO tbOrder(odate,pid,cid,qty,price,total)VALUES(@odate,@pid,@cid,@qty,@price,@total)", con);
+					cm.Parameters.AddWithValue("@odate", dtOrder.Value);
+					cm.Parameters.AddWithValue("@pid", Convert.ToInt16(txtPId.Text));
+					cm.Parameters.AddWithValue("@cid", Convert.ToInt16(textCid.Text));
+					cm.Parameters.AddWithValue("@qty", Convert.ToInt16(UDQty.Value));
+					cm.Parameters.AddWithValue("@price", Convert.ToInt16(txtPrice.Text));
+					cm.Parameters.AddWithValue("@total", Convert.ToInt16(txtTotal.Text));
+					con.Open();
+					cm.ExecuteNonQuery();
+					con.Close();
+					MessageBox.Show("Order has been successfully added");
+					Clear();
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+			}
+		}
+
+		public void Clear()
+		{
+			txtCName.Clear();
+			txtPId.Clear();
+			textCid.Clear();
+			txtPName.Clear();
+			txtPrice.Clear();
+			UDQty.Value = 1;
+			txtTotal.Clear();
+			dtOrder.Value = DateTime.Now;
+		}
+
+		private void btnClear_Click(object sender, EventArgs e)
+		{
+			 Clear();
+			btnInsert.Enabled = false;
+			btnUpdate.Enabled = false;
 		}
 	}
 }
