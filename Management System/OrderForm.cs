@@ -53,7 +53,7 @@ namespace Management_System
 		private void productButton1_Click(object sender, EventArgs e)
 		{
 			OrderModuleForm moduleForm = new OrderModuleForm();
-			moduleForm.btnInsert.Enabled = true;
+			moduleForm.btnInsert.Enabled = true; 
 			moduleForm.btnUpdate.Enabled = false;
 			moduleForm.ShowDialog();
 		}
