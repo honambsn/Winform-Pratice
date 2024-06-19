@@ -28,16 +28,16 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OrderForm));
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OrderForm));
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.label2 = new System.Windows.Forms.Label();
+			this.productButton1 = new Management_System.CustomerButton();
 			this.txtSearch = new System.Windows.Forms.TextBox();
+			this.btnAdd = new Management_System.CustomerButton();
 			this.label1 = new System.Windows.Forms.Label();
 			this.dgvOrder = new System.Windows.Forms.DataGridView();
-			this.productButton1 = new Management_System.CustomerButton();
-			this.btnAdd = new Management_System.CustomerButton();
 			this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,12 +46,11 @@
 			this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
 			this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
 			this.panel1.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.dgvOrder)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.productButton1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnAdd)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.dgvOrder)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// panel1
@@ -79,12 +78,39 @@
 			this.label2.TabIndex = 5;
 			this.label2.Text = "Search Box:";
 			// 
+			// productButton1
+			// 
+			this.productButton1.Image = ((System.Drawing.Image)(resources.GetObject("productButton1.Image")));
+			this.productButton1.ImageHover = ((System.Drawing.Image)(resources.GetObject("productButton1.ImageHover")));
+			this.productButton1.ImageNormal = ((System.Drawing.Image)(resources.GetObject("productButton1.ImageNormal")));
+			this.productButton1.Location = new System.Drawing.Point(785, 4);
+			this.productButton1.Margin = new System.Windows.Forms.Padding(4);
+			this.productButton1.Name = "productButton1";
+			this.productButton1.Size = new System.Drawing.Size(47, 47);
+			this.productButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+			this.productButton1.TabIndex = 13;
+			this.productButton1.TabStop = false;
+			this.productButton1.Click += new System.EventHandler(this.productButton1_Click);
+			// 
 			// txtSearch
 			// 
 			this.txtSearch.Location = new System.Drawing.Point(399, 17);
 			this.txtSearch.Name = "txtSearch";
 			this.txtSearch.Size = new System.Drawing.Size(321, 22);
 			this.txtSearch.TabIndex = 4;
+			// 
+			// btnAdd
+			// 
+			this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
+			this.btnAdd.ImageHover = ((System.Drawing.Image)(resources.GetObject("btnAdd.ImageHover")));
+			this.btnAdd.ImageNormal = ((System.Drawing.Image)(resources.GetObject("btnAdd.ImageNormal")));
+			this.btnAdd.Location = new System.Drawing.Point(1079, 4);
+			this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
+			this.btnAdd.Name = "btnAdd";
+			this.btnAdd.Size = new System.Drawing.Size(46, 47);
+			this.btnAdd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+			this.btnAdd.TabIndex = 12;
+			this.btnAdd.TabStop = false;
 			// 
 			// label1
 			// 
@@ -120,7 +146,6 @@
             this.Column6,
             this.Column7,
             this.Column8,
-            this.Edit,
             this.Delete});
 			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
 			dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
@@ -138,33 +163,7 @@
 			this.dgvOrder.RowHeadersVisible = false;
 			this.dgvOrder.Size = new System.Drawing.Size(1129, 562);
 			this.dgvOrder.TabIndex = 5;
-			// 
-			// productButton1
-			// 
-			this.productButton1.Image = ((System.Drawing.Image)(resources.GetObject("productButton1.Image")));
-			this.productButton1.ImageHover = ((System.Drawing.Image)(resources.GetObject("productButton1.ImageHover")));
-			this.productButton1.ImageNormal = ((System.Drawing.Image)(resources.GetObject("productButton1.ImageNormal")));
-			this.productButton1.Location = new System.Drawing.Point(785, 4);
-			this.productButton1.Margin = new System.Windows.Forms.Padding(4);
-			this.productButton1.Name = "productButton1";
-			this.productButton1.Size = new System.Drawing.Size(47, 47);
-			this.productButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-			this.productButton1.TabIndex = 13;
-			this.productButton1.TabStop = false;
-			this.productButton1.Click += new System.EventHandler(this.productButton1_Click);
-			// 
-			// btnAdd
-			// 
-			this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
-			this.btnAdd.ImageHover = ((System.Drawing.Image)(resources.GetObject("btnAdd.ImageHover")));
-			this.btnAdd.ImageNormal = ((System.Drawing.Image)(resources.GetObject("btnAdd.ImageNormal")));
-			this.btnAdd.Location = new System.Drawing.Point(1079, 4);
-			this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
-			this.btnAdd.Name = "btnAdd";
-			this.btnAdd.Size = new System.Drawing.Size(46, 47);
-			this.btnAdd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-			this.btnAdd.TabIndex = 12;
-			this.btnAdd.TabStop = false;
+			this.dgvOrder.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrder_CellContentClick);
 			// 
 			// Column5
 			// 
@@ -221,14 +220,9 @@
 			this.Column8.Name = "Column8";
 			this.Column8.Width = 112;
 			// 
-			// Edit
-			// 
-			this.Edit.HeaderText = "";
-			this.Edit.Image = ((System.Drawing.Image)(resources.GetObject("Edit.Image")));
-			this.Edit.Name = "Edit";
-			// 
 			// Delete
 			// 
+			this.Delete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
 			this.Delete.HeaderText = "";
 			this.Delete.Image = ((System.Drawing.Image)(resources.GetObject("Delete.Image")));
 			this.Delete.Name = "Delete";
@@ -247,9 +241,9 @@
 			this.Text = "OrderForm";
 			this.panel1.ResumeLayout(false);
 			this.panel1.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.dgvOrder)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.productButton1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnAdd)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.dgvOrder)).EndInit();
 			this.ResumeLayout(false);
 
 		}
@@ -271,7 +265,6 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-		private System.Windows.Forms.DataGridViewImageColumn Edit;
 		private System.Windows.Forms.DataGridViewImageColumn Delete;
 	}
 }

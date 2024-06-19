@@ -53,9 +53,52 @@ namespace Management_System
 		private void productButton1_Click(object sender, EventArgs e)
 		{
 			OrderModuleForm moduleForm = new OrderModuleForm();
-			moduleForm.btnInsert.Enabled = true; 
-			moduleForm.btnUpdate.Enabled = false;
 			moduleForm.ShowDialog();
+			LoadOrder();
+		}
+
+		private void dgvOrder_CellContentClick(object sender, DataGridViewCellEventArgs e)
+		{
+			string colName = dgvOrder.Columns[e.ColumnIndex].Name;
+			//if (colName == "Edit")
+			//{
+			//	OrderModuleForm formModule = new OrderModuleForm();
+			//	formModule.lblOid.Text = dgvOrder.Rows[e.RowIndex].Cells[1].Value.ToString();
+			//	formModule.dtOrder.Text = dgvOrder.Rows[e.RowIndex].Cells[2].Value.ToString();
+			//	formModule.txtPId.Text = dgvOrder.Rows[e.RowIndex].Cells[3].Value.ToString();
+			//	formModule.textCid.Text = dgvOrder.Rows[e.RowIndex].Cells[4].Value.ToString();
+			//	formModule.UDQty.Value = Convert.ToInt32( dgvOrder.Rows[e.RowIndex].Cells[5].Value.ToString());
+			//	formModule.txtPrice.Text = dgvOrder.Rows[e.RowIndex].Cells[6].Value.ToString();
+
+
+			//	//formModule.txtPass.Text = dgvOrder.Rows[e.RowIndex].Cells[3].Value.ToString();
+			//	//formModule.txtPhone.Text = dgvOrder.Rows[e.RowIndex].Cells[4].Value.ToString();
+
+
+			//	formModule.btnInsert.Enabled = false;
+			//	formModule.btnUpdate.Enabled = true;
+			//	formModule.ShowDialog();
+			//}
+			if (colName == "Delete")
+			{
+				if (MessageBox.Show("Are u sure to delete this order?", "Delete Record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+				{
+					con.Open();
+					cm = new SqlCommand("DELETE FROM tbOrder WHERE orderid LIKE '" + dgvOrder.Rows[e.RowIndex].Cells[1].Value.ToString() + "'", con);
+					cm.ExecuteNonQuery();
+					con.Close();
+					MessageBox.Show("Record has been successfully deleted");
+
+
+					cm = new SqlCommand("UPDATE tbProduct SET pqty = ( pqty + @pqty) WHERE pid LIKE '" + dgvOrder.Rows[e.RowIndex].Cells[3].Value.ToString() + "'", con);
+					cm.Parameters.AddWithValue("@pqty", Convert.ToInt16(dgvOrder.Rows[e.RowIndex].Cells[5	].Value.ToString()));
+
+					con.Open() ;
+					cm.ExecuteNonQuery() ;
+					con.Close();
+				}
+			}
+			LoadOrder();
 		}
 	}
 }

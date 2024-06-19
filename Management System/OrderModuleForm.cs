@@ -16,6 +16,7 @@ namespace Management_System
 		SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=""D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Management System\dbIMS.mdf"";Integrated Security=True;Connect Timeout=30;Encrypt=False");
 		SqlCommand cm = new SqlCommand();
 		SqlDataReader dr;
+		int qty = 0;
 		public OrderModuleForm()
 		{
 			InitializeComponent();
@@ -72,18 +73,21 @@ namespace Management_System
 		}
 
 
-		int qty = 0;
 
 
 		private void numericUpDown1_ValueChanged(object sender, EventArgs e)
 		{
+			GetQty();
 			if (Convert.ToInt16(UDQty.Value) > qty) 
 			{
 				MessageBox.Show("Instock quatity is not enough!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning );
 				return;
 			}
-			int total = Convert.ToInt16(txtPrice.Text) * Convert.ToInt16(UDQty.Value);
-			txtTotal.Text = total.ToString();
+			if (Convert.ToInt16(UDQty.Value) > 0)
+			{
+				int total = Convert.ToInt16(txtPrice.Text) * Convert.ToInt16(UDQty.Value);
+				txtTotal.Text = total.ToString();
+			}
 		}
 
 		private void dgvCustomer_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -97,7 +101,7 @@ namespace Management_System
 			txtPId.Text = dgvProduct.Rows[e.RowIndex].Cells[1].Value.ToString();
 			txtPName.Text = dgvProduct.Rows[e.RowIndex].Cells[2].Value.ToString();
 			txtPrice.Text = dgvProduct.Rows[e.RowIndex].Cells[4].Value.ToString();
-			qty = Convert.ToInt16(dgvProduct.Rows[e.RowIndex].Cells[3].Value.ToString());
+			//qty = Convert.ToInt16(dgvProduct.Rows[e.RowIndex].Cells[3].Value.ToString());
 		}
 
 		private void btnInsert_Click(object sender, EventArgs e)
@@ -127,7 +131,16 @@ namespace Management_System
 					cm.ExecuteNonQuery();
 					con.Close();
 					MessageBox.Show("Order has been successfully added");
+					
+
+					cm = new SqlCommand("UPDATE tbProduct set pqty = (pqty-@pqty) WHERE pid LIKE '" + txtPId.Text + "'", con);
+					cm.Parameters.AddWithValue("@pqty", Convert.ToInt16(UDQty.Value));
+
+					con.Open();
+					cm.ExecuteNonQuery();
+					con.Close();
 					Clear();
+					LoadProduct();
 				}
 			}
 			catch (Exception ex)
@@ -143,7 +156,7 @@ namespace Management_System
 			textCid.Clear();
 			txtPName.Clear();
 			txtPrice.Clear();
-			UDQty.Value = 1;
+			UDQty.Value = 0;
 			txtTotal.Clear();
 			dtOrder.Value = DateTime.Now;
 		}
@@ -151,8 +164,22 @@ namespace Management_System
 		private void btnClear_Click(object sender, EventArgs e)
 		{
 			 Clear();
-			btnInsert.Enabled = false;
-			btnUpdate.Enabled = false;
+			
 		}
+
+		public void GetQty()
+		{
+			cm = new SqlCommand("SELECT pqty FROM tbProduct WHERE pid = '" + txtPId.Text + "'", con);
+			con.Open();
+			dr = cm.ExecuteReader();
+			while (dr.Read())
+			{
+				qty = Convert.ToInt32( dr[0].ToString());
+			}
+			dr.Close();
+			con.Close();
+		}
+
+		
 	}
 }
