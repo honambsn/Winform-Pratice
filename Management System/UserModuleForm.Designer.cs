@@ -136,6 +136,7 @@
 			this.txtPass.Name = "txtPass";
 			this.txtPass.Size = new System.Drawing.Size(329, 20);
 			this.txtPass.TabIndex = 6;
+			this.txtPass.UseSystemPasswordChar = true;
 			// 
 			// label5
 			// 
