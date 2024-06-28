@@ -29,44 +29,33 @@ namespace Inventory_Mangaement
 			panel1.Location = new Point(xPos, yPos);
 
 			int labelWidth = label1.Width;
-			int labelHeight = label1.Height;
+			//int labelHeight = label1.Height;
 
 			xPos = (this.panel1.Width - labelWidth) / 2;
-			yPos = (this.panel1.Height - labelHeight) / 2;
+			//yPos = (this.panel1.Height - labelHeight) / 2;
 
 			label1.Location = new Point(xPos, yPos);
 
-		}
-
-		private void label1_Click(object sender, EventArgs e)
-		{
-			
-
-		}
-
-		private void textBox2_TextChanged(object sender, EventArgs e)
-		{
-
-		}
-
-		private void button4_Click(object sender, EventArgs e)
-		{
-
-		}
-
-		private void pictureBox3_Click(object sender, EventArgs e)
-		{
 
 		}
 
 		private void button1_Click(object sender, EventArgs e)
 		{
-			this.Dispose();
+			Application.Exit();
 		}
 
-		private void panel1_Paint(object sender, PaintEventArgs e)
+		private void register_label_Click(object sender, EventArgs e)
 		{
-			
+			RegisterForm regForm = new RegisterForm();
+			regForm.Show();
+
+			this.Hide();
+		}
+
+		private void login_showPass_CheckedChanged(object sender, EventArgs e)
+		{
+			login_password.PasswordChar = login_showPass.Checked ? '\0' : '*';
+
 		}
 	}
 }
