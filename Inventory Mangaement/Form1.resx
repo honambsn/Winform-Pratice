@@ -121,7 +121,7 @@
   <data name="pictureBox3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAB0AAAAdCAYAAABWk2cPAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EAAACxABrSO9dQAAAWRJREFUSEvt1rsuBGEYxvGhcGiIkDhEQ0FwEwqFAp1r2IYK0eAiJE4NJSIkqIlT
+        DwAACw8BkvkDpQAAAWRJREFUSEvt1rsuBGEYxvGhcGiIkDhEQ0FwEwqFAp1r2IYK0eAiJE4NJSIkqIlT
         UOhU7kQQ/J8xbzLF7M7s+20iYp/klzHfvofNYoj+QoaxhjPcJddVDKHmacE2PvCVQeebUF1NokG3sAWv
         uMA+LpN7e+0azQjOBmzoIbqRTg+OYDXrCMog3qFhGtyArOj8BKp7wwDcWYYGaXGfDiqkH/YGl3TgzQE0
         5D6+y88jVK/vtzv6gdGQ4/guP6pTvfpcGcUzNOQBswWoTvXqG0FV0QPgExrgpf4VFEo7yj0EqqU5bcjN
@@ -133,7 +133,7 @@
   <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAB0AAAAdCAYAAABWk2cPAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DwAACw8BkvkDpQAAAShJREFUSEvt1j1KA0EYxvGFKNHYBCsVKwvxBKaLlaYIFpam1AvYiCcIWFuIAfEE
+        DgAACw4BQL7hQQAAAShJREFUSEvt1j1KA0EYxvGFKNHYBCsVKwvxBKaLlaYIFpam1AvYiCcIWFuIAfEE
         2nuBEKwlWMU7+FGpxPyfsMIyvLv5mFmrfeDHMMvuPIGdMBsVmZAFrKI0nuWcPTziC7/xqHkdueQCQ6jM
         pevnCJojWGVJKj5EsLzAKnL1ESQ7sArSbMM7DViLpzmAd5qwFk+j+71Tg7V4ml14p4x3WAWuN+j+ILmE
         VeJqI1iW0YNV9KeLJQTNCm7wg2TZN65RQW5ZwzHO4lHzIt7RJtmHTpMrdOJRc10PtokW0cIDPpHcQK4P
@@ -144,7 +144,7 @@
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAYAAACOEfKtAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EAAACxABrSO9dQAABW5JREFUeF7tnGmodVMYgK95niMZfpmnzPMsZehLfOYhQpGpCCFF8sM8SygS+UyZ
+        DwAACw8BkvkDpQAABW5JREFUeF7tnGmodVMYgK95niMZfpmnzPMsZehLfOYhQpGpCCFF8sM8SygS+UyZ
         RShTUkLmjJnHDCHz/Dz1vbXa7cs9d+917t3r7Kee1Pru2eu8y9p7r+FdZ6ynp6enp6cklsVd8FS8DG/E
         2/EGvASPxDVxDuyZzfJ4Br6I/0zQt/FgnAtHlqXwKvwV6xppIj6FS+DIsRN+hnWN8jU+gXHbnouX4634
         Hlb//lncGxfDkWB//B3TRvgQT8O18P9YG+/H9PP6E16KS2OxbI9/YgT9Mx6P8+AgzIl3YtqA4ae4JRaH
