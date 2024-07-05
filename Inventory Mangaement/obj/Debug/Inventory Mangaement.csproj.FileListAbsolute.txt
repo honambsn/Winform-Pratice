@@ -11,3 +11,4 @@ D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Inventory Mangaement\obj\Debug
 D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Inventory Mangaement\obj\Debug\Inventory_Mangaement.RegisterForm.resources
 D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Inventory Mangaement\obj\Debug\Inventory_Mangaement.MainForm.resources
 D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Inventory Mangaement\obj\Debug\Inventory_Mangaement.AdminDashboard.resources
+D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Inventory Mangaement\obj\Debug\Inventory_Mangaement.AdminAddUser.resources
