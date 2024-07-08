@@ -93,7 +93,7 @@ namespace Inventory_Mangaement
 
 						if (table.Rows.Count > 0)
 						{
-							MessageBox.Show("Login successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+							MessageBox.Show("Login as -"+ login_username.Text.Trim() + "- successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
 							
 							MainForm mainForm = new MainForm();
 							mainForm.Show();

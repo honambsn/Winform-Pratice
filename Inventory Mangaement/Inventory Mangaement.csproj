@@ -46,11 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdminAddUser.cs">
-      <SubType>Form</SubType>
+    <Compile Include="AdminAdd.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="AdminAddUser.Designer.cs">
-      <DependentUpon>AdminAddUser.cs</DependentUpon>
+    <Compile Include="AdminAdd.Designer.cs">
+      <DependentUpon>AdminAdd.cs</DependentUpon>
     </Compile>
     <Compile Include="AdminDashboard.cs">
       <SubType>UserControl</SubType>
@@ -78,8 +78,8 @@
     <Compile Include="RegisterForm.Designer.cs">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AdminAddUser.resx">
-      <DependentUpon>AdminAddUser.cs</DependentUpon>
+    <EmbeddedResource Include="AdminAdd.resx">
+      <DependentUpon>AdminAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdminDashboard.resx">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
@@ -126,9 +126,6 @@
     <Content Include="Assets\icons8-user-80.png" />
     <Content Include="Assets\icons8-register-80.png" />
     <Content Include="Assets\icons8-users-80.png" />
-    <Content Include="Roll Dice\Roll Dice\index.html" />
-    <Content Include="Roll Dice\Roll Dice\index.js" />
-    <Content Include="Roll Dice\Roll Dice\style.css" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -46,7 +46,8 @@
 			this.label2 = new System.Windows.Forms.Label();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.panel3 = new System.Windows.Forms.Panel();
-			this.adminDashboard1 = new Inventory_Mangaement.AdminDashboard();
+			this.adminDashboard2 = new Inventory_Mangaement.AdminDashboard();
+			this.adminAdd1 = new Inventory_Mangaement.AdminAdd();
 			this.panel1.SuspendLayout();
 			this.panel2.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -262,19 +263,27 @@
 			// 
 			// panel3
 			// 
-			this.panel3.Controls.Add(this.adminDashboard1);
+			this.panel3.Controls.Add(this.adminAdd1);
+			this.panel3.Controls.Add(this.adminDashboard2);
 			this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel3.Location = new System.Drawing.Point(200, 45);
 			this.panel3.Name = "panel3";
 			this.panel3.Size = new System.Drawing.Size(1080, 675);
 			this.panel3.TabIndex = 12;
 			// 
-			// adminDashboard1
+			// adminDashboard2
 			// 
-			this.adminDashboard1.Location = new System.Drawing.Point(0, 0);
-			this.adminDashboard1.Name = "adminDashboard1";
-			this.adminDashboard1.Size = new System.Drawing.Size(1080, 675);
-			this.adminDashboard1.TabIndex = 0;
+			this.adminDashboard2.Location = new System.Drawing.Point(0, 0);
+			this.adminDashboard2.Name = "adminDashboard2";
+			this.adminDashboard2.Size = new System.Drawing.Size(1080, 675);
+			this.adminDashboard2.TabIndex = 0;
+			// 
+			// adminAdd1
+			// 
+			this.adminAdd1.Location = new System.Drawing.Point(0, 0);
+			this.adminAdd1.Name = "adminAdd1";
+			this.adminAdd1.Size = new System.Drawing.Size(1080, 675);
+			this.adminAdd1.TabIndex = 1;
 			// 
 			// MainForm
 			// 
@@ -317,6 +326,7 @@
 		private System.Windows.Forms.Button button6;
 		private System.Windows.Forms.Panel panel3;
 		private System.Windows.Forms.Button logout_btn;
-		private AdminDashboard adminDashboard1;
+		private AdminDashboard adminDashboard2;
+		private AdminAdd adminAdd1;
 	}
 }
