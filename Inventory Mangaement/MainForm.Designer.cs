@@ -42,12 +42,12 @@
 			this.button2 = new System.Windows.Forms.Button();
 			this.button1 = new System.Windows.Forms.Button();
 			this.textBox1 = new System.Windows.Forms.TextBox();
-			this.label3 = new System.Windows.Forms.Label();
+			this.lbl_username = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.panel3 = new System.Windows.Forms.Panel();
-			this.adminDashboard2 = new Inventory_Mangaement.AdminDashboard();
 			this.adminAdd1 = new Inventory_Mangaement.AdminAdd();
+			this.adminDashboard2 = new Inventory_Mangaement.AdminDashboard();
 			this.panel1.SuspendLayout();
 			this.panel2.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -120,7 +120,7 @@
 			this.panel2.Controls.Add(this.button2);
 			this.panel2.Controls.Add(this.button1);
 			this.panel2.Controls.Add(this.textBox1);
-			this.panel2.Controls.Add(this.label3);
+			this.panel2.Controls.Add(this.lbl_username);
 			this.panel2.Controls.Add(this.label2);
 			this.panel2.Controls.Add(this.pictureBox1);
 			this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
@@ -230,16 +230,16 @@
 			this.textBox1.Size = new System.Drawing.Size(100, 13);
 			this.textBox1.TabIndex = 2;
 			// 
-			// label3
+			// lbl_username
 			// 
-			this.label3.AutoSize = true;
-			this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label3.ForeColor = System.Drawing.Color.White;
-			this.label3.Location = new System.Drawing.Point(107, 134);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(54, 18);
-			this.label3.TabIndex = 4;
-			this.label3.Text = "Admin";
+			this.lbl_username.AutoSize = true;
+			this.lbl_username.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lbl_username.ForeColor = System.Drawing.Color.White;
+			this.lbl_username.Location = new System.Drawing.Point(107, 134);
+			this.lbl_username.Name = "lbl_username";
+			this.lbl_username.Size = new System.Drawing.Size(54, 18);
+			this.lbl_username.TabIndex = 4;
+			this.lbl_username.Text = "Admin";
 			// 
 			// label2
 			// 
@@ -271,19 +271,19 @@
 			this.panel3.Size = new System.Drawing.Size(1080, 675);
 			this.panel3.TabIndex = 12;
 			// 
-			// adminDashboard2
-			// 
-			this.adminDashboard2.Location = new System.Drawing.Point(0, 0);
-			this.adminDashboard2.Name = "adminDashboard2";
-			this.adminDashboard2.Size = new System.Drawing.Size(1080, 675);
-			this.adminDashboard2.TabIndex = 0;
-			// 
 			// adminAdd1
 			// 
 			this.adminAdd1.Location = new System.Drawing.Point(0, 0);
 			this.adminAdd1.Name = "adminAdd1";
 			this.adminAdd1.Size = new System.Drawing.Size(1080, 675);
 			this.adminAdd1.TabIndex = 1;
+			// 
+			// adminDashboard2
+			// 
+			this.adminDashboard2.Location = new System.Drawing.Point(0, 0);
+			this.adminDashboard2.Name = "adminDashboard2";
+			this.adminDashboard2.Size = new System.Drawing.Size(1080, 675);
+			this.adminDashboard2.TabIndex = 0;
 			// 
 			// MainForm
 			// 
@@ -318,7 +318,7 @@
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.Button button1;
 		private System.Windows.Forms.TextBox textBox1;
-		private System.Windows.Forms.Label label3;
+		private System.Windows.Forms.Label lbl_username;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Button button3;
 		private System.Windows.Forms.Button button4;

@@ -28,7 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.label5 = new System.Windows.Forms.Label();
 			this.btn_ClearUser = new System.Windows.Forms.Button();
 			this.btn_RemoveUser = new System.Windows.Forms.Button();
@@ -75,6 +75,7 @@
 			this.btn_ClearUser.TabIndex = 11;
 			this.btn_ClearUser.Text = "Clear";
 			this.btn_ClearUser.UseVisualStyleBackColor = false;
+			this.btn_ClearUser.Click += new System.EventHandler(this.btn_ClearUser_Click);
 			// 
 			// btn_RemoveUser
 			// 
@@ -91,6 +92,7 @@
 			this.btn_RemoveUser.TabIndex = 10;
 			this.btn_RemoveUser.Text = "Remove";
 			this.btn_RemoveUser.UseVisualStyleBackColor = false;
+			this.btn_RemoveUser.Click += new System.EventHandler(this.btn_RemoveUser_Click);
 			// 
 			// btn_UpdateUser
 			// 
@@ -107,6 +109,7 @@
 			this.btn_UpdateUser.TabIndex = 9;
 			this.btn_UpdateUser.Text = "Update";
 			this.btn_UpdateUser.UseVisualStyleBackColor = false;
+			this.btn_UpdateUser.Click += new System.EventHandler(this.btn_UpdateUser_Click);
 			// 
 			// btn_AddUser
 			// 
@@ -163,14 +166,14 @@
 			this.dataGridView1.AllowUserToAddRows = false;
 			this.dataGridView1.AllowUserToDeleteRows = false;
 			this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-			dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(113)))), ((int)(((byte)(73)))));
-			dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-			dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-			dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-			dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(113)))), ((int)(((byte)(73)))));
+			dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+			dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
 			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dataGridView1.Location = new System.Drawing.Point(15, 50);
 			this.dataGridView1.Name = "dataGridView1";
@@ -178,6 +181,7 @@
 			this.dataGridView1.RowHeadersVisible = false;
 			this.dataGridView1.Size = new System.Drawing.Size(650, 550);
 			this.dataGridView1.TabIndex = 13;
+			this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
 			// 
 			// cb_Role
 			// 
