@@ -38,8 +38,8 @@
 			this.logout_btn = new System.Windows.Forms.Button();
 			this.button6 = new System.Windows.Forms.Button();
 			this.button3 = new System.Windows.Forms.Button();
-			this.button4 = new System.Windows.Forms.Button();
-			this.button2 = new System.Windows.Forms.Button();
+			this.CategoryView = new System.Windows.Forms.Button();
+			this.UserView = new System.Windows.Forms.Button();
 			this.button1 = new System.Windows.Forms.Button();
 			this.textBox1 = new System.Windows.Forms.TextBox();
 			this.lbl_username = new System.Windows.Forms.Label();
@@ -48,6 +48,7 @@
 			this.panel3 = new System.Windows.Forms.Panel();
 			this.adminAdd1 = new Inventory_Mangaement.AdminAdd();
 			this.adminDashboard2 = new Inventory_Mangaement.AdminDashboard();
+			this.adminAddCategories1 = new Inventory_Mangaement.AdminAddCategories();
 			this.panel1.SuspendLayout();
 			this.panel2.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -116,8 +117,8 @@
 			this.panel2.Controls.Add(this.logout_btn);
 			this.panel2.Controls.Add(this.button6);
 			this.panel2.Controls.Add(this.button3);
-			this.panel2.Controls.Add(this.button4);
-			this.panel2.Controls.Add(this.button2);
+			this.panel2.Controls.Add(this.CategoryView);
+			this.panel2.Controls.Add(this.UserView);
 			this.panel2.Controls.Add(this.button1);
 			this.panel2.Controls.Add(this.textBox1);
 			this.panel2.Controls.Add(this.lbl_username);
@@ -175,35 +176,35 @@
 			this.button3.Text = "Add Products";
 			this.button3.UseVisualStyleBackColor = true;
 			// 
-			// button4
+			// CategoryView
 			// 
-			this.button4.FlatAppearance.BorderSize = 0;
-			this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(145)))), ((int)(((byte)(105)))));
-			this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(145)))), ((int)(((byte)(105)))));
-			this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button4.ForeColor = System.Drawing.Color.White;
-			this.button4.Location = new System.Drawing.Point(15, 329);
-			this.button4.Name = "button4";
-			this.button4.Size = new System.Drawing.Size(161, 37);
-			this.button4.TabIndex = 8;
-			this.button4.Text = "Add Categories";
-			this.button4.UseVisualStyleBackColor = true;
+			this.CategoryView.FlatAppearance.BorderSize = 0;
+			this.CategoryView.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(145)))), ((int)(((byte)(105)))));
+			this.CategoryView.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(145)))), ((int)(((byte)(105)))));
+			this.CategoryView.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.CategoryView.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.CategoryView.ForeColor = System.Drawing.Color.White;
+			this.CategoryView.Location = new System.Drawing.Point(15, 329);
+			this.CategoryView.Name = "CategoryView";
+			this.CategoryView.Size = new System.Drawing.Size(161, 37);
+			this.CategoryView.TabIndex = 8;
+			this.CategoryView.Text = "Add Categories";
+			this.CategoryView.UseVisualStyleBackColor = true;
 			// 
-			// button2
+			// UserView
 			// 
-			this.button2.FlatAppearance.BorderSize = 0;
-			this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(145)))), ((int)(((byte)(105)))));
-			this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(145)))), ((int)(((byte)(105)))));
-			this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button2.ForeColor = System.Drawing.Color.White;
-			this.button2.Location = new System.Drawing.Point(15, 278);
-			this.button2.Name = "button2";
-			this.button2.Size = new System.Drawing.Size(161, 37);
-			this.button2.TabIndex = 7;
-			this.button2.Text = "Add Users";
-			this.button2.UseVisualStyleBackColor = true;
+			this.UserView.FlatAppearance.BorderSize = 0;
+			this.UserView.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(145)))), ((int)(((byte)(105)))));
+			this.UserView.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(145)))), ((int)(((byte)(105)))));
+			this.UserView.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.UserView.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.UserView.ForeColor = System.Drawing.Color.White;
+			this.UserView.Location = new System.Drawing.Point(15, 278);
+			this.UserView.Name = "UserView";
+			this.UserView.Size = new System.Drawing.Size(161, 37);
+			this.UserView.TabIndex = 7;
+			this.UserView.Text = "Add Users";
+			this.UserView.UseVisualStyleBackColor = true;
 			// 
 			// button1
 			// 
@@ -263,6 +264,7 @@
 			// 
 			// panel3
 			// 
+			this.panel3.Controls.Add(this.adminAddCategories1);
 			this.panel3.Controls.Add(this.adminAdd1);
 			this.panel3.Controls.Add(this.adminDashboard2);
 			this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -284,6 +286,13 @@
 			this.adminDashboard2.Name = "adminDashboard2";
 			this.adminDashboard2.Size = new System.Drawing.Size(1080, 675);
 			this.adminDashboard2.TabIndex = 0;
+			// 
+			// adminAddCategories1
+			// 
+			this.adminAddCategories1.Location = new System.Drawing.Point(0, 0);
+			this.adminAddCategories1.Name = "adminAddCategories1";
+			this.adminAddCategories1.Size = new System.Drawing.Size(1080, 675);
+			this.adminAddCategories1.TabIndex = 0;
 			// 
 			// MainForm
 			// 
@@ -321,12 +330,13 @@
 		private System.Windows.Forms.Label lbl_username;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Button button3;
-		private System.Windows.Forms.Button button4;
-		private System.Windows.Forms.Button button2;
+		private System.Windows.Forms.Button CategoryView;
+		private System.Windows.Forms.Button UserView;
 		private System.Windows.Forms.Button button6;
 		private System.Windows.Forms.Panel panel3;
 		private System.Windows.Forms.Button logout_btn;
 		private AdminDashboard adminDashboard2;
 		private AdminAdd adminAdd1;
+		private AdminAddCategories adminAddCategories1;
 	}
 }

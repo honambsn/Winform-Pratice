@@ -52,12 +52,19 @@
     <Compile Include="AdminAdd.Designer.cs">
       <DependentUpon>AdminAdd.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminAddCategories.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AdminAddCategories.Designer.cs">
+      <DependentUpon>AdminAddCategories.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminDashboard.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="AdminDashboard.Designer.cs">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="CategoriesData.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +88,9 @@
     <Compile Include="UserData.cs" />
     <EmbeddedResource Include="AdminAdd.resx">
       <DependentUpon>AdminAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminAddCategories.resx">
+      <DependentUpon>AdminAddCategories.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdminDashboard.resx">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
@@ -127,6 +137,7 @@
     <Content Include="Assets\icons8-user-80.png" />
     <Content Include="Assets\icons8-register-80.png" />
     <Content Include="Assets\icons8-users-80.png" />
+    <Content Include="invent.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

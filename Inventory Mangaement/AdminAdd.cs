@@ -287,5 +287,10 @@ namespace Inventory_Mangaement
 				}
 
 		}
+
+		private void button1_Click(object sender, EventArgs e)
+		{
+			displayAllUserData();
+		}
 	}
 }
