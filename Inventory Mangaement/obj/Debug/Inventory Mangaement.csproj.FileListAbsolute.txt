@@ -13,3 +13,4 @@ D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Inventory Mangaement\obj\Debug
 D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Inventory Mangaement\obj\Debug\Inventory Mangaement.csproj.CoreCompileInputs.cache
 D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Inventory Mangaement\obj\Debug\Inventory Mangaement.exe
 D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Inventory Mangaement\obj\Debug\Inventory Mangaement.pdb
+D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Inventory Mangaement\obj\Debug\Inventory_Mangaement.AdminAddProducts.resources

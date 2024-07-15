@@ -46,9 +46,10 @@
 			this.label2 = new System.Windows.Forms.Label();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.panel3 = new System.Windows.Forms.Panel();
+			this.adminAddCategories1 = new Inventory_Mangaement.AdminAddCategories();
 			this.adminAdd1 = new Inventory_Mangaement.AdminAdd();
 			this.adminDashboard2 = new Inventory_Mangaement.AdminDashboard();
-			this.adminAddCategories1 = new Inventory_Mangaement.AdminAddCategories();
+			this.adminAddProducts1 = new Inventory_Mangaement.AdminAddProducts();
 			this.panel1.SuspendLayout();
 			this.panel2.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -264,6 +265,7 @@
 			// 
 			// panel3
 			// 
+			this.panel3.Controls.Add(this.adminAddProducts1);
 			this.panel3.Controls.Add(this.adminAddCategories1);
 			this.panel3.Controls.Add(this.adminAdd1);
 			this.panel3.Controls.Add(this.adminDashboard2);
@@ -272,6 +274,13 @@
 			this.panel3.Name = "panel3";
 			this.panel3.Size = new System.Drawing.Size(1080, 675);
 			this.panel3.TabIndex = 12;
+			// 
+			// adminAddCategories1
+			// 
+			this.adminAddCategories1.Location = new System.Drawing.Point(0, 0);
+			this.adminAddCategories1.Name = "adminAddCategories1";
+			this.adminAddCategories1.Size = new System.Drawing.Size(1080, 675);
+			this.adminAddCategories1.TabIndex = 0;
 			// 
 			// adminAdd1
 			// 
@@ -287,12 +296,12 @@
 			this.adminDashboard2.Size = new System.Drawing.Size(1080, 675);
 			this.adminDashboard2.TabIndex = 0;
 			// 
-			// adminAddCategories1
+			// adminAddProducts1
 			// 
-			this.adminAddCategories1.Location = new System.Drawing.Point(0, 0);
-			this.adminAddCategories1.Name = "adminAddCategories1";
-			this.adminAddCategories1.Size = new System.Drawing.Size(1080, 675);
-			this.adminAddCategories1.TabIndex = 0;
+			this.adminAddProducts1.Location = new System.Drawing.Point(0, 0);
+			this.adminAddProducts1.Name = "adminAddProducts1";
+			this.adminAddProducts1.Size = new System.Drawing.Size(1080, 675);
+			this.adminAddProducts1.TabIndex = 2;
 			// 
 			// MainForm
 			// 
@@ -338,5 +347,6 @@
 		private AdminDashboard adminDashboard2;
 		private AdminAdd adminAdd1;
 		private AdminAddCategories adminAddCategories1;
+		private AdminAddProducts adminAddProducts1;
 	}
 }
