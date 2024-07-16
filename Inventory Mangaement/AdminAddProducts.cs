@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,7 @@ namespace Inventory_Mangaement
 {
 	public partial class AdminAddProducts : UserControl
 	{
+		SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\honam\Documents\inventory.mdf;Integrated Security=True;Connect Timeout=30");
 		public AdminAddProducts()
 		{
 			InitializeComponent();
@@ -56,9 +58,74 @@ namespace Inventory_Mangaement
 
 		}
 
+		private void btn_addProduct_Click(object sender, EventArgs e)
+		{
+			if (txt_ProductID.Text == "" || txt_ProductName.Text == "" || txt_ProductPrice.Text == "" || txt_ProductStock.Text == "" || cb_ProductCategory.SelectedIndex == -1 || cb_ProductStatus.SelectedIndex == -1)
+			{
+				MessageBox.Show("Empty fields", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+			else
+			{
+				if (checkConnection())
+				{
+					try
+					{
+						con.Open();
+						string checkUsername = "SELECT * FROM products WHERE prod_id = @prodID";
+						using (SqlCommand cmd = new SqlCommand(checkUsername, con))
+						{
+							cmd.Parameters.AddWithValue("@prodID", txt_ProductID.Text.Trim());
 
+							SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+							DataTable table = new DataTable();
+							adapter.Fill(table);
 
+							if (table.Rows.Count > 0)
+							{
+								MessageBox.Show("Product ID: " + txt_ProductID.Text.Trim() + " is existed", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+							}
+							else
+							{
+								string insertData = "INSERT INTO products (prod_id, prod_name, category, price, stock, image_path, status, date_insert) " + "VALUES(@prodID, @prodName, @category, @price, @stock, @path, @status, @date)";
+								using (SqlCommand insertD = new SqlCommand(insertData, con))
+								{
+									insertD.Parameters.AddWithValue("@prodId", txt_ProductID.Text.Trim());
+									insertD.Parameters.AddWithValue("@prodName", txt_ProductName.Text.Trim());
+									insertD.Parameters.AddWithValue("@category", cb_ProductCategory.SelectedItem);
+									insertD.Parameters.AddWithValue("@price", txt_ProductPrice.Text.Trim());
+									insertD.Parameters.AddWithValue("@stock", txt_ProductStock.Text.Trim());
+									insertD.Parameters.AddWithValue("@path",txt_ProductID.Text.Trim());
+									insertD.Parameters.AddWithValue("@status", cb_ProductStatus.SelectedItem);
 
+									DateTime today = DateTime.Today;
+									insertD.Parameters.AddWithValue("@date", today);
+									insertD.ExecuteNonQuery();
+									con.Close();
+
+									MessageBox.Show("Added successfully", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+									//displayAllUserData();
+									//ClearFields();
+								}
+							}
+						}
+					}
+					catch (Exception ex)
+					{
+						MessageBox.Show("Connection failed: " + ex, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					}
+					finally
+					{
+						con.Close();
+					}
+				}
+			}
+		}
+
+		public bool checkConnection()
+		{
+			if (con.State == ConnectionState.Closed) return true;
+			else return false;
+		}
 	}
 
 }
