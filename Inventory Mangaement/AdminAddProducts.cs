@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,6 +19,7 @@ namespace Inventory_Mangaement
 		{
 			InitializeComponent();
 			drawCenter();
+			//displayCategories();
 		}
 
 		private void drawCenter()
@@ -58,9 +60,82 @@ namespace Inventory_Mangaement
 
 		}
 
+		public void displayCategories()
+		{
+			if (checkConnection())
+			{
+				try
+				{
+					con.Open();
+
+					string selectData = "SELECT * FROM categories";
+
+					using(SqlCommand cmd = new SqlCommand(selectData, con))
+					{
+						SqlDataReader reader = cmd.ExecuteReader();
+
+
+						if (reader.HasRows)
+						{
+							while(reader.Read())
+							{
+								cb_ProductCategory.Items.Add(reader["category"].ToString());
+							}
+						}
+					}
+
+				}
+				catch 
+				{
+
+				}
+				finally
+				{
+
+				}
+
+			}
+		}
+		
+		public bool emptyFields()
+		{
+			//if (txt_ProductID.Text == "" || txt_ProductName.Text == "" || txt_ProductPrice.Text == "" || txt_ProductStock.Text == "" || cb_ProductCategory.SelectedIndex == -1 || cb_ProductStatus.SelectedIndex == -1 || productImageView.Image == null)
+			//	return true;
+			//return false;
+			return false;
+		}
+
+
+		public bool checkConnection()
+		{
+			if (con.State != ConnectionState.Open) return true;
+			else return false;
+		}
+
+		private void btn_Import_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				OpenFileDialog dialog = new OpenFileDialog();
+				dialog.Filter = "Image Files (*.jpg; *.png)|*.jpg;*.png";
+				string imagePath = "";
+
+				if (dialog.ShowDialog() == DialogResult.OK)
+				{
+					imagePath = dialog.FileName;
+					productImageView.ImageLocation = imagePath;
+					
+				}
+			}
+			catch(Exception ex)
+			{
+				MessageBox.Show("Error: " + ex, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+		}
+
 		private void btn_addProduct_Click(object sender, EventArgs e)
 		{
-			if (txt_ProductID.Text == "" || txt_ProductName.Text == "" || txt_ProductPrice.Text == "" || txt_ProductStock.Text == "" || cb_ProductCategory.SelectedIndex == -1 || cb_ProductStatus.SelectedIndex == -1)
+			if (txt_ProductID.Text == "")
 			{
 				MessageBox.Show("Empty fields", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
@@ -71,60 +146,49 @@ namespace Inventory_Mangaement
 					try
 					{
 						con.Open();
-						string checkUsername = "SELECT * FROM products WHERE prod_id = @prodID";
-						using (SqlCommand cmd = new SqlCommand(checkUsername, con))
+						string selectData = "SELECT * FROM test WHERE val = @val";
+						using (SqlCommand cmd = new SqlCommand(selectData, con))
 						{
-							cmd.Parameters.AddWithValue("@prodID", txt_ProductID.Text.Trim());
+							cmd.Parameters.AddWithValue("@val", txt_ProductID.Text.Trim());
 
 							SqlDataAdapter adapter = new SqlDataAdapter(cmd);
 							DataTable table = new DataTable();
+
 							adapter.Fill(table);
 
 							if (table.Rows.Count > 0)
 							{
-								MessageBox.Show("Product ID: " + txt_ProductID.Text.Trim() + " is existed", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+								MessageBox.Show("Value: " + txt_ProductID.Text.Trim(), "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
 							}
 							else
 							{
-								string insertData = "INSERT INTO products (prod_id, prod_name, category, price, stock, image_path, status, date_insert) " + "VALUES(@prodID, @prodName, @category, @price, @stock, @path, @status, @date)";
+								string insertData = "INSERT INTO test (val) VALUES(@val)";
+
 								using (SqlCommand insertD = new SqlCommand(insertData, con))
 								{
-									insertD.Parameters.AddWithValue("@prodId", txt_ProductID.Text.Trim());
-									insertD.Parameters.AddWithValue("@prodName", txt_ProductName.Text.Trim());
-									insertD.Parameters.AddWithValue("@category", cb_ProductCategory.SelectedItem);
-									insertD.Parameters.AddWithValue("@price", txt_ProductPrice.Text.Trim());
-									insertD.Parameters.AddWithValue("@stock", txt_ProductStock.Text.Trim());
-									insertD.Parameters.AddWithValue("@path",txt_ProductID.Text.Trim());
-									insertD.Parameters.AddWithValue("@status", cb_ProductStatus.SelectedItem);
-
-									DateTime today = DateTime.Today;
-									insertD.Parameters.AddWithValue("@date", today);
+									insertD.Parameters.AddWithValue("@val", txt_ProductID.Text.Trim());
 									insertD.ExecuteNonQuery();
+									
 									con.Close();
-
 									MessageBox.Show("Added successfully", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-									//displayAllUserData();
-									//ClearFields();
+									
 								}
 							}
 						}
 					}
 					catch (Exception ex)
 					{
-						MessageBox.Show("Connection failed: " + ex, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+						MessageBox.Show("Error: " + ex, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
 					}
 					finally
 					{
 						con.Close();
 					}
+					
 				}
+				
 			}
-		}
-
-		public bool checkConnection()
-		{
-			if (con.State == ConnectionState.Closed) return true;
-			else return false;
+					
 		}
 	}
 

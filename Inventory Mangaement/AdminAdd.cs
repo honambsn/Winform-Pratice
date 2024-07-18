@@ -138,7 +138,7 @@ namespace Inventory_Mangaement
 									insertD.Parameters.AddWithValue("@username", txt_addUsername.Text.Trim());
 									insertD.Parameters.AddWithValue("@password", txt_addPassword.Text.Trim());
 									insertD.Parameters.AddWithValue("@role", cb_Role.SelectedItem.ToString());
-									insertD.Parameters.AddWithValue("@username", cb_Status.SelectedIndex.ToString());
+									insertD.Parameters.AddWithValue("@status", cb_Status.SelectedItem.ToString());
 
 									DateTime today = DateTime.Today;
 									insertD.Parameters.AddWithValue("@date", today);

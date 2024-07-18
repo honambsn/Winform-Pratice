@@ -30,4 +30,12 @@ create table products
 	insert_date date null
 )
 
+create table test
+(
+	id int primary key identity(1,1),
+	val varchar(max) null
+)
+
 select * from products
+select * from test
+
