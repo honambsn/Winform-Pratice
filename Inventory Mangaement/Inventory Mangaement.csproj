@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddProductData.cs" />
     <Compile Include="AdminAdd.cs">
       <SubType>UserControl</SubType>
     </Compile>

@@ -19,7 +19,8 @@ namespace Inventory_Mangaement
 		{
 			InitializeComponent();
 			drawCenter();
-			//displayCategories();
+			displayCategories();
+			displayAllProducts();
 		}
 
 		private void drawCenter()
@@ -60,6 +61,13 @@ namespace Inventory_Mangaement
 
 		}
 
+		public void displayAllProducts()
+		{
+			AddProductData pData = new AddProductData();
+			List<AddProductData> listData = pData.AllProductData();
+			dataGridView1.DataSource = listData;
+		}
+
 		public void displayCategories()
 		{
 			if (checkConnection())
@@ -85,13 +93,14 @@ namespace Inventory_Mangaement
 					}
 
 				}
-				catch 
+				catch (Exception ex) 
 				{
-
+					MessageBox.Show("Error: " + ex, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				}
+				
 				finally
 				{
-
+					con.Close();
 				}
 
 			}
@@ -99,10 +108,10 @@ namespace Inventory_Mangaement
 		
 		public bool emptyFields()
 		{
-			//if (txt_ProductID.Text == "" || txt_ProductName.Text == "" || txt_ProductPrice.Text == "" || txt_ProductStock.Text == "" || cb_ProductCategory.SelectedIndex == -1 || cb_ProductStatus.SelectedIndex == -1 || productImageView.Image == null)
-			//	return true;
-			//return false;
+			if (txt_ProductID.Text == "" || txt_ProductName.Text == "" || txt_ProductPrice.Text == "" || txt_ProductStock.Text == "" || cb_ProductCategory.SelectedIndex == -1 || cb_ProductStatus.SelectedIndex == -1 || productImageView.Image == null)
+				return true;
 			return false;
+			
 		}
 
 
@@ -146,10 +155,10 @@ namespace Inventory_Mangaement
 					try
 					{
 						con.Open();
-						string selectData = "SELECT * FROM test WHERE val = @val";
+						string selectData = "SELECT * FROM products WHERE prod_id = @prod_id";
 						using (SqlCommand cmd = new SqlCommand(selectData, con))
 						{
-							cmd.Parameters.AddWithValue("@val", txt_ProductID.Text.Trim());
+							cmd.Parameters.AddWithValue("@prod_id", txt_ProductID.Text.Trim());
 
 							SqlDataAdapter adapter = new SqlDataAdapter(cmd);
 							DataTable table = new DataTable();
@@ -158,20 +167,45 @@ namespace Inventory_Mangaement
 
 							if (table.Rows.Count > 0)
 							{
-								MessageBox.Show("Value: " + txt_ProductID.Text.Trim(), "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+								MessageBox.Show("Value: " + txt_ProductID.Text.Trim() , "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
 							}
 							else
 							{
-								string insertData = "INSERT INTO test (val) VALUES(@val)";
+								string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
+								string relativePath = Path.Combine("Product_Directory", txt_ProductID.Text.Trim() + ".jpg");
+								string path = Path.Combine(baseDirectory, relativePath);
+
+								string directoryPath = Path.GetDirectoryName(path);
+
+								if (!Directory.Exists(directoryPath))
+								{
+									Directory.CreateDirectory(directoryPath);
+								}
+
+								File.Copy(productImageView.ImageLocation, path, true);
+								string insertData = "INSERT INTO products " +
+								"(prod_id, prod_name, category, price, stock, image_path, status, insert_date) " + "VALUES (@prod_id, @prodName, @category, @price, @stock, @path, @status, @date)";
+
+								//string insertData = "INSERT INTO test (val) VALUES(@val)";
 
 								using (SqlCommand insertD = new SqlCommand(insertData, con))
 								{
-									insertD.Parameters.AddWithValue("@val", txt_ProductID.Text.Trim());
+									insertD.Parameters.AddWithValue("@prod_id", txt_ProductID.Text.Trim()); 
+									insertD.Parameters.AddWithValue("@prodName", txt_ProductName.Text.Trim()); 
+									insertD.Parameters.AddWithValue("@category", cb_ProductCategory.SelectedItem); 
+									insertD.Parameters.AddWithValue("@price", txt_ProductPrice.Text.Trim()); 
+									insertD.Parameters.AddWithValue("@stock", txt_ProductStock.Text.Trim()); 
+									insertD.Parameters.AddWithValue("@path", path);
+									insertD.Parameters.AddWithValue("@status", cb_ProductStatus.SelectedItem);
+
+									DateTime today = DateTime.Today;
+									insertD.Parameters.AddWithValue("@date", today);
+
 									insertD.ExecuteNonQuery();
-									
+									clearFields();
+
 									con.Close();
 									MessageBox.Show("Added successfully", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-									
 								}
 							}
 						}
@@ -189,6 +223,21 @@ namespace Inventory_Mangaement
 				
 			}
 					
+		}
+
+		public void clearFields()
+		{
+			txt_ProductID.Text = "";
+			txt_ProductName.Text = "";
+			txt_ProductPrice.Text = "";
+			txt_ProductStock.Text = "";
+			cb_ProductCategory.SelectedItem = -1;
+			cb_ProductStatus.SelectedItem = -1;
+		}
+		private void btn_clearProduct_Click(object sender, EventArgs e)
+		{
+			clearFields();
+			MessageBox.Show("Clear successfully", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
 		}
 	}
 
