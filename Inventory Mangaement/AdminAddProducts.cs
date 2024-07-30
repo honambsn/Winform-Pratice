@@ -144,7 +144,7 @@ namespace Inventory_Mangaement
 
 		private void btn_addProduct_Click(object sender, EventArgs e)
 		{
-			if (txt_ProductID.Text == "")
+			if (emptyFields())
 			{
 				MessageBox.Show("Empty fields", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
@@ -167,7 +167,10 @@ namespace Inventory_Mangaement
 
 							if (table.Rows.Count > 0)
 							{
-								MessageBox.Show("Value: " + txt_ProductID.Text.Trim() , "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+								btn_addProduct.Enabled = false;
+								btn_addProduct.BackColor = Color.LightGray; // Custom background color for disabled state
+								btn_addProduct.ForeColor = Color.DarkGray;  // Custom text color for disabled state
+								MessageBox.Show("Existed Product: " + txt_ProductID.Text.Trim() , "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
 							}
 							else
 							{
@@ -203,6 +206,7 @@ namespace Inventory_Mangaement
 
 									insertD.ExecuteNonQuery();
 									clearFields();
+									displayAllProducts();
 
 									con.Close();
 									MessageBox.Show("Added successfully", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -231,13 +235,160 @@ namespace Inventory_Mangaement
 			txt_ProductName.Text = "";
 			txt_ProductPrice.Text = "";
 			txt_ProductStock.Text = "";
-			cb_ProductCategory.SelectedItem = -1;
-			cb_ProductStatus.SelectedItem = -1;
+			cb_ProductCategory.SelectedIndex = -1;
+			cb_ProductStatus.SelectedIndex = -1;
+
+			//btn_updateProduct.BackColor = Color.LightGray;
+			//btn_updateProduct.ForeColor = Color.DarkGray;
+			//btn_updateProduct.Enabled = false;
+
+			//btn_removeProduct.BackColor = Color.LightGray;
+			//btn_removeProduct.ForeColor = Color.DarkGray;
+			//btn_removeProduct.Enabled = false;
 		}
 		private void btn_clearProduct_Click(object sender, EventArgs e)
 		{
 			clearFields();
 			MessageBox.Show("Clear successfully", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+		}
+
+		private int getID = 0;
+		private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+		{
+			if (e.RowIndex != -1)
+			{
+				DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+
+				getID = (int)row.Cells[0].Value;
+
+				txt_ProductID.Text = row.Cells[1].Value.ToString();
+				txt_ProductName.Text = row.Cells[2].Value.ToString();
+				cb_ProductCategory.Text = row.Cells[3].Value.ToString();
+				txt_ProductPrice.Text = row.Cells[4].Value.ToString();
+				txt_ProductStock.Text = row.Cells[5].Value.ToString();
+
+				string imgPath = row.Cells[6].Value.ToString();
+
+				try
+				{
+					if (imgPath != null)
+					{
+						productImageView.Image = Image.FromFile(imgPath);
+					}
+				}
+				catch(Exception ex)
+				{
+					MessageBox.Show("Error: " + ex, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				}
+
+				cb_ProductStatus.Text = row.Cells[7].Value.ToString();
+			}
+		}
+
+		private void btn_updateProduct_Click(object sender, EventArgs e)
+		{
+			if (emptyFields())
+			{
+				MessageBox.Show("Empty fields", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+			else
+			{ 
+				if (MessageBox.Show("Are you sure you want to UPDATE product ID: " + getID + " ?", "Confirmation Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+				{
+					if (checkConnection())
+					{
+						try
+						{
+							con.Open();							
+							string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
+							
+							string updateData = "UPDATE products SET prod_id = @prod_id, prod_name = @prodName, category = @category, price = @price, stock = @stock, insert_date = @date, status = @status WHERE id = @id";
+
+							using (SqlCommand updateD = new SqlCommand(updateData, con))
+							{
+								updateD.Parameters.AddWithValue("@prod_id", txt_ProductID.Text.Trim());
+								updateD.Parameters.AddWithValue("@prodName", txt_ProductName.Text.Trim());
+								updateD.Parameters.AddWithValue("@category", cb_ProductCategory.SelectedItem);
+								updateD.Parameters.AddWithValue("@price", txt_ProductPrice.Text.Trim());
+								updateD.Parameters.AddWithValue("@stock", txt_ProductStock.Text.Trim());
+								updateD.Parameters.AddWithValue("@id", getID);
+								updateD.Parameters.AddWithValue("@status", cb_ProductStatus.SelectedItem);
+
+								DateTime today = DateTime.Today;
+								updateD.Parameters.AddWithValue("@date", today);
+
+								updateD.ExecuteNonQuery();
+								clearFields();
+								displayAllProducts();
+
+								con.Close();
+								MessageBox.Show("Updated successfully", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+							}
+							
+						}
+						catch (Exception ex)
+						{
+							MessageBox.Show("Error: " + ex, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+						}
+						finally
+						{
+							displayAllProducts();
+							con.Close();
+						}
+
+					}
+
+				}
+
+			}
+		}
+
+		private void btn_removeProduct_Click(object sender, EventArgs e)
+		{
+			if (emptyFields())
+			{
+				MessageBox.Show("Empty fields", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+			else
+			{
+				if (MessageBox.Show("Are you sure you want to DELETE product ID: " + getID + " ?", "Confirmation Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+				{
+					if (checkConnection())
+					{
+						try
+						{
+							con.Open();
+							string delData = "DELETE FROM products WHERE id = @id";
+
+							using (SqlCommand delD = new SqlCommand(delData, con))
+							{
+
+								delD.Parameters.AddWithValue("@id", getID);
+
+
+								delD.ExecuteNonQuery();
+								clearFields();
+								displayAllProducts();
+
+								con.Close();
+								MessageBox.Show("Deleted successfully", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+							}
+						}
+						catch (Exception ex)
+						{
+							MessageBox.Show("Error: " + ex, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+						}
+						finally
+						{
+							displayAllProducts();
+							con.Close();
+						}
+
+					}
+
+				}
+
+			}
 		}
 	}
 
