@@ -52,5 +52,43 @@ namespace Inventory_Mangaement
 
 			return listData;
 		}
+
+		public List<AddProductData> allAvailableProducts()
+		{
+			List<AddProductData> listData = new List<AddProductData>();
+
+
+			using (SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\honam\Documents\inventory.mdf;Integrated Security=True;Connect Timeout=30"))
+			{
+				con.Open();
+
+				string selectData = "SELECT * FROM products WHERE status = @status";
+
+				using (SqlCommand cmd = new SqlCommand(selectData, con))
+				{
+					cmd.Parameters.AddWithValue("@status", "Available");
+
+					SqlDataReader reader = cmd.ExecuteReader();
+
+					while (reader.Read())
+					{
+						AddProductData pData = new AddProductData();
+						pData.ID = (int)reader["id"];
+						pData.ProdID = reader["prod_id"].ToString();
+						pData.ProdName = reader["prod_name"].ToString();
+						pData.Category = reader["category"].ToString();
+						pData.Price = reader["price"].ToString();
+						pData.Stock = reader["stock"].ToString();
+						pData.ImagePath = reader["image_path"].ToString();
+						pData.Status = reader["status"].ToString();
+						pData.Date = reader["insert_date"].ToString();
+						listData.Add(pData);
+					}
+				}
+			}
+
+			return listData;
+
+		}
 	}
 }

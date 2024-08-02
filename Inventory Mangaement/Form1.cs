@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Inventory_Mangaement
@@ -80,24 +75,54 @@ namespace Inventory_Mangaement
 				{
 					con.Open();
 
-					string selectData = "SELECT * FROM users WHERE username = @username AND password = @password";
+					string selectData = "SELECT COUNT(*) FROM users WHERE username = @username AND password = @password AND status = @status";
 
-					using (SqlCommand cmd = new SqlCommand(selectData, con)) 
+					using (SqlCommand cmd = new SqlCommand(selectData, con))
 					{
 						cmd.Parameters.AddWithValue("@username", login_username.Text.Trim());
 						cmd.Parameters.AddWithValue("@password", login_password.Text.Trim());
+						cmd.Parameters.AddWithValue("status", "Active");
 
-						SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-						DataTable table = new DataTable();
-						adapter.Fill(table);
+						int rowCount = (int)cmd.ExecuteScalar();
 
-						if (table.Rows.Count > 0)
+						//SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+						//DataTable table = new DataTable();
+						//adapter.Fill(table);
+
+						//if (table.Rows.Count > 0)
+						if (rowCount > 0)
 						{
-							MessageBox.Show("Login as -"+ login_username.Text.Trim() + "- successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-							
-							MainForm mainForm = new MainForm();
-							mainForm.Show();
-							this.Hide();
+
+							string selectRole = "SELECT role FROM users WHERE username = @username AND password = @password";
+
+							using (SqlCommand getRole = new SqlCommand(selectRole, con))
+							{
+								getRole.Parameters.AddWithValue("@username", login_username.Text.Trim());
+								getRole.Parameters.AddWithValue("@password", login_password.Text.Trim());
+
+								string userRole = getRole.ExecuteScalar() as string;
+
+								MessageBox.Show("Login as -" + login_username.Text.Trim() + "- successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+								if (userRole == "Admin")
+								{
+									MainForm mainForm = new MainForm();
+									mainForm.Show();
+
+									this.Hide();
+
+								}
+								else if (userRole == "Cashier")
+								{
+									CashierMainForm cmForm = new CashierMainForm();
+									cmForm.Show();
+
+									this.Hide();
+								}
+
+							}
+
+
 						}
 						else
 						{
@@ -109,7 +134,7 @@ namespace Inventory_Mangaement
 				{
 					MessageBox.Show("Failed: " + ex, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				}
-				finally 
+				finally
 				{
 					con.Close();
 				}

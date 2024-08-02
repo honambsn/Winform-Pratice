@@ -38,4 +38,9 @@ create table test
 
 select * from products
 select * from test
+select * from users
+
+TRUNCATE TABLE users;
+
+INSERT INTO users VALUES('aa', '1', 'Admin','Active', '2024-08-02');
 

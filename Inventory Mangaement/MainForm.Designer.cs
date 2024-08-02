@@ -46,11 +46,12 @@
 			this.label2 = new System.Windows.Forms.Label();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.panel3 = new System.Windows.Forms.Panel();
-			this.adminAdd1 = new Inventory_Mangaement.AdminAdd();
-			this.adminDashboard2 = new Inventory_Mangaement.AdminDashboard();
-			this.adminAddProducts2 = new Inventory_Mangaement.AdminAddProducts();
 			this.adminAddProducts1 = new Inventory_Mangaement.AdminAddProducts();
 			this.adminAddCategories1 = new Inventory_Mangaement.AdminAddCategories();
+			this.adminAdd1 = new Inventory_Mangaement.AdminAdd();
+			this.adminDashboard2 = new Inventory_Mangaement.AdminDashboard();
+			this.cashierOrder1 = new Inventory_Mangaement.CashierOrder();
+			this.adminAdd2 = new Inventory_Mangaement.AdminAdd();
 			this.panel1.SuspendLayout();
 			this.panel2.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -266,7 +267,8 @@
 			// 
 			// panel3
 			// 
-			this.panel3.Controls.Add(this.adminAddProducts2);
+			this.panel3.Controls.Add(this.adminAdd2);
+			this.panel3.Controls.Add(this.cashierOrder1);
 			this.panel3.Controls.Add(this.adminAddProducts1);
 			this.panel3.Controls.Add(this.adminAddCategories1);
 			this.panel3.Controls.Add(this.adminAdd1);
@@ -276,6 +278,21 @@
 			this.panel3.Name = "panel3";
 			this.panel3.Size = new System.Drawing.Size(1080, 675);
 			this.panel3.TabIndex = 12;
+			// 
+			// adminAddProducts1
+			// 
+			this.adminAddProducts1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.adminAddProducts1.Location = new System.Drawing.Point(0, 0);
+			this.adminAddProducts1.Name = "adminAddProducts1";
+			this.adminAddProducts1.Size = new System.Drawing.Size(1080, 675);
+			this.adminAddProducts1.TabIndex = 2;
+			// 
+			// adminAddCategories1
+			// 
+			this.adminAddCategories1.Location = new System.Drawing.Point(0, 0);
+			this.adminAddCategories1.Name = "adminAddCategories1";
+			this.adminAddCategories1.Size = new System.Drawing.Size(1080, 675);
+			this.adminAddCategories1.TabIndex = 0;
 			// 
 			// adminAdd1
 			// 
@@ -291,26 +308,21 @@
 			this.adminDashboard2.Size = new System.Drawing.Size(1080, 675);
 			this.adminDashboard2.TabIndex = 0;
 			// 
-			// adminAddProducts2
+			// cashierOrder1
 			// 
-			this.adminAddProducts2.Location = new System.Drawing.Point(-3, 0);
-			this.adminAddProducts2.Name = "adminAddProducts2";
-			this.adminAddProducts2.Size = new System.Drawing.Size(1080, 675);
-			this.adminAddProducts2.TabIndex = 13;
+			this.cashierOrder1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.cashierOrder1.Location = new System.Drawing.Point(0, 0);
+			this.cashierOrder1.Name = "cashierOrder1";
+			this.cashierOrder1.Size = new System.Drawing.Size(1080, 675);
+			this.cashierOrder1.TabIndex = 6;
 			// 
-			// adminAddProducts1
+			// adminAdd2
 			// 
-			this.adminAddProducts1.Location = new System.Drawing.Point(0, 0);
-			this.adminAddProducts1.Name = "adminAddProducts1";
-			this.adminAddProducts1.Size = new System.Drawing.Size(1080, 675);
-			this.adminAddProducts1.TabIndex = 2;
-			// 
-			// adminAddCategories1
-			// 
-			this.adminAddCategories1.Location = new System.Drawing.Point(0, 0);
-			this.adminAddCategories1.Name = "adminAddCategories1";
-			this.adminAddCategories1.Size = new System.Drawing.Size(1080, 675);
-			this.adminAddCategories1.TabIndex = 0;
+			this.adminAdd2.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.adminAdd2.Location = new System.Drawing.Point(0, 0);
+			this.adminAdd2.Name = "adminAdd2";
+			this.adminAdd2.Size = new System.Drawing.Size(1080, 675);
+			this.adminAdd2.TabIndex = 7;
 			// 
 			// MainForm
 			// 
@@ -357,6 +369,7 @@
 		private AdminAdd adminAdd1;
 		private AdminAddCategories adminAddCategories1;
 		private AdminAddProducts adminAddProducts1;
-		private AdminAddProducts adminAddProducts2;
+		private AdminAdd adminAdd2;
+		private CashierOrder cashierOrder1;
 	}
 }

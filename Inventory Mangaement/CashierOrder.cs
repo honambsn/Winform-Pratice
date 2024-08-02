@@ -15,6 +15,15 @@ namespace Inventory_Mangaement
 		public CashierOrder()
 		{
 			InitializeComponent();
+			displayAllAvailableProducts();
+		}
+
+		public void displayAllAvailableProducts()
+		{
+			AddProductData apData = new AddProductData();
+			List<AddProductData> listData = apData.allAvailableProducts();
+
+			dataGridView1.DataSource = listData;
 		}
 	}
 }
