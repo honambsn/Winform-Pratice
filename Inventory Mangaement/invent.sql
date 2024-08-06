@@ -36,10 +36,37 @@ create table test
 	val varchar(max) null
 )
 
+create table orders
+(
+	id int primary key identity(1,1),
+	prod_id varchar(max) null,
+	prod_name varchar(max) null,
+	category varchar(max) null,
+	qty int null,
+	orig_price float null,
+	total_price float null,
+	order_date date null
+)
+
+create table customers
+(
+	id int primary key identity(1,1),
+	customer_id int null,
+	prod_id varchar(max) null,
+	total_price float null,
+	amount float null,
+	change float null,
+	order_date date null
+)
+
 select * from products
-select * from test
 select * from users
 select * from categories
+select * from orders
+select * from customers
+
+alter table orders
+add customer_id int null
 
 TRUNCATE TABLE users;
 

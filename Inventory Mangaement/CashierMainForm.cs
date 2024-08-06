@@ -30,10 +30,10 @@ namespace Inventory_Mangaement
 			if (MessageBox.Show("Are you sure you want to logout?", "Confirmation Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
 			{
 
+				Form1 loginForm = new Form1();
+				loginForm.Show();
 
-				form1 loginform = new form1();
-				loginform.show();
-
+				this.Hide();
 
 
 				this.Hide();
