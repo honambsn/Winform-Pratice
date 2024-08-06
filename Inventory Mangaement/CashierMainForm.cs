@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace Inventory_Mangaement
 {
 	public partial class CashierMainForm : Form
 	{
+		
 		public CashierMainForm()
 		{
 			InitializeComponent();
@@ -20,6 +22,21 @@ namespace Inventory_Mangaement
 				//this.Hide();
 
 				Application.Exit();
+			}
+		}
+
+		private void logout_btn_Click(object sender, EventArgs e)
+		{
+			if (MessageBox.Show("Are you sure you want to logout?", "Confirmation Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+			{
+
+
+				form1 loginform = new form1();
+				loginform.show();
+
+
+
+				this.Hide();
 			}
 		}
 	}
