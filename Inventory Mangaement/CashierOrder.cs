@@ -20,6 +20,7 @@ namespace Inventory_Mangaement
 			displayAllAvailableProducts();
 			displayAllCategories();
 			displayAllOrder();
+			displayTotalPrice();
 		}
 
 		public void displayAllAvailableProducts()
@@ -168,6 +169,43 @@ namespace Inventory_Mangaement
 			}
 		}
 
+		private float totalPrice = 0;
+		public void displayTotalPrice()
+		{
+			IDGenerator();
+			if (checkConnection())
+			{
+				try
+				{
+					con.Open();
+
+					string selectData = "SELECT SUM(total_price) FROM orders WHERE customer_id = @cID";
+
+					using(SqlCommand cmd = new SqlCommand(selectData, con))
+					{
+						cmd.Parameters.AddWithValue("@cID", idGen);
+
+						object result = cmd.ExecuteScalar();
+
+						if (result != DBNull.Value)
+						{
+							totalPrice = Convert.ToSingle(result);
+
+							cashierOrder_TotalPrice.Text = totalPrice.ToString("0.00");
+						}
+					}
+				}
+				catch (Exception ex)
+				{
+					MessageBox.Show("Failed connection" + ex, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				}
+				finally
+				{
+					con.Close();
+				}
+			}
+		}
+
 		private void cashierOrder_btnAdd_Click(object sender, EventArgs e)
 		{
 			IDGenerator();
@@ -223,7 +261,8 @@ namespace Inventory_Mangaement
 
 							cmd.Parameters.AddWithValue("@date", today);
 							cmd.ExecuteNonQuery();
-							
+
+							MessageBox.Show("Add order successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 						}
 					} catch (Exception ex)
@@ -236,6 +275,8 @@ namespace Inventory_Mangaement
 					}
 				}
 			}
+			displayAllOrder();
+			displayTotalPrice();
 		}
 
 		private int idGen;
@@ -270,6 +311,84 @@ namespace Inventory_Mangaement
 					}
 				}
 			}
+		}
+
+		private void cashierOrder_btnRemove_Click(object sender, EventArgs e)
+		{
+			if (prodID == 0)
+			{
+				MessageBox.Show("Please select item first", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+			else
+			{
+				if (MessageBox.Show("Are you sure you want to Remove ID: " + prodID + "?", "Confirm Message", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question) == DialogResult.Yes)
+				{
+					if (checkConnection())
+					{
+						try
+						{
+							con.Open();
+
+							string deleteData = "DELETE FROM orders WHERE id = @id";
+
+							using (SqlCommand cmd = new SqlCommand(deleteData, con))
+							{
+								cmd.Parameters.AddWithValue("@id", prodID);
+
+								cmd.ExecuteNonQuery();
+
+								MessageBox.Show("Remove successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+							}
+
+						}
+						catch (Exception ex)
+						{
+							MessageBox.Show("Failed connection" + ex, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+						}
+						finally
+						{
+							
+							con.Close();
+							
+						}
+					}
+				}
+			}
+			displayAllOrder();
+			displayTotalPrice();
+		}
+
+		private int prodID = 0;
+		private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+		{
+			
+
+		}
+
+		private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
+		{
+			if (e.RowIndex != -1)
+			{
+				DataGridViewRow row = dataGridView2.Rows[e.RowIndex];
+
+				prodID = (int)row.Cells[0].Value;
+			}
+		}
+
+		public void clearFields()
+		{
+			cashierOrder_category.SelectedIndex = -1;
+			cashierOrder_ProductID.SelectedIndex = -1;
+			cashierOrder_ProductName.Text = "";
+			cashierOrder_ProductPrice.Text = "";
+			cashierOrder_ProductQty.Value = 0;
+		}
+
+		private void cashierOrder_btnClear_Click(object sender, EventArgs e)
+		{
+
+			clearFields();
 		}
 	}
 }
