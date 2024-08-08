@@ -231,6 +231,7 @@
 			this.cashierOrder_btnPayOrder.TabIndex = 15;
 			this.cashierOrder_btnPayOrder.Text = "Pay Orders";
 			this.cashierOrder_btnPayOrder.UseVisualStyleBackColor = false;
+			this.cashierOrder_btnPayOrder.Click += new System.EventHandler(this.cashierOrder_btnPayOrder_Click);
 			// 
 			// label12
 			// 
@@ -259,6 +260,7 @@
 			this.cashierOrder_Amount.Name = "cashierOrder_Amount";
 			this.cashierOrder_Amount.Size = new System.Drawing.Size(100, 26);
 			this.cashierOrder_Amount.TabIndex = 19;
+			this.cashierOrder_Amount.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cashierOrder_Amount_KeyDown);
 			// 
 			// label9
 			// 

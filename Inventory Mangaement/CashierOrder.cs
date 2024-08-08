@@ -390,5 +390,112 @@ namespace Inventory_Mangaement
 
 			clearFields();
 		}
+
+		private static readonly char[] Characters =
+		"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789".ToCharArray();
+
+		public static string GenerateRandomString()
+		{
+			int length = 4;
+
+			var random = new Random();
+			var result = new char[length];
+
+			for (int i = 0; i < length; i++)
+			{
+				result[i] = Characters[random.Next(Characters.Length)];
+			}
+
+			return new string(result);
+		}
+
+		private void cashierOrder_btnPayOrder_Click(object sender, EventArgs e)
+		{
+			IDGenerator();
+			string code = GenerateRandomString() + "@cID";
+
+			if(cashierOrder_Amount.Text == "" || dataGridView2.Rows.Count < 0)
+			{
+				MessageBox.Show("Something wrong", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+			else
+			{
+				if(MessageBox.Show("Are you sure to pay your orders?", "Confirm Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+				{
+					if (checkConnection())
+					{
+						try
+						{
+							con.Open();
+
+							string insertData = "INSERT INTO customers (customer_id, prod_id, total_price, amount, change, order_date, order_code)" + "VALUES(@cID, @prodID, @totalPrice, @amount, @change, @date, @order_code)";
+
+
+							using (SqlCommand cmd = new SqlCommand(insertData, con))
+							{
+								cmd.Parameters.AddWithValue("@cID", idGen);
+								cmd.Parameters.AddWithValue("@prodID", cashierOrder_ProductID.SelectedItem);
+								cmd.Parameters.AddWithValue("@totalPrice", cashierOrder_TotalPrice.Text);
+								cmd.Parameters.AddWithValue("@amount", cashierOrder_Amount.Text);
+								cmd.Parameters.AddWithValue("@change", cashierOrder_Change.Text);
+								
+
+								DateTime today = DateTime.Today;
+								
+								cmd.Parameters.AddWithValue("@date", today);
+								cmd.Parameters.AddWithValue("@order_code", code);
+								cmd.ExecuteNonQuery();
+								clearFields();
+								MessageBox.Show("Paid successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+							}
+
+						} catch (Exception ex)
+						{
+							MessageBox.Show("Failed connection" + ex, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+						}
+						finally
+						{
+							//string deleteData = "DELETE FROM orders WHERE id = @id";
+							displayAllOrder();
+							con.Close();
+						}
+					}
+				}
+			}
+			cashierOrder_category.Text = "";
+			cashierOrder_Change.Text = "";
+			cashierOrder_Amount.Text = "";
+			cashierOrder_TotalPrice.Text = "";
+			displayAllOrder();
+			displayTotalPrice();
+		}
+
+		private void cashierOrder_Amount_KeyDown(object sender, KeyEventArgs e)
+		{
+			if (e.KeyCode == Keys.Enter)
+			{
+				try
+				{
+					float getAmount = Convert.ToSingle(cashierOrder_Amount.Text);
+					float getChange = (getAmount - totalPrice);
+					if (getChange <= -1)
+					{
+						MessageBox.Show("Not Enough Money" , "Warning Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+						cashierOrder_Amount.Text = "";
+						cashierOrder_Change.Text = "";
+					}
+					else
+					{
+						cashierOrder_Change.Text = getChange.ToString("0.00");
+					}
+                }
+                catch(Exception ex) 
+				{
+					MessageBox.Show("Somthing wrong" + ex, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					cashierOrder_Amount.Text = "";
+					cashierOrder_Change.Text = "";
+				}
+			}
+		}
 	}
 }

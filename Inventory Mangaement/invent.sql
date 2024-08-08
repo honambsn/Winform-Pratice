@@ -58,6 +58,8 @@ create table customers
 	change float null,
 	order_date date null
 )
+ALTER TABLE customers
+ADD order_code varchar(max) null
 
 select * from products
 select * from users
@@ -231,3 +233,11 @@ update products set price = 1000 where prod_id = '4';
 update products set price = 1000 where prod_id = '5';
 
 select * from products
+
+delete from orders where id =2
+delete from orders where id =3
+delete from orders where id =6
+select * from orders
+
+truncate table orders
+select * from customers
