@@ -517,7 +517,7 @@ namespace Inventory_Mangaement
 		{
 			try
 			{
-				if (MessageBox.Show("Are you start \r'Print Spooler Services' ?", "Confirm Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+				if (MessageBox.Show("Did you start \r'Print Spooler Services' ?", "Confirm Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
 				{
 
 					printDocument1.PrintPage += new PrintPageEventHandler(printDocument1_PrintPage);
@@ -561,7 +561,7 @@ namespace Inventory_Mangaement
 
 			string headerText = "Inventory Management System";
 			y = (margin + count * headerFont.GetHeight(e.Graphics) + headerMargin);
-			e.Graphics.DrawString(headerText, headerFont, Brushes.Black, e.MarginBounds.Left + (dataGridView2.ColumnCount / 2) *colWidth, y, alignCenter);
+			e.Graphics.DrawString(headerText, headerFont, Brushes.Black, e.MarginBounds.Left + (dataGridView2.ColumnCount / 2) * colWidth, y, alignCenter);
 
 			count++;
 
@@ -569,7 +569,7 @@ namespace Inventory_Mangaement
 
 			string[] header = { "CID", "PID", "PName", "Category", "QTY", "OrigPrice" };
 
-			for(int q = 0; q < header.Length; q++)
+			for (int q = 0; q < header.Length; q++)
 			{
 				y = margin + count * bold.GetHeight(e.Graphics) + tableMargin;
 				e.Graphics.DrawString(header[1], bold, Brushes.Black, e.MarginBounds.Left + idGen * colWidth, y, alignCenter);
@@ -578,11 +578,11 @@ namespace Inventory_Mangaement
 
 			float rSpace = e.MarginBounds.Bottom - y;
 
-			while(rowIndex < dataGridView2.Rows.Count)
+			while (rowIndex < dataGridView2.Rows.Count)
 			{
 				DataGridViewRow row = dataGridView2.Rows[rowIndex];
 
-				for (int q = 0;q < row.Cells.Count; q++)
+				for (int q = 0; q < row.Cells.Count; q++)
 				{
 					object cellValue = row.Cells[q].Value;
 					string cell = (cellValue != null) ? cellValue.ToString() : string.Empty;
@@ -593,8 +593,8 @@ namespace Inventory_Mangaement
 
 				count++;
 				rowIndex++;
-				
-				if(y + font.GetHeight(e.Graphics) > e.MarginBounds.Bottom)
+
+				if (y + font.GetHeight(e.Graphics) > e.MarginBounds.Bottom)
 				{
 					e.HasMorePages = true;
 					return;
@@ -611,7 +611,7 @@ namespace Inventory_Mangaement
 			e.Graphics.DrawString("Total Price: \t$" + totalPrice + "\nAmount: \t$" + cashierOrder_Amount.Text.Trim() + "\n\t\t--------------------\nChange: \t$" + cashierOrder_Change.Text.Trim(), labelFont, Brushes.Black, labelX, y);
 
 			labelmargin = (int)Math.Min(rSpace, -40);
-			
+
 			string labelText = today.ToString();
 			y = e.MarginBounds.Bottom - labelmargin - labelFont.GetHeight(e.Graphics);
 			e.Graphics.DrawString(labelText, labelFont, Brushes.Black, e.MarginBounds.Right - e.Graphics.MeasureString("---------------------------", labelFont).Width, y);
