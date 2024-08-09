@@ -1,0 +1,5 @@
+﻿already paid/pending status
+
+
+get id => pay 
+handle display order in previous session cannot pay in new session

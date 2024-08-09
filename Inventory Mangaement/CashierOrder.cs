@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,6 +22,8 @@ namespace Inventory_Mangaement
 			displayAllCategories();
 			displayAllOrder();
 			displayTotalPrice();
+			//dataGridView1.RowHeaderMouseClick += new DataGridViewCellMouseEventHandler(dataGridView2_RowHeaderMouseClick);
+			dataGridView2.CellContentClick += new DataGridViewCellEventHandler(dataGridView2_CellContentDoubleClick);
 		}
 
 		public void displayAllAvailableProducts()
@@ -76,6 +79,8 @@ namespace Inventory_Mangaement
 			List<OrderData> listData = oData.allOrderData();
 
 			dataGridView2.DataSource = listData;
+			dataGridView2.Columns["Status"].Visible = false;
+
 		}
 
 		private void cashierOrder_category_SelectedIndexChanged(object sender, EventArgs e)
@@ -262,6 +267,11 @@ namespace Inventory_Mangaement
 							cmd.Parameters.AddWithValue("@date", today);
 							cmd.ExecuteNonQuery();
 
+							OrderData oData = new OrderData();
+							List<OrderData> listData = oData.allOrderData();
+
+							dataGridView2.DataSource = listData;
+
 							MessageBox.Show("Add order successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 						}
@@ -446,6 +456,10 @@ namespace Inventory_Mangaement
 								cmd.Parameters.AddWithValue("@order_code", code);
 								cmd.ExecuteNonQuery();
 								clearFields();
+
+								dataGridView2.DataSource = null;
+								dataGridView2.Rows.Clear();
+								dataGridView2.Columns.Clear();
 								MessageBox.Show("Paid successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
 							}
 
@@ -456,7 +470,7 @@ namespace Inventory_Mangaement
 						finally
 						{
 							//string deleteData = "DELETE FROM orders WHERE id = @id";
-							displayAllOrder();
+							//displayAllOrder();
 							con.Close();
 						}
 					}
@@ -466,8 +480,8 @@ namespace Inventory_Mangaement
 			cashierOrder_Change.Text = "";
 			cashierOrder_Amount.Text = "";
 			cashierOrder_TotalPrice.Text = "";
-			displayAllOrder();
-			displayTotalPrice();
+			//displayAllOrder();
+			//displayTotalPrice();
 		}
 
 		private void cashierOrder_Amount_KeyDown(object sender, KeyEventArgs e)
@@ -497,5 +511,178 @@ namespace Inventory_Mangaement
 				}
 			}
 		}
+
+		private int rowIndex = 0;
+		private void cashierOrder_btnReceipt_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				if (MessageBox.Show("Are you start \r'Print Spooler Services' ?", "Confirm Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+				{
+
+					printDocument1.PrintPage += new PrintPageEventHandler(printDocument1_PrintPage);
+					printDocument1.BeginPrint += new PrintEventHandler(printDocument1_BeginPrint);
+
+					printPreviewDialog1.Document = printDocument1;
+					printPreviewDialog1.ShowDialog();
+				}
+				
+			}catch(Exception ex)
+			{
+				MessageBox.Show("Somthing wrong" + ex, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+		}
+
+		private void printDocument1_BeginPrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+		{
+			rowIndex = 0;
+		}
+
+		private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+		{
+			displayTotalPrice();
+
+			float y = 0;
+			int count = 0;
+			int colWidth = 120;
+			int headerMargin = 10;
+			int tableMargin = 20;
+
+			Font font = new Font("Tahoma", 12);
+			Font bold = new Font("tahoma", 12, FontStyle.Bold);
+			Font headerFont = new Font("Tahoma", 16, FontStyle.Bold);
+			Font labelFont = new Font("Tahoma", 14, FontStyle.Bold);
+
+			float margin = e.MarginBounds.Top;
+
+			StringFormat alignCenter = new StringFormat();
+			alignCenter.Alignment = StringAlignment.Center;
+			alignCenter.LineAlignment = StringAlignment.Center;
+
+			string headerText = "Inventory Management System";
+			y = (margin + count * headerFont.GetHeight(e.Graphics) + headerMargin);
+			e.Graphics.DrawString(headerText, headerFont, Brushes.Black, e.MarginBounds.Left + (dataGridView2.ColumnCount / 2) *colWidth, y, alignCenter);
+
+			count++;
+
+			y += tableMargin;
+
+			string[] header = { "CID", "PID", "PName", "Category", "QTY", "OrigPrice" };
+
+			for(int q = 0; q < header.Length; q++)
+			{
+				y = margin + count * bold.GetHeight(e.Graphics) + tableMargin;
+				e.Graphics.DrawString(header[1], bold, Brushes.Black, e.MarginBounds.Left + idGen * colWidth, y, alignCenter);
+			}
+			count++;
+
+			float rSpace = e.MarginBounds.Bottom - y;
+
+			while(rowIndex < dataGridView2.Rows.Count)
+			{
+				DataGridViewRow row = dataGridView2.Rows[rowIndex];
+
+				for (int q = 0;q < row.Cells.Count; q++)
+				{
+					object cellValue = row.Cells[q].Value;
+					string cell = (cellValue != null) ? cellValue.ToString() : string.Empty;
+
+					y = margin + count * font.GetHeight(e.Graphics) + tableMargin;
+					e.Graphics.DrawString(cell, font, Brushes.Black, e.MarginBounds.Left + idGen * colWidth, y, alignCenter);
+				}
+
+				count++;
+				rowIndex++;
+				
+				if(y + font.GetHeight(e.Graphics) > e.MarginBounds.Bottom)
+				{
+					e.HasMorePages = true;
+					return;
+				}
+			}
+
+			int labelmargin = (int)Math.Min(rSpace, 200);
+
+			DateTime today = DateTime.Now;
+
+			float labelX = e.MarginBounds.Right - e.Graphics.MeasureString("---------------------------", labelFont).Width;
+
+			y = e.MarginBounds.Bottom - labelmargin - labelFont.GetHeight(e.Graphics);
+			e.Graphics.DrawString("Total Price: \t$" + totalPrice + "\nAmount: \t$" + cashierOrder_Amount.Text.Trim() + "\n\t\t--------------------\nChange: \t$" + cashierOrder_Change.Text.Trim(), labelFont, Brushes.Black, labelX, y);
+
+			labelmargin = (int)Math.Min(rSpace, -40);
+			
+			string labelText = today.ToString();
+			y = e.MarginBounds.Bottom - labelmargin - labelFont.GetHeight(e.Graphics);
+			e.Graphics.DrawString(labelText, labelFont, Brushes.Black, e.MarginBounds.Right - e.Graphics.MeasureString("---------------------------", labelFont).Width, y);
+
+		}
+
+		private void button1_Click(object sender, EventArgs e)
+		{
+			if (MessageBox.Show("Are you sure you want to clear all Orders?: ", "Confirm Message", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question) == DialogResult.Yes)
+			{
+				if (checkConnection())
+				{
+					try
+					{
+						con.Open();
+
+						string clearOrder = "TRUNCATE TABLE orders";
+
+						using (SqlCommand cmd = new SqlCommand(clearOrder, con))
+						{
+
+
+							cmd.ExecuteNonQuery();
+
+							MessageBox.Show("Remove successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+						}
+
+					}
+					catch (Exception ex)
+					{
+						MessageBox.Show("Failed connection" + ex, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					}
+					finally
+					{
+						displayAllOrder();
+						con.Close();
+
+					}
+				}
+			}
+			
+		}
+
+		private void dataGridView2_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+		{
+			if (e.RowIndex >= 0 && e.ColumnIndex >= 0) // Ensure the click is not on the column header
+			{
+				DataGridViewRow row = dataGridView2.Rows[e.RowIndex];
+				//DataGridViewCell cell = row.Cells[e.ColumnIndex];
+
+				// Get value from the clicked cell
+				//string cellValue = cell.Value.ToString();
+
+
+
+
+				//// Get value from the entire row
+				//// Example: Display values from all cells in the row
+				//string rowValues = string.Join(", ", row.Cells.Cast<DataGridViewCell>().Select(c => c.Value.ToString()));
+
+				//// Display the values or use them as needed
+				//MessageBox.Show($"Cell Value: {cellValue}\nRow Values: {rowValues}");
+
+				int lastCellIndex = row.Cells.Count - 1;
+				DataGridViewCell lastCell = row.Cells[lastCellIndex];
+				string lastCellValue = lastCell.Value?.ToString() ?? "No Value";
+
+				MessageBox.Show($"Value of the last cell: {lastCellValue}");
+			}
+		}
+
 	}
 }

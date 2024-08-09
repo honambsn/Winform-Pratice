@@ -19,6 +19,7 @@ namespace Inventory_Mangaement
 		public string QTY { set; get; }
 		public string TotalPrice { set; get; }
 		public string Date { set; get; }
+		public string Status { set; get; }
 
 		public List<OrderData> allOrderData()
 		{
@@ -50,10 +51,10 @@ namespace Inventory_Mangaement
 								cusID = temp;
 							}
 						}
-						else
-						{
-							MessageBox.Show("Error ID", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-						}
+						//else
+						//{
+						//	MessageBox.Show("There is no order yet", "Notice Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+						//}
 
 					}
 					string selectData = "SELECT * FROM orders WHERE customer_id = @cID";
@@ -78,6 +79,7 @@ namespace Inventory_Mangaement
 							oData.QTY = reader["qty"].ToString();
 							oData.TotalPrice = reader["total_price"].ToString();
 							oData.Date = reader["order_date"].ToString();
+							oData.Status = reader["status"].ToString();
 
 
 							listData.Add(oData);

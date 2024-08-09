@@ -237,6 +237,18 @@ select * from products
 delete from orders where id =2
 delete from orders where id =3
 delete from orders where id =6
+
+
+
+ALTER TABLE orders
+ADD status VARCHAR(10);
+
+ALTER TABLE orders
+ADD CONSTRAINT DF_orders_status DEFAULT 'pending' FOR status;
+
+UPDATE orders
+SET status = 'paid' where id =1
+
 select * from orders
 
 truncate table orders

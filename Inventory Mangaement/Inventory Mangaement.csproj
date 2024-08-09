@@ -169,6 +169,7 @@
     <Content Include="Assets\icons8-register-80.png" />
     <Content Include="Assets\icons8-users-80.png" />
     <Content Include="invent.sql" />
+    <Content Include="script.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
