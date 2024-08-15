@@ -544,9 +544,9 @@ namespace Inventory_Mangaement
 
 			float y = 0;
 			int count = 0;
-			int colWidth = 120;
+			int colWidth = 80;
 			int headerMargin = 10;
-			int tableMargin = 20;
+			int tableMargin = 30;
 
 			Font font = new Font("Tahoma", 12);
 			Font bold = new Font("tahoma", 12, FontStyle.Bold);
@@ -561,18 +561,18 @@ namespace Inventory_Mangaement
 
 			string headerText = "Inventory Management System";
 			y = (margin + count * headerFont.GetHeight(e.Graphics) + headerMargin);
-			e.Graphics.DrawString(headerText, headerFont, Brushes.Black, e.MarginBounds.Left + (dataGridView2.ColumnCount / 2) * colWidth, y, alignCenter);
+			e.Graphics.DrawString(headerText, headerFont, Brushes.Black, e.MarginBounds.Left  + (dataGridView2.ColumnCount / 2) * colWidth, y, alignCenter);
 
 			count++;
 
 			y += tableMargin;
 
-			string[] header = { "CID", "PID", "PName", "Category", "QTY", "OrigPrice" };
+			string[] header = {"ID", "CID", "PID", "PName", "Category","OrigPrice", "QTY", "TotalPrice", "Date" , "Status" };
 
 			for (int q = 0; q < header.Length; q++)
 			{
 				y = margin + count * bold.GetHeight(e.Graphics) + tableMargin;
-				e.Graphics.DrawString(header[1], bold, Brushes.Black, e.MarginBounds.Left + idGen * colWidth, y, alignCenter);
+				e.Graphics.DrawString(header[q], bold, Brushes.Black, e.MarginBounds.Left - 50 + q * colWidth, y, alignCenter);
 			}
 			count++;
 
@@ -585,10 +585,11 @@ namespace Inventory_Mangaement
 				for (int q = 0; q < row.Cells.Count; q++)
 				{
 					object cellValue = row.Cells[q].Value;
+
 					string cell = (cellValue != null) ? cellValue.ToString() : string.Empty;
 
 					y = margin + count * font.GetHeight(e.Graphics) + tableMargin;
-					e.Graphics.DrawString(cell, font, Brushes.Black, e.MarginBounds.Left + idGen * colWidth, y, alignCenter);
+					e.Graphics.DrawString(cell, font, Brushes.Black, e.MarginBounds.Left - 50 + q * (colWidth), y, alignCenter);
 				}
 
 				count++;
