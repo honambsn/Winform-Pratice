@@ -519,12 +519,19 @@ namespace Inventory_Mangaement
 			{
 				if (MessageBox.Show("Did you start \r'Print Spooler Services' ?", "Confirm Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
 				{
+					if (cashierOrder_Amount.Text == "" || dataGridView2.Rows.Count < 0)
+					{
+						MessageBox.Show("Please order first", "Error Message", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+					}
+					else
+					{
+						printDocument1.PrintPage += new PrintPageEventHandler(printDocument1_PrintPage);
+						printDocument1.BeginPrint += new PrintEventHandler(printDocument1_BeginPrint);
 
-					printDocument1.PrintPage += new PrintPageEventHandler(printDocument1_PrintPage);
-					printDocument1.BeginPrint += new PrintEventHandler(printDocument1_BeginPrint);
-
-					printPreviewDialog1.Document = printDocument1;
-					printPreviewDialog1.ShowDialog();
+						printPreviewDialog1.Document = printDocument1;
+						printPreviewDialog1.ShowDialog();
+					}
+					
 				}
 				
 			}catch(Exception ex)
@@ -544,9 +551,9 @@ namespace Inventory_Mangaement
 
 			float y = 0;
 			int count = 0;
-			int colWidth = 80;
-			int headerMargin = 10;
-			int tableMargin = 30;
+			int colWidth = 120;
+			int headerMargin = 5;
+			int tableMargin = 5;
 
 			Font font = new Font("Tahoma", 12);
 			Font bold = new Font("tahoma", 12, FontStyle.Bold);
@@ -561,7 +568,7 @@ namespace Inventory_Mangaement
 
 			string headerText = "Inventory Management System";
 			y = (margin + count * headerFont.GetHeight(e.Graphics) + headerMargin);
-			e.Graphics.DrawString(headerText, headerFont, Brushes.Black, e.MarginBounds.Left  + (dataGridView2.ColumnCount / 2) * colWidth, y, alignCenter);
+			e.Graphics.DrawString(headerText, headerFont, Brushes.Black, e.MarginBounds.Left -250 + (dataGridView2.ColumnCount / 2) * colWidth, y, alignCenter);
 
 			count++;
 
