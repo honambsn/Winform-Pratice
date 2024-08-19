@@ -16,3 +16,4 @@ D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Inventory Mangaement\obj\Debug
 D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Inventory Mangaement\bin\Debug\Inventory Mangaement.pdb
 D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Inventory Mangaement\obj\Debug\Inventory_Mangaement.CashierMainForm.resources
 D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Inventory Mangaement\obj\Debug\Inventory_Mangaement.CashierOrder.resources
+D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Inventory Mangaement\obj\Debug\Inventory_Mangaement.CashierCustomer.resources

@@ -253,3 +253,5 @@ select * from orders
 
 truncate table orders
 select * from customers
+select count(id) from customers
+select * from users

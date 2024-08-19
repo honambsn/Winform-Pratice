@@ -21,6 +21,17 @@ namespace Inventory_Mangaement
 			displayAllCategoryData();
 		}
 
+		public void refreshData()
+		{
+			if (InvokeRequired)
+			{
+				Invoke((MethodInvoker)refreshData);
+				return;
+			}
+
+			displayAllCategoryData();
+		}
+
 		private void drawCenter()
 		{
 			int XdataGridPos = (this.panel2.Width - this.dataGridView1.Width) / 2;

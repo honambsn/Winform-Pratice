@@ -8,6 +8,7 @@ namespace Inventory_Mangaement
 {
 	public partial class Form1 : Form
 	{
+		public static string username;
 		SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\honam\Documents\inventory.mdf;Integrated Security=True;Connect Timeout=30");
 		public Form1()
 		{

@@ -26,6 +26,19 @@ namespace Inventory_Mangaement
 			dataGridView2.CellContentClick += new DataGridViewCellEventHandler(dataGridView2_CellContentDoubleClick);
 		}
 
+		public void refreshData()
+		{
+			if (InvokeRequired)
+			{
+				Invoke((MethodInvoker)refreshData);
+				return;
+			}
+			displayAllAvailableProducts();
+			displayAllCategories();
+			displayAllOrder();
+			displayTotalPrice();
+		}
+
 		public void displayAllAvailableProducts()
 		{
 			AddProductData apData = new AddProductData();
@@ -455,11 +468,11 @@ namespace Inventory_Mangaement
 								cmd.Parameters.AddWithValue("@date", today);
 								cmd.Parameters.AddWithValue("@order_code", code);
 								cmd.ExecuteNonQuery();
-								clearFields();
+								//clearFields();
 
-								dataGridView2.DataSource = null;
-								dataGridView2.Rows.Clear();
-								dataGridView2.Columns.Clear();
+								//dataGridView2.DataSource = null;
+								//dataGridView2.Rows.Clear();
+								//dataGridView2.Columns.Clear();
 								MessageBox.Show("Paid successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
 							}
 
@@ -476,10 +489,10 @@ namespace Inventory_Mangaement
 					}
 				}
 			}
-			cashierOrder_category.Text = "";
-			cashierOrder_Change.Text = "";
-			cashierOrder_Amount.Text = "";
-			cashierOrder_TotalPrice.Text = "";
+			//cashierOrder_category.Text = "";
+			//cashierOrder_Change.Text = "";
+			//cashierOrder_Amount.Text = "";
+			//cashierOrder_TotalPrice.Text = "";
 			//displayAllOrder();
 			//displayTotalPrice();
 		}
@@ -530,14 +543,28 @@ namespace Inventory_Mangaement
 
 						printPreviewDialog1.Document = printDocument1;
 						printPreviewDialog1.ShowDialog();
+
 					}
 					
 				}
-				
-			}catch(Exception ex)
+
+			}
+			catch (Exception ex)
 			{
 				MessageBox.Show("Somthing wrong" + ex, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
+			finally
+			{
+
+				dataGridView2.DataSource = null;
+				dataGridView2.Rows.Clear();
+				dataGridView2.Columns.Clear();
+				cashierOrder_category.Text = "";
+				cashierOrder_Change.Text = "";
+				cashierOrder_Amount.Text = "";
+				cashierOrder_TotalPrice.Text = "";
+			}
+
 		}
 
 		private void printDocument1_BeginPrint(object sender, System.Drawing.Printing.PrintEventArgs e)

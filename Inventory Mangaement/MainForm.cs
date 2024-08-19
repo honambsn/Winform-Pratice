@@ -49,6 +49,13 @@ namespace Inventory_Mangaement
 		//	}
 		//}
 
+		public void displayUsername()
+		{
+			string username = Form1.username.Substring(0,1).ToUpper() + Form1.username.Substring(1);
+			lbl_username.Text = username;
+					
+		}
+
 		private void close_Click(object sender, EventArgs e)
 		{
 			if (MessageBox.Show("Are you sure you want to close?", "Confirmation Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -80,5 +87,82 @@ namespace Inventory_Mangaement
 			
 		}
 
+		private void dashboard_btn_Click(object sender, EventArgs e)
+		{
+			adminDashboard1.Visible = true;
+			adminAddCategories1.Visible = false;
+			adminAdd1.Visible = false;
+			adminAddProducts1.Visible = false;
+			cashierCustomer1.Visible = false;
+
+			AdminDashboard adForm = adminDashboard1 as AdminDashboard;
+
+			if (adForm != null)
+			{
+				adForm.refreshData();
+			}
+		}
+
+		private void addUsers_btn_Click(object sender, EventArgs e)
+		{
+			adminDashboard1.Visible = false;
+			adminAdd1.Visible = true;
+			adminAddCategories1.Visible = false;
+			adminAddProducts1.Visible = false;
+			cashierCustomer1.Visible = false;
+
+			AdminAdd aauForm = adminAdd1 as AdminAdd;
+
+			if(aauForm != null)
+			{
+				aauForm.refreshData();
+			}
+		}
+
+		private void addCategories_btn_Click(object sender, EventArgs e)
+		{
+			adminDashboard1.Visible = false;
+			adminAdd1.Visible = false;
+			adminAddCategories1.Visible = true;
+			adminAddProducts1.Visible = false;
+			cashierCustomer1.Visible = false;
+
+			AdminAddCategories aacForm = adminAddCategories1 as AdminAddCategories;
+
+			if (aacForm != null)
+			{
+				aacForm.refreshData();
+			}
+		}
+
+		private void addProduct_btn_Click(object sender, EventArgs e)
+		{
+			adminDashboard1.Visible = false;
+			adminAdd1.Visible = false;
+			adminAddCategories1.Visible = false;
+			adminAddProducts1.Visible = true;
+			cashierCustomer1.Visible = false;
+
+			AdminAddProducts aap = adminAddProducts1 as AdminAddProducts;
+			if (aap != null)
+			{
+				aap.refreshData();
+			}
+		}
+
+		private void customers_btn_Click(object sender, EventArgs e)
+		{
+			adminDashboard1.Visible = false;
+			adminAdd1.Visible = false;
+			adminAddCategories1.Visible = false;
+			adminAddProducts1.Visible = false;
+			cashierCustomer1.Visible = true;
+
+			CashierCustomer ccForm = cashierCustomer1 as CashierCustomer;
+			if (ccForm != null)
+			{
+				ccForm.refreshData();
+			}
+		}
 	}
 }

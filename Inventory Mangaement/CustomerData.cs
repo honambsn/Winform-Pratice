@@ -60,5 +60,52 @@ namespace Inventory_Mangaement
 			}
 			return listData;
 		}
+
+		public List<CustomerData> allTodayCustomer()
+		{
+			List<CustomerData> listData = new List<CustomerData>();
+
+			if (con.State != ConnectionState.Open)
+			{
+				try
+				{
+					con.Open();
+					DateTime today = DateTime.Today;
+
+					string selectData = "SELECT * FROM customers WHERE order_date = @date";
+
+					using (SqlCommand cmd = new SqlCommand(selectData, con))
+					{
+						cmd.Parameters.AddWithValue("@date", today);
+
+						SqlDataReader reader = cmd.ExecuteReader();
+
+						while (reader.Read())
+						{
+							CustomerData cData = new CustomerData();
+
+							cData.CustomerID = reader["customer_id"].ToString();
+							cData.TotalPrice = reader["total_price"].ToString();
+							cData.Amount = reader["amount"].ToString();
+							cData.Change = reader["change"].ToString();
+							cData.Date = reader["order_date"].ToString();
+
+							listData.Add(cData);
+						}
+					}
+
+				}
+				catch (Exception ex)
+				{
+					MessageBox.Show("Failed connection" + ex, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				}
+				finally
+				{
+					con.Close();
+				}
+			}
+			return listData;
+		}
 	}
 }
+

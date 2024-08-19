@@ -15,6 +15,28 @@ namespace Inventory_Mangaement
 		public CashierCustomer()
 		{
 			InitializeComponent();
+			displayCustomer();
+		}
+
+		public void refreshData()
+		{
+			if (InvokeRequired)
+			{
+				Invoke((MethodInvoker)refreshData);
+				return;
+			}
+
+			displayCustomer();
+		}
+
+		public void displayCustomer()
+		{
+			CustomerData cData = new CustomerData();
+
+			List<CustomerData> listData = cData.allCustomer();
+
+			dataGridView1.DataSource = listData;
+
 		}
 	}
 }

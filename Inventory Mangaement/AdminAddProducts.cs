@@ -23,6 +23,18 @@ namespace Inventory_Mangaement
 			displayAllProducts();
 		}
 
+		public void refreshData()
+		{
+			if (InvokeRequired)
+			{
+				Invoke((MethodInvoker)refreshData);
+				return;
+			}
+
+			displayCategories();
+			displayAllProducts();
+		}
+
 		private void drawCenter()
 		{
 			// Form dimensions

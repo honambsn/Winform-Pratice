@@ -22,6 +22,17 @@ namespace Inventory_Mangaement
 			displayAllUserData();
 		}
 
+		public void refreshData()
+		{
+			if (InvokeRequired)
+			{
+				Invoke((MethodInvoker)refreshData);
+				return;
+			}
+
+			displayAllUserData();
+		}
+
 
 		public void displayAllUserData()
 		{
