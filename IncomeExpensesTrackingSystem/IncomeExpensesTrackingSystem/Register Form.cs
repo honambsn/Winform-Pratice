@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -10,12 +11,12 @@ using System.Windows.Forms;
 
 namespace IncomeExpensesTrackingSystem
 {
-	public partial class Form1 : Form
+	public partial class Register_Form : Form
 	{
-		public Form1()
+		SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\honam\Documents\expense.mdf;Integrated Security=True;Connect Timeout=30");
+		public Register_Form()
 		{
 			InitializeComponent();
-			//CenterPictureBoxVertically();
 			CenterPictureBoxHorizontally();
 			panel1.Resize += new EventHandler(panel1_Resize);
 			CenterLabelHorizontally();
@@ -63,9 +64,11 @@ namespace IncomeExpensesTrackingSystem
 				label2.Left = centerX;
 			}
 
-			if (panel1.ClientSize.Width > login_signupBtn.Width)
+			
+
+			if (panel1.ClientSize.Width > reg_signinBtn.Width)
 			{
-				login_signupBtn.Left = (panel1.ClientSize.Width - login_signupBtn.Width) / 2;
+				reg_signinBtn.Left = (panel1.ClientSize.Width - reg_signinBtn.Width) / 2;
 			}
 		}
 
@@ -78,16 +81,13 @@ namespace IncomeExpensesTrackingSystem
 		private void CenterTextBoxHorizontally()
 		{
 			// Calculate the horizontal center position and apply it
-			login_username.Left = (panel2.ClientSize.Width - login_username.Width) / 2;
-			login_password.Left = (panel2.ClientSize.Width - login_password.Width) / 2;
+			reg_username.Left = (panel2.ClientSize.Width - reg_username.Width) / 2;
+			reg_password.Left = (panel2.ClientSize.Width - reg_password.Width) / 2;
 
-			registerhere.Left = (panel1.ClientSize.Width -  registerhere.Width) / 2;
+			signinhere.Left = (panel1.ClientSize.Width - signinhere.Width) / 2;
 		}
 
-		private void label1_Click(object sender, EventArgs e)
-		{
-			Application.Exit();
-		}
+		
 
 		private void button1_Click(object sender, EventArgs e)
 		{
@@ -95,17 +95,33 @@ namespace IncomeExpensesTrackingSystem
 
 		}
 
-		private void login_signupBtn_Click(object sender, EventArgs e)
+		private void close_Click(object sender, EventArgs e)
 		{
-			this.Hide();
-
-			Register_Form register_Form = new Register_Form();
-			register_Form.Show();
+			Application.Exit();
 		}
 
-		private void login_showpass_CheckedChanged(object sender, EventArgs e)
+		private void reg_signinBtn_Click(object sender, EventArgs e)
 		{
-			login_password.PasswordChar = login_showpass.Checked ? '\0' : '*';
+			Form1 loginForm = new Form1();
+			loginForm.Show();
+
+			this.Hide();
+		}
+
+		public bool checkConnection()
+		{
+			return (con.State == ConnectionState.Closed) ? true :  false;
+		}
+
+		private void reg_btn_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void reg_showpass_CheckedChanged(object sender, EventArgs e)
+		{
+			reg_password.PasswordChar = reg_showpass.Checked ? '\0' : '*';
+			reg_confirmpass.PasswordChar = reg_showpass.Checked ? '\0' : '*';
 		}
 	}
 }
