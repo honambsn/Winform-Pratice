@@ -115,7 +115,59 @@ namespace IncomeExpensesTrackingSystem
 
 		private void reg_btn_Click(object sender, EventArgs e)
 		{
+			if(reg_username.Text == "" || reg_password.Text == "" || reg_confirmpass.Text == "")
+			{
+				MessageBox.Show("Fill all blank", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+			}
+			else
+			{
+				if (checkConnection())
+				{
+					try
+					{
+						con.Open();
 
+						string selectUsername = "select * from users where username = @usename";
+						using (SqlCommand checkUser = new SqlCommand(selectUsername, con))
+						{
+							checkUser.Parameters.AddWithValue("@username", reg_username.Text.Trim());
+
+							SqlDataAdapter adapter = new SqlDataAdapter();
+							DataTable table = new DataTable();
+
+							adapter.Fill(table);
+
+							if (table.Rows.Count != 0)
+							{
+								string tempUsername = reg_username.Text.Substring(0, 1).ToUpper() + reg_username.Text.Substring(1);
+								MessageBox.Show(tempUsername + "is existing already", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+							}
+							else
+							{
+								string insertData = "insert into users (username, password, date) values (@username, @password, @date)";
+
+								using (SqlCommand insertUser = new SqlCommand(insertData, con))
+								{
+									insertUser.Parameters.AddWithValue("@username", reg_username.Text.Trim());
+									insertUser.Parameters.AddWithValue("@password", reg_password.Text.Trim());
+
+									DateTime today = DateTime.Today;
+									insertUser.Parameters.AddWithValue("@date", today);
+								}
+							}
+						}
+					}
+					catch (Exception ex)
+					{
+						MessageBox.Show("Error: "+ ex, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					}
+					finally 
+					{
+						con.Close();
+					}
+				}
+			}
 		}
 
 		private void reg_showpass_CheckedChanged(object sender, EventArgs e)
