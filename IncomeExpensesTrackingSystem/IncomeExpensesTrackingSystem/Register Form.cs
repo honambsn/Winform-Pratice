@@ -63,9 +63,7 @@ namespace IncomeExpensesTrackingSystem
 				// Set the Left property of the PictureBox
 				label2.Left = centerX;
 			}
-
-			
-
+						
 			if (panel1.ClientSize.Width > reg_signinBtn.Width)
 			{
 				reg_signinBtn.Left = (panel1.ClientSize.Width - reg_signinBtn.Width) / 2;
@@ -127,12 +125,12 @@ namespace IncomeExpensesTrackingSystem
 					{
 						con.Open();
 
-						string selectUsername = "select * from users where username = @usename";
+						string selectUsername = "select * from users where username = @username";
 						using (SqlCommand checkUser = new SqlCommand(selectUsername, con))
 						{
 							checkUser.Parameters.AddWithValue("@username", reg_username.Text.Trim());
 
-							SqlDataAdapter adapter = new SqlDataAdapter();
+							SqlDataAdapter adapter = new SqlDataAdapter(checkUser);
 							DataTable table = new DataTable();
 
 							adapter.Fill(table);
@@ -140,27 +138,46 @@ namespace IncomeExpensesTrackingSystem
 							if (table.Rows.Count != 0)
 							{
 								string tempUsername = reg_username.Text.Substring(0, 1).ToUpper() + reg_username.Text.Substring(1);
-								MessageBox.Show(tempUsername + "is existing already", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+								MessageBox.Show(tempUsername + " is existing already", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
+							}
+							//else if(reg_password.Text.Length < 16)
+							//{
+							//	MessageBox.Show("Invalid pass, at least 16 characters are needed", "Error Message", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+							//}
+							else if(reg_password.Text != reg_confirmpass.Text){
+								MessageBox.Show("Password not match", "Error Message", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
 							}
 							else
 							{
+
+								string hashedPass = PasswordHash.HashPassword(reg_username.Text);
+
 								string insertData = "insert into users (username, password, date) values (@username, @password, @date)";
 
 								using (SqlCommand insertUser = new SqlCommand(insertData, con))
 								{
 									insertUser.Parameters.AddWithValue("@username", reg_username.Text.Trim());
-									insertUser.Parameters.AddWithValue("@password", reg_password.Text.Trim());
+									insertUser.Parameters.AddWithValue("@password", hashedPass.Trim());
 
 									DateTime today = DateTime.Today;
 									insertUser.Parameters.AddWithValue("@date", today);
+								
+									insertUser.ExecuteNonQuery();
+
+									MessageBox.Show("Registered successfully", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+									Form1 loginForm = new Form1();
+									loginForm.Show();
+
+									this.Hide();
 								}
 							}
 						}
 					}
 					catch (Exception ex)
 					{
-						MessageBox.Show("Error: "+ ex, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+						MessageBox.Show("Failed connection: "+ ex, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
 					}
 					finally 
 					{

@@ -30,6 +30,7 @@
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
 			this.panel1 = new System.Windows.Forms.Panel();
+			this.registerhere = new System.Windows.Forms.Label();
 			this.login_signupBtn = new System.Windows.Forms.Button();
 			this.label2 = new System.Windows.Forms.Label();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -42,7 +43,6 @@
 			this.login_btn = new System.Windows.Forms.Button();
 			this.login_showpass = new System.Windows.Forms.CheckBox();
 			this.panel2 = new System.Windows.Forms.Panel();
-			this.registerhere = new System.Windows.Forms.Label();
 			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.panel2.SuspendLayout();
@@ -60,6 +60,18 @@
 			this.panel1.Name = "panel1";
 			this.panel1.Size = new System.Drawing.Size(321, 500);
 			this.panel1.TabIndex = 0;
+			// 
+			// registerhere
+			// 
+			this.registerhere.AutoSize = true;
+			this.registerhere.Enabled = false;
+			this.registerhere.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.registerhere.ForeColor = System.Drawing.Color.White;
+			this.registerhere.Location = new System.Drawing.Point(87, 410);
+			this.registerhere.Name = "registerhere";
+			this.registerhere.Size = new System.Drawing.Size(151, 23);
+			this.registerhere.TabIndex = 16;
+			this.registerhere.Text = "REGISTER HERE";
 			// 
 			// login_signupBtn
 			// 
@@ -139,7 +151,6 @@
 			this.login_username.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.login_username.Location = new System.Drawing.Point(57, 212);
 			this.login_username.Name = "login_username";
-			this.login_username.PasswordChar = '*';
 			this.login_username.Size = new System.Drawing.Size(268, 29);
 			this.login_username.TabIndex = 11;
 			// 
@@ -210,18 +221,6 @@
 			this.panel2.Name = "panel2";
 			this.panel2.Size = new System.Drawing.Size(379, 500);
 			this.panel2.TabIndex = 2;
-			// 
-			// registerhere
-			// 
-			this.registerhere.AutoSize = true;
-			this.registerhere.Enabled = false;
-			this.registerhere.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.registerhere.ForeColor = System.Drawing.Color.White;
-			this.registerhere.Location = new System.Drawing.Point(87, 410);
-			this.registerhere.Name = "registerhere";
-			this.registerhere.Size = new System.Drawing.Size(151, 23);
-			this.registerhere.TabIndex = 16;
-			this.registerhere.Text = "REGISTER HERE";
 			// 
 			// Form1
 			// 

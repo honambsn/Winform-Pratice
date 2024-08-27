@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,8 @@ namespace IncomeExpensesTrackingSystem
 {
 	public partial class Form1 : Form
 	{
+		//SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\honam\Documents\expense.mdf;Integrated Security=True;Connect Timeout=30");
+		string stringConnection = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\honam\Documents\expense.mdf;Integrated Security=True;Connect Timeout=30";
 		public Form1()
 		{
 			InitializeComponent();
@@ -89,9 +92,54 @@ namespace IncomeExpensesTrackingSystem
 			Application.Exit();
 		}
 
+
+
 		private void button1_Click(object sender, EventArgs e)
 		{
-			MessageBox.Show("Login", "Login successfully", MessageBoxButtons.OK, MessageBoxIcon.Information);
+			string username = login_username.Text.Trim();
+			string password = login_password.Text.Trim();
+
+			if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+			{
+				MessageBox.Show("Username or password cannot be empty.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				return;
+			}
+
+			using (SqlConnection con = new SqlConnection(stringConnection))
+			{
+				con.Open();
+
+				string selectData = "SELECT password FROM users WHERE username = @username";
+
+				using (SqlCommand cmd = new SqlCommand(selectData, con))
+				{
+					cmd.Parameters.AddWithValue("@username", username);
+
+					// Use ExecuteScalar to retrieve a single value (the hashed password)
+					object result = cmd.ExecuteScalar();
+					if (result != null)
+					{
+						string storedHashedPassword = result as string;
+
+						// Verify the password using a secure method
+						bool isPasswordCorrect = PasswordHash.VerifyPassword(password, storedHashedPassword);
+
+						if (isPasswordCorrect)
+						{
+							MessageBox.Show("Login successful!: " + storedHashedPassword, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+						}
+						else
+						{
+							MessageBox.Show("Invalid username or password. " + storedHashedPassword, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+						}
+					}
+					else
+					{
+						// Handle case where username is not found
+						MessageBox.Show("Username not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					}
+				}
+			}
 
 		}
 
@@ -107,5 +155,7 @@ namespace IncomeExpensesTrackingSystem
 		{
 			login_password.PasswordChar = login_showpass.Checked ? '\0' : '*';
 		}
+
+		
 	}
 }
