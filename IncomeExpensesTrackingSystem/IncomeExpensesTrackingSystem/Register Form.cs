@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -145,20 +146,25 @@ namespace IncomeExpensesTrackingSystem
 							//{
 							//	MessageBox.Show("Invalid pass, at least 16 characters are needed", "Error Message", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
 							//}
+							//else if (Regex.IsMatch(reg_password.Text.Trim(), @"[\W_]") || reg_password.Text.Trim().Contains(" ")) {
+							else if (reg_password.Text.Trim().Contains(" "))
+							{
+								MessageBox.Show("Password not contains blank characters", "Error Message", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+							}
 							else if(reg_password.Text != reg_confirmpass.Text){
 								MessageBox.Show("Password not match", "Error Message", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
 							}
 							else
 							{
 
-								string hashedPass = PasswordHash.HashPassword(reg_username.Text);
+								string hashedPass = PasswordHash.HashPassword(reg_password.Text);
 
 								string insertData = "insert into users (username, password, date) values (@username, @password, @date)";
 
 								using (SqlCommand insertUser = new SqlCommand(insertData, con))
 								{
 									insertUser.Parameters.AddWithValue("@username", reg_username.Text.Trim());
-									insertUser.Parameters.AddWithValue("@password", hashedPass.Trim());
+									insertUser.Parameters.AddWithValue("@password", hashedPass);
 
 									DateTime today = DateTime.Today;
 									insertUser.Parameters.AddWithValue("@date", today);

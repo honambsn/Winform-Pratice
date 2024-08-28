@@ -7,3 +7,4 @@
 
 
 select * from users
+truncate table users

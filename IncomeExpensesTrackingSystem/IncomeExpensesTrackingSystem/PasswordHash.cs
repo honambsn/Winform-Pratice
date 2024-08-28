@@ -9,64 +9,62 @@ namespace IncomeExpensesTrackingSystem
 {
 	internal class PasswordHash
 	{
-		private const int SaltSize = 16; // Kích thước của salt (bytes)
-		private const int HashSize = 20; // Kích thước của hash (bytes)
-		private const int Iterations = 10000; // Số vòng lặp cho PBKDF2
+		private const int SaltSize = 16; // Size of salt in bytes
+		private const int HashSize = 20; // Size of hash in bytes
+		private const int Iterations = 10000; // Number of iterations
 
-		// Phương thức để mã hóa mật khẩu
+		// Hashes the password using PBKDF2
 		public static string HashPassword(string password)
 		{
-			// Tạo salt ngẫu nhiên
+			// Generate a random salt
+			byte[] salt = new byte[SaltSize];
 			using (var rng = new RNGCryptoServiceProvider())
 			{
-				var salt = new byte[SaltSize];
 				rng.GetBytes(salt);
+			}
 
-				// Tạo hash từ mật khẩu và salt
-				using (var pbkdf2 = new Rfc2898DeriveBytes(password, salt, Iterations))
-				{
-					var hash = pbkdf2.GetBytes(HashSize);
+			// Create the PBKDF2 instance and hash the password
+			using (var pbkdf2 = new Rfc2898DeriveBytes(password, salt, Iterations, HashAlgorithmName.SHA256))
+			{
+				byte[] hash = pbkdf2.GetBytes(HashSize);
 
-					// Kết hợp salt và hash thành một mảng byte
-					var hashBytes = new byte[SaltSize + HashSize];
-					Array.Copy(salt, 0, hashBytes, 0, SaltSize);
-					Array.Copy(hash, 0, hashBytes, SaltSize, HashSize);
+				// Combine the salt and hash into a single string for storage
+				byte[] hashBytes = new byte[SaltSize + HashSize];
+				Array.Copy(salt, 0, hashBytes, 0, SaltSize);
+				Array.Copy(hash, 0, hashBytes, SaltSize, HashSize);
 
-					// Chuyển đổi thành chuỗi base64
-					return Convert.ToBase64String(hashBytes);
-				}
+				return Convert.ToBase64String(hashBytes);
 			}
 		}
 
-		// Phương thức để xác minh mật khẩu
 		public static bool VerifyPassword(string password, string hashedPassword)
 		{
-			// Chuyển đổi chuỗi base64 thành mảng byte
-			var hashBytes = Convert.FromBase64String(hashedPassword);
+			// Convert the stored hash from Base64 string to byte array
+			byte[] hashBytes = Convert.FromBase64String(hashedPassword);
 
-			// Tách salt và hash từ mảng byte
-			var salt = new byte[SaltSize];
+			// Extract the salt from the stored hash
+			byte[] salt = new byte[SaltSize];
 			Array.Copy(hashBytes, 0, salt, 0, SaltSize);
 
-			var hash = new byte[HashSize];
-			Array.Copy(hashBytes, SaltSize, hash, 0, HashSize);
+			// Extract the hash from the stored hash
+			byte[] storedHash = new byte[HashSize];
+			Array.Copy(hashBytes, SaltSize, storedHash, 0, HashSize);
 
-			// Tạo hash từ mật khẩu và salt
-			using (var pbkdf2 = new Rfc2898DeriveBytes(password, salt, Iterations))
+			// Hash the input password with the extracted salt
+			using (var pbkdf2 = new Rfc2898DeriveBytes(password, salt, Iterations, HashAlgorithmName.SHA256))
 			{
-				var computedHash = pbkdf2.GetBytes(HashSize);
+				byte[] hash = pbkdf2.GetBytes(HashSize);
 
-				// So sánh hash đã lưu với hash được tính toán
+				// Compare the computed hash with the stored hash
 				for (int i = 0; i < HashSize; i++)
 				{
-					if (hash[i] != computedHash[i])
+					if (hash[i] != storedHash[i])
 					{
 						return false;
 					}
 				}
+				return true;
 			}
-
-			return true;
 		}
 	}
 }

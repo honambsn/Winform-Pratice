@@ -16,7 +16,7 @@ namespace IncomeExpensesTrackingSystem
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new Register_Form());
+			Application.Run(new Form1());
 		}
 	}
 }

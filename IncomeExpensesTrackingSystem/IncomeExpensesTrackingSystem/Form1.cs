@@ -97,7 +97,7 @@ namespace IncomeExpensesTrackingSystem
 		private void button1_Click(object sender, EventArgs e)
 		{
 			string username = login_username.Text.Trim();
-			string password = login_password.Text.Trim();
+			string password = login_password.Text;
 
 			if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
 			{
@@ -126,11 +126,11 @@ namespace IncomeExpensesTrackingSystem
 
 						if (isPasswordCorrect)
 						{
-							MessageBox.Show("Login successful!: " + storedHashedPassword, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+							MessageBox.Show("Login successful!: ", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
 						}
 						else
 						{
-							MessageBox.Show("Invalid username or password. " + storedHashedPassword, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+							MessageBox.Show("Invalid username or password. ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 						}
 					}
 					else
