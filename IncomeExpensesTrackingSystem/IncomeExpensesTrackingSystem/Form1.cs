@@ -126,7 +126,12 @@ namespace IncomeExpensesTrackingSystem
 
 						if (isPasswordCorrect)
 						{
-							MessageBox.Show("Login successful!: ", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+							MessageBox.Show("Login successful!: " + username, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+							
+							main main = new main();
+							main.Show();
+
+							this.Hide();
 						}
 						else
 						{
