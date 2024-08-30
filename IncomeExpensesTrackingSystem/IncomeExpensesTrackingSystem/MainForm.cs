@@ -28,16 +28,11 @@ namespace IncomeExpensesTrackingSystem
 			// Check if the panel and picture box are initialized
 			if (pictureBox2 != null && pictureBox2 != null)
 			{
-				// Calculate the top position for vertical centering
-				int centerY = (panel1.ClientSize.Height - pictureBox1.Height) / 2;
+				// Calculate the X coordinate to center the PictureBox
+				int centerX = (panel2.Width - pictureBox2.Width) / 2;
 
-				// Set the Top property of the PictureBox
-				pictureBox2.Top = centerY;
-
-				int centerX = (panel2.ClientSize.Height - pictureBox1.Height) / 2;
-
+				// Set the Left property of the PictureBox
 				pictureBox2.Left = centerX;
-
 			}
 		}
 	}

@@ -128,8 +128,8 @@ namespace IncomeExpensesTrackingSystem
 						{
 							MessageBox.Show("Login successful!: " + username, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
 							
-							main main = new main();
-							main.Show();
+							MainForm mainF = new MainForm();
+							mainF.Show();
 
 							this.Hide();
 						}

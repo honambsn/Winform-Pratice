@@ -3,11 +3,12 @@ D:\Ba Nam\Own project\Practice\c#\Winform Pratice\IncomeExpensesTrackingSystem\I
 D:\Ba Nam\Own project\Practice\c#\Winform Pratice\IncomeExpensesTrackingSystem\IncomeExpensesTrackingSystem\bin\Debug\IncomeExpensesTrackingSystem.pdb
 D:\Ba Nam\Own project\Practice\c#\Winform Pratice\IncomeExpensesTrackingSystem\IncomeExpensesTrackingSystem\obj\Debug\IncomeExpensesTrackingSystem.csproj.AssemblyReference.cache
 D:\Ba Nam\Own project\Practice\c#\Winform Pratice\IncomeExpensesTrackingSystem\IncomeExpensesTrackingSystem\obj\Debug\IncomeExpensesTrackingSystem.Form1.resources
+D:\Ba Nam\Own project\Practice\c#\Winform Pratice\IncomeExpensesTrackingSystem\IncomeExpensesTrackingSystem\obj\Debug\IncomeExpensesTrackingSystem.main.resources
+D:\Ba Nam\Own project\Practice\c#\Winform Pratice\IncomeExpensesTrackingSystem\IncomeExpensesTrackingSystem\obj\Debug\IncomeExpensesTrackingSystem.MainForm.resources
 D:\Ba Nam\Own project\Practice\c#\Winform Pratice\IncomeExpensesTrackingSystem\IncomeExpensesTrackingSystem\obj\Debug\IncomeExpensesTrackingSystem.Properties.Resources.resources
+D:\Ba Nam\Own project\Practice\c#\Winform Pratice\IncomeExpensesTrackingSystem\IncomeExpensesTrackingSystem\obj\Debug\IncomeExpensesTrackingSystem.Register_Form.resources
 D:\Ba Nam\Own project\Practice\c#\Winform Pratice\IncomeExpensesTrackingSystem\IncomeExpensesTrackingSystem\obj\Debug\IncomeExpensesTrackingSystem.csproj.GenerateResource.cache
 D:\Ba Nam\Own project\Practice\c#\Winform Pratice\IncomeExpensesTrackingSystem\IncomeExpensesTrackingSystem\obj\Debug\IncomeExpensesTrackingSystem.csproj.CoreCompileInputs.cache
 D:\Ba Nam\Own project\Practice\c#\Winform Pratice\IncomeExpensesTrackingSystem\IncomeExpensesTrackingSystem\obj\Debug\IncomeExpensesTrackingSystem.exe
 D:\Ba Nam\Own project\Practice\c#\Winform Pratice\IncomeExpensesTrackingSystem\IncomeExpensesTrackingSystem\obj\Debug\IncomeExpensesTrackingSystem.pdb
-D:\Ba Nam\Own project\Practice\c#\Winform Pratice\IncomeExpensesTrackingSystem\IncomeExpensesTrackingSystem\obj\Debug\IncomeExpensesTrackingSystem.Register_Form.resources
-D:\Ba Nam\Own project\Practice\c#\Winform Pratice\IncomeExpensesTrackingSystem\IncomeExpensesTrackingSystem\obj\Debug\IncomeExpensesTrackingSystem.MainForm.resources
-D:\Ba Nam\Own project\Practice\c#\Winform Pratice\IncomeExpensesTrackingSystem\IncomeExpensesTrackingSystem\obj\Debug\IncomeExpensesTrackingSystem.main.resources
+D:\Ba Nam\Own project\Practice\c#\Winform Pratice\IncomeExpensesTrackingSystem\IncomeExpensesTrackingSystem\obj\Debug\IncomeExpensesTrackingSystem.DashboardForm.resources
