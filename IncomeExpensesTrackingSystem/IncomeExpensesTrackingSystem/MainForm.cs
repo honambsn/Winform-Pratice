@@ -20,7 +20,11 @@ namespace IncomeExpensesTrackingSystem
 
 		private void close_Click(object sender, EventArgs e)
 		{
-			Application.Exit();
+			if (MessageBox.Show("Are u sure u want to close?", "Confirmation Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+			{
+				Application.Exit();
+			}
+			
 		}
 
 		private void CenterPictureBoxVertically()
@@ -33,6 +37,17 @@ namespace IncomeExpensesTrackingSystem
 
 				// Set the Left property of the PictureBox
 				pictureBox2.Left = centerX;
+			}
+		}
+
+		private void logout_Btn_Click(object sender, EventArgs e)
+		{
+			if (MessageBox.Show("Are u sure u want to logout?", "Confirmation Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+			{
+				Form1 loginForm = new Form1();
+				loginForm.Show();
+
+				this.Hide();
 			}
 		}
 	}

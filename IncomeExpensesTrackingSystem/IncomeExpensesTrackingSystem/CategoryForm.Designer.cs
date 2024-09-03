@@ -28,106 +28,108 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.panel1 = new System.Windows.Forms.Panel();
-			this.button3 = new System.Windows.Forms.Button();
-			this.button4 = new System.Windows.Forms.Button();
-			this.button2 = new System.Windows.Forms.Button();
-			this.button1 = new System.Windows.Forms.Button();
+			this.category_DelBtn = new System.Windows.Forms.Button();
+			this.category_ClearBtn = new System.Windows.Forms.Button();
+			this.category_UpdateBtn = new System.Windows.Forms.Button();
+			this.category_AddBtn = new System.Windows.Forms.Button();
 			this.label3 = new System.Windows.Forms.Label();
-			this.comboBox2 = new System.Windows.Forms.ComboBox();
+			this.category_status = new System.Windows.Forms.ComboBox();
 			this.label2 = new System.Windows.Forms.Label();
-			this.textBox1 = new System.Windows.Forms.TextBox();
+			this.category_category = new System.Windows.Forms.TextBox();
 			this.label1 = new System.Windows.Forms.Label();
-			this.comboBox1 = new System.Windows.Forms.ComboBox();
+			this.category_type = new System.Windows.Forms.ComboBox();
 			this.panel2 = new System.Windows.Forms.Panel();
 			this.label4 = new System.Windows.Forms.Label();
-			this.dataGridView1 = new System.Windows.Forms.DataGridView();
+			this.category_categoryList = new System.Windows.Forms.DataGridView();
 			this.panel1.SuspendLayout();
 			this.panel2.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.category_categoryList)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// panel1
 			// 
 			this.panel1.BackColor = System.Drawing.Color.White;
-			this.panel1.Controls.Add(this.button3);
-			this.panel1.Controls.Add(this.button4);
-			this.panel1.Controls.Add(this.button2);
-			this.panel1.Controls.Add(this.button1);
+			this.panel1.Controls.Add(this.category_DelBtn);
+			this.panel1.Controls.Add(this.category_ClearBtn);
+			this.panel1.Controls.Add(this.category_UpdateBtn);
+			this.panel1.Controls.Add(this.category_AddBtn);
 			this.panel1.Controls.Add(this.label3);
-			this.panel1.Controls.Add(this.comboBox2);
+			this.panel1.Controls.Add(this.category_status);
 			this.panel1.Controls.Add(this.label2);
-			this.panel1.Controls.Add(this.textBox1);
+			this.panel1.Controls.Add(this.category_category);
 			this.panel1.Controls.Add(this.label1);
-			this.panel1.Controls.Add(this.comboBox1);
+			this.panel1.Controls.Add(this.category_type);
 			this.panel1.Location = new System.Drawing.Point(15, 15);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(292, 692);
+			this.panel1.Size = new System.Drawing.Size(292, 722);
 			this.panel1.TabIndex = 0;
 			// 
-			// button3
+			// category_DelBtn
 			// 
-			this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(121)))), ((int)(((byte)(84)))));
-			this.button3.FlatAppearance.BorderSize = 0;
-			this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(160)))), ((int)(((byte)(108)))));
-			this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(160)))), ((int)(((byte)(108)))));
-			this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button3.ForeColor = System.Drawing.Color.White;
-			this.button3.Location = new System.Drawing.Point(182, 478);
-			this.button3.Name = "button3";
-			this.button3.Size = new System.Drawing.Size(91, 46);
-			this.button3.TabIndex = 10;
-			this.button3.Text = "Delete";
-			this.button3.UseVisualStyleBackColor = false;
+			this.category_DelBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(121)))), ((int)(((byte)(84)))));
+			this.category_DelBtn.FlatAppearance.BorderSize = 0;
+			this.category_DelBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(160)))), ((int)(((byte)(108)))));
+			this.category_DelBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(160)))), ((int)(((byte)(108)))));
+			this.category_DelBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.category_DelBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.category_DelBtn.ForeColor = System.Drawing.Color.White;
+			this.category_DelBtn.Location = new System.Drawing.Point(182, 478);
+			this.category_DelBtn.Name = "category_DelBtn";
+			this.category_DelBtn.Size = new System.Drawing.Size(91, 46);
+			this.category_DelBtn.TabIndex = 10;
+			this.category_DelBtn.Text = "Delete";
+			this.category_DelBtn.UseVisualStyleBackColor = false;
 			// 
-			// button4
+			// category_ClearBtn
 			// 
-			this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(121)))), ((int)(((byte)(84)))));
-			this.button4.FlatAppearance.BorderSize = 0;
-			this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(160)))), ((int)(((byte)(108)))));
-			this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(160)))), ((int)(((byte)(108)))));
-			this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button4.ForeColor = System.Drawing.Color.White;
-			this.button4.Location = new System.Drawing.Point(19, 478);
-			this.button4.Name = "button4";
-			this.button4.Size = new System.Drawing.Size(91, 46);
-			this.button4.TabIndex = 9;
-			this.button4.Text = "Clear";
-			this.button4.UseVisualStyleBackColor = false;
+			this.category_ClearBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(121)))), ((int)(((byte)(84)))));
+			this.category_ClearBtn.FlatAppearance.BorderSize = 0;
+			this.category_ClearBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(160)))), ((int)(((byte)(108)))));
+			this.category_ClearBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(160)))), ((int)(((byte)(108)))));
+			this.category_ClearBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.category_ClearBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.category_ClearBtn.ForeColor = System.Drawing.Color.White;
+			this.category_ClearBtn.Location = new System.Drawing.Point(19, 478);
+			this.category_ClearBtn.Name = "category_ClearBtn";
+			this.category_ClearBtn.Size = new System.Drawing.Size(91, 46);
+			this.category_ClearBtn.TabIndex = 9;
+			this.category_ClearBtn.Text = "Clear";
+			this.category_ClearBtn.UseVisualStyleBackColor = false;
 			// 
-			// button2
+			// category_UpdateBtn
 			// 
-			this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(121)))), ((int)(((byte)(84)))));
-			this.button2.FlatAppearance.BorderSize = 0;
-			this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(160)))), ((int)(((byte)(108)))));
-			this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(160)))), ((int)(((byte)(108)))));
-			this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button2.ForeColor = System.Drawing.Color.White;
-			this.button2.Location = new System.Drawing.Point(182, 397);
-			this.button2.Name = "button2";
-			this.button2.Size = new System.Drawing.Size(91, 46);
-			this.button2.TabIndex = 8;
-			this.button2.Text = "Update";
-			this.button2.UseVisualStyleBackColor = false;
+			this.category_UpdateBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(121)))), ((int)(((byte)(84)))));
+			this.category_UpdateBtn.FlatAppearance.BorderSize = 0;
+			this.category_UpdateBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(160)))), ((int)(((byte)(108)))));
+			this.category_UpdateBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(160)))), ((int)(((byte)(108)))));
+			this.category_UpdateBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.category_UpdateBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.category_UpdateBtn.ForeColor = System.Drawing.Color.White;
+			this.category_UpdateBtn.Location = new System.Drawing.Point(182, 397);
+			this.category_UpdateBtn.Name = "category_UpdateBtn";
+			this.category_UpdateBtn.Size = new System.Drawing.Size(91, 46);
+			this.category_UpdateBtn.TabIndex = 8;
+			this.category_UpdateBtn.Text = "Update";
+			this.category_UpdateBtn.UseVisualStyleBackColor = false;
 			// 
-			// button1
+			// category_AddBtn
 			// 
-			this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(121)))), ((int)(((byte)(84)))));
-			this.button1.FlatAppearance.BorderSize = 0;
-			this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(160)))), ((int)(((byte)(108)))));
-			this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(160)))), ((int)(((byte)(108)))));
-			this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button1.ForeColor = System.Drawing.Color.White;
-			this.button1.Location = new System.Drawing.Point(19, 397);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(91, 46);
-			this.button1.TabIndex = 7;
-			this.button1.Text = "Add";
-			this.button1.UseVisualStyleBackColor = false;
+			this.category_AddBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(121)))), ((int)(((byte)(84)))));
+			this.category_AddBtn.FlatAppearance.BorderSize = 0;
+			this.category_AddBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(160)))), ((int)(((byte)(108)))));
+			this.category_AddBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(160)))), ((int)(((byte)(108)))));
+			this.category_AddBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.category_AddBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.category_AddBtn.ForeColor = System.Drawing.Color.White;
+			this.category_AddBtn.Location = new System.Drawing.Point(19, 397);
+			this.category_AddBtn.Name = "category_AddBtn";
+			this.category_AddBtn.Size = new System.Drawing.Size(91, 46);
+			this.category_AddBtn.TabIndex = 7;
+			this.category_AddBtn.Text = "Add";
+			this.category_AddBtn.UseVisualStyleBackColor = false;
+			this.category_AddBtn.Click += new System.EventHandler(this.category_AddBtn_Click);
 			// 
 			// label3
 			// 
@@ -139,17 +141,17 @@
 			this.label3.TabIndex = 5;
 			this.label3.Text = "Status";
 			// 
-			// comboBox2
+			// category_status
 			// 
-			this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.comboBox2.FormattingEnabled = true;
-			this.comboBox2.Items.AddRange(new object[] {
+			this.category_status.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.category_status.FormattingEnabled = true;
+			this.category_status.Items.AddRange(new object[] {
             "Active",
             "Inactive"});
-			this.comboBox2.Location = new System.Drawing.Point(15, 300);
-			this.comboBox2.Name = "comboBox2";
-			this.comboBox2.Size = new System.Drawing.Size(262, 32);
-			this.comboBox2.TabIndex = 6;
+			this.category_status.Location = new System.Drawing.Point(15, 300);
+			this.category_status.Name = "category_status";
+			this.category_status.Size = new System.Drawing.Size(262, 32);
+			this.category_status.TabIndex = 6;
 			// 
 			// label2
 			// 
@@ -161,13 +163,13 @@
 			this.label2.TabIndex = 2;
 			this.label2.Text = "Type";
 			// 
-			// textBox1
+			// category_category
 			// 
-			this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.textBox1.Location = new System.Drawing.Point(15, 69);
-			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(262, 29);
-			this.textBox1.TabIndex = 1;
+			this.category_category.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.category_category.Location = new System.Drawing.Point(15, 69);
+			this.category_category.Name = "category_category";
+			this.category_category.Size = new System.Drawing.Size(262, 29);
+			this.category_category.TabIndex = 1;
 			// 
 			// label1
 			// 
@@ -179,26 +181,26 @@
 			this.label1.TabIndex = 0;
 			this.label1.Text = "Category";
 			// 
-			// comboBox1
+			// category_type
 			// 
-			this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.comboBox1.FormattingEnabled = true;
-			this.comboBox1.Items.AddRange(new object[] {
+			this.category_type.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.category_type.FormattingEnabled = true;
+			this.category_type.Items.AddRange(new object[] {
             "Income",
             "Expenses"});
-			this.comboBox1.Location = new System.Drawing.Point(15, 180);
-			this.comboBox1.Name = "comboBox1";
-			this.comboBox1.Size = new System.Drawing.Size(262, 32);
-			this.comboBox1.TabIndex = 4;
+			this.category_type.Location = new System.Drawing.Point(15, 180);
+			this.category_type.Name = "category_type";
+			this.category_type.Size = new System.Drawing.Size(262, 32);
+			this.category_type.TabIndex = 4;
 			// 
 			// panel2
 			// 
 			this.panel2.BackColor = System.Drawing.Color.White;
 			this.panel2.Controls.Add(this.label4);
-			this.panel2.Controls.Add(this.dataGridView1);
+			this.panel2.Controls.Add(this.category_categoryList);
 			this.panel2.Location = new System.Drawing.Point(325, 15);
 			this.panel2.Name = "panel2";
-			this.panel2.Size = new System.Drawing.Size(809, 692);
+			this.panel2.Size = new System.Drawing.Size(809, 722);
 			this.panel2.TabIndex = 1;
 			// 
 			// label4
@@ -211,13 +213,24 @@
 			this.label4.TabIndex = 11;
 			this.label4.Text = "Categories List";
 			// 
-			// dataGridView1
+			// category_categoryList
 			// 
-			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dataGridView1.Location = new System.Drawing.Point(15, 45);
-			this.dataGridView1.Name = "dataGridView1";
-			this.dataGridView1.Size = new System.Drawing.Size(779, 677);
-			this.dataGridView1.TabIndex = 0;
+			this.category_categoryList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(121)))), ((int)(((byte)(84)))));
+			dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+			dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.category_categoryList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+			this.category_categoryList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.category_categoryList.EnableHeadersVisualStyles = false;
+			this.category_categoryList.Location = new System.Drawing.Point(15, 45);
+			this.category_categoryList.Name = "category_categoryList";
+			this.category_categoryList.RowHeadersVisible = false;
+			this.category_categoryList.Size = new System.Drawing.Size(779, 662);
+			this.category_categoryList.TabIndex = 0;
 			// 
 			// CategoryForm
 			// 
@@ -226,12 +239,12 @@
 			this.Controls.Add(this.panel2);
 			this.Controls.Add(this.panel1);
 			this.Name = "CategoryForm";
-			this.Size = new System.Drawing.Size(1150, 722);
+			this.Size = new System.Drawing.Size(1150, 752);
 			this.panel1.ResumeLayout(false);
 			this.panel1.PerformLayout();
 			this.panel2.ResumeLayout(false);
 			this.panel2.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.category_categoryList)).EndInit();
 			this.ResumeLayout(false);
 
 		}
@@ -242,15 +255,15 @@
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Panel panel2;
 		private System.Windows.Forms.Label label2;
-		private System.Windows.Forms.TextBox textBox1;
+		private System.Windows.Forms.TextBox category_category;
 		private System.Windows.Forms.Label label3;
-		private System.Windows.Forms.ComboBox comboBox2;
-		private System.Windows.Forms.ComboBox comboBox1;
-		private System.Windows.Forms.Button button1;
-		private System.Windows.Forms.Button button3;
-		private System.Windows.Forms.Button button4;
-		private System.Windows.Forms.Button button2;
-		private System.Windows.Forms.DataGridView dataGridView1;
+		private System.Windows.Forms.ComboBox category_status;
+		private System.Windows.Forms.ComboBox category_type;
+		private System.Windows.Forms.Button category_AddBtn;
+		private System.Windows.Forms.Button category_DelBtn;
+		private System.Windows.Forms.Button category_ClearBtn;
+		private System.Windows.Forms.Button category_UpdateBtn;
+		private System.Windows.Forms.DataGridView category_categoryList;
 		private System.Windows.Forms.Label label4;
 	}
 }
