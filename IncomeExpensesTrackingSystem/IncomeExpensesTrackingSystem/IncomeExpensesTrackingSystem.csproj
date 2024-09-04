@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CategoryData.cs" />
     <Compile Include="CategoryForm.cs">
       <SubType>UserControl</SubType>
     </Compile>

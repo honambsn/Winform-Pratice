@@ -18,3 +18,4 @@ create table categories(
 )
 
 select * from categories
+truncate table categories

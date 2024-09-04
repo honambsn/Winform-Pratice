@@ -28,6 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.category_DelBtn = new System.Windows.Forms.Button();
@@ -42,10 +43,10 @@
 			this.category_type = new System.Windows.Forms.ComboBox();
 			this.panel2 = new System.Windows.Forms.Panel();
 			this.label4 = new System.Windows.Forms.Label();
-			this.category_categoryList = new System.Windows.Forms.DataGridView();
+			this.category_DataGridView = new System.Windows.Forms.DataGridView();
 			this.panel1.SuspendLayout();
 			this.panel2.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.category_categoryList)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.category_DataGridView)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// panel1
@@ -69,6 +70,7 @@
 			// category_DelBtn
 			// 
 			this.category_DelBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(121)))), ((int)(((byte)(84)))));
+			this.category_DelBtn.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.category_DelBtn.FlatAppearance.BorderSize = 0;
 			this.category_DelBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(160)))), ((int)(((byte)(108)))));
 			this.category_DelBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(160)))), ((int)(((byte)(108)))));
@@ -81,10 +83,12 @@
 			this.category_DelBtn.TabIndex = 10;
 			this.category_DelBtn.Text = "Delete";
 			this.category_DelBtn.UseVisualStyleBackColor = false;
+			this.category_DelBtn.Click += new System.EventHandler(this.category_DelBtn_Click);
 			// 
 			// category_ClearBtn
 			// 
 			this.category_ClearBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(121)))), ((int)(((byte)(84)))));
+			this.category_ClearBtn.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.category_ClearBtn.FlatAppearance.BorderSize = 0;
 			this.category_ClearBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(160)))), ((int)(((byte)(108)))));
 			this.category_ClearBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(160)))), ((int)(((byte)(108)))));
@@ -97,10 +101,12 @@
 			this.category_ClearBtn.TabIndex = 9;
 			this.category_ClearBtn.Text = "Clear";
 			this.category_ClearBtn.UseVisualStyleBackColor = false;
+			this.category_ClearBtn.Click += new System.EventHandler(this.category_ClearBtn_Click);
 			// 
 			// category_UpdateBtn
 			// 
 			this.category_UpdateBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(121)))), ((int)(((byte)(84)))));
+			this.category_UpdateBtn.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.category_UpdateBtn.FlatAppearance.BorderSize = 0;
 			this.category_UpdateBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(160)))), ((int)(((byte)(108)))));
 			this.category_UpdateBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(160)))), ((int)(((byte)(108)))));
@@ -113,10 +119,12 @@
 			this.category_UpdateBtn.TabIndex = 8;
 			this.category_UpdateBtn.Text = "Update";
 			this.category_UpdateBtn.UseVisualStyleBackColor = false;
+			this.category_UpdateBtn.Click += new System.EventHandler(this.category_UpdateBtn_Click);
 			// 
 			// category_AddBtn
 			// 
 			this.category_AddBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(121)))), ((int)(((byte)(84)))));
+			this.category_AddBtn.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.category_AddBtn.FlatAppearance.BorderSize = 0;
 			this.category_AddBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(160)))), ((int)(((byte)(108)))));
 			this.category_AddBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(160)))), ((int)(((byte)(108)))));
@@ -197,7 +205,7 @@
 			// 
 			this.panel2.BackColor = System.Drawing.Color.White;
 			this.panel2.Controls.Add(this.label4);
-			this.panel2.Controls.Add(this.category_categoryList);
+			this.panel2.Controls.Add(this.category_DataGridView);
 			this.panel2.Location = new System.Drawing.Point(325, 15);
 			this.panel2.Name = "panel2";
 			this.panel2.Size = new System.Drawing.Size(809, 722);
@@ -213,24 +221,39 @@
 			this.label4.TabIndex = 11;
 			this.label4.Text = "Categories List";
 			// 
-			// category_categoryList
+			// category_DataGridView
 			// 
-			this.category_categoryList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(121)))), ((int)(((byte)(84)))));
-			dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+			this.category_DataGridView.AllowUserToAddRows = false;
+			this.category_DataGridView.AllowUserToDeleteRows = false;
+			this.category_DataGridView.AllowUserToResizeColumns = false;
+			this.category_DataGridView.AllowUserToResizeRows = false;
+			this.category_DataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+			this.category_DataGridView.BackgroundColor = System.Drawing.Color.LightCyan;
+			dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(121)))), ((int)(((byte)(84)))));
+			dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+			dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+			dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.category_DataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+			this.category_DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+			dataGridViewCellStyle2.BackColor = System.Drawing.Color.Aquamarine;
+			dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
 			dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
 			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
 			dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.category_categoryList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-			this.category_categoryList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.category_categoryList.EnableHeadersVisualStyles = false;
-			this.category_categoryList.Location = new System.Drawing.Point(15, 45);
-			this.category_categoryList.Name = "category_categoryList";
-			this.category_categoryList.RowHeadersVisible = false;
-			this.category_categoryList.Size = new System.Drawing.Size(779, 662);
-			this.category_categoryList.TabIndex = 0;
+			this.category_DataGridView.DefaultCellStyle = dataGridViewCellStyle2;
+			this.category_DataGridView.EnableHeadersVisualStyles = false;
+			this.category_DataGridView.GridColor = System.Drawing.SystemColors.Control;
+			this.category_DataGridView.Location = new System.Drawing.Point(15, 45);
+			this.category_DataGridView.Name = "category_DataGridView";
+			this.category_DataGridView.RowHeadersVisible = false;
+			this.category_DataGridView.Size = new System.Drawing.Size(779, 662);
+			this.category_DataGridView.TabIndex = 0;
+			this.category_DataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.category_DataGridView_CellClick);
 			// 
 			// CategoryForm
 			// 
@@ -244,7 +267,7 @@
 			this.panel1.PerformLayout();
 			this.panel2.ResumeLayout(false);
 			this.panel2.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.category_categoryList)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.category_DataGridView)).EndInit();
 			this.ResumeLayout(false);
 
 		}
@@ -263,7 +286,7 @@
 		private System.Windows.Forms.Button category_DelBtn;
 		private System.Windows.Forms.Button category_ClearBtn;
 		private System.Windows.Forms.Button category_UpdateBtn;
-		private System.Windows.Forms.DataGridView category_categoryList;
+		private System.Windows.Forms.DataGridView category_DataGridView;
 		private System.Windows.Forms.Label label4;
 	}
 }
