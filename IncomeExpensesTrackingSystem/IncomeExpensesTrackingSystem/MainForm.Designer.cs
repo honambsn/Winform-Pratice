@@ -41,13 +41,13 @@
 			this.dashboard_Btn = new System.Windows.Forms.Button();
 			this.label2 = new System.Windows.Forms.Label();
 			this.pictureBox2 = new System.Windows.Forms.PictureBox();
-			this.panel3 = new System.Windows.Forms.Panel();
 			this.categoryForm1 = new IncomeExpensesTrackingSystem.CategoryForm();
+			this.dashboardForm1 = new IncomeExpensesTrackingSystem.DashboardForm();
+			this.incomeForm1 = new IncomeExpensesTrackingSystem.IncomeForm();
 			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.panel2.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-			this.panel3.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// panel1
@@ -163,6 +163,7 @@
 			this.income_Btn.TabIndex = 5;
 			this.income_Btn.Text = "Income";
 			this.income_Btn.UseVisualStyleBackColor = false;
+			this.income_Btn.Click += new System.EventHandler(this.income_Btn_Click);
 			// 
 			// addCate_Btn
 			// 
@@ -179,6 +180,7 @@
 			this.addCate_Btn.TabIndex = 4;
 			this.addCate_Btn.Text = "Add Category";
 			this.addCate_Btn.UseVisualStyleBackColor = false;
+			this.addCate_Btn.Click += new System.EventHandler(this.addCate_Btn_Click);
 			// 
 			// dashboard_Btn
 			// 
@@ -195,6 +197,7 @@
 			this.dashboard_Btn.TabIndex = 3;
 			this.dashboard_Btn.Text = "Dashboard";
 			this.dashboard_Btn.UseVisualStyleBackColor = false;
+			this.dashboard_Btn.Click += new System.EventHandler(this.dashboard_Btn_Click);
 			// 
 			// label2
 			// 
@@ -217,29 +220,38 @@
 			this.pictureBox2.TabIndex = 2;
 			this.pictureBox2.TabStop = false;
 			// 
-			// panel3
-			// 
-			this.panel3.Controls.Add(this.categoryForm1);
-			this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.panel3.Location = new System.Drawing.Point(250, 48);
-			this.panel3.Name = "panel3";
-			this.panel3.Size = new System.Drawing.Size(1150, 752);
-			this.panel3.TabIndex = 2;
-			// 
 			// categoryForm1
 			// 
 			this.categoryForm1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.categoryForm1.Location = new System.Drawing.Point(0, 0);
+			this.categoryForm1.Location = new System.Drawing.Point(250, 48);
 			this.categoryForm1.Name = "categoryForm1";
 			this.categoryForm1.Size = new System.Drawing.Size(1150, 752);
-			this.categoryForm1.TabIndex = 0;
+			this.categoryForm1.TabIndex = 2;
+			// 
+			// dashboardForm1
+			// 
+			this.dashboardForm1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.dashboardForm1.Location = new System.Drawing.Point(250, 48);
+			this.dashboardForm1.Name = "dashboardForm1";
+			this.dashboardForm1.Size = new System.Drawing.Size(1150, 752);
+			this.dashboardForm1.TabIndex = 3;
+			// 
+			// incomeForm1
+			// 
+			this.incomeForm1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.incomeForm1.Location = new System.Drawing.Point(250, 48);
+			this.incomeForm1.Name = "incomeForm1";
+			this.incomeForm1.Size = new System.Drawing.Size(1150, 752);
+			this.incomeForm1.TabIndex = 4;
 			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1400, 800);
-			this.Controls.Add(this.panel3);
+			this.Controls.Add(this.incomeForm1);
+			this.Controls.Add(this.dashboardForm1);
+			this.Controls.Add(this.categoryForm1);
 			this.Controls.Add(this.panel2);
 			this.Controls.Add(this.panel1);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -252,7 +264,6 @@
 			this.panel2.ResumeLayout(false);
 			this.panel2.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-			this.panel3.ResumeLayout(false);
 			this.ResumeLayout(false);
 
 		}
@@ -271,7 +282,8 @@
 		private System.Windows.Forms.Button expense_Btn;
 		private System.Windows.Forms.Button income_Btn;
 		private System.Windows.Forms.Button addCate_Btn;
-		private System.Windows.Forms.Panel panel3;
 		private CategoryForm categoryForm1;
+		private DashboardForm dashboardForm1;
+		private IncomeForm incomeForm1;
 	}
 }

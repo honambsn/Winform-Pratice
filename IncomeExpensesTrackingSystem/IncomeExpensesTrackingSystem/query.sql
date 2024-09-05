@@ -19,3 +19,15 @@ create table categories(
 
 select * from categories
 truncate table categories
+
+create table income(
+	id int primary key identity(1,1),
+	category varchar(max) null,
+	item varchar(max) null,
+	income float null,
+	description text null,
+	date_income date null,
+	date_insert date null
+)
+
+select * from income
