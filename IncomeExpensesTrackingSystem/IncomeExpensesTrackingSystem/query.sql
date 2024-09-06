@@ -31,3 +31,15 @@ create table income(
 )
 
 select * from income
+
+create table expenses(
+	id int primary key identity(1,1),
+	category varchar(max) null,
+	item varchar(max) null,
+	cost float null,
+	description varchar(max) null,
+	date_expense date null,
+	date_insert date null
+)
+
+select * from expenses

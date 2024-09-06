@@ -21,7 +21,7 @@ namespace IncomeExpensesTrackingSystem
 		{
 			List<IncomeData> listData = new List<IncomeData> ();
 
-			using(SqlConnection  connect = new SqlConnection (connectionString))
+			using(SqlConnection  connect = new SqlConnection(connectionString))
 			{
 				connect.Open();
 

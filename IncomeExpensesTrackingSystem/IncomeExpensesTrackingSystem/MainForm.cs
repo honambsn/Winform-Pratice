@@ -54,8 +54,9 @@ namespace IncomeExpensesTrackingSystem
 		private void income_Btn_Click(object sender, EventArgs e)
 		{
 			incomeForm1.Visible = true;
-			categoryForm1.Visible = false;			
+			categoryForm1.Visible = false;
 			dashboardForm1.Visible = false;
+			expensesForm1.Visible = false;
 		}
 
 		private void addCate_Btn_Click(object sender, EventArgs e)
@@ -63,11 +64,21 @@ namespace IncomeExpensesTrackingSystem
 			categoryForm1.Visible = true;
 			dashboardForm1.Visible = false;
 			incomeForm1.Visible = false;
+			expensesForm1.Visible = false;
 		}
 
 		private void dashboard_Btn_Click(object sender, EventArgs e)
 		{
 			dashboardForm1.Visible = true;
+			incomeForm1.Visible = false;
+			categoryForm1.Visible = false;
+			expensesForm1.Visible = false;
+		}
+
+		private void expense_Btn_Click(object sender, EventArgs e)
+		{
+			expensesForm1.Visible = true;
+			dashboardForm1.Visible = false;
 			incomeForm1.Visible = false;
 			categoryForm1.Visible = false;
 		}

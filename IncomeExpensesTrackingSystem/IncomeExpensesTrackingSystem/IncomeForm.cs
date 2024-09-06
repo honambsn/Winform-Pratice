@@ -159,7 +159,7 @@ namespace IncomeExpensesTrackingSystem
 			}
 			else
 			{
-				if (MessageBox.Show("Are you sure you want to delete ID: " + getID + "?", "Confirm Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+				if (MessageBox.Show("Are you sure you want to update ID: " + getID + "?", "Confirm Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
 				{
 					try
 					{

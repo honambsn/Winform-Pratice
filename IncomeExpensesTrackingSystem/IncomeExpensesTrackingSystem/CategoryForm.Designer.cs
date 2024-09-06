@@ -228,6 +228,7 @@
 			this.category_DataGridView.AllowUserToResizeColumns = false;
 			this.category_DataGridView.AllowUserToResizeRows = false;
 			this.category_DataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+			this.category_DataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
 			this.category_DataGridView.BackgroundColor = System.Drawing.Color.LightCyan;
 			dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
 			dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(121)))), ((int)(((byte)(84)))));
