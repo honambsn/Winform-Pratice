@@ -92,7 +92,7 @@ namespace IncomeExpensesTrackingSystem
 			Application.Exit();
 		}
 
-
+		public static string username;
 
 		private void button1_Click(object sender, EventArgs e)
 		{
@@ -119,6 +119,8 @@ namespace IncomeExpensesTrackingSystem
 					object result = cmd.ExecuteScalar();
 					if (result != null)
 					{
+						
+
 						string storedHashedPassword = result as string;
 
 						// Verify the password using a secure method
@@ -126,6 +128,8 @@ namespace IncomeExpensesTrackingSystem
 
 						if (isPasswordCorrect)
 						{
+							username = login_username.Text;
+
 							MessageBox.Show("Login successful!: " + username, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
 							
 							MainForm mainF = new MainForm();

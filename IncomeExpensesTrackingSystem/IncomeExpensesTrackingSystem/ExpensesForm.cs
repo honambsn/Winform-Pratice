@@ -21,6 +21,17 @@ namespace IncomeExpensesTrackingSystem
 			displayExpenseData();
 		}
 
+		public void refreshData()
+		{
+			if (InvokeRequired){
+				Invoke((MethodInvoker)refreshData);
+				return;
+			}
+			displayCategoryList();
+			displayExpenseData();
+
+		}
+
 		public void displayCategoryList()
 		{
 

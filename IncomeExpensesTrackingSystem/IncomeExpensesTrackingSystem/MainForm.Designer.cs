@@ -30,7 +30,7 @@
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
 			this.pictureBox2 = new System.Windows.Forms.PictureBox();
-			this.label2 = new System.Windows.Forms.Label();
+			this.greetUser = new System.Windows.Forms.Label();
 			this.dashboard_Btn = new System.Windows.Forms.Button();
 			this.addCate_Btn = new System.Windows.Forms.Button();
 			this.income_Btn = new System.Windows.Forms.Button();
@@ -41,10 +41,10 @@
 			this.label1 = new System.Windows.Forms.Label();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.panel1 = new System.Windows.Forms.Panel();
-			this.categoryForm1 = new IncomeExpensesTrackingSystem.CategoryForm();
-			this.dashboardForm1 = new IncomeExpensesTrackingSystem.DashboardForm();
-			this.expensesForm1 = new IncomeExpensesTrackingSystem.ExpensesForm();
 			this.incomeForm1 = new IncomeExpensesTrackingSystem.IncomeForm();
+			this.expensesForm1 = new IncomeExpensesTrackingSystem.ExpensesForm();
+			this.dashboardForm1 = new IncomeExpensesTrackingSystem.DashboardForm();
+			this.categoryForm1 = new IncomeExpensesTrackingSystem.CategoryForm();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
 			this.panel2.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -61,16 +61,16 @@
 			this.pictureBox2.TabIndex = 2;
 			this.pictureBox2.TabStop = false;
 			// 
-			// label2
+			// greetUser
 			// 
-			this.label2.AutoSize = true;
-			this.label2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label2.ForeColor = System.Drawing.Color.White;
-			this.label2.Location = new System.Drawing.Point(17, 186);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(83, 19);
-			this.label2.TabIndex = 2;
-			this.label2.Text = "Welcome, ";
+			this.greetUser.AutoSize = true;
+			this.greetUser.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.greetUser.ForeColor = System.Drawing.Color.White;
+			this.greetUser.Location = new System.Drawing.Point(17, 186);
+			this.greetUser.Name = "greetUser";
+			this.greetUser.Size = new System.Drawing.Size(83, 19);
+			this.greetUser.TabIndex = 2;
+			this.greetUser.Text = "Welcome, ";
 			// 
 			// dashboard_Btn
 			// 
@@ -165,7 +165,7 @@
 			this.panel2.Controls.Add(this.income_Btn);
 			this.panel2.Controls.Add(this.addCate_Btn);
 			this.panel2.Controls.Add(this.dashboard_Btn);
-			this.panel2.Controls.Add(this.label2);
+			this.panel2.Controls.Add(this.greetUser);
 			this.panel2.Controls.Add(this.pictureBox2);
 			this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
 			this.panel2.Location = new System.Drawing.Point(0, 48);
@@ -222,21 +222,13 @@
 			this.panel1.Size = new System.Drawing.Size(1400, 48);
 			this.panel1.TabIndex = 0;
 			// 
-			// categoryForm1
+			// incomeForm1
 			// 
-			this.categoryForm1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.categoryForm1.Location = new System.Drawing.Point(250, 48);
-			this.categoryForm1.Name = "categoryForm1";
-			this.categoryForm1.Size = new System.Drawing.Size(1150, 752);
-			this.categoryForm1.TabIndex = 2;
-			// 
-			// dashboardForm1
-			// 
-			this.dashboardForm1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.dashboardForm1.Location = new System.Drawing.Point(250, 48);
-			this.dashboardForm1.Name = "dashboardForm1";
-			this.dashboardForm1.Size = new System.Drawing.Size(1150, 752);
-			this.dashboardForm1.TabIndex = 3;
+			this.incomeForm1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.incomeForm1.Location = new System.Drawing.Point(250, 48);
+			this.incomeForm1.Name = "incomeForm1";
+			this.incomeForm1.Size = new System.Drawing.Size(1150, 752);
+			this.incomeForm1.TabIndex = 5;
 			// 
 			// expensesForm1
 			// 
@@ -246,13 +238,21 @@
 			this.expensesForm1.Size = new System.Drawing.Size(1150, 752);
 			this.expensesForm1.TabIndex = 4;
 			// 
-			// incomeForm1
+			// dashboardForm1
 			// 
-			this.incomeForm1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.incomeForm1.Location = new System.Drawing.Point(250, 48);
-			this.incomeForm1.Name = "incomeForm1";
-			this.incomeForm1.Size = new System.Drawing.Size(1150, 752);
-			this.incomeForm1.TabIndex = 5;
+			this.dashboardForm1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.dashboardForm1.Location = new System.Drawing.Point(250, 48);
+			this.dashboardForm1.Name = "dashboardForm1";
+			this.dashboardForm1.Size = new System.Drawing.Size(1150, 752);
+			this.dashboardForm1.TabIndex = 3;
+			// 
+			// categoryForm1
+			// 
+			this.categoryForm1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.categoryForm1.Location = new System.Drawing.Point(250, 48);
+			this.categoryForm1.Name = "categoryForm1";
+			this.categoryForm1.Size = new System.Drawing.Size(1150, 752);
+			this.categoryForm1.TabIndex = 2;
 			// 
 			// MainForm
 			// 
@@ -281,7 +281,7 @@
 
 		#endregion
 		private System.Windows.Forms.PictureBox pictureBox2;
-		private System.Windows.Forms.Label label2;
+		private System.Windows.Forms.Label greetUser;
 		private System.Windows.Forms.Button dashboard_Btn;
 		private System.Windows.Forms.Button addCate_Btn;
 		private System.Windows.Forms.Button income_Btn;

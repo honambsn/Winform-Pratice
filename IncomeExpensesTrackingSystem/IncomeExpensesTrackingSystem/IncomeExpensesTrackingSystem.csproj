@@ -157,6 +157,9 @@
     <Content Include="Assets\icons8-income-25.png" />
     <Content Include="Assets\icons8-log-out-25 %281%29.png" />
     <Content Include="Assets\icons8-log-out-25.png" />
+    <Content Include="Assets\icons8-mastercard-credit-card-100.png" />
+    <Content Include="Assets\icons8-money-100-coin.png" />
+    <Content Include="Assets\icons8-money-100.png" />
     <Content Include="Assets\icons8-user-94.png" />
     <Content Include="Assets\wk.jpg" />
     <Content Include="query.sql" />

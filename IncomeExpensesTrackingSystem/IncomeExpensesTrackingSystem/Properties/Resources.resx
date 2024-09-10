@@ -121,11 +121,17 @@
   <data name="icons8-dashboard-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\icons8-dashboard-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icons8-mastercard-credit-card-100" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\icons8-mastercard-credit-card-100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icons8-income-25" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\icons8-income-25.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-category-25 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\icons8-category-25 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8-money-100" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\icons8-money-100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-expense-25" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\icons8-expense-25.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -133,10 +139,13 @@
   <data name="icons8-dashboard-25" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\icons8-dashboard-25.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icons8-log-out-25 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\icons8-log-out-25 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icons8-category-25" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\icons8-category-25.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-log-out-25 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\icons8-log-out-25 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-money-100-coin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\icons8-money-100-coin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

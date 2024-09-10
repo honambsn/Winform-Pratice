@@ -32,74 +32,74 @@
 			this.label1 = new System.Windows.Forms.Label();
 			this.panel3 = new System.Windows.Forms.Panel();
 			this.label12 = new System.Windows.Forms.Label();
-			this.pictureBox2 = new System.Windows.Forms.PictureBox();
 			this.income_yesterdayIncome = new System.Windows.Forms.Label();
 			this.panel4 = new System.Windows.Forms.Panel();
 			this.label13 = new System.Windows.Forms.Label();
-			this.pictureBox3 = new System.Windows.Forms.PictureBox();
 			this.income_monthIncome = new System.Windows.Forms.Label();
 			this.panel5 = new System.Windows.Forms.Panel();
 			this.label14 = new System.Windows.Forms.Label();
-			this.pictureBox4 = new System.Windows.Forms.PictureBox();
 			this.income_yearIncome = new System.Windows.Forms.Label();
 			this.panel2 = new System.Windows.Forms.Panel();
 			this.label11 = new System.Windows.Forms.Label();
-			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.income_todayIncome = new System.Windows.Forms.Label();
 			this.panel6 = new System.Windows.Forms.Panel();
 			this.label10 = new System.Windows.Forms.Label();
 			this.panel7 = new System.Windows.Forms.Panel();
 			this.label16 = new System.Windows.Forms.Label();
 			this.expenses_yesterdayExpense = new System.Windows.Forms.Label();
-			this.pictureBox6 = new System.Windows.Forms.PictureBox();
 			this.panel8 = new System.Windows.Forms.Panel();
 			this.label17 = new System.Windows.Forms.Label();
 			this.expenses_monthExpense = new System.Windows.Forms.Label();
-			this.pictureBox7 = new System.Windows.Forms.PictureBox();
 			this.panel9 = new System.Windows.Forms.Panel();
 			this.label18 = new System.Windows.Forms.Label();
 			this.expenses_yearExpense = new System.Windows.Forms.Label();
-			this.pictureBox8 = new System.Windows.Forms.PictureBox();
 			this.panel10 = new System.Windows.Forms.Panel();
 			this.label15 = new System.Windows.Forms.Label();
-			this.pictureBox5 = new System.Windows.Forms.PictureBox();
 			this.expenses_todayExpense = new System.Windows.Forms.Label();
 			this.panel11 = new System.Windows.Forms.Panel();
 			this.label19 = new System.Windows.Forms.Label();
 			this.panel15 = new System.Windows.Forms.Panel();
 			this.label21 = new System.Windows.Forms.Label();
-			this.pictureBox9 = new System.Windows.Forms.PictureBox();
-			this.label22 = new System.Windows.Forms.Label();
+			this.totalIncome = new System.Windows.Forms.Label();
 			this.panel12 = new System.Windows.Forms.Panel();
 			this.label20 = new System.Windows.Forms.Label();
 			this.panel13 = new System.Windows.Forms.Panel();
 			this.label23 = new System.Windows.Forms.Label();
+			this.totalExpense = new System.Windows.Forms.Label();
 			this.pictureBox10 = new System.Windows.Forms.PictureBox();
-			this.label24 = new System.Windows.Forms.Label();
+			this.pictureBox9 = new System.Windows.Forms.PictureBox();
+			this.pictureBox6 = new System.Windows.Forms.PictureBox();
+			this.pictureBox7 = new System.Windows.Forms.PictureBox();
+			this.pictureBox8 = new System.Windows.Forms.PictureBox();
+			this.pictureBox5 = new System.Windows.Forms.PictureBox();
+			this.pictureBox2 = new System.Windows.Forms.PictureBox();
+			this.pictureBox3 = new System.Windows.Forms.PictureBox();
+			this.pictureBox4 = new System.Windows.Forms.PictureBox();
+			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.panel1.SuspendLayout();
 			this.panel3.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
 			this.panel4.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
 			this.panel5.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
 			this.panel2.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.panel6.SuspendLayout();
 			this.panel7.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
 			this.panel8.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
 			this.panel9.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
 			this.panel10.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
 			this.panel11.SuspendLayout();
 			this.panel15.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
 			this.panel12.SuspendLayout();
 			this.panel13.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// panel1
@@ -147,14 +147,6 @@
 			this.label12.TabIndex = 5;
 			this.label12.Text = "Yesterday\'s Income";
 			// 
-			// pictureBox2
-			// 
-			this.pictureBox2.Location = new System.Drawing.Point(15, 14);
-			this.pictureBox2.Name = "pictureBox2";
-			this.pictureBox2.Size = new System.Drawing.Size(57, 55);
-			this.pictureBox2.TabIndex = 4;
-			this.pictureBox2.TabStop = false;
-			// 
 			// income_yesterdayIncome
 			// 
 			this.income_yesterdayIncome.AutoSize = true;
@@ -187,14 +179,6 @@
 			this.label13.Size = new System.Drawing.Size(144, 20);
 			this.label13.TabIndex = 6;
 			this.label13.Text = "This Month Income";
-			// 
-			// pictureBox3
-			// 
-			this.pictureBox3.Location = new System.Drawing.Point(16, 14);
-			this.pictureBox3.Name = "pictureBox3";
-			this.pictureBox3.Size = new System.Drawing.Size(57, 55);
-			this.pictureBox3.TabIndex = 5;
-			this.pictureBox3.TabStop = false;
 			// 
 			// income_monthIncome
 			// 
@@ -229,14 +213,6 @@
 			this.label14.TabIndex = 7;
 			this.label14.Text = "This Year Income";
 			// 
-			// pictureBox4
-			// 
-			this.pictureBox4.Location = new System.Drawing.Point(17, 14);
-			this.pictureBox4.Name = "pictureBox4";
-			this.pictureBox4.Size = new System.Drawing.Size(57, 55);
-			this.pictureBox4.TabIndex = 6;
-			this.pictureBox4.TabStop = false;
-			// 
 			// income_yearIncome
 			// 
 			this.income_yearIncome.AutoSize = true;
@@ -269,14 +245,6 @@
 			this.label11.Size = new System.Drawing.Size(120, 20);
 			this.label11.TabIndex = 4;
 			this.label11.Text = "Today\'s Income";
-			// 
-			// pictureBox1
-			// 
-			this.pictureBox1.Location = new System.Drawing.Point(18, 14);
-			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(57, 55);
-			this.pictureBox1.TabIndex = 3;
-			this.pictureBox1.TabStop = false;
 			// 
 			// income_todayIncome
 			// 
@@ -345,14 +313,6 @@
 			this.expenses_yesterdayExpense.TabIndex = 8;
 			this.expenses_yesterdayExpense.Text = "0";
 			// 
-			// pictureBox6
-			// 
-			this.pictureBox6.Location = new System.Drawing.Point(15, 15);
-			this.pictureBox6.Name = "pictureBox6";
-			this.pictureBox6.Size = new System.Drawing.Size(57, 55);
-			this.pictureBox6.TabIndex = 8;
-			this.pictureBox6.TabStop = false;
-			// 
 			// panel8
 			// 
 			this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(121)))), ((int)(((byte)(84)))));
@@ -385,14 +345,6 @@
 			this.expenses_monthExpense.Size = new System.Drawing.Size(21, 24);
 			this.expenses_monthExpense.TabIndex = 9;
 			this.expenses_monthExpense.Text = "0";
-			// 
-			// pictureBox7
-			// 
-			this.pictureBox7.Location = new System.Drawing.Point(16, 15);
-			this.pictureBox7.Name = "pictureBox7";
-			this.pictureBox7.Size = new System.Drawing.Size(57, 55);
-			this.pictureBox7.TabIndex = 9;
-			this.pictureBox7.TabStop = false;
 			// 
 			// panel9
 			// 
@@ -427,14 +379,6 @@
 			this.expenses_yearExpense.TabIndex = 10;
 			this.expenses_yearExpense.Text = "0";
 			// 
-			// pictureBox8
-			// 
-			this.pictureBox8.Location = new System.Drawing.Point(17, 15);
-			this.pictureBox8.Name = "pictureBox8";
-			this.pictureBox8.Size = new System.Drawing.Size(57, 55);
-			this.pictureBox8.TabIndex = 10;
-			this.pictureBox8.TabStop = false;
-			// 
 			// panel10
 			// 
 			this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(121)))), ((int)(((byte)(84)))));
@@ -456,14 +400,6 @@
 			this.label15.Size = new System.Drawing.Size(137, 20);
 			this.label15.TabIndex = 8;
 			this.label15.Text = "Today\'s Expenses";
-			// 
-			// pictureBox5
-			// 
-			this.pictureBox5.Location = new System.Drawing.Point(18, 15);
-			this.pictureBox5.Name = "pictureBox5";
-			this.pictureBox5.Size = new System.Drawing.Size(57, 55);
-			this.pictureBox5.TabIndex = 7;
-			this.pictureBox5.TabStop = false;
 			// 
 			// expenses_todayExpense
 			// 
@@ -501,7 +437,7 @@
 			this.panel15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(121)))), ((int)(((byte)(84)))));
 			this.panel15.Controls.Add(this.label21);
 			this.panel15.Controls.Add(this.pictureBox9);
-			this.panel15.Controls.Add(this.label22);
+			this.panel15.Controls.Add(this.totalIncome);
 			this.panel15.Location = new System.Drawing.Point(15, 43);
 			this.panel15.Name = "panel15";
 			this.panel15.Size = new System.Drawing.Size(509, 152);
@@ -514,28 +450,20 @@
 			this.label21.ForeColor = System.Drawing.Color.White;
 			this.label21.Location = new System.Drawing.Point(73, 85);
 			this.label21.Name = "label21";
-			this.label21.Size = new System.Drawing.Size(137, 20);
+			this.label21.Size = new System.Drawing.Size(120, 20);
 			this.label21.TabIndex = 11;
-			this.label21.Text = "Today\'s Expenses";
+			this.label21.Text = "Today\'s Income";
 			// 
-			// pictureBox9
+			// totalIncome
 			// 
-			this.pictureBox9.Location = new System.Drawing.Point(18, 17);
-			this.pictureBox9.Name = "pictureBox9";
-			this.pictureBox9.Size = new System.Drawing.Size(57, 55);
-			this.pictureBox9.TabIndex = 9;
-			this.pictureBox9.TabStop = false;
-			// 
-			// label22
-			// 
-			this.label22.AutoSize = true;
-			this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label22.ForeColor = System.Drawing.Color.White;
-			this.label22.Location = new System.Drawing.Point(92, 17);
-			this.label22.Name = "label22";
-			this.label22.Size = new System.Drawing.Size(21, 24);
-			this.label22.TabIndex = 10;
-			this.label22.Text = "0";
+			this.totalIncome.AutoSize = true;
+			this.totalIncome.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.totalIncome.ForeColor = System.Drawing.Color.White;
+			this.totalIncome.Location = new System.Drawing.Point(92, 17);
+			this.totalIncome.Name = "totalIncome";
+			this.totalIncome.Size = new System.Drawing.Size(21, 24);
+			this.totalIncome.TabIndex = 10;
+			this.totalIncome.Text = "0";
 			// 
 			// panel12
 			// 
@@ -562,7 +490,7 @@
 			this.panel13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(121)))), ((int)(((byte)(84)))));
 			this.panel13.Controls.Add(this.label23);
 			this.panel13.Controls.Add(this.pictureBox10);
-			this.panel13.Controls.Add(this.label24);
+			this.panel13.Controls.Add(this.totalExpense);
 			this.panel13.Location = new System.Drawing.Point(15, 43);
 			this.panel13.Name = "panel13";
 			this.panel13.Size = new System.Drawing.Size(507, 152);
@@ -579,24 +507,116 @@
 			this.label23.TabIndex = 11;
 			this.label23.Text = "Today\'s Expenses";
 			// 
+			// totalExpense
+			// 
+			this.totalExpense.AutoSize = true;
+			this.totalExpense.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.totalExpense.ForeColor = System.Drawing.Color.White;
+			this.totalExpense.Location = new System.Drawing.Point(91, 17);
+			this.totalExpense.Name = "totalExpense";
+			this.totalExpense.Size = new System.Drawing.Size(21, 24);
+			this.totalExpense.TabIndex = 10;
+			this.totalExpense.Text = "0";
+			// 
 			// pictureBox10
 			// 
+			this.pictureBox10.Image = global::IncomeExpensesTrackingSystem.Properties.Resources.icons8_money_100_coin;
 			this.pictureBox10.Location = new System.Drawing.Point(17, 17);
 			this.pictureBox10.Name = "pictureBox10";
 			this.pictureBox10.Size = new System.Drawing.Size(57, 55);
+			this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.pictureBox10.TabIndex = 9;
 			this.pictureBox10.TabStop = false;
 			// 
-			// label24
+			// pictureBox9
 			// 
-			this.label24.AutoSize = true;
-			this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label24.ForeColor = System.Drawing.Color.White;
-			this.label24.Location = new System.Drawing.Point(91, 17);
-			this.label24.Name = "label24";
-			this.label24.Size = new System.Drawing.Size(21, 24);
-			this.label24.TabIndex = 10;
-			this.label24.Text = "0";
+			this.pictureBox9.Image = global::IncomeExpensesTrackingSystem.Properties.Resources.icons8_money_100_coin;
+			this.pictureBox9.Location = new System.Drawing.Point(18, 17);
+			this.pictureBox9.Name = "pictureBox9";
+			this.pictureBox9.Size = new System.Drawing.Size(57, 55);
+			this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.pictureBox9.TabIndex = 9;
+			this.pictureBox9.TabStop = false;
+			// 
+			// pictureBox6
+			// 
+			this.pictureBox6.Image = global::IncomeExpensesTrackingSystem.Properties.Resources.icons8_mastercard_credit_card_100;
+			this.pictureBox6.Location = new System.Drawing.Point(15, 15);
+			this.pictureBox6.Name = "pictureBox6";
+			this.pictureBox6.Size = new System.Drawing.Size(57, 55);
+			this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.pictureBox6.TabIndex = 8;
+			this.pictureBox6.TabStop = false;
+			// 
+			// pictureBox7
+			// 
+			this.pictureBox7.Image = global::IncomeExpensesTrackingSystem.Properties.Resources.icons8_mastercard_credit_card_100;
+			this.pictureBox7.Location = new System.Drawing.Point(16, 15);
+			this.pictureBox7.Name = "pictureBox7";
+			this.pictureBox7.Size = new System.Drawing.Size(57, 55);
+			this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.pictureBox7.TabIndex = 9;
+			this.pictureBox7.TabStop = false;
+			// 
+			// pictureBox8
+			// 
+			this.pictureBox8.Image = global::IncomeExpensesTrackingSystem.Properties.Resources.icons8_mastercard_credit_card_100;
+			this.pictureBox8.Location = new System.Drawing.Point(17, 15);
+			this.pictureBox8.Name = "pictureBox8";
+			this.pictureBox8.Size = new System.Drawing.Size(57, 55);
+			this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.pictureBox8.TabIndex = 10;
+			this.pictureBox8.TabStop = false;
+			// 
+			// pictureBox5
+			// 
+			this.pictureBox5.Image = global::IncomeExpensesTrackingSystem.Properties.Resources.icons8_mastercard_credit_card_100;
+			this.pictureBox5.Location = new System.Drawing.Point(18, 15);
+			this.pictureBox5.Name = "pictureBox5";
+			this.pictureBox5.Size = new System.Drawing.Size(57, 55);
+			this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.pictureBox5.TabIndex = 7;
+			this.pictureBox5.TabStop = false;
+			// 
+			// pictureBox2
+			// 
+			this.pictureBox2.Image = global::IncomeExpensesTrackingSystem.Properties.Resources.icons8_money_100;
+			this.pictureBox2.Location = new System.Drawing.Point(15, 14);
+			this.pictureBox2.Name = "pictureBox2";
+			this.pictureBox2.Size = new System.Drawing.Size(57, 55);
+			this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.pictureBox2.TabIndex = 4;
+			this.pictureBox2.TabStop = false;
+			// 
+			// pictureBox3
+			// 
+			this.pictureBox3.Image = global::IncomeExpensesTrackingSystem.Properties.Resources.icons8_money_100;
+			this.pictureBox3.Location = new System.Drawing.Point(16, 14);
+			this.pictureBox3.Name = "pictureBox3";
+			this.pictureBox3.Size = new System.Drawing.Size(57, 55);
+			this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.pictureBox3.TabIndex = 5;
+			this.pictureBox3.TabStop = false;
+			// 
+			// pictureBox4
+			// 
+			this.pictureBox4.Image = global::IncomeExpensesTrackingSystem.Properties.Resources.icons8_money_100;
+			this.pictureBox4.Location = new System.Drawing.Point(17, 14);
+			this.pictureBox4.Name = "pictureBox4";
+			this.pictureBox4.Size = new System.Drawing.Size(57, 55);
+			this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.pictureBox4.TabIndex = 6;
+			this.pictureBox4.TabStop = false;
+			// 
+			// pictureBox1
+			// 
+			this.pictureBox1.Image = global::IncomeExpensesTrackingSystem.Properties.Resources.icons8_money_100;
+			this.pictureBox1.Location = new System.Drawing.Point(18, 14);
+			this.pictureBox1.Name = "pictureBox1";
+			this.pictureBox1.Size = new System.Drawing.Size(57, 55);
+			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.pictureBox1.TabIndex = 3;
+			this.pictureBox1.TabStop = false;
 			// 
 			// DashboardForm
 			// 
@@ -612,40 +632,40 @@
 			this.panel1.PerformLayout();
 			this.panel3.ResumeLayout(false);
 			this.panel3.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
 			this.panel4.ResumeLayout(false);
 			this.panel4.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
 			this.panel5.ResumeLayout(false);
 			this.panel5.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
 			this.panel2.ResumeLayout(false);
 			this.panel2.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.panel6.ResumeLayout(false);
 			this.panel6.PerformLayout();
 			this.panel7.ResumeLayout(false);
 			this.panel7.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
 			this.panel8.ResumeLayout(false);
 			this.panel8.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
 			this.panel9.ResumeLayout(false);
 			this.panel9.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
 			this.panel10.ResumeLayout(false);
 			this.panel10.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
 			this.panel11.ResumeLayout(false);
 			this.panel11.PerformLayout();
 			this.panel15.ResumeLayout(false);
 			this.panel15.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
 			this.panel12.ResumeLayout(false);
 			this.panel12.PerformLayout();
 			this.panel13.ResumeLayout(false);
 			this.panel13.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.ResumeLayout(false);
 
 		}
@@ -696,9 +716,9 @@
 		private System.Windows.Forms.Label label20;
 		private System.Windows.Forms.Label label21;
 		private System.Windows.Forms.PictureBox pictureBox9;
-		private System.Windows.Forms.Label label22;
+		private System.Windows.Forms.Label totalIncome;
 		private System.Windows.Forms.Label label23;
 		private System.Windows.Forms.PictureBox pictureBox10;
-		private System.Windows.Forms.Label label24;
+		private System.Windows.Forms.Label totalExpense;
 	}
 }

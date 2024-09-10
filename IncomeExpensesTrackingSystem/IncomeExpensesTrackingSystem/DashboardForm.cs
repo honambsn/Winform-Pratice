@@ -20,14 +20,43 @@ namespace IncomeExpensesTrackingSystem
 		{
 			InitializeComponent();
 			CenterPanelInForm();
+			
 			incomeTodayIncome();
 			incomeYesterdayIncome();
 			incomeThisMonthIncome();
 			incomeThisYearIncome();
+			
 			expenseTodayExpense();
 			expensesYesterdayExpense();
 			expenseThisMonthExpense();
 			expenseThisYearExpense();
+
+			incomeTotalIncome();
+
+			expenseTotalExpense();
+		}
+
+		public void refreshData()
+		{
+			if (InvokeRequired)
+			{
+				Invoke((MethodInvoker)refreshData);
+				return;
+			}
+
+			incomeTodayIncome();
+			incomeYesterdayIncome();
+			incomeThisMonthIncome();
+			incomeThisYearIncome();
+
+			expenseTodayExpense();
+			expensesYesterdayExpense();
+			expenseThisMonthExpense();
+			expenseThisYearExpense();
+
+			incomeTotalIncome();
+
+			expenseTotalExpense();
 		}
 
 		private void CenterPanelInForm()
@@ -177,7 +206,33 @@ namespace IncomeExpensesTrackingSystem
 			}
 		}
 
+		public void incomeTotalIncome()
+		{
+			using (SqlConnection con = new SqlConnection(connectionString))
+			{
+				con.Open();
 
+				string query = "select sum(income) from income";
+
+				using (SqlCommand cmd = new SqlCommand(query, con))
+				{
+					object result = cmd.ExecuteScalar();
+
+					if (result != DBNull.Value)
+					{
+						decimal totalCost = Convert.ToDecimal(result);
+
+						totalIncome.Text = "$" + totalCost.ToString("0.00");
+						//income_yesterdayIncome.Text = yesterdayCost.ToString("C");
+					}
+					else
+					{
+						totalIncome.Text = "$0.00";
+						//income_yearIncome
+					}
+				}
+			}
+		}
 
 		//EXPENSES
 		public void expenseTodayExpense()
@@ -304,6 +359,34 @@ namespace IncomeExpensesTrackingSystem
 					else
 					{
 						expenses_yearExpense.Text = "$0.00";
+						//income_yearIncome
+					}
+				}
+			}
+		}
+
+		public void expenseTotalExpense()
+		{
+			using (SqlConnection con = new SqlConnection(connectionString))
+			{
+				con.Open();
+
+				string query = "select sum(cost) from expenses";
+
+				using (SqlCommand cmd = new SqlCommand(query, con))
+				{
+					object result = cmd.ExecuteScalar();
+
+					if (result != DBNull.Value)
+					{
+						decimal totalCost = Convert.ToDecimal(result);
+
+						totalExpense.Text = "$" + totalCost.ToString("0.00");
+						//income_yesterdayIncome.Text = yesterdayCost.ToString("C");
+					}
+					else
+					{
+						totalExpense.Text = "$0.00";
 						//income_yearIncome
 					}
 				}

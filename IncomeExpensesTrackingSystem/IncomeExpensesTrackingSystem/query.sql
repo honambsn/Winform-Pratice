@@ -43,3 +43,6 @@ create table expenses(
 )
 
 select * from expenses
+
+truncate table income
+truncate table expenses
