@@ -17,7 +17,7 @@ namespace Pet_Shop.Views
 
 		string SearchValue { get; set; }
 		bool IsEdit { get; set; }
-		bool IsSuccessfull { get; set; }
+		bool IsSuccessful { get; set; }
 		string Message { get; set; }
 
 
