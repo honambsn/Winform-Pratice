@@ -28,4 +28,8 @@ insert into Pet values('Jasper', 'Dog', 'Silver')
 go
 
 
-select * from Pet
+select * from Pet order by Pet_Id asc
+SELECT * FROM Pet where Pet_Id=100011 or Pet_Name like 'Loki'+'%' order by Pet_Id asc
+
+ALTER TABLE Pet
+ADD Pet_Breed VARCHAR(255) DEFAULT 'Unknown';

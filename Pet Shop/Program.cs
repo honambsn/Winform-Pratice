@@ -1,9 +1,16 @@
-﻿using Pet_Shop.Views;
+﻿using Pet_Shop.Models;
+using Pet_Shop.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Configuration;
+
+
+using Pet_Shop._Repositories;
+using Pet_Shop.Presenters;
+
 
 namespace Pet_Shop
 {
@@ -17,7 +24,13 @@ namespace Pet_Shop
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new PetView());
+			//string sqlConnectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\honam\\Documents\\petshop.mdf;Integrated Security=True;Connect Timeout=30";
+			string sqlConnectionString = ConfigurationManager.ConnectionStrings["sqlConnectionString"].ConnectionString;
+			IPetView view = new PetView();
+			IPetRepository repository = new PetRepository(sqlConnectionString);
+			new PetPresenter(view, repository);
+			//Application.Run(new PetView());
+			Application.Run((Form)view);
 		}
 	}
 }

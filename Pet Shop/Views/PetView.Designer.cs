@@ -32,8 +32,14 @@
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.tabPagePetDetail = new System.Windows.Forms.TabPage();
+			this.button4 = new System.Windows.Forms.Button();
+			this.button3 = new System.Windows.Forms.Button();
+			this.button2 = new System.Windows.Forms.Button();
+			this.dataGridView1 = new System.Windows.Forms.DataGridView();
+			this.btnSearch = new System.Windows.Forms.Button();
+			this.txtSearch = new System.Windows.Forms.TextBox();
+			this.label6 = new System.Windows.Forms.Label();
 			this.tabPage2 = new System.Windows.Forms.TabPage();
-			this.tabPage3 = new System.Windows.Forms.TabPage();
 			this.cancel_btn = new System.Windows.Forms.Button();
 			this.txtPetType = new System.Windows.Forms.TextBox();
 			this.save_btn = new System.Windows.Forms.Button();
@@ -44,18 +50,12 @@
 			this.label5 = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
-			this.txtSearch = new System.Windows.Forms.TextBox();
-			this.label6 = new System.Windows.Forms.Label();
-			this.btnSearch = new System.Windows.Forms.Button();
-			this.dataGridView1 = new System.Windows.Forms.DataGridView();
-			this.button2 = new System.Windows.Forms.Button();
-			this.button3 = new System.Windows.Forms.Button();
-			this.button4 = new System.Windows.Forms.Button();
+			this.tabPage3 = new System.Windows.Forms.TabPage();
 			this.panel1.SuspendLayout();
 			this.tabControl1.SuspendLayout();
 			this.tabPagePetDetail.SuspendLayout();
-			this.tabPage2.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+			this.tabPage2.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// label1
@@ -109,6 +109,75 @@
 			this.tabPagePetDetail.Text = "Pet List";
 			this.tabPagePetDetail.UseVisualStyleBackColor = true;
 			// 
+			// button4
+			// 
+			this.button4.FlatAppearance.BorderSize = 0;
+			this.button4.Location = new System.Drawing.Point(692, 165);
+			this.button4.Name = "button4";
+			this.button4.Size = new System.Drawing.Size(80, 29);
+			this.button4.TabIndex = 25;
+			this.button4.Text = "Delete";
+			this.button4.UseVisualStyleBackColor = true;
+			// 
+			// button3
+			// 
+			this.button3.FlatAppearance.BorderSize = 0;
+			this.button3.Location = new System.Drawing.Point(693, 121);
+			this.button3.Name = "button3";
+			this.button3.Size = new System.Drawing.Size(80, 29);
+			this.button3.TabIndex = 24;
+			this.button3.Text = "Edit";
+			this.button3.UseVisualStyleBackColor = true;
+			// 
+			// button2
+			// 
+			this.button2.FlatAppearance.BorderSize = 0;
+			this.button2.Location = new System.Drawing.Point(692, 75);
+			this.button2.Name = "button2";
+			this.button2.Size = new System.Drawing.Size(80, 29);
+			this.button2.TabIndex = 23;
+			this.button2.Text = "Add";
+			this.button2.UseVisualStyleBackColor = true;
+			// 
+			// dataGridView1
+			// 
+			this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+			this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dataGridView1.Location = new System.Drawing.Point(11, 75);
+			this.dataGridView1.Name = "dataGridView1";
+			this.dataGridView1.Size = new System.Drawing.Size(664, 284);
+			this.dataGridView1.TabIndex = 22;
+			// 
+			// btnSearch
+			// 
+			this.btnSearch.FlatAppearance.BorderSize = 0;
+			this.btnSearch.Location = new System.Drawing.Point(551, 38);
+			this.btnSearch.Name = "btnSearch";
+			this.btnSearch.Size = new System.Drawing.Size(124, 31);
+			this.btnSearch.TabIndex = 21;
+			this.btnSearch.Text = "Search";
+			this.btnSearch.UseVisualStyleBackColor = true;
+			// 
+			// txtSearch
+			// 
+			this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtSearch.Location = new System.Drawing.Point(12, 40);
+			this.txtSearch.Name = "txtSearch";
+			this.txtSearch.Size = new System.Drawing.Size(533, 29);
+			this.txtSearch.TabIndex = 19;
+			// 
+			// label6
+			// 
+			this.label6.AutoSize = true;
+			this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label6.Location = new System.Drawing.Point(7, 14);
+			this.label6.Name = "label6";
+			this.label6.Size = new System.Drawing.Size(58, 20);
+			this.label6.TabIndex = 18;
+			this.label6.Text = "Pet ID:";
+			// 
 			// tabPage2
 			// 
 			this.tabPage2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -129,16 +198,6 @@
 			this.tabPage2.TabIndex = 1;
 			this.tabPage2.Text = "Pet Details";
 			this.tabPage2.UseVisualStyleBackColor = true;
-			// 
-			// tabPage3
-			// 
-			this.tabPage3.Location = new System.Drawing.Point(4, 29);
-			this.tabPage3.Name = "tabPage3";
-			this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage3.Size = new System.Drawing.Size(792, 347);
-			this.tabPage3.TabIndex = 2;
-			this.tabPage3.Text = "Information";
-			this.tabPage3.UseVisualStyleBackColor = true;
 			// 
 			// cancel_btn
 			// 
@@ -232,72 +291,15 @@
 			this.label2.TabIndex = 13;
 			this.label2.Text = "Pet ID:";
 			// 
-			// txtSearch
+			// tabPage3
 			// 
-			this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtSearch.Location = new System.Drawing.Point(12, 40);
-			this.txtSearch.Name = "txtSearch";
-			this.txtSearch.Size = new System.Drawing.Size(533, 29);
-			this.txtSearch.TabIndex = 19;
-			// 
-			// label6
-			// 
-			this.label6.AutoSize = true;
-			this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label6.Location = new System.Drawing.Point(7, 14);
-			this.label6.Name = "label6";
-			this.label6.Size = new System.Drawing.Size(58, 20);
-			this.label6.TabIndex = 18;
-			this.label6.Text = "Pet ID:";
-			// 
-			// btnSearch
-			// 
-			this.btnSearch.FlatAppearance.BorderSize = 0;
-			this.btnSearch.Location = new System.Drawing.Point(551, 38);
-			this.btnSearch.Name = "btnSearch";
-			this.btnSearch.Size = new System.Drawing.Size(124, 31);
-			this.btnSearch.TabIndex = 21;
-			this.btnSearch.Text = "Search";
-			this.btnSearch.UseVisualStyleBackColor = true;
-			// 
-			// dataGridView1
-			// 
-			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dataGridView1.Location = new System.Drawing.Point(11, 75);
-			this.dataGridView1.Name = "dataGridView1";
-			this.dataGridView1.Size = new System.Drawing.Size(664, 284);
-			this.dataGridView1.TabIndex = 22;
-			// 
-			// button2
-			// 
-			this.button2.FlatAppearance.BorderSize = 0;
-			this.button2.Location = new System.Drawing.Point(692, 75);
-			this.button2.Name = "button2";
-			this.button2.Size = new System.Drawing.Size(80, 29);
-			this.button2.TabIndex = 23;
-			this.button2.Text = "Add";
-			this.button2.UseVisualStyleBackColor = true;
-			// 
-			// button3
-			// 
-			this.button3.FlatAppearance.BorderSize = 0;
-			this.button3.Location = new System.Drawing.Point(693, 121);
-			this.button3.Name = "button3";
-			this.button3.Size = new System.Drawing.Size(80, 29);
-			this.button3.TabIndex = 24;
-			this.button3.Text = "Edit";
-			this.button3.UseVisualStyleBackColor = true;
-			// 
-			// button4
-			// 
-			this.button4.FlatAppearance.BorderSize = 0;
-			this.button4.Location = new System.Drawing.Point(692, 165);
-			this.button4.Name = "button4";
-			this.button4.Size = new System.Drawing.Size(80, 29);
-			this.button4.TabIndex = 25;
-			this.button4.Text = "Delete";
-			this.button4.UseVisualStyleBackColor = true;
+			this.tabPage3.Location = new System.Drawing.Point(4, 29);
+			this.tabPage3.Name = "tabPage3";
+			this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+			this.tabPage3.Size = new System.Drawing.Size(792, 367);
+			this.tabPage3.TabIndex = 2;
+			this.tabPage3.Text = "Information";
+			this.tabPage3.UseVisualStyleBackColor = true;
 			// 
 			// PetView
 			// 
@@ -314,9 +316,9 @@
 			this.tabControl1.ResumeLayout(false);
 			this.tabPagePetDetail.ResumeLayout(false);
 			this.tabPagePetDetail.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
 			this.tabPage2.ResumeLayout(false);
 			this.tabPage2.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
 			this.ResumeLayout(false);
 
 		}

@@ -20,7 +20,7 @@ namespace Pet_Shop.Views
 		{
 			InitializeComponent();
 			AssociateAndRaiseViewEvents();
-			tabControl1.TabPages.Remove(tabPagePetDetail);
+			//tabControl1.TabPages.Remove(tabPagePetDetail);
 		}
 
 		private void AssociateAndRaiseViewEvents()
