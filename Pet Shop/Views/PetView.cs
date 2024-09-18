@@ -20,11 +20,16 @@ namespace Pet_Shop.Views
 		{
 			InitializeComponent();
 			AssociateAndRaiseViewEvents();
+			//txtSearch.TextChanged += new EventHandler();
 			//tabControl1.TabPages.Remove(tabPagePetDetail);
 		}
 
 		private void AssociateAndRaiseViewEvents()
 		{
+			txtSearch.TextChanged += (s, e) =>
+			{
+				SearchEvent?.Invoke(this, EventArgs.Empty);
+			};
 			btnSearch.Click += delegate { SearchEvent?.Invoke(this, EventArgs.Empty); };
 			txtSearch.KeyDown += (s, e) =>
 			{

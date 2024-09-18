@@ -36,7 +36,7 @@ namespace Pet_Shop._Repositories
 			using (var connection = new SqlConnection(ConnectionString))
 			{
 				connection.Open();
-				using (var command = new SqlCommand("SELECT * FROM Pet order by Pet_Id desc", connection))
+				using (var command = new SqlCommand("SELECT * FROM Pet order by Pet_Id asc", connection))
 				{
 					using (var reader = command.ExecuteReader())
 					{
@@ -67,11 +67,48 @@ namespace Pet_Shop._Repositories
 
 		public IEnumerable<PetModel> GetByType(string type)
 		{
-			throw new NotImplementedException();
+			var petList = new List<PetModel>();
+
+			// Ensure the type is not null or empty
+			string petType = type;
+
+			using (var connection = new SqlConnection(ConnectionString))
+			using (var command = new SqlCommand())
+			{
+				connection.Open();
+
+				command.Connection = connection;
+				// Update the SQL query to only search by Pet_Type
+				command.CommandText = "SELECT * FROM Pet WHERE Pet_Type LIKE @petType + '%' ORDER BY Pet_Id ASC";
+
+				// Add the parameter for the type search
+				command.Parameters.AddWithValue("@petType", SqlDbType.NVarChar).Value = petType;
+
+				using (var reader = command.ExecuteReader())
+				{
+					while (reader.Read())
+					{
+						var petModel = new PetModel
+						{
+							Id = (int)reader["Pet_Id"],
+							Name = reader["Pet_Name"].ToString(),
+							Type = reader["Pet_Type"].ToString(),
+							Colour = reader["Pet_Colour"].ToString()
+						};
+
+						petList.Add(petModel);
+					}
+				}
+			}
+
+			return petList;
 		}
+
+
 
 		public IEnumerable<PetModel> GetByValue(string value)
 		{
+
 			var petList = new List<PetModel>();
 
 			int petId = int.TryParse(value, out _)? Convert.ToInt32(value) : 0;
@@ -84,10 +121,11 @@ namespace Pet_Shop._Repositories
 				connection.Open();
 
 				command.Connection = connection;
-				command.CommandText = "SELECT * FROM Pet where Pet_Id=@id or Pet_Name like @name+'%' order by Pet_Id desc";
+				command.CommandText = "SELECT * FROM Pet where Pet_Id=@id or Pet_Name like @name+'%' or Pet_Type LIKE @value + '%' or Pet_Colour like @value+'%' order by Pet_Id asc";
 
 				command.Parameters.AddWithValue("@id", SqlDbType.Int).Value = petId;
 				command.Parameters.AddWithValue("@name", SqlDbType.NVarChar).Value = petName;
+				command.Parameters.AddWithValue("@value", SqlDbType.NVarChar).Value = value;
 				using (var reader = command.ExecuteReader())
 				{
 					while (reader.Read())

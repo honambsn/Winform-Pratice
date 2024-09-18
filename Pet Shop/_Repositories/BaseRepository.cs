@@ -8,8 +8,8 @@ namespace Pet_Shop._Repositories
 {
 	public abstract class BaseRepository
 	{
-		protected string ConnectionString { get; set; }
-
+		protected string ConnectionString;
+		
 		//public BaseRepository(string connectionString)
 		//{
 		//	ConnectionString = connectionString;

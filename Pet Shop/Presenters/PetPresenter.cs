@@ -39,6 +39,8 @@ namespace Pet_Shop.Presenters
 
 			//show view
 			this.view.Show();
+
+			
 		}
 
 		private void LoadAllPetList()
@@ -74,7 +76,7 @@ namespace Pet_Shop.Presenters
 
 		private void SearchEvent(object sender, EventArgs e)
 		{
-			bool emptyValue = string.IsNullOrWhiteSpace(view.SearchValue);	
+			bool emptyValue = string.IsNullOrWhiteSpace(this.view.SearchValue);	
 			if (emptyValue == false)
 			{
 				petList = repository.GetByValue(this.view.SearchValue);
