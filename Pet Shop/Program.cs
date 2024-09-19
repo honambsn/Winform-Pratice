@@ -26,9 +26,13 @@ namespace Pet_Shop
 			Application.SetCompatibleTextRenderingDefault(false);
 			//string sqlConnectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\honam\\Documents\\petshop.mdf;Integrated Security=True;Connect Timeout=30";
 			string sqlConnectionString = ConfigurationManager.ConnectionStrings["sqlConnectionString"].ConnectionString;
-			IPetView view = new PetView();
-			IPetRepository repository = new PetRepository(sqlConnectionString);
-			new PetPresenter(view, repository);
+			//IPetView view = new PetView();
+			//IPetRepository repository = new PetRepository(sqlConnectionString);
+
+			IMainView view = new MainView();
+			new MainPresenter(view, sqlConnectionString);
+
+			//new PetPresenter(view, repository);
 			//Application.Run(new PetView());
 			Application.Run((Form)view);
 		}

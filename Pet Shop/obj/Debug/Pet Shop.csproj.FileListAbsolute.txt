@@ -1,0 +1,11 @@
+D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Pet Shop\bin\Debug\Pet Shop.exe.config
+D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Pet Shop\bin\Debug\Pet Shop.exe
+D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Pet Shop\bin\Debug\Pet Shop.pdb
+D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Pet Shop\obj\Debug\Pet Shop.csproj.AssemblyReference.cache
+D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Pet Shop\obj\Debug\Pet_Shop.Properties.Resources.resources
+D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Pet Shop\obj\Debug\Pet_Shop.Views.MainView.resources
+D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Pet Shop\obj\Debug\Pet_Shop.Views.PetView.resources
+D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Pet Shop\obj\Debug\Pet Shop.csproj.GenerateResource.cache
+D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Pet Shop\obj\Debug\Pet Shop.csproj.CoreCompileInputs.cache
+D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Pet Shop\obj\Debug\Pet Shop.exe
+D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Pet Shop\obj\Debug\Pet Shop.pdb
