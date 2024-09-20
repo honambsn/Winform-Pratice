@@ -51,27 +51,91 @@ namespace Pet_Shop.Presenters
 
 		private void CancelEvent(object sender, EventArgs e)
 		{
-			throw new NotImplementedException();
+			cleanViewFields();
 		}
 
 		private void SaveEvent(object sender, EventArgs e)
 		{
-			throw new NotImplementedException();
+			var model = new PetModel
+			{
+				Id = view.PetId,
+				Name = view.PetName,
+				Type = view.PetType,
+				Colour = view.PetColour
+			};
+
+			try
+			{
+				new Common.ModelDataValidation().Validate(model);
+				if (view.IsEdit)
+				{
+					repository.Edit(model);
+					view.Message = "Pet edited successfully";
+				}
+				else
+				{
+					repository.Add(model);
+					view.Message = "Pet added successfully";
+				}
+
+			}
+			catch(Exception ex)
+			{
+				view.Message = ex.Message;
+				view.IsSuccessful = false;
+			}
+			finally
+			{
+				view.IsSuccessful = true;
+				LoadAllPetList();
+				cleanViewFields();
+			}
+		}
+
+		private void cleanViewFields()
+		{
+			view.PetId = 0;
+			view.PetName = "";
+			view.PetType = "";
+			view.PetColour = "";
 		}
 
 		private void DeleteEvent(object sender, EventArgs e)
 		{
-			throw new NotImplementedException();
+			try
+			{
+				var pet = (PetModel)petsBindingSource.Current;
+				repository.Delete(pet.Id);
+				view.IsSuccessful = true;
+				view.Message = "Pet deleted successfully";
+
+			}
+			catch(Exception ex)
+			{
+				view.Message = ex.Message;
+				view.IsSuccessful = false;
+			}
+			finally
+			{
+				view.IsSuccessful = true;
+				LoadAllPetList();
+				cleanViewFields();
+			}
 		}
 
 		private void EditEvent(object sender, EventArgs e)
 		{
-			throw new NotImplementedException();
+			var pet = (PetModel)petsBindingSource.Current;
+			view.PetId = Convert.ToInt32(pet.Id.ToString());
+			view.PetName = pet.Name;
+			view.PetType = pet.Type;
+			view.PetColour = pet.Colour;
+			view.IsEdit = true;
 		}
 
 		private void AddNewEvent(object sender, EventArgs e)
 		{
-			throw new NotImplementedException();
+			view.IsEdit = false;
 		}
 
 		private void SearchEvent(object sender, EventArgs e)

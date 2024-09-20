@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Pet_Shop._Repositories
 {
@@ -17,17 +18,70 @@ namespace Pet_Shop._Repositories
 		}
 		public void Add(PetModel petModel)
 		{
-			throw new NotImplementedException();
+			try 
+			{
+				using (var connection = new SqlConnection(ConnectionString))
+				{
+					connection.Open();
+					using (var command = new SqlCommand("INSERT INTO Pet (Pet_Name, Pet_Type, Pet_Colour) VALUES (@name, @type, @colour)", connection))
+					{
+						command.Parameters.AddWithValue("@name", SqlDbType.NVarChar).Value = petModel.Name;
+						command.Parameters.AddWithValue("@type", SqlDbType.NVarChar).Value = petModel.Type;
+						command.Parameters.AddWithValue("@colour", SqlDbType.NVarChar).Value = petModel.Colour;
+
+						command.ExecuteNonQuery();
+					}
+				}
+
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message, "Error", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+			}
 		}
 
 		public void Delete(int id)
 		{
-			throw new NotImplementedException();
+			try
+			{
+				using (var connection = new SqlConnection(ConnectionString))
+				{
+					connection.Open();
+					using (var command = new SqlCommand("DELETE FROM Pet WHERE Pet_Id = @id", connection))
+					{
+						command.Parameters.AddWithValue("@id", SqlDbType.Int).Value = id;
+						command.ExecuteNonQuery();
+					}
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message, "Error", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+			}
 		}
 
 		public void Edit(PetModel petModel)
 		{
-			throw new NotImplementedException();
+			try
+			{
+				using (var connection = new SqlConnection(ConnectionString))
+				{
+					connection.Open();
+					using (var command = new SqlCommand("UPDATE Pet SET Pet_Name = @name, Pet_Type = @type, Pet_Colour = @colour WHERE Pet_Id = @id", connection))
+					{
+						command.Parameters.AddWithValue("@name", SqlDbType.NVarChar).Value = petModel.Name;
+						command.Parameters.AddWithValue("@type", SqlDbType.NVarChar).Value = petModel.Type;
+						command.Parameters.AddWithValue("@colour", SqlDbType.NVarChar).Value = petModel.Colour;
+						command.Parameters.AddWithValue("@id", SqlDbType.Int).Value = petModel.Id;
+
+						command.ExecuteNonQuery();
+					}
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message, "Error", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+			}
 		}
 
 		public IEnumerable<PetModel> GetAll()

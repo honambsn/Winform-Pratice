@@ -3,16 +3,52 @@
   "WorkspaceRootPath": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Pet Shop\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{59F0CBC2-68ED-4746-8EBF-04C6399D0A99}|Pet Shop.csproj|D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Pet Shop\\views\\petview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{59F0CBC2-68ED-4746-8EBF-04C6399D0A99}|Pet Shop.csproj|solutionrelative:views\\petview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{59F0CBC2-68ED-4746-8EBF-04C6399D0A99}|Pet Shop.csproj|D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Pet Shop\\views\\petview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{59F0CBC2-68ED-4746-8EBF-04C6399D0A99}|Pet Shop.csproj|solutionrelative:views\\petview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{59F0CBC2-68ED-4746-8EBF-04C6399D0A99}|Pet Shop.csproj|D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Pet Shop\\_repositories\\petrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{59F0CBC2-68ED-4746-8EBF-04C6399D0A99}|Pet Shop.csproj|solutionrelative:_repositories\\petrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{59F0CBC2-68ED-4746-8EBF-04C6399D0A99}|Pet Shop.csproj|D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Pet Shop\\views\\ipetview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{59F0CBC2-68ED-4746-8EBF-04C6399D0A99}|Pet Shop.csproj|solutionrelative:views\\ipetview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{59F0CBC2-68ED-4746-8EBF-04C6399D0A99}|Pet Shop.csproj|D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Pet Shop\\views\\imainview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{59F0CBC2-68ED-4746-8EBF-04C6399D0A99}|Pet Shop.csproj|solutionrelative:views\\imainview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{59F0CBC2-68ED-4746-8EBF-04C6399D0A99}|Pet Shop.csproj|D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Pet Shop\\presenters\\petpresenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{59F0CBC2-68ED-4746-8EBF-04C6399D0A99}|Pet Shop.csproj|solutionrelative:presenters\\petpresenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{59F0CBC2-68ED-4746-8EBF-04C6399D0A99}|Pet Shop.csproj|D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Pet Shop\\presenters\\mainpresenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{59F0CBC2-68ED-4746-8EBF-04C6399D0A99}|Pet Shop.csproj|solutionrelative:presenters\\mainpresenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{59F0CBC2-68ED-4746-8EBF-04C6399D0A99}|Pet Shop.csproj|d:\\ba nam\\own project\\practice\\c#\\winform pratice\\pet shop\\presenters\\common\\modeldatavalidation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{59F0CBC2-68ED-4746-8EBF-04C6399D0A99}|Pet Shop.csproj|solutionrelative:presenters\\common\\modeldatavalidation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{59F0CBC2-68ED-4746-8EBF-04C6399D0A99}|Pet Shop.csproj|D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Pet Shop\\models\\petmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{59F0CBC2-68ED-4746-8EBF-04C6399D0A99}|Pet Shop.csproj|solutionrelative:models\\petmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{59F0CBC2-68ED-4746-8EBF-04C6399D0A99}|Pet Shop.csproj|D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Pet Shop\\models\\ipetrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{59F0CBC2-68ED-4746-8EBF-04C6399D0A99}|Pet Shop.csproj|solutionrelative:models\\ipetrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{59F0CBC2-68ED-4746-8EBF-04C6399D0A99}|Pet Shop.csproj|D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Pet Shop\\_repositories\\baserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{59F0CBC2-68ED-4746-8EBF-04C6399D0A99}|Pet Shop.csproj|solutionrelative:_repositories\\baserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Pet Shop\\query.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:query.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{59F0CBC2-68ED-4746-8EBF-04C6399D0A99}|Pet Shop.csproj|d:\\ba nam\\own project\\practice\\c#\\winform pratice\\pet shop\\views\\petview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{59F0CBC2-68ED-4746-8EBF-04C6399D0A99}|Pet Shop.csproj|solutionrelative:views\\petview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{59F0CBC2-68ED-4746-8EBF-04C6399D0A99}|Pet Shop.csproj|D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Pet Shop\\views\\mainview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -23,44 +59,16 @@
       "RelativeMoniker": "D:0:0:{59F0CBC2-68ED-4746-8EBF-04C6399D0A99}|Pet Shop.csproj|solutionrelative:views\\mainview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{59F0CBC2-68ED-4746-8EBF-04C6399D0A99}|Pet Shop.csproj|d:\\ba nam\\own project\\practice\\c#\\winform pratice\\pet shop\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{59F0CBC2-68ED-4746-8EBF-04C6399D0A99}|Pet Shop.csproj|D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Pet Shop\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{59F0CBC2-68ED-4746-8EBF-04C6399D0A99}|Pet Shop.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{59F0CBC2-68ED-4746-8EBF-04C6399D0A99}|Pet Shop.csproj|D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Pet Shop\\views\\imainview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{59F0CBC2-68ED-4746-8EBF-04C6399D0A99}|Pet Shop.csproj|solutionrelative:views\\imainview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{59F0CBC2-68ED-4746-8EBF-04C6399D0A99}|Pet Shop.csproj|D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Pet Shop\\_repositories\\petrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{59F0CBC2-68ED-4746-8EBF-04C6399D0A99}|Pet Shop.csproj|solutionrelative:_repositories\\petrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Pet Shop\\query.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:query.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{59F0CBC2-68ED-4746-8EBF-04C6399D0A99}|Pet Shop.csproj|D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Pet Shop\\presenters\\petpresenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{59F0CBC2-68ED-4746-8EBF-04C6399D0A99}|Pet Shop.csproj|solutionrelative:presenters\\petpresenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{59F0CBC2-68ED-4746-8EBF-04C6399D0A99}|Pet Shop.csproj|D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Pet Shop\\_repositories\\baserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{59F0CBC2-68ED-4746-8EBF-04C6399D0A99}|Pet Shop.csproj|solutionrelative:_repositories\\baserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{59F0CBC2-68ED-4746-8EBF-04C6399D0A99}|Pet Shop.csproj|D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Pet Shop\\models\\ipetrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{59F0CBC2-68ED-4746-8EBF-04C6399D0A99}|Pet Shop.csproj|solutionrelative:models\\ipetrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{59F0CBC2-68ED-4746-8EBF-04C6399D0A99}|Pet Shop.csproj|D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Pet Shop\\views\\ipetview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{59F0CBC2-68ED-4746-8EBF-04C6399D0A99}|Pet Shop.csproj|solutionrelative:views\\ipetview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{59F0CBC2-68ED-4746-8EBF-04C6399D0A99}|Pet Shop.csproj|D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Pet Shop\\models\\petmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{59F0CBC2-68ED-4746-8EBF-04C6399D0A99}|Pet Shop.csproj|solutionrelative:models\\petmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{59F0CBC2-68ED-4746-8EBF-04C6399D0A99}|Pet Shop.csproj|D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Pet Shop\\views\\petview.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{59F0CBC2-68ED-4746-8EBF-04C6399D0A99}|Pet Shop.csproj|solutionrelative:views\\petview.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Pet Shop\\query.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|CodeFrame",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:query.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|CodeFrame"
     }
   ],
   "DocumentGroupContainers": [
@@ -70,74 +78,50 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "PetView.cs [Design]",
-              "DocumentMoniker": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Pet Shop\\Views\\PetView.cs",
-              "RelativeDocumentMoniker": "Views\\PetView.cs",
-              "ToolTip": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Pet Shop\\Views\\PetView.cs [Design]",
-              "RelativeToolTip": "Views\\PetView.cs [Design]",
+              "DocumentIndex": 9,
+              "Title": "BaseRepository.cs",
+              "DocumentMoniker": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Pet Shop\\_Repositories\\BaseRepository.cs",
+              "RelativeDocumentMoniker": "_Repositories\\BaseRepository.cs",
+              "ToolTip": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Pet Shop\\_Repositories\\BaseRepository.cs",
+              "RelativeToolTip": "_Repositories\\BaseRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-13T15:14:00.764Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "MainView.cs",
-              "DocumentMoniker": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Pet Shop\\Views\\MainView.cs",
-              "RelativeDocumentMoniker": "Views\\MainView.cs",
-              "ToolTip": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Pet Shop\\Views\\MainView.cs",
-              "RelativeToolTip": "Views\\MainView.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-19T14:47:24.831Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "MainView.cs [Design]",
-              "DocumentMoniker": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Pet Shop\\Views\\MainView.cs",
-              "RelativeDocumentMoniker": "Views\\MainView.cs",
-              "ToolTip": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Pet Shop\\Views\\MainView.cs [Design]",
-              "RelativeToolTip": "Views\\MainView.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-19T14:45:40.427Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Pet Shop\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Pet Shop\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-13T15:31:02.835Z",
+              "WhenOpened": "2024-09-17T14:38:16.078Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "PetView.cs",
-              "DocumentMoniker": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Pet Shop\\Views\\PetView.cs",
-              "RelativeDocumentMoniker": "Views\\PetView.cs",
-              "ToolTip": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Pet Shop\\Views\\PetView.cs",
-              "RelativeToolTip": "Views\\PetView.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAcwCgAAAA4AAAAAAAAAA==",
+              "Title": "PetRepository.cs",
+              "DocumentMoniker": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Pet Shop\\_Repositories\\PetRepository.cs",
+              "RelativeDocumentMoniker": "_Repositories\\PetRepository.cs",
+              "ToolTip": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Pet Shop\\_Repositories\\PetRepository.cs",
+              "RelativeToolTip": "_Repositories\\PetRepository.cs",
+              "ViewState": "AgIAADkAAAAAAAAAAAAiwHQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-13T15:48:28.418Z",
+              "WhenOpened": "2024-09-17T14:43:24.96Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 7,
+              "Title": "PetModel.cs",
+              "DocumentMoniker": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Pet Shop\\Models\\PetModel.cs",
+              "RelativeDocumentMoniker": "Models\\PetModel.cs",
+              "ToolTip": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Pet Shop\\Models\\PetModel.cs",
+              "RelativeToolTip": "Models\\PetModel.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAACwAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-13T14:43:14.084Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "MainPresenter.cs",
               "DocumentMoniker": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Pet Shop\\Presenters\\MainPresenter.cs",
               "RelativeDocumentMoniker": "Presenters\\MainPresenter.cs",
@@ -150,19 +134,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "IPetView.cs",
-              "DocumentMoniker": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Pet Shop\\Views\\IPetView.cs",
-              "RelativeDocumentMoniker": "Views\\IPetView.cs",
-              "ToolTip": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Pet Shop\\Views\\IPetView.cs",
-              "RelativeToolTip": "Views\\IPetView.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwBgAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-13T14:58:38.986Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 3,
               "Title": "IMainView.cs",
               "DocumentMoniker": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Pet Shop\\Views\\IMainView.cs",
               "RelativeDocumentMoniker": "Views\\IMainView.cs",
@@ -175,66 +147,130 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "IPetRepository.cs",
-              "DocumentMoniker": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Pet Shop\\Models\\IPetRepository.cs",
-              "RelativeDocumentMoniker": "Models\\IPetRepository.cs",
-              "ToolTip": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Pet Shop\\Models\\IPetRepository.cs",
-              "RelativeToolTip": "Models\\IPetRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAhAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "PetView.cs",
+              "DocumentMoniker": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Pet Shop\\Views\\PetView.cs",
+              "RelativeDocumentMoniker": "Views\\PetView.cs",
+              "ToolTip": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Pet Shop\\Views\\PetView.cs",
+              "RelativeToolTip": "Views\\PetView.cs",
+              "ViewState": "AgIAADIAAAAAAAAAAAAwwFkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-13T14:51:38.702Z"
+              "WhenOpened": "2024-09-13T15:48:28.418Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "query.sql",
-              "DocumentMoniker": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Pet Shop\\query.sql",
-              "RelativeDocumentMoniker": "query.sql",
-              "ToolTip": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Pet Shop\\query.sql",
-              "RelativeToolTip": "query.sql",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2024-09-13T14:40:16.849Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "BaseRepository.cs",
-              "DocumentMoniker": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Pet Shop\\_Repositories\\BaseRepository.cs",
-              "RelativeDocumentMoniker": "_Repositories\\BaseRepository.cs",
-              "ToolTip": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Pet Shop\\_Repositories\\BaseRepository.cs",
-              "RelativeToolTip": "_Repositories\\BaseRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-17T14:38:16.078Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "PetRepository.cs",
-              "DocumentMoniker": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Pet Shop\\_Repositories\\PetRepository.cs",
-              "RelativeDocumentMoniker": "_Repositories\\PetRepository.cs",
-              "ToolTip": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Pet Shop\\_Repositories\\PetRepository.cs",
-              "RelativeToolTip": "_Repositories\\PetRepository.cs",
-              "ViewState": "AgIAAEIAAAAAAAAAAAAAAH4AAABRAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-17T14:43:24.96Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 4,
               "Title": "PetPresenter.cs",
               "DocumentMoniker": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Pet Shop\\Presenters\\PetPresenter.cs",
               "RelativeDocumentMoniker": "Presenters\\PetPresenter.cs",
               "ToolTip": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Pet Shop\\Presenters\\PetPresenter.cs",
               "RelativeToolTip": "Presenters\\PetPresenter.cs",
-              "ViewState": "AgIAAC0AAAAAAAAAAAA2wFEAAAA7AAAAAAAAAA==",
+              "ViewState": "AgIAADAAAAAAAAAAAAAowDwAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-16T15:27:03.574Z"
+              "WhenOpened": "2024-09-16T15:27:03.574Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "IPetRepository.cs",
+              "DocumentMoniker": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Pet Shop\\Models\\IPetRepository.cs",
+              "RelativeDocumentMoniker": "Models\\IPetRepository.cs",
+              "ToolTip": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Pet Shop\\Models\\IPetRepository.cs",
+              "RelativeToolTip": "Models\\IPetRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-13T14:51:38.702Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ModelDataValidation.cs",
+              "DocumentMoniker": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Pet Shop\\Presenters\\Common\\ModelDataValidation.cs",
+              "RelativeDocumentMoniker": "Presenters\\Common\\ModelDataValidation.cs",
+              "ToolTip": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Pet Shop\\Presenters\\Common\\ModelDataValidation.cs",
+              "RelativeToolTip": "Presenters\\Common\\ModelDataValidation.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-20T15:31:53.035Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "IPetView.cs",
+              "DocumentMoniker": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Pet Shop\\Views\\IPetView.cs",
+              "RelativeDocumentMoniker": "Views\\IPetView.cs",
+              "ToolTip": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Pet Shop\\Views\\IPetView.cs",
+              "RelativeToolTip": "Views\\IPetView.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwB8AAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-13T14:58:38.986Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "MainView.cs",
+              "DocumentMoniker": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Pet Shop\\Views\\MainView.cs",
+              "RelativeDocumentMoniker": "Views\\MainView.cs",
+              "ToolTip": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Pet Shop\\Views\\MainView.cs",
+              "RelativeToolTip": "Views\\MainView.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-19T14:47:24.831Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "MainView.cs [Design]",
+              "DocumentMoniker": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Pet Shop\\Views\\MainView.cs",
+              "RelativeDocumentMoniker": "Views\\MainView.cs",
+              "ToolTip": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Pet Shop\\Views\\MainView.cs [Design]",
+              "RelativeToolTip": "Views\\MainView.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-19T14:45:40.427Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "query.sql ",
+              "DocumentMoniker": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Pet Shop\\query.sql",
+              "RelativeDocumentMoniker": "query.sql",
+              "ToolTip": "query.sql ",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2024-09-13T14:40:16.849Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "PetView.cs [Design]",
+              "DocumentMoniker": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Pet Shop\\Views\\PetView.cs",
+              "RelativeDocumentMoniker": "Views\\PetView.cs",
+              "ToolTip": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Pet Shop\\Views\\PetView.cs [Design]",
+              "RelativeToolTip": "Views\\PetView.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-13T15:14:00.764Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 14,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Pet Shop\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Pet Shop\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-13T15:31:02.835Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
               "Title": "PetView.Designer.cs",
               "DocumentMoniker": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Pet Shop\\Views\\PetView.Designer.cs",
               "RelativeDocumentMoniker": "Views\\PetView.Designer.cs",
@@ -242,20 +278,7 @@
               "RelativeToolTip": "Views\\PetView.Designer.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-13T15:48:37.868Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "PetModel.cs",
-              "DocumentMoniker": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Pet Shop\\Models\\PetModel.cs",
-              "RelativeDocumentMoniker": "Models\\PetModel.cs",
-              "ToolTip": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Pet Shop\\Models\\PetModel.cs",
-              "RelativeToolTip": "Models\\PetModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACwAAABBAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-13T14:43:14.084Z"
+              "WhenOpened": "2024-09-13T15:48:37.868Z"
             }
           ]
         }

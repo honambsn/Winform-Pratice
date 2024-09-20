@@ -38,13 +38,76 @@ namespace Pet_Shop.Views
 					SearchEvent?.Invoke(this, EventArgs.Empty);
 				}
 			};
+			tabControl1.TabPages.Remove(tabPagePetDetails);
+
 			petview_btnClose.Click += delegate { this.Close(); };
+
+			// crud
+			//add
+			petview_btnAdd.Click += (s, e) =>
+			{
+				AddNewEvent?.Invoke(this, EventArgs.Empty);
+				tabControl1.TabPages.Remove(tabPagePetList);
+				tabControl1.TabPages.Remove(tabPageInformation);
+				
+				tabControl1.TabPages.Add(tabPagePetDetails);
+				tabPagePetDetails.Text = "Add New Pet";
+
+			};
+
+			//edit
+			petview_btnEdit.Click += (s, e) =>
+			{
+				EditEvent?.Invoke(this, EventArgs.Empty);
+				tabControl1.TabPages.Remove(tabPagePetList);
+				tabControl1.TabPages.Remove(tabPageInformation);
+
+				tabControl1.TabPages.Add(tabPagePetDetails);
+				tabPagePetDetails.Text = "Edit Pet Details";
+			};
+
+			//save
+			save_btn.Click += (s, e) =>
+			{
+				SaveEvent?.Invoke(this, EventArgs.Empty);
+				if (isSuccessful)
+				{
+					tabControl1.TabPages.Add(tabPagePetList);
+					tabControl1.TabPages.Remove(tabPageInformation);
+
+					tabControl1.TabPages.Remove(tabPagePetDetails);
+				}
+				MessageBox.Show(Message);
+			};
+
+			//cancel
+			cancel_btn.Click += (s, e) =>
+			{
+				CancelEvent?.Invoke(this, EventArgs.Empty);
+				
+				tabControl1.TabPages.Add(tabPagePetList);
+				tabControl1.TabPages.Remove(tabPageInformation);
+
+				tabControl1.TabPages.Remove(tabPagePetDetails);
+			};
+
+			//delete
+			petview_btnDel.Click += (s, e) =>
+			{
+				
+				var result = MessageBox.Show("Are u sure to delete the selected pet?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+				if (result == DialogResult.Yes)
+				{
+					DelelteEvent?.Invoke(this, EventArgs.Empty);
+					MessageBox.Show(Message);
+				}
+			};
 		}
 
-		public string PetId
+		public int PetId
 		{
-			get { return txtPetId.Text; }
-			set { txtPetId.Text = value; }
+			get { return int.Parse(txtPetId.Text); }
+			set { txtPetId.Text = value.ToString(); }
 		}
 
 		public string PetName
@@ -91,8 +154,6 @@ namespace Pet_Shop.Views
 		}
 
 		//public bool IsSuccessfull { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-		int IPetView.PetId { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-
 		public event EventHandler SearchEvent;
 		public event EventHandler AddNewEvent;
 		public event EventHandler EditEvent;
