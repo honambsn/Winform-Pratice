@@ -51,6 +51,7 @@
 			this.label3 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
 			this.tabPage3 = new System.Windows.Forms.TabPage();
+			this.petview_btnClose = new System.Windows.Forms.Button();
 			this.panel1.SuspendLayout();
 			this.tabControl1.SuspendLayout();
 			this.tabPagePetDetail.SuspendLayout();
@@ -72,6 +73,7 @@
 			// 
 			this.panel1.BackColor = System.Drawing.Color.White;
 			this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.panel1.Controls.Add(this.petview_btnClose);
 			this.panel1.Controls.Add(this.label1);
 			this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
 			this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -111,6 +113,7 @@
 			// 
 			// button4
 			// 
+			this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.button4.FlatAppearance.BorderSize = 0;
 			this.button4.Location = new System.Drawing.Point(692, 165);
 			this.button4.Name = "button4";
@@ -121,6 +124,7 @@
 			// 
 			// button3
 			// 
+			this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.button3.FlatAppearance.BorderSize = 0;
 			this.button3.Location = new System.Drawing.Point(693, 121);
 			this.button3.Name = "button3";
@@ -131,6 +135,7 @@
 			// 
 			// button2
 			// 
+			this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.button2.FlatAppearance.BorderSize = 0;
 			this.button2.Location = new System.Drawing.Point(692, 75);
 			this.button2.Name = "button2";
@@ -145,6 +150,9 @@
 			this.dataGridView1.AllowUserToDeleteRows = false;
 			this.dataGridView1.AllowUserToResizeColumns = false;
 			this.dataGridView1.AllowUserToResizeRows = false;
+			this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
 			this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
 			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -157,6 +165,7 @@
 			// 
 			// btnSearch
 			// 
+			this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.btnSearch.FlatAppearance.BorderSize = 0;
 			this.btnSearch.Location = new System.Drawing.Point(551, 38);
 			this.btnSearch.Name = "btnSearch";
@@ -167,6 +176,8 @@
 			// 
 			// txtSearch
 			// 
+			this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtSearch.Location = new System.Drawing.Point(12, 40);
@@ -307,6 +318,17 @@
 			this.tabPage3.Text = "Information";
 			this.tabPage3.UseVisualStyleBackColor = true;
 			// 
+			// petview_btnClose
+			// 
+			this.petview_btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.petview_btnClose.FlatAppearance.BorderSize = 0;
+			this.petview_btnClose.Location = new System.Drawing.Point(726, 3);
+			this.petview_btnClose.Name = "petview_btnClose";
+			this.petview_btnClose.Size = new System.Drawing.Size(60, 31);
+			this.petview_btnClose.TabIndex = 26;
+			this.petview_btnClose.Text = "Close";
+			this.petview_btnClose.UseVisualStyleBackColor = true;
+			// 
 			// PetView
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -354,5 +376,6 @@
 		private System.Windows.Forms.Button button4;
 		private System.Windows.Forms.Button button3;
 		private System.Windows.Forms.Button button2;
+		private System.Windows.Forms.Button petview_btnClose;
 	}
 }

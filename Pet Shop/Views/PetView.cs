@@ -38,6 +38,7 @@ namespace Pet_Shop.Views
 					SearchEvent?.Invoke(this, EventArgs.Empty);
 				}
 			};
+			petview_btnClose.Click += delegate { this.Close(); };
 		}
 
 		public string PetId
@@ -104,5 +105,28 @@ namespace Pet_Shop.Views
 			//throw new NotImplementedException();
 			dataGridView1.DataSource = petList;
 		}
+
+		//singleton pattern (open a single form instace)
+		private static PetView instance;	
+		public static PetView GetInstance(Form parentContainer)
+		{
+			if (instance == null || instance.IsDisposed)
+			{
+				instance = new PetView();
+				instance.MdiParent = parentContainer;
+				instance.FormBorderStyle = FormBorderStyle.None;
+				instance.Dock = DockStyle.Fill;
+			}
+			else
+			{
+				if (instance.WindowState == FormWindowState.Minimized)
+				{
+					instance.WindowState = FormWindowState.Normal;
+				}
+				instance.BringToFront();
+			}
+			return instance;
+		}
+
 	}
 }
