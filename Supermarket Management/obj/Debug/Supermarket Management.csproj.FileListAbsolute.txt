@@ -2,9 +2,9 @@ D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Supermarket Management\bin\Deb
 D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Supermarket Management\bin\Debug\Supermarket Management.exe
 D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Supermarket Management\bin\Debug\Supermarket Management.pdb
 D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Supermarket Management\obj\Debug\Supermarket Management.csproj.AssemblyReference.cache
-D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Supermarket Management\obj\Debug\Supermarket_Management.Form1.resources
 D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Supermarket Management\obj\Debug\Supermarket_Management.Properties.Resources.resources
 D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Supermarket Management\obj\Debug\Supermarket Management.csproj.GenerateResource.cache
 D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Supermarket Management\obj\Debug\Supermarket Management.csproj.CoreCompileInputs.cache
 D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Supermarket Management\obj\Debug\Supermarket Management.exe
 D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Supermarket Management\obj\Debug\Supermarket Management.pdb
+D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Supermarket Management\obj\Debug\Supermarket_Management.MainForm.resources
