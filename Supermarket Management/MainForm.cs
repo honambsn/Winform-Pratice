@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,12 +13,18 @@ namespace Supermarket_Management
 {
 	public partial class MainForm : Form
 	{
+		SqlConnection con = new SqlConnection();
+		SqlCommand cmd = new SqlCommand();
+		DBConnect dbcon = new DBConnect();
+
 		public MainForm()
 		{
 			InitializeComponent();
 			drawCenter();
 			customizeDesign();
-
+			con = new SqlConnection(dbcon.myConnection());
+			con.Open();
+			MessageBox.Show("Connection Established");
 		}
 
 		#region panelSlide
@@ -49,9 +56,9 @@ namespace Supermarket_Management
 		private void customizeDesign()
 		{
 			this.panelSubProduct.Visible = false;
-			this.panel_SubRecord.Visible = false;
 			this.panelSubStock.Visible = false;
-			this.panel_SubSettings.Visible = false;
+			this.panelSubSetting.Visible = false;
+			this.panelSubRecord.Visible = false;
 		}
 
 		private void hideSubMenu()
@@ -59,16 +66,15 @@ namespace Supermarket_Management
 			if (this.panelSubProduct.Visible == true)
 				this.panelSubProduct.Visible = false;
 			
-			if(this.panelSubStock.Visible == true)
-				this.panelSubStock.Visible = false;
+			if(this.panelSubRecord.Visible == true)
+				this.panelSubRecord.Visible = false;
 
-			if (this.panel_SubRecord.Visible == true)
-				this.panel_SubRecord.Visible = false;
+			if (this.panelSubSetting.Visible == true)
+				this.panelSubSetting.Visible = false;
 
-			if(this.panel_SubSettings.Visible == true)
-				this.panel_SubSettings.Visible = false;
-	
-			
+			if(this.panelSubRecord.Visible == true)
+				this.panelSubRecord.Visible = false;
+
 		}
 
 		private void showSubMenu(Panel subMenu)
@@ -81,29 +87,27 @@ namespace Supermarket_Management
 			else
 				subMenu.Visible = false;
 		}
+
+
+
 		#endregion panelSlide
-
-		private void btn_Dashboard_Click(object sender, EventArgs e)
-		{
-
-		}
 
 		private void btn_Product_Click(object sender, EventArgs e)
 		{
 			showSubMenu(panelSubProduct);
 		}
 
-		private void Productbtn_ProductList_Click(object sender, EventArgs e)
+		private void Product_List_Click(object sender, EventArgs e)
 		{
 			hideSubMenu();
 		}
 
-		private void Productbtn_Category_Click(object sender, EventArgs e)
+		private void Product_Category_Click(object sender, EventArgs e)
 		{
 			hideSubMenu();
 		}
 
-		private void Productbtn_Brand_Click(object sender, EventArgs e)
+		private void Product_Brand_Click(object sender, EventArgs e)
 		{
 			hideSubMenu();
 		}
@@ -113,12 +117,42 @@ namespace Supermarket_Management
 			showSubMenu(panelSubStock);
 		}
 
-		private void Stockbtn_StockEntry_Click(object sender, EventArgs e)
+		private void Stock_Entry_Click(object sender, EventArgs e)
 		{
 			hideSubMenu();
 		}
 
-		private void Stockbtn_StockAdjustment_Click(object sender, EventArgs e)
+		private void Stock_Adjusment_Click(object sender, EventArgs e)
+		{
+			hideSubMenu();
+		}
+
+		private void btn_Record_Click(object sender, EventArgs e)
+		{
+			showSubMenu(panelSubRecord);
+		}
+
+		private void Record_Sale_Click(object sender, EventArgs e)
+		{
+			hideSubMenu();
+		}
+
+		private void Record_POS_Click(object sender, EventArgs e)
+		{
+			hideSubMenu();
+		}
+
+		private void btn_Setting_Click(object sender, EventArgs e)
+		{
+			showSubMenu(panelSubSetting);
+		}
+
+		private void Setting_User_Click(object sender, EventArgs e)
+		{
+			hideSubMenu();
+		}
+
+		private void Setting_Store_Click(object sender, EventArgs e)
 		{
 			hideSubMenu();
 		}
@@ -128,39 +162,14 @@ namespace Supermarket_Management
 			hideSubMenu();
 		}
 
-		private void btn_Record_Click(object sender, EventArgs e)
-		{
-			showSubMenu(panel_SubRecord);
-		}
-
-		private void Recordbtn_Sale_Click(object sender, EventArgs e)
-		{
-			hideSubMenu();
-		}
-
-		private void Recordbtn_POS_Click(object sender, EventArgs e)
-		{
-			hideSubMenu();
-		}
-
-		private void btn_Settings_Click(object sender, EventArgs e)
-		{
-			showSubMenu(panel_SubSettings);
-		}
-
-		private void Settingbtn_User_Click(object sender, EventArgs e)
-		{
-			hideSubMenu();
-		}
-
-		private void Settingbtn_Store_Click(object sender, EventArgs e)
+		private void btn_Dashboard_Click(object sender, EventArgs e)
 		{
 			hideSubMenu();
 		}
 
 		private void btn_Logout_Click(object sender, EventArgs e)
 		{
-
+			hideSubMenu();
 		}
 	}
 }
