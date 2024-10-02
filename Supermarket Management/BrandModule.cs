@@ -17,7 +17,7 @@ namespace Supermarket_Management
 		SqlCommand cm = new SqlCommand();
 		DBConnect dbcon = new DBConnect();
 
-		SqlConnection con = new SqlConnection(@"");
+		//SqlConnection con = new SqlConnection(@"");
 		public BrandModule()
 		{
 			InitializeComponent();
@@ -51,8 +51,8 @@ namespace Supermarket_Management
 				if(MessageBox.Show("Are u sure u want to save this test?", "Save", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
 				{
 					cn.Open();
-					cm = new SqlCommand("INSERT INTO Brand (BrandName) VALUES (@BrandName)", cn);
-					cm.Parameters.AddWithValue("@BrandName", txtBrand.Text); // Use the correct parameter name
+					cm = new SqlCommand("INSERT INTO Brand (BrandName) VALUES(@BrandName)", cn);
+					cm.Parameters.AddWithValue("@BrandName", txtBrand.Text.Trim()); // Use the correct parameter name
 					cm.ExecuteNonQuery();
 					MessageBox.Show("Record has been saved successfully", "Save Record", MessageBoxButtons.OK, MessageBoxIcon.Information);
 				}
