@@ -16,13 +16,15 @@ namespace Supermarket_Management
 		SqlConnection cn = new SqlConnection();
 		SqlCommand cm = new SqlCommand();
 		DBConnect dbcon = new DBConnect();
+		Brand brand;
 
 		//SqlConnection con = new SqlConnection(@"");
-		public BrandModule()
+		public BrandModule(Brand br)
 		{
 			InitializeComponent();
 			cn = new SqlConnection(dbcon.myConnection());
 			drawCenter();
+			brand = br;
 		}
 
 		private void drawCenter()
@@ -40,8 +42,6 @@ namespace Supermarket_Management
 			{
 				this.Close();
 			}
-
-
 		}
 
 		private void btnSave_Click(object sender, EventArgs e)
@@ -54,7 +54,6 @@ namespace Supermarket_Management
 					cm = new SqlCommand("INSERT INTO Brand (BrandName) VALUES(@BrandName)", cn);
 					cm.Parameters.AddWithValue("@BrandName", txtBrand.Text.Trim()); // Use the correct parameter name
 					cm.ExecuteNonQuery();
-					MessageBox.Show("Record has been saved successfully", "Save Record", MessageBoxButtons.OK, MessageBoxIcon.Information);
 				}
 
 			}
@@ -64,7 +63,8 @@ namespace Supermarket_Management
 			}
 			finally
 			{
-
+				brand.LoadBrand();
+				MessageBox.Show("Record has been saved successfully", "Save Record", MessageBoxButtons.OK, MessageBoxIcon.Information);
 				Clear();
 				cn.Close();
 			}
@@ -73,6 +73,9 @@ namespace Supermarket_Management
 		public void Clear()
 		{
 			txtBrand.Clear();
+			btnUpdate.Enabled = false;
+			btnSave.Enabled = true;
+			txtBrand.Focus();
 		}
 
 		private void btnCancel_Click(object sender, EventArgs e)
@@ -90,7 +93,37 @@ namespace Supermarket_Management
 			}
 			finally
 			{
+				brand.LoadBrand();
+			}
+		}
 
+		private void btnUpdate_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				//Update brand name
+				cn.Open();
+
+				using(SqlCommand cm = new SqlCommand("UPDATE Brand SET BrandName = @BrandName WHERE id = @id", cn))
+				{
+					SqlParameter idParameter = new SqlParameter("@id", System.Data.SqlDbType.Int); 
+					idParameter.Value = Convert.ToInt32(lblID.Text);
+					cm.Parameters.Add(new SqlParameter("@BrandName", System.Data.SqlDbType.NVarChar) { Value = txtBrand.Text.Trim() });
+					cm.Parameters.Add(new SqlParameter("@id", System.Data.SqlDbType.Int) { Value = Convert.ToInt32(lblID.Text) });
+					cm.ExecuteNonQuery();
+
+					MessageBox.Show("Record has been updated successfully", "Update Record", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+			}
+			finally
+			{
+				brand.LoadBrand();
+				Clear();
+				cn.Close();
 			}
 		}
 	}

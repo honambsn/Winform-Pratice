@@ -58,6 +58,18 @@
     <Compile Include="BrandModule.Designer.cs">
       <DependentUpon>BrandModule.cs</DependentUpon>
     </Compile>
+    <Compile Include="Category.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Category.Designer.cs">
+      <DependentUpon>Category.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CategoryModule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CategoryModule.Designer.cs">
+      <DependentUpon>CategoryModule.cs</DependentUpon>
+    </Compile>
     <Compile Include="DBConnect.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -72,6 +84,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BrandModule.resx">
       <DependentUpon>BrandModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Category.resx">
+      <DependentUpon>Category.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CategoryModule.resx">
+      <DependentUpon>CategoryModule.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -113,8 +131,26 @@
     </Resource>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Icons\icons8-add-30.png" />
-    <Content Include="Icons\icons8-close-30.png" />
+    <Resource Include="Icons\icons8-add-30.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\icons8-close-30.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\icons8-edit-100.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\icons8-erase-100.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\icons8-category-100.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Icons\icons8-category-30.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

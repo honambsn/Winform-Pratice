@@ -92,6 +92,25 @@ namespace Supermarket_Management
 
 		#endregion panelSlide
 
+		private Form activeForm = null;
+		public void openChildForm(Form childForm)
+		{
+			if(activeForm != null)
+			{
+				activeForm.Close();
+			}
+
+			activeForm = childForm;
+			childForm.TopLevel = false;
+			childForm.FormBorderStyle = FormBorderStyle.None;
+			childForm.Dock = DockStyle.Fill;
+			lbl_Title.Text = childForm.Text;
+			panelMain.Controls.Add(childForm);
+
+			panelMain.Tag = childForm;
+			childForm.Show();
+		}
+
 		private void btn_Product_Click(object sender, EventArgs e)
 		{
 			showSubMenu(panelSubProduct);
@@ -109,6 +128,7 @@ namespace Supermarket_Management
 
 		private void Product_Brand_Click(object sender, EventArgs e)
 		{
+			openChildForm(new Brand());
 			hideSubMenu();
 		}
 

@@ -21,6 +21,7 @@ namespace Supermarket_Management
 			InitializeComponent();
 			cn = new SqlConnection(dbcon.myConnection());
 			drawCenter();
+			LoadBrand();
 		}
 
 		private void drawCenter()
@@ -35,6 +36,44 @@ namespace Supermarket_Management
 			xPos = this.btnAdd.Location.X;
 			yPos = (this.panel1.Height - this.btnAdd.Height) / 2;
 			this.btnAdd.Location = new Point(xPos, yPos);
+		}
+
+		//data retrieve from tbBrand to dgbBrand on Brand from
+		public void LoadBrand()
+		{
+			try
+			{
+				int i = 0;
+				dgvBrand.Rows.Clear();
+				cn.Open();
+				cm = new SqlCommand("SELECT * FROM Brand ORDER BY BrandName", cn);
+				SqlDataReader dr = cm.ExecuteReader();
+				while (dr.Read())
+				{
+					i++;
+					dgvBrand.Rows.Add(i, dr["id"].ToString(), dr["BrandName"].ToString());
+				}
+				dr.Close();
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+			}
+			finally
+			{
+				cn.Close();
+			}
+		}
+
+		private void btnAdd_Click(object sender, EventArgs e)
+		{
+			BrandModule moduleForm = new BrandModule(this);
+			moduleForm.ShowDialog();
+		}
+
+		private void dgvBrand_CellContentClick(object sender, DataGridViewCellEventArgs e)
+		{
+
 		}
 	}
 }
