@@ -45,6 +45,10 @@ namespace Supermarket_Management
 			{
 				int i = 0;
 				dgvBrand.Rows.Clear();
+				if (cn.State == ConnectionState.Open)
+				{
+					cn.Close();
+				}
 				cn.Open();
 				cm = new SqlCommand("SELECT * FROM Brand ORDER BY BrandName", cn);
 				SqlDataReader dr = cm.ExecuteReader();
@@ -73,7 +77,63 @@ namespace Supermarket_Management
 
 		private void dgvBrand_CellContentClick(object sender, DataGridViewCellEventArgs e)
 		{
+			string colname = dgvBrand.Columns[e.ColumnIndex].Name;
+			if (colname == "Delete")
+			{
+				if (MessageBox.Show("Are u sure u want to delete this record?", "Delete", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
+				{	
+					try
+					{
+						using (SqlCommand cm = new SqlCommand("DELETE FROM Brand WHERE id = @id", cn))
+						{
+							// Set the command parameter
+							cm.Parameters.Add("@id", SqlDbType.Int).Value = Convert.ToInt32(dgvBrand.Rows[e.RowIndex].Cells[1].Value);
 
+							cn.Open(); // Open the connection
+							int rowsAffected = cm.ExecuteNonQuery(); // Execute the command
+
+							if (rowsAffected > 0)
+							{
+								MessageBox.Show("Record has been successfully deleted", "Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
+							}
+							else
+							{
+								MessageBox.Show("No record found with the specified ID.", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+							}
+						}
+					}
+					catch(Exception ex)
+					{
+						MessageBox.Show(ex.Message);
+					}
+					finally
+					{
+						LoadBrand();
+						cn.Close();
+					}
+				}
+			}
+			else if (colname == "Edit")
+			{
+				try
+				{
+					BrandModule brandModule = new BrandModule(this);
+					brandModule.lblID.Text = dgvBrand.Rows[e.RowIndex].Cells[1].Value.ToString();
+					brandModule.txtBrand.Text = dgvBrand.Rows[e.RowIndex].Cells[2].Value.ToString();
+					brandModule.btnSave.Enabled = false;
+					brandModule.btnUpdate.Enabled = true;
+					brandModule.ShowDialog();
+				}
+				catch(Exception ex)
+				{
+					MessageBox.Show(ex.Message);
+				}
+				finally
+				{
+					LoadBrand();
+					cn.Close();
+				}
+			}
 		}
 	}
 }

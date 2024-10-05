@@ -31,15 +31,15 @@
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Category));
 			this.btnAdd = new System.Windows.Forms.Button();
 			this.dgvCategory = new System.Windows.Forms.DataGridView();
+			this.panel1 = new System.Windows.Forms.Panel();
+			this.label1 = new System.Windows.Forms.Label();
+			this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+			this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
 			this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
 			this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
-			this.panel1 = new System.Windows.Forms.Panel();
-			this.label1 = new System.Windows.Forms.Label();
-			this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-			this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
 			((System.ComponentModel.ISupportInitialize)(this.dgvCategory)).BeginInit();
 			this.panel1.SuspendLayout();
 			this.SuspendLayout();
@@ -56,6 +56,7 @@
 			this.btnAdd.Size = new System.Drawing.Size(54, 31);
 			this.btnAdd.TabIndex = 1;
 			this.btnAdd.UseVisualStyleBackColor = true;
+			this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
 			// 
 			// dgvCategory
 			// 
@@ -79,49 +80,7 @@
 			this.dgvCategory.RowHeadersVisible = false;
 			this.dgvCategory.Size = new System.Drawing.Size(984, 481);
 			this.dgvCategory.TabIndex = 3;
-			// 
-			// Column1
-			// 
-			this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			this.Column1.HeaderText = "No";
-			this.Column1.Name = "Column1";
-			this.Column1.ReadOnly = true;
-			this.Column1.Width = 55;
-			// 
-			// Column2
-			// 
-			this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			this.Column2.HeaderText = "ID";
-			this.Column2.Name = "Column2";
-			this.Column2.ReadOnly = true;
-			this.Column2.Visible = false;
-			// 
-			// Column3
-			// 
-			this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.Column3.HeaderText = "Brand";
-			this.Column3.Name = "Column3";
-			this.Column3.ReadOnly = true;
-			// 
-			// Edit
-			// 
-			this.Edit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			this.Edit.HeaderText = "";
-			this.Edit.Image = ((System.Drawing.Image)(resources.GetObject("Edit.Image")));
-			this.Edit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-			this.Edit.Name = "Edit";
-			this.Edit.ReadOnly = true;
-			this.Edit.Width = 5;
-			// 
-			// Delete
-			// 
-			this.Delete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			this.Delete.HeaderText = "";
-			this.Delete.Image = ((System.Drawing.Image)(resources.GetObject("Delete.Image")));
-			this.Delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-			this.Delete.Name = "Delete";
-			this.Delete.ReadOnly = true;
-			this.Delete.Width = 5;
+			this.dgvCategory.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCategory_CellContentClick);
 			// 
 			// panel1
 			// 
@@ -163,6 +122,50 @@
 			this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
 			this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
 			// 
+			// Column1
+			// 
+			this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.Column1.HeaderText = "No";
+			this.Column1.Name = "Column1";
+			this.Column1.ReadOnly = true;
+			this.Column1.Width = 55;
+			// 
+			// Column2
+			// 
+			this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.Column2.HeaderText = "ID";
+			this.Column2.Name = "Column2";
+			this.Column2.ReadOnly = true;
+			this.Column2.Visible = false;
+			this.Column2.Width = 50;
+			// 
+			// Column3
+			// 
+			this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.Column3.HeaderText = "Category";
+			this.Column3.Name = "Column3";
+			this.Column3.ReadOnly = true;
+			// 
+			// Edit
+			// 
+			this.Edit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.Edit.HeaderText = "";
+			this.Edit.Image = ((System.Drawing.Image)(resources.GetObject("Edit.Image")));
+			this.Edit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+			this.Edit.Name = "Edit";
+			this.Edit.ReadOnly = true;
+			this.Edit.Width = 5;
+			// 
+			// Delete
+			// 
+			this.Delete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.Delete.HeaderText = "";
+			this.Delete.Image = ((System.Drawing.Image)(resources.GetObject("Delete.Image")));
+			this.Delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+			this.Delete.Name = "Delete";
+			this.Delete.ReadOnly = true;
+			this.Delete.Width = 5;
+			// 
 			// Category
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -187,14 +190,14 @@
 
 		private System.Windows.Forms.Button btnAdd;
 		private System.Windows.Forms.DataGridView dgvCategory;
+		private System.Windows.Forms.Panel panel1;
+		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+		private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
 		private System.Windows.Forms.DataGridViewImageColumn Edit;
 		private System.Windows.Forms.DataGridViewImageColumn Delete;
-		private System.Windows.Forms.Panel panel1;
-		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
-		private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
 	}
 }

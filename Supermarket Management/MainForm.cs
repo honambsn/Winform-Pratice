@@ -123,6 +123,7 @@ namespace Supermarket_Management
 
 		private void Product_Category_Click(object sender, EventArgs e)
 		{
+			openChildForm(new Category());
 			hideSubMenu();
 		}
 

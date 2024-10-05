@@ -21,7 +21,7 @@ namespace Supermarket_Management
 		{
 			InitializeComponent();
 			cn = new SqlConnection(dbcon.myConnection());
-			this.category = cate;
+			category = cate;
 		}
 
 		private void btnSave_Click(object sender, EventArgs e)
@@ -43,7 +43,7 @@ namespace Supermarket_Management
 			}
 			finally
 			{
-				//category.LoadBrand();
+				category.LoadCategory();
 				MessageBox.Show("Record has been saved successfully", "Save Record", MessageBoxButtons.OK, MessageBoxIcon.Information);
 				Clear();
 				cn.Close();
@@ -63,6 +63,54 @@ namespace Supermarket_Management
 			if (MessageBox.Show("Are you sure you want to close this form?", "Confirm", MessageBoxButtons.YesNo) == DialogResult.Yes)
 			{
 				this.Close();
+			}
+		}
+
+		private void btnCancel_Click(object sender, EventArgs e)
+		{
+			Clear();
+		}
+
+		private void btnUpdate_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				using (SqlCommand cm = new SqlCommand("UPDATE Category SET CategoryName = @CategoryName WHERE id = @id", cn))
+				{
+					// Open connection if it isn't already
+					if (cn.State != ConnectionState.Open)
+					{
+						cn.Open();
+					}
+
+					// Define parameters with explicit types
+					cm.Parameters.Add("@CategoryName", SqlDbType.NVarChar).Value = txtCategory.Text.Trim();
+					cm.Parameters.Add("@id", SqlDbType.Int).Value = Convert.ToInt32(lblID.Text); // Assuming ID is an integer
+
+
+					int rowsAffected = cm.ExecuteNonQuery();
+
+					if (rowsAffected > 0)
+					{
+						MessageBox.Show("Record has been updated successfully", "Update Record", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					}
+					else
+					{
+						MessageBox.Show("No record was found with the provided ID.", "Update Record", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+					}
+				}
+
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+			}
+			finally
+			{
+				category.LoadCategory();
+				
+				Clear();
+				cn.Close();
 			}
 		}
 	}
