@@ -32,9 +32,7 @@
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.btnAdd = new System.Windows.Forms.Button();
 			this.label1 = new System.Windows.Forms.Label();
-			this.dgvBrand = new System.Windows.Forms.DataGridView();
-			this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-			this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+			this.dgvProduct = new System.Windows.Forms.DataGridView();
 			this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,8 +43,10 @@
 			this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
 			this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
+			this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+			this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
 			this.panel1.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.dgvBrand)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// panel1
@@ -72,6 +72,7 @@
 			this.btnAdd.Size = new System.Drawing.Size(54, 31);
 			this.btnAdd.TabIndex = 1;
 			this.btnAdd.UseVisualStyleBackColor = true;
+			this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
 			// 
 			// label1
 			// 
@@ -86,16 +87,16 @@
 			this.label1.Text = "Manage Product";
 			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
-			// dgvBrand
+			// dgvProduct
 			// 
-			this.dgvBrand.AllowUserToAddRows = false;
-			this.dgvBrand.AllowUserToDeleteRows = false;
-			this.dgvBrand.AllowUserToResizeColumns = false;
-			this.dgvBrand.AllowUserToResizeRows = false;
-			this.dgvBrand.BackgroundColor = System.Drawing.Color.PaleTurquoise;
-			this.dgvBrand.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-			this.dgvBrand.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dgvBrand.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+			this.dgvProduct.AllowUserToAddRows = false;
+			this.dgvProduct.AllowUserToDeleteRows = false;
+			this.dgvProduct.AllowUserToResizeColumns = false;
+			this.dgvProduct.AllowUserToResizeRows = false;
+			this.dgvProduct.BackgroundColor = System.Drawing.Color.PaleTurquoise;
+			this.dgvProduct.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+			this.dgvProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dgvProduct.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
             this.Column3,
@@ -106,29 +107,13 @@
             this.Column8,
             this.Edit,
             this.Delete});
-			this.dgvBrand.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.dgvBrand.Location = new System.Drawing.Point(0, 0);
-			this.dgvBrand.Name = "dgvBrand";
-			this.dgvBrand.ReadOnly = true;
-			this.dgvBrand.RowHeadersVisible = false;
-			this.dgvBrand.Size = new System.Drawing.Size(984, 561);
-			this.dgvBrand.TabIndex = 3;
-			// 
-			// dataGridViewImageColumn1
-			// 
-			this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			this.dataGridViewImageColumn1.HeaderText = "";
-			this.dataGridViewImageColumn1.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn1.Image")));
-			this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-			this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-			// 
-			// dataGridViewImageColumn2
-			// 
-			this.dataGridViewImageColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			this.dataGridViewImageColumn2.HeaderText = "";
-			this.dataGridViewImageColumn2.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn2.Image")));
-			this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-			this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+			this.dgvProduct.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.dgvProduct.Location = new System.Drawing.Point(0, 0);
+			this.dgvProduct.Name = "dgvProduct";
+			this.dgvProduct.ReadOnly = true;
+			this.dgvProduct.RowHeadersVisible = false;
+			this.dgvProduct.Size = new System.Drawing.Size(984, 561);
+			this.dgvProduct.TabIndex = 3;
 			// 
 			// Column1
 			// 
@@ -145,7 +130,6 @@
 			this.Column2.Name = "Column2";
 			this.Column2.ReadOnly = true;
 			this.Column2.Visible = false;
-			this.Column2.Width = 85;
 			// 
 			// Column3
 			// 
@@ -214,6 +198,22 @@
 			this.Delete.ReadOnly = true;
 			this.Delete.Width = 5;
 			// 
+			// dataGridViewImageColumn1
+			// 
+			this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.dataGridViewImageColumn1.HeaderText = "";
+			this.dataGridViewImageColumn1.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn1.Image")));
+			this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+			this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+			// 
+			// dataGridViewImageColumn2
+			// 
+			this.dataGridViewImageColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.dataGridViewImageColumn2.HeaderText = "";
+			this.dataGridViewImageColumn2.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn2.Image")));
+			this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+			this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+			// 
 			// Product
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -222,13 +222,13 @@
 			this.ClientSize = new System.Drawing.Size(984, 561);
 			this.ControlBox = false;
 			this.Controls.Add(this.panel1);
-			this.Controls.Add(this.dgvBrand);
+			this.Controls.Add(this.dgvProduct);
 			this.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.Name = "Product";
 			this.Text = "PRODUCT";
 			this.panel1.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)(this.dgvBrand)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).EndInit();
 			this.ResumeLayout(false);
 
 		}
@@ -238,7 +238,7 @@
 		private System.Windows.Forms.Panel panel1;
 		private System.Windows.Forms.Button btnAdd;
 		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.DataGridView dgvBrand;
+		private System.Windows.Forms.DataGridView dgvProduct;
 		private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
 		private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column1;

@@ -32,6 +32,13 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icons8-supermarket-100.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -168,8 +175,12 @@
     </Resource>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="icons8-supermarket-100.ico" />
     <Content Include="Icons\icons8-category-30.png" />
     <Content Include="Icons\icons8-product-30.png" />
+    <Content Include="Icons\icons8-supermarket-100.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

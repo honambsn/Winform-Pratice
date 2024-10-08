@@ -1,3 +1,4 @@
+D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Supermarket Management\bin\Debug\Icons\icons8-supermarket-100.ico
 D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Supermarket Management\bin\Debug\Supermarket Management.exe.config
 D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Supermarket Management\bin\Debug\Supermarket Management.exe
 D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Supermarket Management\bin\Debug\Supermarket Management.pdb

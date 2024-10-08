@@ -30,6 +30,7 @@
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
 			this.panelSlide = new System.Windows.Forms.Panel();
+			this.btn_Supplier = new System.Windows.Forms.Button();
 			this.panelSubSetting = new System.Windows.Forms.Panel();
 			this.Setting_Store = new System.Windows.Forms.Button();
 			this.Setting_User = new System.Windows.Forms.Button();
@@ -57,7 +58,6 @@
 			this.panelTitle = new System.Windows.Forms.Panel();
 			this.lbl_Title = new System.Windows.Forms.Label();
 			this.panelMain = new System.Windows.Forms.Panel();
-			this.btn_Supplier = new System.Windows.Forms.Button();
 			this.panelSlide.SuspendLayout();
 			this.panelSubSetting.SuspendLayout();
 			this.panelSubRecord.SuspendLayout();
@@ -88,6 +88,24 @@
 			this.panelSlide.Name = "panelSlide";
 			this.panelSlide.Size = new System.Drawing.Size(230, 661);
 			this.panelSlide.TabIndex = 0;
+			// 
+			// btn_Supplier
+			// 
+			this.btn_Supplier.BackColor = System.Drawing.Color.Fuchsia;
+			this.btn_Supplier.Dock = System.Windows.Forms.DockStyle.Top;
+			this.btn_Supplier.FlatAppearance.BorderSize = 0;
+			this.btn_Supplier.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+			this.btn_Supplier.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btn_Supplier.ForeColor = System.Drawing.Color.White;
+			this.btn_Supplier.Location = new System.Drawing.Point(0, 844);
+			this.btn_Supplier.Name = "btn_Supplier";
+			this.btn_Supplier.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+			this.btn_Supplier.Size = new System.Drawing.Size(213, 45);
+			this.btn_Supplier.TabIndex = 14;
+			this.btn_Supplier.Text = "Supplier";
+			this.btn_Supplier.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btn_Supplier.UseVisualStyleBackColor = false;
+			this.btn_Supplier.Click += new System.EventHandler(this.btn_Supplier_Click);
 			// 
 			// panelSubSetting
 			// 
@@ -477,24 +495,6 @@
 			this.panelMain.Size = new System.Drawing.Size(1154, 601);
 			this.panelMain.TabIndex = 3;
 			// 
-			// btn_Supplier
-			// 
-			this.btn_Supplier.BackColor = System.Drawing.Color.Fuchsia;
-			this.btn_Supplier.Dock = System.Windows.Forms.DockStyle.Top;
-			this.btn_Supplier.FlatAppearance.BorderSize = 0;
-			this.btn_Supplier.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-			this.btn_Supplier.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btn_Supplier.ForeColor = System.Drawing.Color.White;
-			this.btn_Supplier.Location = new System.Drawing.Point(0, 844);
-			this.btn_Supplier.Name = "btn_Supplier";
-			this.btn_Supplier.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-			this.btn_Supplier.Size = new System.Drawing.Size(213, 45);
-			this.btn_Supplier.TabIndex = 14;
-			this.btn_Supplier.Text = "Supplier";
-			this.btn_Supplier.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.btn_Supplier.UseVisualStyleBackColor = false;
-			this.btn_Supplier.Click += new System.EventHandler(this.btn_Supplier_Click);
-			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
@@ -506,6 +506,7 @@
 			this.Controls.Add(this.panelSlide);
 			this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Margin = new System.Windows.Forms.Padding(5);
 			this.MinimumSize = new System.Drawing.Size(1400, 700);
 			this.Name = "MainForm";

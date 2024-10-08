@@ -16,10 +16,13 @@ namespace Supermarket_Management
 		SqlConnection cn = new SqlConnection();
 		SqlCommand cm = new SqlCommand();
 		DBConnect dbcon = new DBConnect();
-		public ProductModule()
+		Product product;
+		string stitle = "Simple Market Management System";
+		public ProductModule(Product pd)
 		{
 			InitializeComponent();
 			cn = new SqlConnection(dbcon.myConnection());
+			product = pd;
 			LoadBrand();
 			LoadCategory();	
 		}
@@ -56,7 +59,12 @@ namespace Supermarket_Management
 			txtPrice.Clear();
 			cbBrand.SelectedIndex = -1;
 			cbCate.SelectedIndex = -1;
-			UDReOrder.Value = 0;
+			UDReOrder.Value = 1;
+
+			txtPCode.Enabled = true;
+			txtBarcode.Focus();
+			btnSave.Enabled = true;
+			btnUpdate.Enabled = false;
 		}
 
 		private void btnSave_Click(object sender, EventArgs e)
@@ -66,15 +74,25 @@ namespace Supermarket_Management
 				if(MessageBox.Show("Are u sure u want to save this product?", "Save product", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
 				{
 					cn.Open();
-					cm = new SqlCommand("INSERT INTO Product (ProductCode, Barcode, Description, BrandID, CategoryID, Price, ReOrder) VALUES(@ProductCode, @Barcode, @Description, @BrandID, @CategoryID, @Price, @ReOrder)", cn);
-					cm.Parameters.AddWithValue("@ProductCode", txtPCode.Text.Trim());
-					cm.Parameters.AddWithValue("@Barcode", txtBarcode.Text.Trim());
-					cm.Parameters.AddWithValue("@Description", txtPDesc.Text.Trim());
-					cm.Parameters.AddWithValue("@BrandID", cbBrand.SelectedValue);
-					cm.Parameters.AddWithValue("@CategoryID", cbCate.SelectedValue);
-					cm.Parameters.AddWithValue("@Price", txtPrice.Text.Trim());
-					cm.Parameters.AddWithValue("@ReOrder", UDReOrder.Value);
-					cm.ExecuteNonQuery();
+					try
+					{
+						using (SqlCommand cm = new SqlCommand("INSERT INTO Product (ProductCode, Barcode, Description, BrandID, CategoryID, Price, ReOrder) VALUES(@ProductCode, @Barcode, @Description, @BrandID, @CategoryID, @Price, @ReOrder)", cn))
+						{
+							cm.Parameters.AddWithValue("@ProductCode", txtPCode.Text.Trim());
+							cm.Parameters.AddWithValue("@Barcode", txtBarcode.Text.Trim());
+							cm.Parameters.AddWithValue("@Description", txtPDesc.Text.Trim());
+							cm.Parameters.AddWithValue("@BrandID", cbBrand.SelectedValue);
+							cm.Parameters.AddWithValue("@CategoryID", cbCate.SelectedValue);
+							cm.Parameters.AddWithValue("@Price", txtPrice.Text.Trim());
+							cm.Parameters.AddWithValue("@ReOrder", UDReOrder.Value);
+							MessageBox.Show("Product has been saved successfully", stitle);
+							cm.ExecuteNonQuery();
+						}
+					}
+					catch (Exception ex)
+					{
+						MessageBox.Show(ex.Message);
+					}
 				}
 			}
 			catch (Exception ex)
@@ -83,10 +101,17 @@ namespace Supermarket_Management
 			}
 			finally
 			{
+				Clear();
 				MessageBox.Show("Record has been saved successfully", "Save Record", MessageBoxButtons.OK, MessageBoxIcon.Information);
 				Clear();
 				cn.Close();
+				product.LoadProduct();
 			}
+		}
+
+		private void btnCancel_Click(object sender, EventArgs e)
+		{
+			Clear();
 		}
 	}
 }

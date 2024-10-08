@@ -118,6 +118,7 @@ namespace Supermarket_Management
 
 		private void Product_List_Click(object sender, EventArgs e)
 		{
+			openChildForm(new Product());
 			hideSubMenu();
 		}
 
