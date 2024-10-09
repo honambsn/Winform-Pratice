@@ -33,6 +33,8 @@
 			this.btnAdd = new System.Windows.Forms.Button();
 			this.label1 = new System.Windows.Forms.Label();
 			this.dgvProduct = new System.Windows.Forms.DataGridView();
+			this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+			this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
 			this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,8 +45,6 @@
 			this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
 			this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
-			this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-			this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
 			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).BeginInit();
 			this.SuspendLayout();
@@ -114,6 +114,23 @@
 			this.dgvProduct.RowHeadersVisible = false;
 			this.dgvProduct.Size = new System.Drawing.Size(984, 561);
 			this.dgvProduct.TabIndex = 3;
+			this.dgvProduct.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProduct_CellContentClick);
+			// 
+			// dataGridViewImageColumn1
+			// 
+			this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.dataGridViewImageColumn1.HeaderText = "";
+			this.dataGridViewImageColumn1.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn1.Image")));
+			this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+			this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+			// 
+			// dataGridViewImageColumn2
+			// 
+			this.dataGridViewImageColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.dataGridViewImageColumn2.HeaderText = "";
+			this.dataGridViewImageColumn2.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn2.Image")));
+			this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+			this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
 			// 
 			// Column1
 			// 
@@ -129,7 +146,7 @@
 			this.Column2.HeaderText = "PCode";
 			this.Column2.Name = "Column2";
 			this.Column2.ReadOnly = true;
-			this.Column2.Visible = false;
+			this.Column2.Width = 85;
 			// 
 			// Column3
 			// 
@@ -197,22 +214,6 @@
 			this.Delete.Name = "Delete";
 			this.Delete.ReadOnly = true;
 			this.Delete.Width = 5;
-			// 
-			// dataGridViewImageColumn1
-			// 
-			this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			this.dataGridViewImageColumn1.HeaderText = "";
-			this.dataGridViewImageColumn1.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn1.Image")));
-			this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-			this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-			// 
-			// dataGridViewImageColumn2
-			// 
-			this.dataGridViewImageColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			this.dataGridViewImageColumn2.HeaderText = "";
-			this.dataGridViewImageColumn2.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn2.Image")));
-			this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-			this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
 			// 
 			// Product
 			// 

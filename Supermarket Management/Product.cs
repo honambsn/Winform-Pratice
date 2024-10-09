@@ -102,6 +102,89 @@ namespace Supermarket_Management
 			productModule.ShowDialog();
 		}
 
-		
+		private void dgvProduct_CellContentClick(object sender, DataGridViewCellEventArgs e)
+		{
+			string colname = dgvProduct.Columns[e.ColumnIndex].Name;
+			if (colname == "Edit")
+			{
+				try
+				{
+					ProductModule product = new ProductModule(this);
+
+					var cells = new (Action<string> setText, int index)[]
+					{
+					(text => product.txtPCode.Text = text, 1),
+					(text => product.txtBarcode.Text = text, 2),
+					(text => product.txtPDesc.Text = text, 3),
+					(text => product.cbBrand.Text = text, 4),
+					(text => product.cbCate.Text = text, 5),
+					(text => product.txtPrice.Text = text, 6),
+					};
+
+					for (int i = 0; i < cells.Length; i++)
+					{
+						var cellValue = dgvProduct.Rows[e.RowIndex].Cells[cells[i].index].Value;
+						if (cellValue != null)
+							cells[i].setText(cellValue.ToString());
+					}
+
+					var reorderCellValue = dgvProduct.Rows[e.RowIndex].Cells[7].Value;
+					if (reorderCellValue != null && int.TryParse(reorderCellValue.ToString(), out int reorderValue))
+					{
+						product.UDReOrder.Value = reorderValue;
+					}
+					else
+					{
+						product.UDReOrder.Value = 0;
+					}
+
+					product.txtPCode.Enabled = false;
+					product.btnSave.Enabled = false;
+					product.btnUpdate.Enabled = true;
+					product.ShowDialog();
+					MessageBox.Show("Record has been successfully updated", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				}
+				catch (Exception ex)
+				{
+					MessageBox.Show(ex.Message);
+				}
+				finally
+				{
+					LoadProduct();
+				}
+			}
+			else if (colname == "Delete")
+			{
+				if (MessageBox.Show("Are you sure you want to delete this record?", "Delete", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
+				{
+					try
+					{
+						// Ensure the connection is open
+						if (cn.State != ConnectionState.Open)
+							cn.Open();
+
+						using (SqlCommand cm = new SqlCommand("DELETE FROM Product WHERE ProductCode = @ProductCode", cn))
+						{
+							// Use parameterized query to prevent SQL injection
+							cm.Parameters.AddWithValue("@ProductCode", dgvProduct[1, e.RowIndex].Value.ToString());
+
+							cm.ExecuteNonQuery();
+							MessageBox.Show("Record has been successfully deleted", "Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
+						}
+					}
+					catch (Exception ex)
+					{
+						MessageBox.Show("Error: " + ex.Message, "Deletion Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					}
+					finally
+					{
+						LoadProduct();
+						if (cn.State == ConnectionState.Open)
+							cn.Close();
+					}
+				}
+			}
+
+		}
 	}
 }

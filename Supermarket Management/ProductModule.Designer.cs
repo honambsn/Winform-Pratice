@@ -133,6 +133,7 @@
 			this.btnUpdate.TabIndex = 11;
 			this.btnUpdate.Text = "Update";
 			this.btnUpdate.UseVisualStyleBackColor = false;
+			this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
 			// 
 			// label2
 			// 
@@ -248,6 +249,7 @@
 			// cbBrand
 			// 
 			this.cbBrand.Anchor = System.Windows.Forms.AnchorStyles.Right;
+			this.cbBrand.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cbBrand.FormattingEnabled = true;
 			this.cbBrand.Location = new System.Drawing.Point(147, 221);
 			this.cbBrand.Name = "cbBrand";
@@ -257,6 +259,7 @@
 			// cbCate
 			// 
 			this.cbCate.Anchor = System.Windows.Forms.AnchorStyles.Right;
+			this.cbCate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cbCate.FormattingEnabled = true;
 			this.cbCate.Location = new System.Drawing.Point(147, 283);
 			this.cbCate.Name = "cbCate";
@@ -353,9 +356,9 @@
 		private System.Windows.Forms.Label label9;
 		public System.Windows.Forms.TextBox txtBarcode;
 		public System.Windows.Forms.TextBox txtPDesc;
-		private System.Windows.Forms.ComboBox cbBrand;
-		private System.Windows.Forms.ComboBox cbCate;
-		private System.Windows.Forms.NumericUpDown UDReOrder;
 		public System.Windows.Forms.TextBox txtPrice;
+		public System.Windows.Forms.ComboBox cbBrand;
+		public System.Windows.Forms.ComboBox cbCate;
+		public System.Windows.Forms.NumericUpDown UDReOrder;
 	}
 }

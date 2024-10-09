@@ -113,5 +113,52 @@ namespace Supermarket_Management
 		{
 			Clear();
 		}
+
+		private void btnUpdate_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				// Ensure the connection is open
+				if (cn.State != ConnectionState.Open)
+					cn.Open();
+
+				if (MessageBox.Show("Are u sure want to update this product?", "Update product", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+				{
+					
+					try
+					{
+						using (SqlCommand cm = new SqlCommand("UPDATE Product SET Barcode = @Barcode, Description = @Description, BrandID = @BrandID, CategoryID = @CategoryID, Price=@Price, ReOrder=@ReOrder where ProductCode like @ProductCode", cn))
+						{
+							cm.Parameters.AddWithValue("@ProductCode", txtPCode.Text.Trim());
+							cm.Parameters.AddWithValue("@Barcode", txtBarcode.Text.Trim());
+							cm.Parameters.AddWithValue("@Description", txtPDesc.Text.Trim());
+							cm.Parameters.AddWithValue("@BrandID", cbBrand.SelectedValue);
+							cm.Parameters.AddWithValue("@CategoryID", cbCate.SelectedValue);
+							cm.Parameters.AddWithValue("@Price", double.Parse(txtPrice.Text.Trim()));
+							cm.Parameters.AddWithValue("@ReOrder", UDReOrder.Value);
+							
+							cm.ExecuteNonQuery();
+							
+							MessageBox.Show("Record has been successfully updated", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
+						}
+					}
+					catch (Exception ex)
+					{
+						MessageBox.Show(ex.Message);
+					}
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+			}
+			finally
+			{
+				Clear();
+				product.LoadProduct();
+				this.Dispose();
+				cn.Close();
+			}
+		}
 	}
 }
