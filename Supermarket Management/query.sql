@@ -17,8 +17,8 @@ CREATE TABLE Product (
     ProductCode NVARCHAR(50) NOT NULL,
     Barcode NVARCHAR(50) NOT NULL,
     Description NVARCHAR(max) NULL,
-    BrandID INT NOT NULL,
-    CategoryID INT NOT NULL,
+    BrandID NVARCHAR(50) NOT NULL,
+    CategoryID NVARCHAR(50) NOT NULL,
     Price DECIMAL(18, 2) NOT NULL,
     qty INT NULL,
     ReOrder INT NOT NULL
