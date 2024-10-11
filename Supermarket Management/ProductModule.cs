@@ -86,6 +86,7 @@ namespace Supermarket_Management
 							cm.Parameters.AddWithValue("@Price", txtPrice.Text.Trim());
 							cm.Parameters.AddWithValue("@ReOrder", UDReOrder.Value);
 							MessageBox.Show("Product has been saved successfully", stitle);
+							
 							cm.ExecuteNonQuery();
 						}
 					}
@@ -132,8 +133,8 @@ namespace Supermarket_Management
 							cm.Parameters.AddWithValue("@ProductCode", txtPCode.Text.Trim());
 							cm.Parameters.AddWithValue("@Barcode", txtBarcode.Text.Trim());
 							cm.Parameters.AddWithValue("@Description", txtPDesc.Text.Trim());
-							cm.Parameters.AddWithValue("@BrandID", cbBrand.SelectedValue);
-							cm.Parameters.AddWithValue("@CategoryID", cbCate.SelectedValue);
+							cm.Parameters.AddWithValue("@BrandID", cbBrand.SelectedItem.ToString());
+							cm.Parameters.AddWithValue("@CategoryID", cbCate.SelectedItem.ToString());
 							cm.Parameters.AddWithValue("@Price", double.Parse(txtPrice.Text.Trim()));
 							cm.Parameters.AddWithValue("@ReOrder", UDReOrder.Value);
 							
@@ -160,5 +161,7 @@ namespace Supermarket_Management
 				cn.Close();
 			}
 		}
+
 	}
 }
+// 					}

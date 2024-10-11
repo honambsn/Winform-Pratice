@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -54,45 +55,23 @@ namespace Supermarket_Management
 		//Version 2 (better)
 		public void LoadProduct()
 		{
-			dgvProduct.Rows.Clear(); // Xóa các hàng hiện có
-			int i = 0; // Khởi tạo chỉ số hàng
+			int i = 0;
+			dgvProduct.Rows.Clear();
+			cm = new SqlCommand("select p.ProductCode, p.Barcode, p.Description, b.BrandName, c.CategoryName, p.Price, p.ReOrder from Product as p inner join Brand as b on b.id = p.BrandID inner join Category as c on c.id = p.CategoryID where concat (p.Description, b.BrandName, c.CategoryName) like '%" + txtSearch.Text + "%'", cn);
 
-			// Đảm bảo kết nối đang mở trước khi thực thi lệnh
-			if (cn.State != ConnectionState.Open)
-			{
+			if (cn.State == ConnectionState.Closed)
 				cn.Open();
+
+			dr = cm.ExecuteReader();
+
+			while (dr.Read())
+			{
+				i++;
+				dgvProduct.Rows.Add(i, dr[0].ToString(), dr[1].ToString(), dr[2].ToString(), dr[3].ToString(), dr[4].ToString(), dr[5].ToString(), dr[6].ToString());
 			}
 
-			// Định nghĩa lệnh SQL
-			using (SqlCommand cm = new SqlCommand("SELECT p.ProductCode, p.Barcode, p.Description, p.BrandID, p.CategoryID, p.Price, p.qty, p.ReOrder " +
-												   "FROM Product AS p " +
-												   "INNER JOIN Brand AS b ON b.id = p.BrandID " +
-												   "INNER JOIN Category AS c ON c.id = p.CategoryID", cn))
-			{
-				using (SqlDataReader dr = cm.ExecuteReader())
-				{
-					while (dr.Read())
-					{
-						i++;
-						// Thêm hàng vào DataGridView
-						dgvProduct.Rows.Add(i,
-											dr["ProductCode"].ToString(),
-											dr["Barcode"].ToString(),
-											dr["Description"]?.ToString() ?? string.Empty, // Xử lý giá trị null
-											dr["BrandID"].ToString(),
-											dr["CategoryID"].ToString(),
-											dr["Price"].ToString(),
-											//											dr["qty"] != DBNull.Value ? dr["qty"].ToString() : "0", // Xử lý giá trị null
-											dr["ReOrder"].ToString());
-					}
-				}
-			}
-
-			// Đảm bảo kết nối được đóng
-			if (cn.State == ConnectionState.Open)
-			{
-				cn.Close();
-			}
+			dr.Close();
+			cn.Close();
 		}
 
 
@@ -185,6 +164,11 @@ namespace Supermarket_Management
 				}
 			}
 
+		}
+
+		private void txtSearch_TextChanged(object sender, EventArgs e)
+		{
+			LoadProduct();
 		}
 	}
 }
