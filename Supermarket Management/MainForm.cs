@@ -181,6 +181,7 @@ namespace Supermarket_Management
 
 		private void btn_Supplier_Click(object sender, EventArgs e)
 		{
+			openChildForm(new Supplier());
 			hideSubMenu();
 		}
 

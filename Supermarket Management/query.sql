@@ -24,12 +24,25 @@ CREATE TABLE Product (
     ReOrder INT NOT NULL
 )
 
+create table Supplier
+(
+    id int primary key identity(1,1),
+	supplierName varchar(255) not null,
+    address text not null,
+    contact varchar(255) not null,
+    phone varchar(255) not null,
+    email varchar(255) not null,
+    fax varchar(255) not null,
+)
+
 
 drop table Brand
 
 drop table Category
 
 drop table Product
+
+select * from Supplier
 
 select * from Brand
 
