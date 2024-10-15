@@ -171,6 +171,7 @@ namespace Supermarket_Management
 
 		private void Setting_User_Click(object sender, EventArgs e)
 		{
+			openChildForm(new UserAccount());
 			hideSubMenu();
 		}
 

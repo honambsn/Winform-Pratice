@@ -30,16 +30,16 @@
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Brand));
 			this.panel1 = new System.Windows.Forms.Panel();
+			this.btnAdd = new System.Windows.Forms.Button();
+			this.label1 = new System.Windows.Forms.Label();
 			this.dgvBrand = new System.Windows.Forms.DataGridView();
 			this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-			this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
 			this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
 			this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
-			this.btnAdd = new System.Windows.Forms.Button();
-			this.label1 = new System.Windows.Forms.Label();
+			this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+			this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
 			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dgvBrand)).BeginInit();
 			this.SuspendLayout();
@@ -54,6 +54,33 @@
 			this.panel1.Name = "panel1";
 			this.panel1.Size = new System.Drawing.Size(984, 80);
 			this.panel1.TabIndex = 0;
+			// 
+			// btnAdd
+			// 
+			this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.btnAdd.FlatAppearance.BorderSize = 0;
+			this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnAdd.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
+			this.btnAdd.Location = new System.Drawing.Point(918, 26);
+			this.btnAdd.Name = "btnAdd";
+			this.btnAdd.Size = new System.Drawing.Size(54, 31);
+			this.btnAdd.TabIndex = 1;
+			this.btnAdd.UseVisualStyleBackColor = true;
+			this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+			// 
+			// label1
+			// 
+			this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label1.ForeColor = System.Drawing.Color.White;
+			this.label1.Image = global::Supermarket_Management.Properties.Resources.icons8_brand_30;
+			this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.label1.Location = new System.Drawing.Point(29, 20);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(108, 42);
+			this.label1.TabIndex = 0;
+			this.label1.Text = "Manage Brand";
+			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
 			// dgvBrand
 			// 
@@ -94,7 +121,6 @@
 			this.Column2.Name = "Column2";
 			this.Column2.ReadOnly = true;
 			this.Column2.Visible = false;
-			this.Column2.Width = 43;
 			// 
 			// Column3
 			// 
@@ -102,24 +128,6 @@
 			this.Column3.HeaderText = "Brand";
 			this.Column3.Name = "Column3";
 			this.Column3.ReadOnly = true;
-			// 
-			// dataGridViewImageColumn1
-			// 
-			this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			this.dataGridViewImageColumn1.HeaderText = "";
-			this.dataGridViewImageColumn1.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn1.Image")));
-			this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-			this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-			this.dataGridViewImageColumn1.Width = 5;
-			// 
-			// dataGridViewImageColumn2
-			// 
-			this.dataGridViewImageColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			this.dataGridViewImageColumn2.HeaderText = "";
-			this.dataGridViewImageColumn2.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn2.Image")));
-			this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-			this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
-			this.dataGridViewImageColumn2.Width = 5;
 			// 
 			// Edit
 			// 
@@ -141,32 +149,21 @@
 			this.Delete.ReadOnly = true;
 			this.Delete.Width = 5;
 			// 
-			// btnAdd
+			// dataGridViewImageColumn1
 			// 
-			this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.btnAdd.FlatAppearance.BorderSize = 0;
-			this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnAdd.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
-			this.btnAdd.Location = new System.Drawing.Point(918, 26);
-			this.btnAdd.Name = "btnAdd";
-			this.btnAdd.Size = new System.Drawing.Size(54, 31);
-			this.btnAdd.TabIndex = 1;
-			this.btnAdd.UseVisualStyleBackColor = true;
-			this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+			this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.dataGridViewImageColumn1.HeaderText = "";
+			this.dataGridViewImageColumn1.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn1.Image")));
+			this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+			this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
 			// 
-			// label1
+			// dataGridViewImageColumn2
 			// 
-			this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label1.ForeColor = System.Drawing.Color.White;
-			this.label1.Image = global::Supermarket_Management.Properties.Resources.icons8_brand_30;
-			this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.label1.Location = new System.Drawing.Point(29, 20);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(108, 42);
-			this.label1.TabIndex = 0;
-			this.label1.Text = "Manage Brand";
-			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.dataGridViewImageColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.dataGridViewImageColumn2.HeaderText = "";
+			this.dataGridViewImageColumn2.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn2.Image")));
+			this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+			this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
 			// 
 			// Brand
 			// 

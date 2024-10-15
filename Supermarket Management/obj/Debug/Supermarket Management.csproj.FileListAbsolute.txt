@@ -17,6 +17,7 @@ D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Supermarket Management\obj\Deb
 D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Supermarket Management\obj\Debug\Supermarket_Management.Properties.Resources.resources
 D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Supermarket Management\obj\Debug\Supermarket_Management.Supplier.resources
 D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Supermarket Management\obj\Debug\Supermarket_Management.SupplierModule.resources
+D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Supermarket Management\obj\Debug\Supermarket_Management.UserAccount.resources
 D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Supermarket Management\obj\Debug\Supermarket_Management.Supplier.dje-NE.resources
 D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Supermarket Management\obj\Debug\Supermarket Management.csproj.GenerateResource.cache
 D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Supermarket Management\obj\Debug\Supermarket Management.csproj.CoreCompileInputs.cache

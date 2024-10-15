@@ -36,11 +36,24 @@ create table Supplier
 )
 
 
+CREATE TABLE Users (
+    username VARCHAR(255) PRIMARY KEY,
+    password VARCHAR(255) NOT NULL,
+    role VARCHAR(255) NOT NULL,
+    name VARCHAR(255) NOT NULL,
+    isactive VARCHAR(50) NOT NULL DEFAULT 'true' -- Default value set to 'true'
+);
+
+
+drop table Users
+
 drop table Brand
 
 drop table Category
 
 drop table Product
+
+select * from Users
 
 select * from Supplier
 
