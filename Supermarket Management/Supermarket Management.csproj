@@ -74,6 +74,12 @@
     <Compile Include="BrandModule.Designer.cs">
       <DependentUpon>BrandModule.cs</DependentUpon>
     </Compile>
+    <Compile Include="Cashier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cashier.Designer.cs">
+      <DependentUpon>Cashier.cs</DependentUpon>
+    </Compile>
     <Compile Include="Category.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,6 +136,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BrandModule.resx">
       <DependentUpon>BrandModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cashier.resx">
+      <DependentUpon>Cashier.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Category.resx">
       <DependentUpon>Category.cs</DependentUpon>
@@ -216,8 +225,20 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icons8-supermarket-100.ico" />
+    <Content Include="Icons\icons8-bin-30.png" />
+    <Content Include="Icons\icons8-cart-30.png" />
+    <Content Include="Icons\icons8-discount-30.png" />
+    <Content Include="Icons\icons8-logout-30.png" />
+    <Content Include="Icons\icons8-minus-30.png" />
     <Content Include="Icons\icons8-package-30.png" />
+    <Content Include="Icons\icons8-password-30.png" />
+    <Content Include="Icons\icons8-payment-30.png" />
+    <Content Include="Icons\icons8-plus-30.png" />
+    <Content Include="Icons\icons8-purchase-64.png" />
+    <Content Include="Icons\icons8-sale-30.png" />
+    <Content Include="Icons\icons8-search2-30.png" />
     <Content Include="Icons\icons8-setting-30.png" />
+    <Content Include="Icons\icons8-transaction-30.png" />
     <Resource Include="Icons\icons8-category-30.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
