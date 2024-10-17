@@ -3,32 +3,48 @@
   "WorkspaceRootPath": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Supermarket Management\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C012B5FD-ACB1-492C-82A3-77F113FDF88C}|Supermarket Management.csproj|d:\\ba nam\\own project\\practice\\c#\\winform pratice\\supermarket management\\cashier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C012B5FD-ACB1-492C-82A3-77F113FDF88C}|Supermarket Management.csproj|solutionrelative:cashier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C012B5FD-ACB1-492C-82A3-77F113FDF88C}|Supermarket Management.csproj|D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Supermarket Management\\lookupproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C012B5FD-ACB1-492C-82A3-77F113FDF88C}|Supermarket Management.csproj|solutionrelative:lookupproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C012B5FD-ACB1-492C-82A3-77F113FDF88C}|Supermarket Management.csproj|d:\\ba nam\\own project\\practice\\c#\\winform pratice\\supermarket management\\cashier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{C012B5FD-ACB1-492C-82A3-77F113FDF88C}|Supermarket Management.csproj|solutionrelative:cashier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Supermarket Management\\query.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:query.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C012B5FD-ACB1-492C-82A3-77F113FDF88C}|Supermarket Management.csproj|d:\\ba nam\\own project\\practice\\c#\\winform pratice\\supermarket management\\cashier.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C012B5FD-ACB1-492C-82A3-77F113FDF88C}|Supermarket Management.csproj|solutionrelative:cashier.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C012B5FD-ACB1-492C-82A3-77F113FDF88C}|Supermarket Management.csproj|d:\\ba nam\\own project\\practice\\c#\\winform pratice\\supermarket management\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C012B5FD-ACB1-492C-82A3-77F113FDF88C}|Supermarket Management.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C012B5FD-ACB1-492C-82A3-77F113FDF88C}|Supermarket Management.csproj|D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Supermarket Management\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{C012B5FD-ACB1-492C-82A3-77F113FDF88C}|Supermarket Management.csproj|solutionrelative:product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{C012B5FD-ACB1-492C-82A3-77F113FDF88C}|Supermarket Management.csproj|d:\\ba nam\\own project\\practice\\c#\\winform pratice\\supermarket management\\lookupproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C012B5FD-ACB1-492C-82A3-77F113FDF88C}|Supermarket Management.csproj|solutionrelative:lookupproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C012B5FD-ACB1-492C-82A3-77F113FDF88C}|Supermarket Management.csproj|D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Supermarket Management\\brandmodule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{C012B5FD-ACB1-492C-82A3-77F113FDF88C}|Supermarket Management.csproj|solutionrelative:brandmodule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Supermarket Management\\query.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:query.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}"
+      "AbsoluteMoniker": "D:0:0:{C012B5FD-ACB1-492C-82A3-77F113FDF88C}|Supermarket Management.csproj|D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Supermarket Management\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C012B5FD-ACB1-492C-82A3-77F113FDF88C}|Supermarket Management.csproj|solutionrelative:product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C012B5FD-ACB1-492C-82A3-77F113FDF88C}|Supermarket Management.csproj|D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Supermarket Management\\cashier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C012B5FD-ACB1-492C-82A3-77F113FDF88C}|Supermarket Management.csproj|solutionrelative:cashier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C012B5FD-ACB1-492C-82A3-77F113FDF88C}|Supermarket Management.csproj|D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Supermarket Management\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C012B5FD-ACB1-492C-82A3-77F113FDF88C}|Supermarket Management.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Supermarket Management\\packages\\MetroFramework.1.2.0.3\\README.TXT||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:packages\\MetroFramework.1.2.0.3\\README.TXT||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C012B5FD-ACB1-492C-82A3-77F113FDF88C}|Supermarket Management.csproj|D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Supermarket Management\\productmodule.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C012B5FD-ACB1-492C-82A3-77F113FDF88C}|Supermarket Management.csproj|solutionrelative:productmodule.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C012B5FD-ACB1-492C-82A3-77F113FDF88C}|Supermarket Management.csproj|D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Supermarket Management\\cashier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C012B5FD-ACB1-492C-82A3-77F113FDF88C}|Supermarket Management.csproj|solutionrelative:cashier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C012B5FD-ACB1-492C-82A3-77F113FDF88C}|Supermarket Management.csproj|D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Supermarket Management\\cashier.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C012B5FD-ACB1-492C-82A3-77F113FDF88C}|Supermarket Management.csproj|solutionrelative:cashier.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C012B5FD-ACB1-492C-82A3-77F113FDF88C}|Supermarket Management.csproj|D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Supermarket Management\\useraccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -91,14 +107,6 @@
       "RelativeMoniker": "D:0:0:{C012B5FD-ACB1-492C-82A3-77F113FDF88C}|Supermarket Management.csproj|solutionrelative:brandmodule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Supermarket Management\\packages\\MetroFramework.1.2.0.3\\README.TXT||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:packages\\MetroFramework.1.2.0.3\\README.TXT||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C012B5FD-ACB1-492C-82A3-77F113FDF88C}|Supermarket Management.csproj|D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Supermarket Management\\productmodule.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C012B5FD-ACB1-492C-82A3-77F113FDF88C}|Supermarket Management.csproj|solutionrelative:productmodule.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Supermarket Management\\query.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|CodeFrame",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:query.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|CodeFrame"
     }
@@ -115,53 +123,38 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Cashier.cs",
-              "DocumentMoniker": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Supermarket Management\\Cashier.cs",
-              "RelativeDocumentMoniker": "Cashier.cs",
-              "ToolTip": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Supermarket Management\\Cashier.cs",
-              "RelativeToolTip": "Cashier.cs",
-              "ViewState": "AgIAAD4AAAAAAAAAAAAwwF8AAAAAAAAAAAAAAA==",
+              "Title": "LookUpProduct.cs",
+              "DocumentMoniker": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Supermarket Management\\LookUpProduct.cs",
+              "RelativeDocumentMoniker": "LookUpProduct.cs",
+              "ToolTip": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Supermarket Management\\LookUpProduct.cs",
+              "RelativeToolTip": "LookUpProduct.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-16T15:00:02.619Z",
+              "WhenOpened": "2024-10-17T14:53:50.931Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Cashier.Designer.cs",
-              "DocumentMoniker": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Supermarket Management\\Cashier.Designer.cs",
-              "RelativeDocumentMoniker": "Cashier.Designer.cs",
-              "ToolTip": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Supermarket Management\\Cashier.Designer.cs",
-              "RelativeToolTip": "Cashier.Designer.cs",
-              "ViewState": "AgIAAHYCAAAAAAAAAAAuwJcCAAAhAAAAAAAAAA==",
+              "Title": "LookUpProduct.cs [Design]",
+              "DocumentMoniker": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Supermarket Management\\LookUpProduct.cs",
+              "RelativeDocumentMoniker": "LookUpProduct.cs",
+              "ToolTip": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Supermarket Management\\LookUpProduct.cs [Design]",
+              "RelativeToolTip": "LookUpProduct.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-16T15:58:30.797Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Supermarket Management\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Supermarket Management\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAbAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-16T15:19:41.426Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-17T14:36:17.447Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Cashier.cs [Design]",
-              "DocumentMoniker": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Supermarket Management\\Cashier.cs",
-              "RelativeDocumentMoniker": "Cashier.cs",
-              "ToolTip": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Supermarket Management\\Cashier.cs [Design]",
-              "RelativeToolTip": "Cashier.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-16T14:34:48.609Z",
-              "EditorCaption": " [Design]"
+              "Title": "query.sql ",
+              "DocumentMoniker": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Supermarket Management\\query.sql",
+              "RelativeDocumentMoniker": "query.sql",
+              "ToolTip": "query.sql ",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2024-10-10T16:35:17.498Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -177,7 +170,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 13,
               "Title": "SupplierModule.cs",
               "DocumentMoniker": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Supermarket Management\\SupplierModule.cs",
               "RelativeDocumentMoniker": "SupplierModule.cs",
@@ -185,11 +178,12 @@
               "RelativeToolTip": "SupplierModule.cs",
               "ViewState": "AgIAADsAAAAAAAAAAAAIwEkAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-14T14:38:41.754Z"
+              "WhenOpened": "2024-10-14T14:38:41.754Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
               "Title": "BrandModule.cs [Design]",
               "DocumentMoniker": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Supermarket Management\\BrandModule.cs",
               "RelativeDocumentMoniker": "BrandModule.cs",
@@ -201,73 +195,144 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 12,
               "Title": "SupplierModule.cs [Design]",
               "DocumentMoniker": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Supermarket Management\\SupplierModule.cs",
               "RelativeDocumentMoniker": "SupplierModule.cs",
               "ToolTip": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Supermarket Management\\SupplierModule.cs [Design]",
               "RelativeToolTip": "SupplierModule.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-14T14:25:31.378Z"
+              "WhenOpened": "2024-10-14T14:25:31.378Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 8,
+              "Title": "ProductModule.Designer.cs",
+              "DocumentMoniker": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Supermarket Management\\ProductModule.Designer.cs",
+              "RelativeDocumentMoniker": "ProductModule.Designer.cs",
+              "ToolTip": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Supermarket Management\\ProductModule.Designer.cs",
+              "RelativeToolTip": "ProductModule.Designer.cs",
+              "ViewState": "AgIAAPMAAAAAAAAAAAAAAAoBAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-11T15:06:23.723Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Supermarket Management\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Supermarket Management\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-16T15:19:41.426Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Cashier.cs",
+              "DocumentMoniker": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Supermarket Management\\Cashier.cs",
+              "RelativeDocumentMoniker": "Cashier.cs",
+              "ToolTip": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Supermarket Management\\Cashier.cs",
+              "RelativeToolTip": "Cashier.cs",
+              "ViewState": "AgIAAD4AAAAAAAAAAAAwwF8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-16T15:00:02.619Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "README.TXT",
+              "DocumentMoniker": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Supermarket Management\\packages\\MetroFramework.1.2.0.3\\README.TXT",
+              "RelativeDocumentMoniker": "packages\\MetroFramework.1.2.0.3\\README.TXT",
+              "ToolTip": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Supermarket Management\\packages\\MetroFramework.1.2.0.3\\README.TXT",
+              "RelativeToolTip": "packages\\MetroFramework.1.2.0.3\\README.TXT",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2024-10-11T15:54:40.474Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Cashier.cs [Design]",
+              "DocumentMoniker": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Supermarket Management\\Cashier.cs",
+              "RelativeDocumentMoniker": "Cashier.cs",
+              "ToolTip": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Supermarket Management\\Cashier.cs [Design]",
+              "RelativeToolTip": "Cashier.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-16T14:34:48.609Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Cashier.Designer.cs",
+              "DocumentMoniker": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Supermarket Management\\Cashier.Designer.cs",
+              "RelativeDocumentMoniker": "Cashier.Designer.cs",
+              "ToolTip": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Supermarket Management\\Cashier.Designer.cs",
+              "RelativeToolTip": "Cashier.Designer.cs",
+              "ViewState": "AgIAAHYCAAAAAAAAAAAuwJcCAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-16T15:58:30.797Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
               "Title": "ProductModule.cs [Design]",
               "DocumentMoniker": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Supermarket Management\\ProductModule.cs",
               "RelativeDocumentMoniker": "ProductModule.cs",
               "ToolTip": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Supermarket Management\\ProductModule.cs [Design]",
               "RelativeToolTip": "ProductModule.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-11T14:40:02.131Z"
+              "WhenOpened": "2024-10-11T14:40:02.131Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "query.sql ",
-              "DocumentMoniker": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Supermarket Management\\query.sql",
-              "RelativeDocumentMoniker": "query.sql",
-              "ToolTip": "query.sql ",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2024-10-10T16:35:17.498Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 11,
               "Title": "UserAccount.cs [Design]",
               "DocumentMoniker": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Supermarket Management\\UserAccount.cs",
               "RelativeDocumentMoniker": "UserAccount.cs",
               "ToolTip": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Supermarket Management\\UserAccount.cs [Design]",
               "RelativeToolTip": "UserAccount.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-15T14:23:31.397Z"
+              "WhenOpened": "2024-10-15T14:23:31.397Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 14,
               "Title": "Brand.cs [Design]",
               "DocumentMoniker": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Supermarket Management\\Brand.cs",
               "RelativeDocumentMoniker": "Brand.cs",
               "ToolTip": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Supermarket Management\\Brand.cs [Design]",
               "RelativeToolTip": "Brand.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-15T15:03:43.359Z"
+              "WhenOpened": "2024-10-15T15:03:43.359Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 16,
               "Title": "MainForm.cs [Design]",
               "DocumentMoniker": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Supermarket Management\\MainForm.cs",
               "RelativeDocumentMoniker": "MainForm.cs",
               "ToolTip": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Supermarket Management\\MainForm.cs [Design]",
               "RelativeToolTip": "MainForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-11T16:23:51.045Z"
+              "WhenOpened": "2024-10-11T16:23:51.045Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 17,
               "Title": "UserAccount.cs",
               "DocumentMoniker": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Supermarket Management\\UserAccount.cs",
               "RelativeDocumentMoniker": "UserAccount.cs",
@@ -275,11 +340,12 @@
               "RelativeToolTip": "UserAccount.cs",
               "ViewState": "AgIAABYAAAAAAAAAAAAiwDMAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-15T15:16:26.342Z"
+              "WhenOpened": "2024-10-15T15:16:26.342Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 18,
               "Title": "MainForm.cs",
               "DocumentMoniker": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Supermarket Management\\MainForm.cs",
               "RelativeDocumentMoniker": "MainForm.cs",
@@ -287,22 +353,24 @@
               "RelativeToolTip": "MainForm.cs",
               "ViewState": "AgIAAIsAAAAAAAAAAAAuwK0AAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-14T15:00:11.605Z"
+              "WhenOpened": "2024-10-14T15:00:11.605Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 20,
               "Title": "Supplier.cs [Design]",
               "DocumentMoniker": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Supermarket Management\\Supplier.cs",
               "RelativeDocumentMoniker": "Supplier.cs",
               "ToolTip": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Supermarket Management\\Supplier.cs [Design]",
               "RelativeToolTip": "Supplier.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-14T14:16:45.025Z"
+              "WhenOpened": "2024-10-14T14:16:45.025Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 22,
               "Title": "Supplier.cs",
               "DocumentMoniker": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Supermarket Management\\Supplier.cs",
               "RelativeDocumentMoniker": "Supplier.cs",
@@ -310,11 +378,12 @@
               "RelativeToolTip": "Supplier.cs",
               "ViewState": "AgIAABQAAAAAAAAAAAAAwCUAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-14T14:55:55.843Z"
+              "WhenOpened": "2024-10-14T14:55:55.843Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 19,
               "Title": "Product.cs",
               "DocumentMoniker": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Supermarket Management\\Product.cs",
               "RelativeDocumentMoniker": "Product.cs",
@@ -327,7 +396,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 21,
               "Title": "ProductModule.cs",
               "DocumentMoniker": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Supermarket Management\\ProductModule.cs",
               "RelativeDocumentMoniker": "ProductModule.cs",
@@ -335,11 +404,12 @@
               "RelativeToolTip": "ProductModule.cs",
               "ViewState": "AgIAAGkAAAAAAAAAAAAmwGAAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-10T16:33:26.106Z"
+              "WhenOpened": "2024-10-10T16:33:26.106Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 23,
               "Title": "Category.cs",
               "DocumentMoniker": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Supermarket Management\\Category.cs",
               "RelativeDocumentMoniker": "Category.cs",
@@ -347,22 +417,24 @@
               "RelativeToolTip": "Category.cs",
               "ViewState": "AgIAAEcAAAAAAAAAAAAIwHAAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-14T15:01:31.893Z"
+              "WhenOpened": "2024-10-14T15:01:31.893Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 24,
               "Title": "Category.cs [Design]",
               "DocumentMoniker": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Supermarket Management\\Category.cs",
               "RelativeDocumentMoniker": "Category.cs",
               "ToolTip": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Supermarket Management\\Category.cs [Design]",
               "RelativeToolTip": "Category.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-14T14:28:46.195Z"
+              "WhenOpened": "2024-10-14T14:28:46.195Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 25,
               "Title": "BrandModule.cs",
               "DocumentMoniker": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Supermarket Management\\BrandModule.cs",
               "RelativeDocumentMoniker": "BrandModule.cs",
@@ -372,30 +444,6 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-14T14:38:57.78Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "README.TXT",
-              "DocumentMoniker": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Supermarket Management\\packages\\MetroFramework.1.2.0.3\\README.TXT",
-              "RelativeDocumentMoniker": "packages\\MetroFramework.1.2.0.3\\README.TXT",
-              "ToolTip": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Supermarket Management\\packages\\MetroFramework.1.2.0.3\\README.TXT",
-              "RelativeToolTip": "packages\\MetroFramework.1.2.0.3\\README.TXT",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2024-10-11T15:54:40.474Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "ProductModule.Designer.cs",
-              "DocumentMoniker": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Supermarket Management\\ProductModule.Designer.cs",
-              "RelativeDocumentMoniker": "ProductModule.Designer.cs",
-              "ToolTip": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Supermarket Management\\ProductModule.Designer.cs",
-              "RelativeToolTip": "ProductModule.Designer.cs",
-              "ViewState": "AgIAAPMAAAAAAAAAAAAAAAoBAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-11T15:06:23.723Z"
             }
           ]
         }

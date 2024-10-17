@@ -44,6 +44,21 @@ CREATE TABLE Users (
     isactive VARCHAR(50) NOT NULL DEFAULT 'true' -- Default value set to 'true'
 );
 
+create table Cart
+(
+    id int primary key identity(1,1),
+    transno varchar(255) not null,
+    ProductCode varchar(255) not null,
+    Price decimal(18,2) not null,
+    qty int not null,
+    disc_percent decimal(18,2) not null default 0,
+    disc decimal(18,2) not null default 0,
+    total decimal(18,2) not null,
+    sdate date not null,
+    status varchar(255) not null default 'Pending',
+    cashier varchar(255) not null,
+)
+
 
 drop table Users
 
@@ -144,4 +159,15 @@ INSERT INTO Product (ProductCode, Barcode, Description, BrandID, CategoryID, Pri
 ('SO-PSP-001', '123456848', 'Sony PlayStation Plus Subscription', 4, 4, 59.99, 100, 50),
 ('GO-NWR-001', '123456849', 'Google Nest Wifi Router', 5, 4, 149.99, 25, 5);
 
+go
+create trigger [dbo].[ComputTotal]
+on [dbo].[Cart]
+after insert, delete, update
 
+as 
+begin
+set nocount on
+update Cart set disc = ((Price * qty) * disc_percent)
+update Cart set total = (Price * qty) - disc
+end
+go
