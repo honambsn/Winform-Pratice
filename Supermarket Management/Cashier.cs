@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,12 +13,17 @@ namespace Supermarket_Management
 {
 	public partial class Cashier : Form
 	{
+		SqlConnection cn = new SqlConnection();
+		SqlCommand cm = new SqlCommand();
+		DBConnect dbcon = new DBConnect();
+		SqlDataReader dr;
 		public Cashier()
 		{
 			InitializeComponent();
 			drawCenter();
+			cn = new SqlConnection(dbcon.myConnection());
 			dgvCashier.ColumnHeadersDefaultCellStyle.BackColor = Color.Red;
-
+			GetTranNo(); 
 			dgvCashier.Refresh();
 
 		}
@@ -58,6 +64,7 @@ namespace Supermarket_Management
 
 		}
 
+		#region button
 		private void btnTransaction_Click(object sender, EventArgs e)
 		{
 			slide(btnTransaction);
@@ -67,6 +74,9 @@ namespace Supermarket_Management
 		private void btnSearchProd_Click(object sender, EventArgs e)
 		{
 			slide(btnSearchProd);
+			LookUpProduct lookUp = new LookUpProduct(this);
+			lookUp.LoadProduct();
+			lookUp.ShowDialog();
 		}
 
 		private void btnDiscount_Click(object sender, EventArgs e)
@@ -98,18 +108,110 @@ namespace Supermarket_Management
 		{
 			slide(btnClearCart);
 		}
+		#endregion button
 
-		private void lblTimerr_Tick(object sender, EventArgs e)
+		public void LoadCart()
+		{
+			dgvCashier.Rows.Clear();
+			cn.Open();
+			try
+			{
+				if (cn.State == ConnectionState.Open)
+				{
+					cn.Close();
+				}
+				cn.Open();
+
+				int i = 0;
+				double total = 0;
+				double discount = 0;
+				using (SqlCommand cm = new SqlCommand("select c.id, c.ProductCode, p.Description, c.Price, c.qty, c.disc, c.total from Cart " +
+					"as c inner join Product as p on c.ProductCode = p.ProductCode " +
+					"where c.transno like @transno and c.status like 'Pending's", cn))
+				{
+					cm.Parameters.AddWithValue("@transno", lblTransNo.Text);
+					dr = cm.ExecuteReader();
+					while (dr.Read())
+					{
+						i++;
+						total += Convert.ToDouble(dr["total"].ToString());
+						discount += Convert.ToDouble(dr["disc"].ToString());
+						dgvCashier.Rows.Add(i, dr["id"].ToString(), dr["ProductCode"].ToString(), dr["Description"].ToString(), dr["Price"].ToString(), dr["qty"].ToString(), dr["disc"].ToString(), double.Parse(dr["total"].ToString()).ToString("#,##0.00"));
+
+					}
+					dr.Close();
+					cn.Close();
+					lblSaleTotal.Text = total.ToString("#,##0.00");
+					lblDiscount.Text = discount.ToString("#,##0.00");
+					GetCartTotal();
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+			}
+			finally
+			{
+				cn.Close();
+			}
+		}
+
+		public void GetCartTotal()
+		{
+			double discount = double.Parse(lblDiscount.Text);
+			double sales = double.Parse(lblSaleTotal.Text) - discount;
+			double vat = sales * 0.12;
+			double vatable = sales - vat;
+
+			lblVat.Text = vat.ToString("#,##0.00");
+			lblVatable.Text = vatable.ToString("#,##0.00");
+			lblDiscount.Text = sales.ToString("#,##0.00");
+		}
+		
+			
+			private void lblTimerr_Tick(object sender, EventArgs e)
 		{
 			lblTimer.Text = DateTime.Now.ToString("HH:mm:ss tt");
 		}
 
 		public void GetTranNo()
 		{
-			// Get the transaction number
-			string sdate = DateTime.Now.ToString("yyyyMMdd");
-			string transno = sdate + "1001";
-			lblTransNo.Text = transno;
+			try
+			{
+				// Get the transaction number
+				string sdate = DateTime.Now.ToString("yyyyMMdd");
+				int count;
+				string transno = sdate + "1001";
+				lblTransNo.Text = transno;
+				//using(SqlCommand cm = new SqlCommand("select top 1 transno from Cart where transno like '" + sdate + "%' order by id desc", cn))
+				//{
+				//	cm.Parameters.AddWithValue("@transno", transno);
+				//	cm.Parameters.AddWithValue("@sdate", DateTime.Now);
+				//	cm.Parameters.AddWithValue("@cashier", lblUsername.Text);
+				//	cm.ExecuteNonQuery();
+				//}
+				cn.Open();
+				cm = new SqlCommand("select top 1 transno from Cart where transno like '" + sdate + "%' order by id desc", cn);
+				dr = cm.ExecuteReader();
+				dr.Read();
+				if (dr.HasRows)
+				{
+					transno = dr[0].ToString();
+					count = int.Parse(transno.Substring(8, 4));
+					lblTransNo.Text = sdate + (count + 1);
+				}
+				else
+				{
+					transno = sdate + "1001";
+					lblTransNo.Text = transno;
+				}
+				dr.Close();
+				cn.Close();
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+			}
 		}
 	}
 }

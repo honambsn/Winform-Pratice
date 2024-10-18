@@ -55,7 +55,7 @@
 			this.panel5 = new System.Windows.Forms.Panel();
 			this.lblTimer = new System.Windows.Forms.Label();
 			this.lblVatable = new System.Windows.Forms.Label();
-			this.lblTax = new System.Windows.Forms.Label();
+			this.lblVat = new System.Windows.Forms.Label();
 			this.lblDiscount = new System.Windows.Forms.Label();
 			this.lblSaleTotal = new System.Windows.Forms.Label();
 			this.label10 = new System.Windows.Forms.Label();
@@ -359,7 +359,7 @@
 			// 
 			this.panel5.Controls.Add(this.lblTimer);
 			this.panel5.Controls.Add(this.lblVatable);
-			this.panel5.Controls.Add(this.lblTax);
+			this.panel5.Controls.Add(this.lblVat);
 			this.panel5.Controls.Add(this.lblDiscount);
 			this.panel5.Controls.Add(this.lblSaleTotal);
 			this.panel5.Controls.Add(this.label10);
@@ -401,14 +401,14 @@
 			this.lblVatable.Text = "0.00";
 			this.lblVatable.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
-			// lblTax
+			// lblVat
 			// 
-			this.lblTax.Location = new System.Drawing.Point(101, 440);
-			this.lblTax.Name = "lblTax";
-			this.lblTax.Size = new System.Drawing.Size(86, 20);
-			this.lblTax.TabIndex = 13;
-			this.lblTax.Text = "0.00";
-			this.lblTax.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.lblVat.Location = new System.Drawing.Point(101, 440);
+			this.lblVat.Name = "lblVat";
+			this.lblVat.Size = new System.Drawing.Size(86, 20);
+			this.lblVat.TabIndex = 13;
+			this.lblVat.Text = "0.00";
+			this.lblVat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
 			// lblDiscount
 			// 
@@ -433,18 +433,18 @@
 			this.label10.AutoSize = true;
 			this.label10.Location = new System.Drawing.Point(9, 483);
 			this.label10.Name = "label10";
-			this.label10.Size = new System.Drawing.Size(72, 20);
+			this.label10.Size = new System.Drawing.Size(73, 20);
 			this.label10.TabIndex = 10;
-			this.label10.Text = "Vatable:";
+			this.label10.Text = "VATable:";
 			// 
 			// label9
 			// 
 			this.label9.AutoSize = true;
 			this.label9.Location = new System.Drawing.Point(9, 440);
 			this.label9.Name = "label9";
-			this.label9.Size = new System.Drawing.Size(35, 20);
+			this.label9.Size = new System.Drawing.Size(40, 20);
 			this.label9.TabIndex = 9;
-			this.label9.Text = "Tax:";
+			this.label9.Text = "VAT:";
 			// 
 			// label8
 			// 
@@ -713,7 +713,6 @@
 		private System.Windows.Forms.Button btnClearCart;
 		private System.Windows.Forms.Button btnPayment;
 		private System.Windows.Forms.PictureBox pictureBox1;
-		private System.Windows.Forms.Label lblUsername;
 		private System.Windows.Forms.Label lblname;
 		private System.Windows.Forms.PictureBox pictureBox2;
 		private System.Windows.Forms.PictureBox picClose;
@@ -732,11 +731,10 @@
 		private System.Windows.Forms.DataGridViewImageColumn Delete;
 		private System.Windows.Forms.Label lblDate;
 		private System.Windows.Forms.Label label5;
-		private System.Windows.Forms.Label lblTransNo;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Label lblVatable;
-		private System.Windows.Forms.Label lblTax;
+		private System.Windows.Forms.Label lblVat;
 		private System.Windows.Forms.Label lblDiscount;
 		private System.Windows.Forms.Label lblSaleTotal;
 		private System.Windows.Forms.Label label10;
@@ -747,5 +745,7 @@
 		private System.Windows.Forms.Label label6;
 		private System.Windows.Forms.Label lblTimer;
 		private System.Windows.Forms.Timer lblTimerr;
+		public System.Windows.Forms.Label lblUsername;
+		public System.Windows.Forms.Label lblTransNo;
 	}
 }

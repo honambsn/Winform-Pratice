@@ -29,11 +29,12 @@
 		private void InitializeComponent()
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LookUpProduct));
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
 			this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
 			this.panel1 = new System.Windows.Forms.Panel();
+			this.btnClose = new System.Windows.Forms.Button();
 			this.txtSearch = new MetroFramework.Controls.MetroTextBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this.dgvProduct = new System.Windows.Forms.DataGridView();
@@ -46,7 +47,6 @@
 			this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Select = new System.Windows.Forms.DataGridViewImageColumn();
-			this.btnClose = new System.Windows.Forms.Button();
 			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).BeginInit();
 			this.SuspendLayout();
@@ -78,6 +78,24 @@
 			this.panel1.Name = "panel1";
 			this.panel1.Size = new System.Drawing.Size(1000, 67);
 			this.panel1.TabIndex = 4;
+			// 
+			// btnClose
+			// 
+			this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.btnClose.BackColor = System.Drawing.Color.Red;
+			this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.btnClose.FlatAppearance.BorderSize = 2;
+			this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnClose.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnClose.ForeColor = System.Drawing.Color.White;
+			this.btnClose.Location = new System.Drawing.Point(923, 19);
+			this.btnClose.Name = "btnClose";
+			this.btnClose.Size = new System.Drawing.Size(65, 33);
+			this.btnClose.TabIndex = 6;
+			this.btnClose.Text = "Close";
+			this.btnClose.UseVisualStyleBackColor = false;
+			this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
 			// 
 			// txtSearch
 			// 
@@ -154,6 +172,7 @@
 			this.dgvProduct.RowHeadersVisible = false;
 			this.dgvProduct.Size = new System.Drawing.Size(1000, 600);
 			this.dgvProduct.TabIndex = 5;
+			this.dgvProduct.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProduct_CellContentClick);
 			// 
 			// Column1
 			// 
@@ -205,8 +224,8 @@
 			// Column7
 			// 
 			this.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-			this.Column7.DefaultCellStyle = dataGridViewCellStyle5;
+			dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+			this.Column7.DefaultCellStyle = dataGridViewCellStyle1;
 			this.Column7.HeaderText = "Price";
 			this.Column7.Name = "Column7";
 			this.Column7.ReadOnly = true;
@@ -215,8 +234,8 @@
 			// Column8
 			// 
 			this.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-			this.Column8.DefaultCellStyle = dataGridViewCellStyle6;
+			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			this.Column8.DefaultCellStyle = dataGridViewCellStyle2;
 			this.Column8.HeaderText = "Qty";
 			this.Column8.Name = "Column8";
 			this.Column8.ReadOnly = true;
@@ -231,24 +250,6 @@
 			this.Select.Name = "Select";
 			this.Select.ReadOnly = true;
 			this.Select.Width = 5;
-			// 
-			// btnClose
-			// 
-			this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.btnClose.BackColor = System.Drawing.Color.Red;
-			this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.btnClose.FlatAppearance.BorderSize = 2;
-			this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnClose.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnClose.ForeColor = System.Drawing.Color.White;
-			this.btnClose.Location = new System.Drawing.Point(923, 19);
-			this.btnClose.Name = "btnClose";
-			this.btnClose.Size = new System.Drawing.Size(65, 33);
-			this.btnClose.TabIndex = 6;
-			this.btnClose.Text = "Close";
-			this.btnClose.UseVisualStyleBackColor = false;
-			this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
 			// 
 			// LookUpProduct
 			// 

@@ -27,3 +27,4 @@ D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Supermarket Management\obj\Deb
 D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Supermarket Management\obj\Debug\Supermarket Management.pdb
 D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Supermarket Management\obj\Debug\Supermarket_Management.Cashier.resources
 D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Supermarket Management\obj\Debug\Supermarket_Management.LookUpProduct.resources
+D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Supermarket Management\obj\Debug\Supermarket_Management.Qty.resources

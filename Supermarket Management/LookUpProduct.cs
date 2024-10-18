@@ -18,11 +18,13 @@ namespace Supermarket_Management
 		DBConnect dbcon = new DBConnect();
 		SqlDataReader dr;
 		string stitle = "POS";
-		public LookUpProduct()
+		Cashier cashier;
+		public LookUpProduct(Cashier cash)
 		{
 			InitializeComponent();
-			LoadProduct();
-			cn = new SqlConnection(dbcon.myConnection());
+			cashier = cash;
+			cn = new SqlConnection(dbcon.myConnection()); // Initialize the connection string first
+			LoadProduct(); // Then load the product
 		}
 
 		private void btnClose_Click(object sender, EventArgs e)
@@ -53,6 +55,17 @@ namespace Supermarket_Management
 
 			dr.Close();
 			cn.Close();
+		}
+
+		private void dgvProduct_CellContentClick(object sender, DataGridViewCellEventArgs e)
+		{
+			string colName = dgvProduct.Columns[e.ColumnIndex].Name;
+			if (colName == "Select")
+			{
+				Qty qty = new Qty(cashier);
+				qty.ProductDetails(dgvProduct.Rows[e.RowIndex].Cells[1].Value.ToString(), double.Parse(dgvProduct.Rows[e.RowIndex].Cells[6].Value.ToString()), cashier.lblTransNo.Text, int.Parse(dgvProduct.Rows[e.RowIndex].Cells[7].Value.ToString()));
+				qty.ShowDialog();
+			}
 		}
 	}
 }
