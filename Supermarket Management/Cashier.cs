@@ -110,9 +110,55 @@ namespace Supermarket_Management
 		}
 		#endregion button
 
+		//public void LoadCart()
+		//{
+
+		//	cn.Open();
+		//	try
+		//	{
+		//		if (cn.State == ConnectionState.Open)
+		//		{
+		//			cn.Close();
+		//		}
+		//		cn.Open();
+
+		//		int i = 0;
+		//		double total = 0;
+		//		double discount = 0;
+		//		dgvCashier.Rows.Clear();
+		//		using (SqlCommand cm = new SqlCommand("select c.id, c.ProductCode, p.Description, c.Price, c.qty, c.disc, c.total from Cart " +
+		//			"as c inner join Product as p on c.ProductCode = p.ProductCode " +
+		//			"where c.transno like @transno and c.status like 'Pending'", cn))
+		//		{
+		//			cm.Parameters.AddWithValue("@transno", lblTransNo.Text);
+		//			dr = cm.ExecuteReader();
+		//			while (dr.Read())
+		//			{
+		//				i++;
+		//				total += Convert.ToDouble(dr["total"].ToString());
+		//				discount += Convert.ToDouble(dr["disc"].ToString());
+		//				dgvCashier.Rows.Add(i, dr["id"].ToString(), dr["ProductCode"].ToString(), dr["Description"].ToString(), dr["Price"].ToString(), dr["qty"].ToString(), dr["disc"].ToString(), double.Parse(dr["total"].ToString()).ToString("#,##0.00"));
+
+		//			}
+		//			dr.Close();
+		//			cn.Close();
+		//			lblSaleTotal.Text = total.ToString("#,##0.00");
+		//			lblDiscount.Text = discount.ToString("#,##0.00");
+		//			GetCartTotal();
+		//		}
+		//	}
+		//	catch (Exception ex)
+		//	{
+		//		MessageBox.Show(ex.Message);
+		//	}
+		//	finally
+		//	{
+		//		cn.Close();
+		//	}
+		//}
+
 		public void LoadCart()
 		{
-			dgvCashier.Rows.Clear();
 			cn.Open();
 			try
 			{
@@ -125,24 +171,39 @@ namespace Supermarket_Management
 				int i = 0;
 				double total = 0;
 				double discount = 0;
-				using (SqlCommand cm = new SqlCommand("select c.id, c.ProductCode, p.Description, c.Price, c.qty, c.disc, c.total from Cart " +
-					"as c inner join Product as p on c.ProductCode = p.ProductCode " +
-					"where c.transno like @transno and c.status like 'Pending's", cn))
+				dgvCashier.Rows.Clear();
+				using (SqlCommand cm = new SqlCommand("SELECT c.id, c.ProductCode, p.Description, c.Price, c.qty, c.disc, c.total FROM Cart " +
+					"AS c INNER JOIN Product AS p ON c.ProductCode = p.ProductCode " +
+					"WHERE c.transno LIKE @transno AND c.status LIKE 'Pending'", cn))
 				{
 					cm.Parameters.AddWithValue("@transno", lblTransNo.Text);
 					dr = cm.ExecuteReader();
 					while (dr.Read())
 					{
 						i++;
-						total += Convert.ToDouble(dr["total"].ToString());
-						discount += Convert.ToDouble(dr["disc"].ToString());
-						dgvCashier.Rows.Add(i, dr["id"].ToString(), dr["ProductCode"].ToString(), dr["Description"].ToString(), dr["Price"].ToString(), dr["qty"].ToString(), dr["disc"].ToString(), double.Parse(dr["total"].ToString()).ToString("#,##0.00"));
 
+						// Kiểm tra DBNull và chuyển đổi an toàn
+						double itemTotal = dr["total"] != DBNull.Value ? Convert.ToDouble(dr["total"]) : 0;
+						double itemDisc = dr["disc"] != DBNull.Value ? Convert.ToDouble(dr["disc"]) : 0;
+
+						total += itemTotal;
+						discount += itemDisc;
+
+						dgvCashier.Rows.Add(i,
+							dr["id"].ToString(),
+							dr["ProductCode"].ToString(),
+							dr["Description"].ToString(),
+							dr["Price"].ToString(),
+							dr["qty"].ToString(),
+							itemDisc.ToString("#,##0.00"),
+							itemTotal.ToString("#,##0.00")
+						);
 					}
 					dr.Close();
-					cn.Close();
 					lblSaleTotal.Text = total.ToString("#,##0.00");
 					lblDiscount.Text = discount.ToString("#,##0.00");
+					MessageBox.Show("Total Sale: " + lblSaleTotal.Text);
+					MessageBox.Show("Total dis: " + lblDiscount.Text);
 					GetCartTotal();
 				}
 			}
@@ -152,6 +213,7 @@ namespace Supermarket_Management
 			}
 			finally
 			{
+				GetCartTotal();
 				cn.Close();
 			}
 		}
@@ -165,11 +227,11 @@ namespace Supermarket_Management
 
 			lblVat.Text = vat.ToString("#,##0.00");
 			lblVatable.Text = vatable.ToString("#,##0.00");
-			lblDiscount.Text = sales.ToString("#,##0.00");
+			lblDisplayTotal.Text = sales.ToString("#,##0.00");
 		}
 		
 			
-			private void lblTimerr_Tick(object sender, EventArgs e)
+		private void lblTimerr_Tick(object sender, EventArgs e)
 		{
 			lblTimer.Text = DateTime.Now.ToString("HH:mm:ss tt");
 		}

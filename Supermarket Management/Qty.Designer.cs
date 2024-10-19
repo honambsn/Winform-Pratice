@@ -36,9 +36,8 @@
 			this.txtQty.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.txtQty.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtQty.Location = new System.Drawing.Point(0, 0);
-			this.txtQty.Multiline = true;
 			this.txtQty.Name = "txtQty";
-			this.txtQty.Size = new System.Drawing.Size(277, 93);
+			this.txtQty.Size = new System.Drawing.Size(126, 41);
 			this.txtQty.TabIndex = 0;
 			this.txtQty.Text = "1";
 			this.txtQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -48,7 +47,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(277, 93);
+			this.ClientSize = new System.Drawing.Size(126, 50);
 			this.Controls.Add(this.txtQty);
 			this.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;

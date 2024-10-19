@@ -47,17 +47,19 @@ CREATE TABLE Users (
 create table Cart
 (
     id int primary key identity(1,1),
-    transno varchar(255) not null,
-    ProductCode varchar(255) not null,
-    Price decimal(18,2) not null,
-    qty int not null,
-    disc_percent decimal(18,2) not null default 0,
-    disc decimal(18,2) not null default 0,
-    total decimal(18,2) not null,
-    sdate date not null,
-    status varchar(255) not null default 'Pending',
-    cashier varchar(255) not null,
+    transno varchar(255) null,
+    ProductCode varchar(255) null,
+    Price decimal(18,2) null,
+    qty int null,
+    disc_percent decimal(18,2) null default 0,
+    disc decimal(18,2) null default 0,
+    total decimal(18,2) null,
+    sdate date null,
+    status varchar(255) null default 'Pending',
+    cashier varchar(255) null,
 )
+
+drop table Cart
 
 
 drop table Users
@@ -171,3 +173,5 @@ update Cart set disc = ((Price * qty) * disc_percent)
 update Cart set total = (Price * qty) - disc
 end
 go
+
+

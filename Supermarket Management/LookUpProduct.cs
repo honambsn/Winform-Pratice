@@ -46,7 +46,7 @@ namespace Supermarket_Management
 				cn.Open();
 
 			dr = cm.ExecuteReader();
-
+		
 			while (dr.Read())
 			{
 				i++;
