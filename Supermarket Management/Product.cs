@@ -170,5 +170,6 @@ namespace Supermarket_Management
 		{
 			LoadProduct();
 		}
+
 	}
 }

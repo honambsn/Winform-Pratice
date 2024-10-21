@@ -60,7 +60,7 @@ namespace Supermarket_Management
 						cm.Parameters.AddWithValue("@cashier", cashier.lblUsername.Text);
 						cm.ExecuteNonQuery();
 						cashier.LoadCart();
-						this.Dispose();
+						
 					}
 				}
 				catch (Exception ex)
@@ -69,7 +69,8 @@ namespace Supermarket_Management
 				}
 				finally
 				{
-					
+					MessageBox.Show("Item added to cart", "POS", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					this.Dispose();
 				}
 			}
 		}

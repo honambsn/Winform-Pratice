@@ -18,6 +18,7 @@ D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Supermarket Management\obj\Deb
 D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Supermarket Management\obj\Debug\Supermarket_Management.ProductModule.resources
 D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Supermarket Management\obj\Debug\Supermarket_Management.Properties.Resources.resources
 D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Supermarket Management\obj\Debug\Supermarket_Management.Qty.resources
+D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Supermarket Management\obj\Debug\Supermarket_Management.StockIn.resources
 D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Supermarket Management\obj\Debug\Supermarket_Management.Supplier.resources
 D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Supermarket Management\obj\Debug\Supermarket_Management.SupplierModule.resources
 D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Supermarket Management\obj\Debug\Supermarket_Management.UserAccount.resources

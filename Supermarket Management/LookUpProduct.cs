@@ -40,7 +40,7 @@ namespace Supermarket_Management
 			int i = 0;
 			dgvProduct.Rows.Clear();
 			cm = new SqlCommand("select p.ProductCode, p.Barcode, p.Description, b.BrandName, c.CategoryName, p.Price, p.qty from Product as p inner join Brand as b on b.id = p.BrandID inner join Category as c on c.id = p.CategoryID " +
-				"where concat (p.Description, b.BrandName, c.CategoryName) like '%" + txtSearch.Text + "%'", cn);
+				"where concat (p.Description, b.BrandName, c.CategoryName, p.ProductCode) like '%" + txtSearch.Text + "%'", cn);
 
 			if (cn.State == ConnectionState.Closed)
 				cn.Open();
@@ -66,6 +66,11 @@ namespace Supermarket_Management
 				qty.ProductDetails(dgvProduct.Rows[e.RowIndex].Cells[1].Value.ToString(), double.Parse(dgvProduct.Rows[e.RowIndex].Cells[6].Value.ToString()), cashier.lblTransNo.Text, int.Parse(dgvProduct.Rows[e.RowIndex].Cells[7].Value.ToString()));
 				qty.ShowDialog();
 			}
+		}
+
+		private void txtSearch_TextChanged(object sender, EventArgs e)
+		{
+			LoadProduct();
 		}
 	}
 }

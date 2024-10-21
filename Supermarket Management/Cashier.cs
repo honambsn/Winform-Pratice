@@ -202,8 +202,8 @@ namespace Supermarket_Management
 					dr.Close();
 					lblSaleTotal.Text = total.ToString("#,##0.00");
 					lblDiscount.Text = discount.ToString("#,##0.00");
-					MessageBox.Show("Total Sale: " + lblSaleTotal.Text);
-					MessageBox.Show("Total dis: " + lblDiscount.Text);
+					//MessageBox.Show("Total Sale: " + lblSaleTotal.Text);
+					//MessageBox.Show("Total dis: " + lblDiscount.Text);
 					GetCartTotal();
 				}
 			}
