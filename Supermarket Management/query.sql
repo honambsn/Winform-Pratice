@@ -186,3 +186,6 @@ create table StockIn
 	status varchar(255) null default 'Pending',
 	supplierID varbinary(255) null,
 )
+
+
+select * from Supplier

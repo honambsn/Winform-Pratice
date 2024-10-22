@@ -117,6 +117,12 @@
     <Compile Include="ProductModule.Designer.cs">
       <DependentUpon>ProductModule.cs</DependentUpon>
     </Compile>
+    <Compile Include="ProductStockIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductStockIn.Designer.cs">
+      <DependentUpon>ProductStockIn.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Qty.cs">
@@ -175,6 +181,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ProductModule.resx">
       <DependentUpon>ProductModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductStockIn.resx">
+      <DependentUpon>ProductStockIn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -266,9 +275,12 @@
     <Content Include="Icons\icons8-sale-30.png" />
     <Content Include="Icons\icons8-search-product-30.png" />
     <Content Include="Icons\icons8-search2-30.png" />
+    <Content Include="Icons\icons8-select-30.png" />
     <Content Include="Icons\icons8-setting-30.png" />
     <Content Include="Icons\icons8-shelves-30.png" />
     <Content Include="Icons\icons8-transaction-30.png" />
+    <Content Include="Icons\icons8-trolley-30.png" />
+    <Content Include="Icons\icons8-trolley-50.png" />
     <Resource Include="Icons\icons8-category-30.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
