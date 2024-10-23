@@ -30,17 +30,17 @@
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductStockIn));
 			this.panel1 = new System.Windows.Forms.Panel();
+			this.btnClose = new System.Windows.Forms.Button();
 			this.txtSearch = new MetroFramework.Controls.MetroTextBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this.dgvProduct = new System.Windows.Forms.DataGridView();
-			this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
-			this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
 			this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Select = new System.Windows.Forms.DataGridViewImageColumn();
-			this.btnClose = new System.Windows.Forms.Button();
+			this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+			this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
 			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).BeginInit();
 			this.SuspendLayout();
@@ -56,6 +56,24 @@
 			this.panel1.Name = "panel1";
 			this.panel1.Size = new System.Drawing.Size(731, 67);
 			this.panel1.TabIndex = 4;
+			// 
+			// btnClose
+			// 
+			this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.btnClose.BackColor = System.Drawing.Color.Red;
+			this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.btnClose.FlatAppearance.BorderSize = 2;
+			this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnClose.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnClose.ForeColor = System.Drawing.Color.White;
+			this.btnClose.Location = new System.Drawing.Point(654, 20);
+			this.btnClose.Name = "btnClose";
+			this.btnClose.Size = new System.Drawing.Size(65, 33);
+			this.btnClose.TabIndex = 7;
+			this.btnClose.Text = "Close";
+			this.btnClose.UseVisualStyleBackColor = false;
+			this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
 			// 
 			// txtSearch
 			// 
@@ -92,6 +110,7 @@
 			this.txtSearch.WaterMark = "Search here ....";
 			this.txtSearch.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
 			this.txtSearch.WaterMarkFont = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
 			// 
 			// label1
 			// 
@@ -129,22 +148,6 @@
 			this.dgvProduct.Size = new System.Drawing.Size(731, 647);
 			this.dgvProduct.TabIndex = 5;
 			this.dgvProduct.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProduct_CellContentClick);
-			// 
-			// dataGridViewImageColumn2
-			// 
-			this.dataGridViewImageColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			this.dataGridViewImageColumn2.HeaderText = "";
-			this.dataGridViewImageColumn2.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn2.Image")));
-			this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-			this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
-			// 
-			// dataGridViewImageColumn1
-			// 
-			this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			this.dataGridViewImageColumn1.HeaderText = "";
-			this.dataGridViewImageColumn1.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn1.Image")));
-			this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-			this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
 			// 
 			// Column1
 			// 
@@ -187,23 +190,21 @@
 			this.Select.ReadOnly = true;
 			this.Select.Width = 5;
 			// 
-			// btnClose
+			// dataGridViewImageColumn2
 			// 
-			this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.btnClose.BackColor = System.Drawing.Color.Red;
-			this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.btnClose.FlatAppearance.BorderSize = 2;
-			this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnClose.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnClose.ForeColor = System.Drawing.Color.White;
-			this.btnClose.Location = new System.Drawing.Point(654, 20);
-			this.btnClose.Name = "btnClose";
-			this.btnClose.Size = new System.Drawing.Size(65, 33);
-			this.btnClose.TabIndex = 7;
-			this.btnClose.Text = "Close";
-			this.btnClose.UseVisualStyleBackColor = false;
-			this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+			this.dataGridViewImageColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.dataGridViewImageColumn2.HeaderText = "";
+			this.dataGridViewImageColumn2.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn2.Image")));
+			this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+			this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+			// 
+			// dataGridViewImageColumn1
+			// 
+			this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.dataGridViewImageColumn1.HeaderText = "";
+			this.dataGridViewImageColumn1.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn1.Image")));
+			this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+			this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
 			// 
 			// ProductStockIn
 			// 

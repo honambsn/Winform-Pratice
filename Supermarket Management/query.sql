@@ -13,16 +13,21 @@ create table Category
 )
 
 CREATE TABLE Product (
-    ProductID INT PRIMARY KEY IDENTITY(1,1),  -- Assuming you want a unique ID for each product
-    ProductCode VARCHAR(50) NOT NULL,
-    Barcode VARCHAR(50) NOT NULL,
+    ProductID INT IDENTITY(1,1),  -- Assuming you want a unique ID for each product
+    ProductCode VARCHAR(255) PRIMARY KEY not NULL,
+    Barcode VARCHAR(50) NULL,
     Description VARCHAR(max) NULL,
-    BrandID VARCHAR(50) NOT NULL,
-    CategoryID VARCHAR(50) NOT NULL,
-    Price DECIMAL(18, 2) NOT NULL,
+    BrandID VARCHAR(50) NULL,
+    CategoryID VARCHAR(50) NULL,
+    Price DECIMAL(18, 2) NULL,
     qty INT NULL,
     ReOrder INT NOT NULL
 )
+
+ALTER TABLE Product
+ALTER COLUMN BrandID INT NULL;
+
+select * from Product
 
 create table Supplier
 (
@@ -58,27 +63,6 @@ create table Cart
     status varchar(255) null default 'Pending',
     cashier varchar(255) null,
 )
-
-drop table Cart
-
-
-drop table Users
-
-drop table Brand
-
-drop table Category
-
-drop table Product
-
-select * from Users
-
-select * from Supplier
-
-select * from Brand
-
-select * from Category
-
-select * from Product
 
 
 INSERT INTO Brand (BrandName) VALUES
@@ -184,8 +168,83 @@ create table StockIn
 	sdate date null,
 	stockinby varchar(255) null,
 	status varchar(255) null default 'Pending',
-	supplierID varbinary(255) null,
+	supplierID int null,
 )
+
+drop table StockIn
 
 
 select * from Supplier
+
+INSERT INTO Supplier (supplierName, address, contact, phone, email, fax)
+VALUES 
+('Supplier A', '123 Main St, City, Country', 'John Doe', '123-456-7890', 'contact@suppliera.com', '123-456-7891'),
+('Supplier B', '456 Elm St, City, Country', 'Jane Smith', '098-765-4321', 'contact@supplierb.com', '098-765-4322'),
+('Supplier C', '789 Oak St, City, Country', 'Jim Brown', '555-123-4567', 'contact@supplierc.com', '555-123-4568');
+
+INSERT INTO Supplier (supplierName, address, contact, phone, email, fax)
+VALUES 
+('Supplier D', '101 Pine St, City, Country', 'Alice Green', '111-222-3333', 'contact@supplierd.com', '111-222-3334'),
+('Supplier E', '202 Maple St, City, Country', 'Bob White', '222-333-4444', 'contact@suppliere.com', '222-333-4445'),
+('Supplier F', '303 Birch St, City, Country', 'Carol Black', '333-444-5555', 'contact@supplierf.com', '333-444-5556'),
+('Supplier G', '404 Cedar St, City, Country', 'Dave Yellow', '444-555-6666', 'contact@supplierg.com', '444-555-6667'),
+('Supplier H', '505 Willow St, City, Country', 'Eva Gray', '555-666-7777', 'contact@supplierh.com', '555-666-7778'),
+('Supplier I', '606 Spruce St, City, Country', 'Frank Blue', '666-777-8888', 'contact@supplieri.com', '666-777-8889'),
+('Supplier J', '707 Fir St, City, Country', 'Gina Pink', '777-888-9999', 'contact@supplierj.com', '777-888-0000'),
+('Supplier K', '808 Poplar St, City, Country', 'Hank Purple', '888-999-0000', 'contact@supplierk.com', '888-999-0001'),
+('Supplier L', '909 Chestnut St, City, Country', 'Ivy Orange', '999-000-1111', 'contact@supplierl.com', '999-000-1112'),
+('Supplier M', '1010 Ash St, City, Country', 'Jack Teal', '000-111-2222', 'contact@supplierm.com', '000-111-2223'),
+('Supplier N', '1111 Walnut St, City, Country', 'Karen Brown', '111-222-3333', 'contact@suppliern.com', '111-222-3334'),
+('Supplier O', '1212 Maple St, City, Country', 'Leo Silver', '222-333-4444', 'contact@suppliero.com', '222-333-4445'),
+('Supplier P', '1313 Oak St, City, Country', 'Mona Gold', '333-444-5555', 'contact@supplierp.com', '333-444-5556'),
+('Supplier Q', '1414 Pine St, City, Country', 'Nina Red', '444-555-6666', 'contact@supplierq.com', '444-555-6667'),
+('Supplier R', '1515 Birch St, City, Country', 'Oscar White', '555-666-7777', 'contact@supplierr.com', '555-666-7778'),
+('Supplier S', '1616 Cedar St, City, Country', 'Paul Black', '666-777-8888', 'contact@suppliers.com', '666-777-8889'),
+('Supplier T', '1717 Spruce St, City, Country', 'Quinn Green', '777-888-9999', 'contact@suppliert.com', '777-888-0000'),
+('Supplier U', '1818 Fir St, City, Country', 'Rita Blue', '888-999-0000', 'contact@supplieru.com', '888-999-0001'),
+('Supplier V', '1919 Poplar St, City, Country', 'Steve Yellow', '999-000-1111', 'contact@supplierv.com', '999-000-1112'),
+('Supplier W', '2020 Chestnut St, City, Country', 'Tina Pink', '000-111-2222', 'contact@supplierw.com', '000-111-2223'),
+('Supplier X', '2121 Ash St, City, Country', 'Ursula Purple', '111-222-3333', 'contact@supplierx.com', '111-222-3334');
+
+select * from Supplier
+
+select * from Product
+
+ALTER TABLE StockIn
+ADD CONSTRAINT FK_StockIn_Supplier FOREIGN KEY (supplierID) REFERENCES Supplier(id);
+
+ALTER TABLE StockIn
+ADD CONSTRAINT FK_StockIn_Product FOREIGN KEY (ProductCode) REFERENCES Product(ProductCode);
+
+DROP TABLE IF EXISTS StockIn;
+DROP TABLE IF EXISTS Product;
+
+select * from StockIn
+select * from Product
+
+
+-- Insert a product
+INSERT INTO Product (ProductCode, Barcode, Description, BrandID, CategoryID, Price, qty, ReOrder)
+VALUES ('test', '123456789', 'Product A Description', 1, 1, 1299.99, 100, 5);
+
+-- Insert stock in data referencing the product
+INSERT INTO StockIn (refno, ProductCode, qty, sdate, stockinby, status, supplierID)
+VALUES ('REF001', 'test', 5, '2024-10-01', 'Alice', 'Pending', NULL);
+
+SELECT DISTINCT ProductCode
+FROM StockIn
+WHERE ProductCode IS NOT NULL
+AND ProductCode NOT IN (SELECT ProductCode FROM Product);
+
+
+select * from StockIn
+
+select * from Product
+
+
+ALTER TABLE Product
+ADD CONSTRAINT FK_Product_Brand FOREIGN KEY (BrandID) REFERENCES Brand(id);
+
+
+ALTER TABLE Cart
+ADD CONSTRAINT FK_Cart_Product FOREIGN KEY (ProductCode) REFERENCES Product(ProductCode);

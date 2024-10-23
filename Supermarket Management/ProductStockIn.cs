@@ -78,6 +78,12 @@ namespace Supermarket_Management
 			string colName = dgvProduct.Columns[e.ColumnIndex].Name;
 			if (colName == "Select")
 			{
+				if (stockIn.txtStockInBy.Text == string.Empty)
+				{
+					MessageBox.Show("Please enter stock in by", "POS", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+					stockIn.txtStockInBy.Focus();
+					return;
+				}
 				if (MessageBox.Show("Add this item?", "POS", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
 				{
 					try
@@ -85,13 +91,23 @@ namespace Supermarket_Management
 						if (cn.State != ConnectionState.Open)
 							cn.Open();
 
-						using (SqlCommand cm = new SqlCommand("insert into StockIn (refno, ProductCode, sdate, , stockinby, supplierID) values(@refno, @ProductCode, @sdate, @stockinby, @supplierID", cn))
+						using (SqlCommand cm = new SqlCommand("insert into StockIn (refno, ProductCode, sdate, stockinby, supplierID) values(@refno, @ProductCode, @sdate, @stockinby, @supplierID)", cn))
 						{
 							cm.Parameters.AddWithValue("@refno", stockIn.txtRefNo.Text);
 							cm.Parameters.AddWithValue("@ProductCode", dgvProduct.CurrentRow.Cells[1].Value.ToString());
 							cm.Parameters.AddWithValue("@sdate", stockIn.dtStockIn.Value);
 							cm.Parameters.AddWithValue("@stockinby", stockIn.txtStockInBy.Text);
-							cm.Parameters.AddWithValue("@supplierID", stockIn.lblID.Text);
+							int supplierID;
+							if (int.TryParse(stockIn.lblID.Text.Replace("IblID:", "").Trim(), out supplierID))
+							{
+								cm.Parameters.AddWithValue("@supplierID", supplierID);
+							}
+							else
+							{
+								MessageBox.Show("Invalid supplier ID format.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+								return; // Ngừng thực hiện nếu ID không hợp lệ
+							}
+
 							cm.ExecuteNonQuery();
 							MessageBox.Show("Product successfully added to stock in", "POS", MessageBoxButtons.OK, MessageBoxIcon.Information);
 						}
@@ -102,11 +118,16 @@ namespace Supermarket_Management
 					}
 					finally
 					{
-
+						stockIn.LoadStockIn();
 					}
 
 				}
 			}
         }
+
+		private void txtSearch_TextChanged(object sender, EventArgs e)
+		{
+			LoadProduct();
+		}
 	}
 }

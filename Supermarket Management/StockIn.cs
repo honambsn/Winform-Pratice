@@ -24,6 +24,30 @@ namespace Supermarket_Management
 			cn = new SqlConnection(dbcon.myConnection());
 			drawCenter();
 			LoadSupplier();
+			GetReferenceNo();
+		}
+
+		public void GetReferenceNo()
+		{
+			//cn.Open();
+			//cm = new SqlCommand("SELECT TOP 1 refNo FROM StockIn ORDER BY refNo DESC", cn);
+			//dr = cm.ExecuteReader();
+			//dr.Read();
+			//if (dr.HasRows)
+			//{
+			//	int v = Convert.ToInt32(dr[0].ToString()) + 1;
+			//	txtRefNo.Text = v.ToString();
+			//}
+			//else
+			//{
+			//	txtRefNo.Text = "1";
+			//}
+			//dr.Close();
+			//cn.Close();
+
+			Random rnd = new Random();
+			txtRefNo.Clear();
+			txtRefNo.Text += rnd.Next();
 		}
 
 		public void drawCenter()
@@ -60,10 +84,35 @@ namespace Supermarket_Management
 			}
 		}
 
+		public void LoadStockIn()
+		{
+			try
+			{
+				int i = 0;
+				dgvStockIn.Rows.Clear();
+				if (cn.State != ConnectionState.Open)
+					cn.Open();
+
+				using(SqlCommand cm = new SqlCommand("SELECT * FROM StockIn where refno like '" + txtRefNo.Text + "' and status like 'Pending'", cn))
+				{
+					using (SqlDataReader dr = cm.ExecuteReader())
+					{
+						while (dr.Read())
+						{
+							i++;
+							dgvStockIn.Rows.Add(i, dr["refNo"].ToString(), dr["pcode"].ToString(), dr["pname"].ToString(), dr["price"].ToString(), dr["qty"].ToString(), dr["sdate"].ToString(), dr["supplier"].ToString(), dr["address"].ToString(), dr["contact"].ToString());
+						}
+					}
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show("An error occurred while loading stock in: " + ex.Message);
+			}
+		}
 
 
-
-		private void cbSupplier_SelectedIndexChanged(object sender, EventArgs e)
+			private void cbSupplier_SelectedIndexChanged(object sender, EventArgs e)
 		{
 			if (cbSupplier.SelectedItem != null) // Ensure an item is selected
 			{
@@ -90,6 +139,17 @@ namespace Supermarket_Management
 		{
 			e.Handled = true;
 
+		}
+
+		private void linkGen_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+		{
+			GetReferenceNo();
+		}
+
+		private void linkProd_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+		{
+			ProductStockIn prodStock = new ProductStockIn(this);
+			prodStock.ShowDialog();
 		}
 	}
 }
