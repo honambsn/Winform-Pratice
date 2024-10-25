@@ -155,10 +155,6 @@ end
 go
 
 
-truncate table Product
-
-select * from Product
-
 create table StockIn
 (
 	id int primary key identity(1,1),
@@ -168,13 +164,24 @@ create table StockIn
 	sdate date null,
 	stockinby varchar(255) null,
 	status varchar(255) null default 'Pending',
-	supplierID int null,
+	supplierID varbinary(255) null
 )
 
-drop table StockIn
+select * from StockIn
+
+alter table StockIn
+alter column supplierID varbinary(255) null
+
+ALTER TABLE StockIn
+ADD CONSTRAINT FK_StockIn_Supplier FOREIGN KEY (supplierID)
+REFERENCES Supplier(Id);  -- Use the correct column name here
 
 
-select * from Supplier
+ALTER TABLE StockIn
+ADD CONSTRAINT FK_StockIn_Supplier FOREIGN KEY (supplierID)
+REFERENCES Supplier(id);
+
+
 
 INSERT INTO Supplier (supplierName, address, contact, phone, email, fax)
 VALUES 
@@ -207,8 +214,6 @@ VALUES
 ('Supplier X', '2121 Ash St, City, Country', 'Ursula Purple', '111-222-3333', 'contact@supplierx.com', '111-222-3334');
 
 select * from Supplier
-
-select * from Product
 
 ALTER TABLE StockIn
 ADD CONSTRAINT FK_StockIn_Supplier FOREIGN KEY (supplierID) REFERENCES Supplier(id);
@@ -248,3 +253,6 @@ ADD CONSTRAINT FK_Product_Brand FOREIGN KEY (BrandID) REFERENCES Brand(id);
 
 ALTER TABLE Cart
 ADD CONSTRAINT FK_Cart_Product FOREIGN KEY (ProductCode) REFERENCES Product(ProductCode);
+
+
+select * from StockIn

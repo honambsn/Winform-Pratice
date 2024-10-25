@@ -97,8 +97,9 @@ namespace Supermarket_Management
 							cm.Parameters.AddWithValue("@ProductCode", dgvProduct.CurrentRow.Cells[1].Value.ToString());
 							cm.Parameters.AddWithValue("@sdate", stockIn.dtStockIn.Value);
 							cm.Parameters.AddWithValue("@stockinby", stockIn.txtStockInBy.Text);
+							//cm.Parameters.AddWithValue("@supplierID", Convert.ToInt32(stockIn.lblID.Text));
 							int supplierID;
-							if (int.TryParse(stockIn.lblID.Text.Replace("IblID:", "").Trim(), out supplierID))
+							if (int.TryParse(stockIn.lblID.Text, out supplierID))
 							{
 								cm.Parameters.AddWithValue("@supplierID", supplierID);
 							}
