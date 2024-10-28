@@ -15,7 +15,7 @@
       "RelativeMoniker": "D:0:0:{C012B5FD-ACB1-492C-82A3-77F113FDF88C}|Supermarket Management.csproj|solutionrelative:stockin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C012B5FD-ACB1-492C-82A3-77F113FDF88C}|Supermarket Management.csproj|d:\\ba nam\\own project\\practice\\c#\\winform pratice\\supermarket management\\productstockin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C012B5FD-ACB1-492C-82A3-77F113FDF88C}|Supermarket Management.csproj|D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Supermarket Management\\productstockin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C012B5FD-ACB1-492C-82A3-77F113FDF88C}|Supermarket Management.csproj|solutionrelative:productstockin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -178,8 +178,7 @@
               "RelativeToolTip": "ProductStockIn.cs",
               "ViewState": "AgIAAEoAAAAAAAAAAAAAwF0AAABpAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-22T15:21:23.247Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-22T15:21:23.247Z"
             },
             {
               "$type": "Document",
@@ -191,8 +190,7 @@
               "RelativeToolTip": "StockIn.cs",
               "ViewState": "AgIAAG0AAAAAAAAAAAAIwHgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-22T14:44:41.937Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-22T14:44:41.937Z"
             },
             {
               "$type": "Document",
@@ -203,8 +201,7 @@
               "ToolTip": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Supermarket Management\\StockIn.cs [Design]",
               "RelativeToolTip": "StockIn.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-21T15:20:48.669Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-10-21T15:20:48.669Z"
             },
             {
               "$type": "Document",
@@ -215,8 +212,7 @@
               "ToolTip": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Supermarket Management\\ProductStockIn.cs [Design]",
               "RelativeToolTip": "ProductStockIn.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-22T15:11:21.871Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-10-22T15:11:21.871Z"
             },
             {
               "$type": "Document",
@@ -228,8 +224,7 @@
               "RelativeToolTip": "ProductStockIn.Designer.cs",
               "ViewState": "AgIAAE0AAAAAAAAAAAAjwHAAAABVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-23T15:30:01.366Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-23T15:30:01.366Z"
             },
             {
               "$type": "Document",

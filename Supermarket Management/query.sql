@@ -256,3 +256,5 @@ ADD CONSTRAINT FK_Cart_Product FOREIGN KEY (ProductCode) REFERENCES Product(Prod
 
 
 select * from StockIn
+
+select * from Product
