@@ -266,3 +266,15 @@ create table test
 )
 
 insert into test values (1)
+
+
+select * from Product
+
+SELECT 
+    CONSTRAINT_NAME, 
+    TABLE_NAME 
+FROM 
+    INFORMATION_SCHEMA.TABLE_CONSTRAINTS 
+WHERE 
+    CONSTRAINT_TYPE = 'FOREIGN KEY';
+

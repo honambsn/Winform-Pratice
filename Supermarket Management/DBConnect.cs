@@ -15,7 +15,7 @@ namespace Supermarket_Management
 		private string con;
 		public string myConnection()
 		{
-			con = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\honam\Documents\pos.mdf;Integrated Security=True;Connect Timeout=30";
+			con = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\honam\Documents\POS_new.mdf;Integrated Security=True;Connect Timeout=30;";
 			return con;
 		}
 
