@@ -94,20 +94,11 @@ namespace Supermarket_Management
 						using (SqlCommand cm = new SqlCommand("insert into StockIn (refno, ProductCode, sdate, stockinby, supplierID) values(@refno, @ProductCode, @sdate, @stockinby, @supplierID)", cn))
 						{
 							cm.Parameters.AddWithValue("@refno", stockIn.txtRefNo.Text);
-							cm.Parameters.AddWithValue("@ProductCode", dgvProduct.CurrentRow.Cells[1].Value.ToString());
+							cm.Parameters.AddWithValue("@ProductCode", dgvProduct.Rows[e.RowIndex].Cells[1].Value.ToString());
 							cm.Parameters.AddWithValue("@sdate", stockIn.dtStockIn.Value);
 							cm.Parameters.AddWithValue("@stockinby", stockIn.txtStockInBy.Text);
-							//cm.Parameters.AddWithValue("@supplierID", Convert.ToInt32(stockIn.lblID.Text));
-							int supplierID;
-							if (int.TryParse(stockIn.lblID.Text, out supplierID))
-							{
-								cm.Parameters.AddWithValue("@supplierID", supplierID);
-							}
-							else
-							{
-								MessageBox.Show("Invalid supplier ID format.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-								return; // Ngừng thực hiện nếu ID không hợp lệ
-							}
+							cm.Parameters.AddWithValue("@supplierID", stockIn.labelID.Text);
+
 
 							cm.ExecuteNonQuery();
 							MessageBox.Show("Product successfully added to stock in", "POS", MessageBoxButtons.OK, MessageBoxIcon.Information);

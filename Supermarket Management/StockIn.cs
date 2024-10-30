@@ -93,14 +93,15 @@ namespace Supermarket_Management
 				if (cn.State != ConnectionState.Open)
 					cn.Open();
 
-				using(SqlCommand cm = new SqlCommand("SELECT * FROM StockIn where refno like '" + txtRefNo.Text + "' and status like 'Pending'", cn))
+				using(SqlCommand cm = new SqlCommand("SELECT * FROM vwStockIn where refno like '" + txtRefNo.Text + "' and status like 'Pending'", cn))
 				{
 					using (SqlDataReader dr = cm.ExecuteReader())
 					{
 						while (dr.Read())
 						{
 							i++;
-							dgvStockIn.Rows.Add(i, dr["refNo"].ToString(), dr["pcode"].ToString(), dr["pname"].ToString(), dr["price"].ToString(), dr["qty"].ToString(), dr["sdate"].ToString(), dr["supplier"].ToString(), dr["address"].ToString(), dr["contact"].ToString());
+							//dgvStockIn.Rows.Add(i, dr["refNo"].ToString(), dr["pcode"].ToString(), dr["pname"].ToString(), dr["price"].ToString(), dr["qty"].ToString(), dr["sdate"].ToString(), dr["supplier"].ToString(), dr["address"].ToString(), dr["contact"].ToString());
+							dgvStockIn.Rows.Add(i, dr[0].ToString(), dr[1].ToString(), dr[2].ToString(), dr[3].ToString(), dr[4].ToString(), dr[5].ToString(), dr[6].ToString(), dr[7].ToString());
 						}
 					}
 				}
@@ -127,8 +128,9 @@ namespace Supermarket_Management
 					{
 						if (dr.Read()) // Check if there are rows
 						{
-							txtAddress.Text = dr["address"].ToString();
+							labelID.Text = dr["id"].ToString(); // Use the correct column name
 							txtConPerson.Text = dr["contact"].ToString(); // Use the correct column name
+							txtAddress.Text = dr["address"].ToString();
 						}
 					}
 				}

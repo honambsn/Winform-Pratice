@@ -140,12 +140,12 @@
             this.Column4,
             this.Column8,
             this.Select});
-			this.dgvProduct.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.dgvProduct.Dock = System.Windows.Forms.DockStyle.Top;
 			this.dgvProduct.Location = new System.Drawing.Point(0, 0);
 			this.dgvProduct.Name = "dgvProduct";
 			this.dgvProduct.ReadOnly = true;
 			this.dgvProduct.RowHeadersVisible = false;
-			this.dgvProduct.Size = new System.Drawing.Size(731, 647);
+			this.dgvProduct.Size = new System.Drawing.Size(731, 574);
 			this.dgvProduct.TabIndex = 5;
 			this.dgvProduct.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProduct_CellContentClick);
 			// 

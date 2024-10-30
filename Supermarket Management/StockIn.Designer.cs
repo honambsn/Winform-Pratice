@@ -52,7 +52,6 @@
 			this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
 			this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
 			this.panel2 = new System.Windows.Forms.Panel();
-			this.label8 = new System.Windows.Forms.Label();
 			this.txtAddress = new System.Windows.Forms.TextBox();
 			this.txtConPerson = new System.Windows.Forms.TextBox();
 			this.cbSupplier = new System.Windows.Forms.ComboBox();
@@ -75,7 +74,6 @@
 			this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
 			this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
 			this.dataGridViewImageColumn4 = new System.Windows.Forms.DataGridViewImageColumn();
-			this.lblID = new System.Windows.Forms.Label();
 			this.panel1.SuspendLayout();
 			this.metroTabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
@@ -344,8 +342,6 @@
 			// 
 			// panel2
 			// 
-			this.panel2.Controls.Add(this.lblID);
-			this.panel2.Controls.Add(this.label8);
 			this.panel2.Controls.Add(this.txtAddress);
 			this.panel2.Controls.Add(this.txtConPerson);
 			this.panel2.Controls.Add(this.cbSupplier);
@@ -366,16 +362,6 @@
 			this.panel2.Name = "panel2";
 			this.panel2.Size = new System.Drawing.Size(976, 170);
 			this.panel2.TabIndex = 0;
-			// 
-			// label8
-			// 
-			this.label8.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.label8.AutoSize = true;
-			this.label8.Location = new System.Drawing.Point(711, 127);
-			this.label8.Name = "label8";
-			this.label8.Size = new System.Drawing.Size(0, 20);
-			this.label8.TabIndex = 21;
-			this.label8.Visible = false;
 			// 
 			// txtAddress
 			// 
@@ -581,17 +567,6 @@
 			this.dataGridViewImageColumn4.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
 			this.dataGridViewImageColumn4.Name = "dataGridViewImageColumn4";
 			// 
-			// lblID
-			// 
-			this.lblID.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.lblID.AutoSize = true;
-			this.lblID.Location = new System.Drawing.Point(710, 127);
-			this.lblID.Name = "lblID";
-			this.lblID.Size = new System.Drawing.Size(45, 20);
-			this.lblID.TabIndex = 22;
-			this.lblID.Text = "lblID:";
-			this.lblID.Visible = false;
-			// 
 			// StockIn
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -661,7 +636,5 @@
 		public System.Windows.Forms.ComboBox cbSupplier;
 		public System.Windows.Forms.Label labelID;
 		public System.Windows.Forms.Button btnSave;
-		public System.Windows.Forms.Label label8;
-		public System.Windows.Forms.Label lblID;
 	}
 }

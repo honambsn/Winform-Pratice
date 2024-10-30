@@ -278,3 +278,7 @@ FROM
 WHERE 
     CONSTRAINT_TYPE = 'FOREIGN KEY';
 
+
+
+
+select * from Product

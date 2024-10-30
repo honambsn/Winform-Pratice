@@ -151,7 +151,7 @@
 			this.dgvProduct.Name = "dgvProduct";
 			this.dgvProduct.ReadOnly = true;
 			this.dgvProduct.RowHeadersVisible = false;
-			this.dgvProduct.Size = new System.Drawing.Size(984, 561);
+			this.dgvProduct.Size = new System.Drawing.Size(984, 488);
 			this.dgvProduct.TabIndex = 3;
 			this.dgvProduct.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProduct_CellContentClick);
 			// 
