@@ -236,6 +236,9 @@ VALUES ('test', '123456789', 'Product A Description', 1, 1, 1299.99, 100, 5);
 INSERT INTO StockIn (refno, ProductCode, qty, sdate, stockinby, status, supplierID)
 VALUES ('REF001', 'test', 5, '2024-10-01', 'Alice', 'Pending', NULL);
 
+
+
+
 SELECT DISTINCT ProductCode
 FROM StockIn
 WHERE ProductCode IS NOT NULL
@@ -279,6 +282,38 @@ WHERE
     CONSTRAINT_TYPE = 'FOREIGN KEY';
 
 
-
+select * from StockIn
 
 select * from Product
+
+
+SELECT * FROM StockIn 
+WHERE refno LIKE 'REF001'
+AND status = 'Pending';
+
+
+INSERT INTO StockIn (refno, ProductCode, qty, sdate, stockinby, status, supplierID)
+VALUES 
+('REF002', 'A123', 1, '2024-10-01', 'Alice', 'Pending', NULL),
+('REF003', 'A124', 2, '2024-10-02', 'Bob', 'Pending', NULL),
+('REF004', 'A125', 3, '2024-10-03', 'Charlie', 'Pending', NULL),
+('REF005', 'A126', 4, '2024-10-04', 'Diana', 'Pending', NULL),
+('REF006', 'A127', 5, '2024-10-05', 'Ethan', 'Pending', NULL),
+('REF007', 'A128', 6, '2024-10-06', 'Fiona', 'Pending', NULL),
+('REF008', 'A123', 7, '2024-10-07', 'George', 'Pending', NULL),
+('REF009', 'A124', 8, '2024-10-08', 'Hannah', 'Pending', NULL),
+('REF010', 'A125', 9, '2024-10-09', 'Ian', 'Pending', NULL),
+('REF011', 'A126', 10, '2024-10-10', 'Jack', 'Pending', NULL),
+('REF012', 'A127', 11, '2024-10-11', 'Kathy', 'Pending', NULL),
+('REF013', 'A128', 12, '2024-10-12', 'Liam', 'Pending', NULL),
+('REF014', 'A123', 13, '2024-10-13', 'Mia', 'Pending', NULL),
+('REF015', 'A124', 14, '2024-10-14', 'Noah', 'Pending', NULL),
+('REF016', 'A125', 15, '2024-10-15', 'Olivia', 'Pending', NULL),
+('REF017', 'A126', 16, '2024-10-16', 'Peter', 'Pending', NULL),
+('REF018', 'A127', 17, '2024-10-17', 'Quinn', 'Pending', NULL),
+('REF019', 'A128', 18, '2024-10-18', 'Ryan', 'Pending', NULL),
+('REF020', 'A123', 19, '2024-10-19', 'Sophia', 'Pending', NULL),
+('REF021', 'A124', 20, '2024-10-20', 'Thomas', 'Pending', NULL);
+
+
+select * from vwStockIn

@@ -71,7 +71,7 @@ namespace Supermarket_Management
 				{
 					cbSupplier.DataSource = supplierData;
 					cbSupplier.DisplayMember = "supplierName"; // Correct column name
-					cbSupplier.ValueMember = "id"; // Optional, if you want to use the ID later
+					//cbSupplier.ValueMember = "id"; // Optional, if you want to use the ID later
 				}
 				else
 				{
@@ -93,8 +93,10 @@ namespace Supermarket_Management
 				if (cn.State != ConnectionState.Open)
 					cn.Open();
 
-				using(SqlCommand cm = new SqlCommand("SELECT * FROM vwStockIn where refno like '" + txtRefNo.Text + "' and status like 'Pending'", cn))
+				using (SqlCommand cm = new SqlCommand("SELECT * FROM vwStockIn WHERE refno LIKE @refNo AND status = 'Pending'", cn))
+				//using(SqlCommand cm = new SqlCommand("SELECT * FROM StockIn where refno like '" + txtRefNo.Text + "' and status like 'Pending'", cn))
 				{
+					cm.Parameters.AddWithValue("@refNo", txtRefNo.Text + "%");
 					using (SqlDataReader dr = cm.ExecuteReader())
 					{
 						while (dr.Read())
@@ -113,7 +115,7 @@ namespace Supermarket_Management
 		}
 
 
-			private void cbSupplier_SelectedIndexChanged(object sender, EventArgs e)
+		private void cbSupplier_SelectedIndexChanged(object sender, EventArgs e)
 		{
 			if (cbSupplier.SelectedItem != null) // Ensure an item is selected
 			{

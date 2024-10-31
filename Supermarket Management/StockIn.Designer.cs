@@ -382,6 +382,7 @@
 			// cbSupplier
 			// 
 			this.cbSupplier.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.cbSupplier.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cbSupplier.FormattingEnabled = true;
 			this.cbSupplier.Location = new System.Drawing.Point(714, 17);
 			this.cbSupplier.Name = "cbSupplier";
