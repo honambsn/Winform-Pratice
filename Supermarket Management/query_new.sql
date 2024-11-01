@@ -317,3 +317,6 @@ VALUES
 
 
 select * from vwStockIn
+
+
+select * from Supplier

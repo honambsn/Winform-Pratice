@@ -7,7 +7,7 @@
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:query_new.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C012B5FD-ACB1-492C-82A3-77F113FDF88C}|Supermarket Management.csproj|d:\\ba nam\\own project\\practice\\c#\\winform pratice\\supermarket management\\stockin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C012B5FD-ACB1-492C-82A3-77F113FDF88C}|Supermarket Management.csproj|D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Supermarket Management\\stockin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C012B5FD-ACB1-492C-82A3-77F113FDF88C}|Supermarket Management.csproj|solutionrelative:stockin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -182,7 +182,7 @@
               "Title": "query_new.sql ",
               "DocumentMoniker": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Supermarket Management\\query_new.sql",
               "RelativeDocumentMoniker": "query_new.sql",
-              "ToolTip": "query_new.sql ",
+              "ToolTip": "query_new.sql *",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
               "WhenOpened": "2024-10-29T14:44:16.31Z",
               "IsPinned": true,
@@ -196,7 +196,7 @@
               "RelativeDocumentMoniker": "StockIn.cs",
               "ToolTip": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Supermarket Management\\StockIn.cs",
               "RelativeToolTip": "StockIn.cs",
-              "ViewState": "AgIAAG8AAAAAAAAAAAAAAFIAAABQAAAAAAAAAA==",
+              "ViewState": "AgIAAD0AAAAAAAAAAAAiwE8AAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-22T14:44:41.937Z",
               "EditorCaption": ""
@@ -211,8 +211,7 @@
               "RelativeToolTip": "DBConnect.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-29T15:24:49.665Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-29T15:24:49.665Z"
             },
             {
               "$type": "Document",
@@ -224,8 +223,7 @@
               "RelativeToolTip": "Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-16T15:19:41.426Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-16T15:19:41.426Z"
             },
             {
               "$type": "Document",
@@ -261,8 +259,7 @@
               "RelativeToolTip": "ProductStockIn.Designer.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-23T15:30:01.366Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-23T15:30:01.366Z"
             },
             {
               "$type": "Document",
@@ -284,8 +281,7 @@
               "ToolTip": "D:\\Ba Nam\\Own project\\Practice\\c#\\Winform Pratice\\Supermarket Management\\ProductStockIn.cs [Design]",
               "RelativeToolTip": "ProductStockIn.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-22T15:11:21.871Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-10-22T15:11:21.871Z"
             },
             {
               "$type": "Document",
@@ -297,8 +293,7 @@
               "RelativeToolTip": "ProductStockIn.cs",
               "ViewState": "AgIAAEMAAAAAAAAAAAAUwGMAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-22T15:21:23.247Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-22T15:21:23.247Z"
             },
             {
               "$type": "Document",
