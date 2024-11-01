@@ -320,3 +320,33 @@ select * from vwStockIn
 
 
 select * from Supplier
+
+INSERT INTO StockIn (refno, ProductCode, qty, sdate, stockinby, status, supplierID)
+VALUES 
+('REF020-T', 'A123', 4, '2024-11-01', 'Kevin', 'Pending', null);
+
+
+INSERT INTO StockIn (refno, ProductCode, qty, sdate, stockinby, status, supplierID)
+VALUES ('STK-2024-004', 'A123', 1, '2024-11-01', 'David', 'Pending', 2);
+select * from vwStockIn
+
+
+BEGIN TRANSACTION;
+
+INSERT INTO StockIn (refno, ProductCode, qty, sdate, stockinby, status, supplierID)
+VALUES ('STK-2024-004', 'A123', 1, '2024-11-01', 'David', 'Pending', 2);
+
+COMMIT;  -- Đảm bảo giao dịch được cam kết
+
+
+EXEC sp_helptext 'vwStockIn';  -- Điều này sẽ hiển thị định nghĩa của view
+
+
+SELECT * FROM StockIn WHERE ProductCode = 'A123';
+
+
+EXEC sp_helptext 'vwStockIn';  -- Hiển thị định nghĩa của view
+
+select * from vwStockIn
+
+select * from StockIn

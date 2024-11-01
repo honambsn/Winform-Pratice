@@ -78,44 +78,44 @@ namespace Supermarket_Management
 			string colName = dgvProduct.Columns[e.ColumnIndex].Name;
 			if (colName == "Select")
 			{
-				if (stockIn.txtStockInBy.Text == string.Empty)
+				if (string.IsNullOrEmpty(stockIn.txtStockInBy.Text))
 				{
 					MessageBox.Show("Please enter stock in by", "POS", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 					stockIn.txtStockInBy.Focus();
 					return;
 				}
+
 				if (MessageBox.Show("Add this item?", "POS", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
 				{
 					try
 					{
-						if (cn.State != ConnectionState.Open)
-							cn.Open();
-
-						using (SqlCommand cm = new SqlCommand("insert into StockIn (refno, ProductCode, sdate, stockinby, supplierID) values(@refno, @ProductCode, @sdate, @stockinby, @supplierID)", cn))
+						cn.Open();
+						using (SqlCommand cm = new SqlCommand("INSERT INTO StockIn (refno, ProductCode, sdate, stockinby, supplierID) VALUES (@refno, @ProductCode, @sdate, @stockinby, @supplierID)", cn))
 						{
-							cm.Parameters.AddWithValue("@refno", stockIn.txtRefNo.Text);
-							cm.Parameters.AddWithValue("@ProductCode", dgvProduct.Rows[e.RowIndex].Cells[1].Value.ToString());
-							cm.Parameters.AddWithValue("@sdate", stockIn.dtStockIn.Value);
-							cm.Parameters.AddWithValue("@stockinby", stockIn.txtStockInBy.Text);
-							cm.Parameters.AddWithValue("@supplierID", stockIn.labelID.Text);
-
+							cm.Parameters.Add("@refno", SqlDbType.VarChar).Value = stockIn.txtRefNo.Text;
+							var productCode = dgvProduct.Rows[e.RowIndex].Cells[1].Value;
+							if (productCode == null)
+							{
+								MessageBox.Show("Product code is not available.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+								return;
+							}
+							cm.Parameters.Add("@ProductCode", SqlDbType.VarChar).Value = productCode.ToString();
+							cm.Parameters.Add("@sdate", SqlDbType.DateTime).Value = stockIn.dtStockIn.Value;
+							cm.Parameters.Add("@stockinby", SqlDbType.VarChar).Value = stockIn.txtStockInBy.Text;
+							cm.Parameters.Add("@supplierID", SqlDbType.Int).Value = int.Parse(stockIn.labelID.Text);
 
 							cm.ExecuteNonQuery();
 							MessageBox.Show("Product successfully added to stock in", "POS", MessageBoxButtons.OK, MessageBoxIcon.Information);
+							stockIn.LoadStockIn(); // Load data after successful insertion
 						}
 					}
 					catch (Exception ex)
 					{
 						MessageBox.Show(ex.Message);
 					}
-					finally
-					{
-						stockIn.LoadStockIn();
-					}
-
 				}
 			}
-        }
+		}
 
 		private void txtSearch_TextChanged(object sender, EventArgs e)
 		{
