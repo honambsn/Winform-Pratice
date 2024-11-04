@@ -17,6 +17,10 @@ namespace Supermarket_Management
 		SqlCommand cm = new SqlCommand();
 		DBConnect dbcon = new DBConnect();
 		SqlDataReader dr;
+
+		int qty;
+		string id;
+		string price;
 		public Cashier()
 		{
 			InitializeComponent();
@@ -275,5 +279,41 @@ namespace Supermarket_Management
 				MessageBox.Show(ex.Message);
 			}
 		}
+
+		private void txtBarcode_TextChanged(object sender, EventArgs e)
+		{
+			try
+			{
+				if (txtBarcode.Text == string.Empty)
+					return;
+				else
+				{
+					string _pcode;
+					double _price;
+
+					using (SqlCommand cm = new SqlCommand("select * from Product where Barcode like '" + txtBarcode.Text + "'", cn))
+					{
+						dr = cm.ExecuteReader();
+						dr.Read();
+						if (dr.HasRows)
+						{
+							qty = int.Parse(dr["qty"].ToString());
+							_pcode = dr["ProductCode"].ToString();
+							_price = double.Parse(dr["Price"].ToString());
+						}
+					}
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+			}
+			finally
+			{
+
+			}
+		}
+
+
 	}
 }

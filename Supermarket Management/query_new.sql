@@ -161,7 +161,7 @@ create table StockIn
 	refno varchar(255) null,
 	ProductCode varchar(255) null,
 	qty int null default 0,
-	sdate date null,
+	sdate datetime null,
 	stockinby varchar(255) null,
 	status varchar(255) null default 'Pending',
 	supplierID varbinary(255) null
@@ -350,3 +350,21 @@ EXEC sp_helptext 'vwStockIn';  -- Hiển thị định nghĩa của view
 select * from vwStockIn
 
 select * from StockIn
+
+
+SELECT 
+    dbo.StockIn.id, 
+    dbo.StockIn.refno, 
+    dbo.StockIn.ProductCode, 
+    dbo.Product.Description, 
+    dbo.StockIn.qty, 
+    dbo.StockIn.sdate, 
+    dbo.StockIn.stockinby, 
+    dbo.StockIn.status, 
+    dbo.Supplier.supplierName
+FROM 
+    dbo.Product 
+INNER JOIN 
+    dbo.StockIn ON dbo.Product.ProductCode = dbo.StockIn.ProductCode 
+INNER JOIN 
+    dbo.Supplier ON dbo.StockIn.supplierID = dbo.Supplier.id

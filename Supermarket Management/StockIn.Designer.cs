@@ -38,19 +38,8 @@
 			this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
 			this.tabPage1 = new System.Windows.Forms.TabPage();
 			this.panel3 = new System.Windows.Forms.Panel();
-			this.btnSave = new System.Windows.Forms.Button();
+			this.btnEntry = new System.Windows.Forms.Button();
 			this.dgvStockIn = new System.Windows.Forms.DataGridView();
-			this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
-			this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
 			this.panel2 = new System.Windows.Forms.Panel();
 			this.txtAddress = new System.Windows.Forms.TextBox();
 			this.txtConPerson = new System.Windows.Forms.TextBox();
@@ -74,6 +63,16 @@
 			this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
 			this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
 			this.dataGridViewImageColumn4 = new System.Windows.Forms.DataGridViewImageColumn();
+			this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
+			this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.panel1.SuspendLayout();
 			this.metroTabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
@@ -183,7 +182,7 @@
 			// 
 			// panel3
 			// 
-			this.panel3.Controls.Add(this.btnSave);
+			this.panel3.Controls.Add(this.btnEntry);
 			this.panel3.Controls.Add(this.dgvStockIn);
 			this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel3.Location = new System.Drawing.Point(0, 170);
@@ -191,21 +190,22 @@
 			this.panel3.Size = new System.Drawing.Size(976, 288);
 			this.panel3.TabIndex = 1;
 			// 
-			// btnSave
+			// btnEntry
 			// 
-			this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(70)))), ((int)(((byte)(160)))));
-			this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.btnSave.FlatAppearance.BorderSize = 0;
-			this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnSave.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnSave.ForeColor = System.Drawing.Color.White;
-			this.btnSave.Location = new System.Drawing.Point(876, 250);
-			this.btnSave.Name = "btnSave";
-			this.btnSave.Size = new System.Drawing.Size(100, 35);
-			this.btnSave.TabIndex = 10;
-			this.btnSave.Text = "Entry";
-			this.btnSave.UseVisualStyleBackColor = false;
+			this.btnEntry.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.btnEntry.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(70)))), ((int)(((byte)(160)))));
+			this.btnEntry.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.btnEntry.FlatAppearance.BorderSize = 0;
+			this.btnEntry.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnEntry.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnEntry.ForeColor = System.Drawing.Color.White;
+			this.btnEntry.Location = new System.Drawing.Point(876, 250);
+			this.btnEntry.Name = "btnEntry";
+			this.btnEntry.Size = new System.Drawing.Size(100, 35);
+			this.btnEntry.TabIndex = 10;
+			this.btnEntry.Text = "Entry";
+			this.btnEntry.UseVisualStyleBackColor = false;
+			this.btnEntry.Click += new System.EventHandler(this.btnEntry_Click);
 			// 
 			// dgvStockIn
 			// 
@@ -234,7 +234,6 @@
             this.Column6,
             this.Column7,
             this.Column8,
-            this.Edit,
             this.Delete});
 			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
 			dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
@@ -247,98 +246,10 @@
 			this.dgvStockIn.Dock = System.Windows.Forms.DockStyle.Top;
 			this.dgvStockIn.Location = new System.Drawing.Point(0, 0);
 			this.dgvStockIn.Name = "dgvStockIn";
-			this.dgvStockIn.ReadOnly = true;
 			this.dgvStockIn.RowHeadersVisible = false;
 			this.dgvStockIn.Size = new System.Drawing.Size(976, 244);
 			this.dgvStockIn.TabIndex = 5;
-			// 
-			// Column1
-			// 
-			this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			this.Column1.HeaderText = "No";
-			this.Column1.Name = "Column1";
-			this.Column1.ReadOnly = true;
-			this.Column1.Width = 55;
-			// 
-			// Column9
-			// 
-			this.Column9.HeaderText = "ID";
-			this.Column9.Name = "Column9";
-			this.Column9.ReadOnly = true;
-			this.Column9.Visible = false;
-			// 
-			// Column10
-			// 
-			this.Column10.HeaderText = "Reference No";
-			this.Column10.Name = "Column10";
-			this.Column10.ReadOnly = true;
-			// 
-			// Column2
-			// 
-			this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			this.Column2.HeaderText = "PCode";
-			this.Column2.Name = "Column2";
-			this.Column2.ReadOnly = true;
-			this.Column2.Width = 85;
-			// 
-			// Column4
-			// 
-			this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.Column4.HeaderText = "Description";
-			this.Column4.Name = "Column4";
-			this.Column4.ReadOnly = true;
-			// 
-			// Column5
-			// 
-			this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			this.Column5.HeaderText = "Qty";
-			this.Column5.Name = "Column5";
-			this.Column5.ReadOnly = true;
-			this.Column5.Width = 60;
-			// 
-			// Column6
-			// 
-			this.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			this.Column6.HeaderText = "Stock In Date";
-			this.Column6.Name = "Column6";
-			this.Column6.ReadOnly = true;
-			this.Column6.Width = 132;
-			// 
-			// Column7
-			// 
-			this.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			this.Column7.HeaderText = "Stock In By";
-			this.Column7.Name = "Column7";
-			this.Column7.ReadOnly = true;
-			this.Column7.Width = 113;
-			// 
-			// Column8
-			// 
-			this.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			this.Column8.HeaderText = "Supplier ID";
-			this.Column8.Name = "Column8";
-			this.Column8.ReadOnly = true;
-			this.Column8.Width = 102;
-			// 
-			// Edit
-			// 
-			this.Edit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			this.Edit.HeaderText = "";
-			this.Edit.Image = ((System.Drawing.Image)(resources.GetObject("Edit.Image")));
-			this.Edit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-			this.Edit.Name = "Edit";
-			this.Edit.ReadOnly = true;
-			this.Edit.Width = 5;
-			// 
-			// Delete
-			// 
-			this.Delete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			this.Delete.HeaderText = "";
-			this.Delete.Image = ((System.Drawing.Image)(resources.GetObject("Delete.Image")));
-			this.Delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-			this.Delete.Name = "Delete";
-			this.Delete.ReadOnly = true;
-			this.Delete.Width = 5;
+			this.dgvStockIn.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStockIn_CellContentClick);
 			// 
 			// panel2
 			// 
@@ -568,6 +479,82 @@
 			this.dataGridViewImageColumn4.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
 			this.dataGridViewImageColumn4.Name = "dataGridViewImageColumn4";
 			// 
+			// Delete
+			// 
+			this.Delete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.Delete.HeaderText = "";
+			this.Delete.Image = ((System.Drawing.Image)(resources.GetObject("Delete.Image")));
+			this.Delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+			this.Delete.Name = "Delete";
+			this.Delete.Width = 5;
+			// 
+			// Column8
+			// 
+			this.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.Column8.HeaderText = "Supplier ID";
+			this.Column8.Name = "Column8";
+			this.Column8.ReadOnly = true;
+			this.Column8.Width = 102;
+			// 
+			// Column7
+			// 
+			this.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.Column7.HeaderText = "Stock In By";
+			this.Column7.Name = "Column7";
+			this.Column7.ReadOnly = true;
+			this.Column7.Width = 88;
+			// 
+			// Column6
+			// 
+			this.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.Column6.HeaderText = "Stock In Date";
+			this.Column6.Name = "Column6";
+			this.Column6.ReadOnly = true;
+			this.Column6.Width = 88;
+			// 
+			// Column5
+			// 
+			this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.Column5.HeaderText = "Qty";
+			this.Column5.Name = "Column5";
+			this.Column5.Width = 60;
+			// 
+			// Column4
+			// 
+			this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.Column4.HeaderText = "Description";
+			this.Column4.Name = "Column4";
+			this.Column4.ReadOnly = true;
+			// 
+			// Column2
+			// 
+			this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.Column2.HeaderText = "PCode";
+			this.Column2.Name = "Column2";
+			this.Column2.ReadOnly = true;
+			this.Column2.Width = 85;
+			// 
+			// Column10
+			// 
+			this.Column10.HeaderText = "Reference No";
+			this.Column10.Name = "Column10";
+			this.Column10.ReadOnly = true;
+			// 
+			// Column9
+			// 
+			this.Column9.HeaderText = "ID";
+			this.Column9.Name = "Column9";
+			this.Column9.ReadOnly = true;
+			this.Column9.Visible = false;
+			// 
+			// Column1
+			// 
+			this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.Column1.HeaderText = "No";
+			this.Column1.Name = "Column1";
+			this.Column1.ReadOnly = true;
+			this.Column1.Width = 55;
+			// 
 			// StockIn
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -617,6 +604,15 @@
 		private System.Windows.Forms.Label label6;
 		private System.Windows.Forms.Panel panel3;
 		private System.Windows.Forms.DataGridView dgvStockIn;
+		public System.Windows.Forms.Panel panel2;
+		public System.Windows.Forms.TextBox txtStockInBy;
+		public System.Windows.Forms.TextBox txtRefNo;
+		public System.Windows.Forms.DateTimePicker dtStockIn;
+		public System.Windows.Forms.TextBox txtAddress;
+		public System.Windows.Forms.TextBox txtConPerson;
+		public System.Windows.Forms.ComboBox cbSupplier;
+		public System.Windows.Forms.Label labelID;
+		public System.Windows.Forms.Button btnEntry;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
@@ -626,16 +622,6 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-		private System.Windows.Forms.DataGridViewImageColumn Edit;
 		private System.Windows.Forms.DataGridViewImageColumn Delete;
-		public System.Windows.Forms.Panel panel2;
-		public System.Windows.Forms.TextBox txtStockInBy;
-		public System.Windows.Forms.TextBox txtRefNo;
-		public System.Windows.Forms.DateTimePicker dtStockIn;
-		public System.Windows.Forms.TextBox txtAddress;
-		public System.Windows.Forms.TextBox txtConPerson;
-		public System.Windows.Forms.ComboBox cbSupplier;
-		public System.Windows.Forms.Label labelID;
-		public System.Windows.Forms.Button btnSave;
 	}
 }

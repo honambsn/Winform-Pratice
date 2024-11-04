@@ -155,5 +155,117 @@ namespace Supermarket_Management
 			ProductStockIn prodStock = new ProductStockIn(this);
 			prodStock.ShowDialog();
 		}
+
+		private void btnEntry_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				if (dgvStockIn.Rows.Count > 0)
+				{
+					if (MessageBox.Show("Are you sure you want to save this records", stitle, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+					{
+						//if (cn.State != ConnectionState.Open)
+						//	cn.Open();
+
+						//using (SqlCommand cm = new SqlCommand("UPDATE StockIn SET status = 'Done' WHERE refNo = @refNo", cn))
+						//{
+						//	cm.Parameters.AddWithValue("@refNo", txtRefNo.Text);
+						//	cm.ExecuteNonQuery();
+						//}
+
+						//MessageBox.Show("Stock In successfully saved", stitle, MessageBoxButtons.OK, MessageBoxIcon.Information);
+						//LoadStockIn();
+
+						try
+						{
+							for (int i = 0; i < dgvStockIn.Rows.Count; i++)
+							{
+								if (cn.State != ConnectionState.Open)
+									cn.Open();
+
+								//using (SqlCommand cm = new SqlCommand("INSERT INTO StockIn (refNo, pcode, pname, price, qty, sdate, supplier, address, contact, status) VALUES (@refNo, @pcode, @pname, @price, @qty, @sdate, @supplier, @address, @contact, @status)", cn))
+								//{
+								//	cm.Parameters.AddWithValue("@refNo", dgvStockIn.Rows[i].Cells[1].Value);
+								//	cm.Parameters.AddWithValue("@pcode", dgvStockIn.Rows[i].Cells[2].Value);
+								//	cm.Parameters.AddWithValue("@pname", dgvStockIn.Rows[i].Cells[3].Value);
+								//	cm.Parameters.AddWithValue("@price", dgvStockIn.Rows[i].Cells[4].Value);
+								//	cm.Parameters.AddWithValue("@qty", dgvStockIn.Rows[i].Cells[5].Value);
+								//	cm.Parameters.AddWithValue("@sdate", dgvStockIn.Rows[i].Cells[6].Value);
+								//	cm.Parameters.AddWithValue("@supplier", dgvStockIn.Rows[i].Cells[7].Value);
+								//	cm.Parameters.AddWithValue("@address", dgvStockIn.Rows[i].Cells[8].Value);
+								//	cm.Parameters.AddWithValue("@contact", dgvStockIn.Rows[i].Cells[9].Value);
+								//	cm.Parameters.AddWithValue("@status", "Done");
+								//	cm.ExecuteNonQuery();
+								//}
+
+								using (SqlCommand cm = new SqlCommand("update Product set qty = qty + " + int.Parse(dgvStockIn.Rows[i].Cells[5].Value.ToString()) + " where ProductCode = '" + dgvStockIn.Rows[i].Cells[4].Value.ToString() + "'", cn))
+								{
+
+									cm.ExecuteNonQuery();
+								}
+
+								using (SqlCommand cm = new SqlCommand("update StockIn set qty = qty + " + int.Parse(dgvStockIn.Rows[i].Cells[5].Value.ToString()) + ", status = 'Done' where id like '" + dgvStockIn.Rows[i].Cells[1].Value.ToString() + "'", cn))
+								{
+
+									cm.ExecuteNonQuery();
+								}
+							}
+						}
+						catch (Exception ex)
+						{
+							MessageBox.Show("An error occurred while saving stock in: " + ex.Message);
+						}
+						finally
+						{
+							Clear();
+							LoadStockIn();
+						}
+					}
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show("An error occurred while saving stock in: " + ex.Message);
+			}
+			finally
+			{
+
+			}
+		}
+
+		public void Clear()
+		{
+			txtRefNo.Clear();
+			txtStockInBy.Clear();
+			dtStockIn.Value = DateTime.Now;
+		}
+
+		private void dgvStockIn_CellContentClick(object sender, DataGridViewCellEventArgs e)
+		{
+			string colName = dgvStockIn.Columns[e.ColumnIndex].Name;
+			if (colName == "Delete")
+			{
+				if (MessageBox.Show("Are you sure you want to delete this record", stitle, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+				{
+					//dgvStockIn.Rows.RemoveAt(e.RowIndex);
+
+					try
+					{
+						using (SqlCommand cm = new SqlCommand("delete from StockIn where id = '" + dgvStockIn.Rows[e.RowIndex].Cells[1].Value.ToString() + "'", cn))
+						{
+							cm.ExecuteNonQuery();
+						}
+					}
+					catch (Exception ex)
+					{
+						MessageBox.Show("An error occurred while deleting stock in: " + ex.Message);
+					}
+					finally
+					{
+						LoadStockIn();
+					}
+				}
+			}
+		}
 	}
 }

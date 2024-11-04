@@ -141,6 +141,7 @@ namespace Supermarket_Management
 
 		private void Stock_Entry_Click(object sender, EventArgs e)
 		{
+			openChildForm(new StockIn());
 			hideSubMenu();
 		}
 

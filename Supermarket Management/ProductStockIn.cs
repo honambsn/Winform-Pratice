@@ -82,14 +82,16 @@ namespace Supermarket_Management
 				{
 					MessageBox.Show("Please enter stock in by", "POS", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 					stockIn.txtStockInBy.Focus();
-					return;
+					this.Dispose();
+					//return;
 				}
 
 				if (MessageBox.Show("Add this item?", "POS", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
 				{
 					try
 					{
-						cn.Open();
+						if (cn.State == ConnectionState.Closed)
+							cn.Open();
 						using (SqlCommand cm = new SqlCommand("INSERT INTO StockIn (refno, ProductCode, sdate, stockinby, supplierID) VALUES (@refno, @ProductCode, @sdate, @stockinby, @supplierID)", cn))
 						{
 							cm.Parameters.Add("@refno", SqlDbType.VarChar).Value = stockIn.txtRefNo.Text;
