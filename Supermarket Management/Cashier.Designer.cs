@@ -70,6 +70,8 @@
 			this.label2 = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
 			this.dgvCashier = new System.Windows.Forms.DataGridView();
+			this.lblTimerr = new System.Windows.Forms.Timer(this.components);
+			this.txtQty = new System.Windows.Forms.TextBox();
 			this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -81,7 +83,6 @@
 			this.colAdd = new System.Windows.Forms.DataGridViewImageColumn();
 			this.colReduce = new System.Windows.Forms.DataGridViewImageColumn();
 			this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
-			this.lblTimerr = new System.Windows.Forms.Timer(this.components);
 			this.panel1.SuspendLayout();
 			this.panel2.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -357,6 +358,7 @@
 			// 
 			// panel5
 			// 
+			this.panel5.Controls.Add(this.txtQty);
 			this.panel5.Controls.Add(this.lblTimer);
 			this.panel5.Controls.Add(this.lblVatable);
 			this.panel5.Controls.Add(this.lblVat);
@@ -468,7 +470,7 @@
 			// 
 			this.txtBarcode.Location = new System.Drawing.Point(10, 252);
 			this.txtBarcode.Name = "txtBarcode";
-			this.txtBarcode.Size = new System.Drawing.Size(149, 26);
+			this.txtBarcode.Size = new System.Drawing.Size(122, 26);
 			this.txtBarcode.TabIndex = 6;
 			this.txtBarcode.TextChanged += new System.EventHandler(this.txtBarcode_TextChanged);
 			// 
@@ -562,6 +564,20 @@
 			this.dgvCashier.Size = new System.Drawing.Size(894, 658);
 			this.dgvCashier.TabIndex = 4;
 			// 
+			// lblTimerr
+			// 
+			this.lblTimerr.Enabled = true;
+			this.lblTimerr.Tick += new System.EventHandler(this.lblTimerr_Tick);
+			// 
+			// txtQty
+			// 
+			this.txtQty.Location = new System.Drawing.Point(153, 252);
+			this.txtQty.Name = "txtQty";
+			this.txtQty.Size = new System.Drawing.Size(34, 26);
+			this.txtQty.TabIndex = 16;
+			this.txtQty.Text = "1";
+			this.txtQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			// 
 			// Column1
 			// 
 			this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -645,10 +661,13 @@
 			// 
 			// colReduce
 			// 
+			this.colReduce.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
 			this.colReduce.HeaderText = "";
 			this.colReduce.Image = ((System.Drawing.Image)(resources.GetObject("colReduce.Image")));
+			this.colReduce.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
 			this.colReduce.Name = "colReduce";
 			this.colReduce.ReadOnly = true;
+			this.colReduce.Width = 5;
 			// 
 			// Delete
 			// 
@@ -659,11 +678,6 @@
 			this.Delete.Name = "Delete";
 			this.Delete.ReadOnly = true;
 			this.Delete.Width = 5;
-			// 
-			// lblTimerr
-			// 
-			this.lblTimerr.Enabled = true;
-			this.lblTimerr.Tick += new System.EventHandler(this.lblTimerr_Tick);
 			// 
 			// Cashier
 			// 
@@ -719,17 +733,6 @@
 		private System.Windows.Forms.PictureBox picClose;
 		private System.Windows.Forms.Panel panelSlide;
 		private System.Windows.Forms.DataGridView dgvCashier;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-		private System.Windows.Forms.DataGridViewImageColumn colAdd;
-		private System.Windows.Forms.DataGridViewImageColumn colReduce;
-		private System.Windows.Forms.DataGridViewImageColumn Delete;
 		private System.Windows.Forms.Label lblDate;
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.Label label2;
@@ -742,11 +745,23 @@
 		private System.Windows.Forms.Label label9;
 		private System.Windows.Forms.Label label8;
 		private System.Windows.Forms.Label label7;
-		private System.Windows.Forms.TextBox txtBarcode;
 		private System.Windows.Forms.Label label6;
 		private System.Windows.Forms.Label lblTimer;
 		private System.Windows.Forms.Timer lblTimerr;
 		public System.Windows.Forms.Label lblUsername;
 		public System.Windows.Forms.Label lblTransNo;
+		private System.Windows.Forms.TextBox txtQty;
+		public System.Windows.Forms.TextBox txtBarcode;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+		private System.Windows.Forms.DataGridViewImageColumn colAdd;
+		private System.Windows.Forms.DataGridViewImageColumn colReduce;
+		private System.Windows.Forms.DataGridViewImageColumn Delete;
 	}
 }

@@ -43,33 +43,128 @@ namespace Supermarket_Management
 		{
 			if ((e.KeyChar == 13) && (txtQty.Text != string.Empty))
 			{
+				//try
+				//{
+				//	if (cn.State == ConnectionState.Open)
+				//	{
+				//		cn.Close();
+				//	}
+				//	cn.Open();
+				//	using (SqlCommand cm = new SqlCommand("insert into Cart (transno, ProductCode, Price, qty, sdate, cashier) values (@transno, @ProductCode, @Price, @qty, @sdate, @cashier)", cn))
+				//	{
+				//		cm.Parameters.AddWithValue("@transno", transno);
+				//		cm.Parameters.AddWithValue("@ProductCode", pcode);
+				//		cm.Parameters.AddWithValue("@Price", price);
+				//		cm.Parameters.AddWithValue("@qty", int.Parse(txtQty.Text));
+				//		cm.Parameters.AddWithValue("@sdate", DateTime.Now);
+				//		cm.Parameters.AddWithValue("@cashier", cashier.lblUsername.Text);
+				//		cm.ExecuteNonQuery();
+				//		cashier.LoadCart();
+
+				//	}
+				//}
+				//catch (Exception ex)
+				//{
+				//	MessageBox.Show(ex.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				//}
+				//finally
+				//{
+				//	MessageBox.Show("Item added to cart", "POS", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				//	this.Dispose();
+				//}
+
+
 				try
 				{
+
 					if (cn.State == ConnectionState.Open)
 					{
 						cn.Close();
 					}
 					cn.Open();
-					using (SqlCommand cm = new SqlCommand("insert into Cart (transno, ProductCode, Price, qty, sdate, cashier) values (@transno, @ProductCode, @Price, @qty, @sdate, @cashier)", cn))
+
+					string id = "";
+					int cart_qty = 0;
+					bool found = false;
+					using (SqlCommand cm = new SqlCommand("select * from Cart where transno = @transno and ProductCode = @ProductCode", cn))
 					{
 						cm.Parameters.AddWithValue("@transno", transno);
 						cm.Parameters.AddWithValue("@ProductCode", pcode);
-						cm.Parameters.AddWithValue("@Price", price);
-						cm.Parameters.AddWithValue("@qty", int.Parse(txtQty.Text));
-						cm.Parameters.AddWithValue("@sdate", DateTime.Now);
-						cm.Parameters.AddWithValue("@cashier", cashier.lblUsername.Text);
-						cm.ExecuteNonQuery();
-						cashier.LoadCart();
-						
+						dr = cm.ExecuteReader();
+
+						if (dr.HasRows)
+						{
+							dr.Read();
+							id = dr["id"].ToString();
+							cart_qty = int.Parse(dr["qty"].ToString());
+							found = true;
+						}
+						else
+						{
+							found = false;
+						}
+
+						dr.Close();
+					}
+
+					if (found)
+					{
+						if (cn.State == ConnectionState.Open)
+						{
+							cn.Close();
+						}
+						cn.Open();
+
+						if (qty < (int.Parse(txtQty.Text) + cart_qty))
+						{
+							MessageBox.Show("Unable to proceed. Remaining qty on hand is" + qty, "Insufficient stock", MessageBoxButtons.OK, MessageBoxIcon.Error);
+							return;
+						}
+
+						using (SqlCommand cm = new SqlCommand("update Cart set qty = (qty + " + int.Parse(txtQty.Text) + ") where id = '" + id + "'", cn))
+						{
+
+							cm.ExecuteNonQuery();
+							//txtBarcode.SelectionStart = 0;
+							//txtBarcode.SelectionLength = txtBarcode.Text.Length;
+							//LoadCart();
+							cashier.txtBarcode.Clear();
+							cashier.txtBarcode.Focus();
+							cashier.LoadCart();
+							this.Dispose();
+						}
+					}
+
+					else
+					{
+						if (qty < (int.Parse(txtQty.Text) + cart_qty))
+						{
+							MessageBox.Show("Unable to proceed. Remaining qty on hand is" + qty, "Insufficient stock", MessageBoxButtons.OK, MessageBoxIcon.Error);
+							return;
+						}
+
+						using (SqlCommand cm = new SqlCommand("insert into Cart(transno, ProductCode, Price, qty, sdate, cashier) values (@transno, @ProductCode, @Price, @qty, @sdate, @cashier)", cn))
+						{
+							cm.Parameters.AddWithValue("@transno", transno);
+							cm.Parameters.AddWithValue("@ProductCode", pcode);
+							cm.Parameters.AddWithValue("@Price", price);
+							cm.Parameters.AddWithValue("@qty", qty);
+							cm.Parameters.AddWithValue("@sdate", DateTime.Now);
+							cm.Parameters.AddWithValue("@cashier", cashier.lblUsername.Text);
+							cm.ExecuteNonQuery();
+						}
 					}
 				}
 				catch (Exception ex)
 				{
-					MessageBox.Show(ex.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+					MessageBox.Show(ex.Message);
 				}
 				finally
 				{
-					MessageBox.Show("Item added to cart", "POS", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					//LoadCart();
+					cashier.txtBarcode.Clear();
+					cashier.txtBarcode.Focus();
+					cashier.LoadCart();
 					this.Dispose();
 				}
 			}

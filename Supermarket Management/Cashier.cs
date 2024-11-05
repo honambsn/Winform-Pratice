@@ -27,11 +27,11 @@ namespace Supermarket_Management
 			drawCenter();
 			cn = new SqlConnection(dbcon.myConnection());
 			dgvCashier.ColumnHeadersDefaultCellStyle.BackColor = Color.Red;
-			GetTranNo(); 
+			GetTranNo();
 			dgvCashier.Refresh();
 
 		}
-		
+
 		public void drawCenter()
 		{
 			int xPos = (this.panel2.Width - this.pictureBox1.Width) / 2;
@@ -54,7 +54,7 @@ namespace Supermarket_Management
 
 		private void picClose_Click(object sender, EventArgs e)
 		{
-			if(MessageBox.Show("Are you sure you want to exit?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+			if (MessageBox.Show("Are you sure you want to exit?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
 			{
 				this.Close();
 			}
@@ -163,7 +163,6 @@ namespace Supermarket_Management
 
 		public void LoadCart()
 		{
-			cn.Open();
 			try
 			{
 				if (cn.State == ConnectionState.Open)
@@ -209,6 +208,7 @@ namespace Supermarket_Management
 					//MessageBox.Show("Total Sale: " + lblSaleTotal.Text);
 					//MessageBox.Show("Total dis: " + lblDiscount.Text);
 					GetCartTotal();
+					
 				}
 			}
 			catch (Exception ex)
@@ -233,8 +233,8 @@ namespace Supermarket_Management
 			lblVatable.Text = vatable.ToString("#,##0.00");
 			lblDisplayTotal.Text = sales.ToString("#,##0.00");
 		}
-		
-			
+
+
 		private void lblTimerr_Tick(object sender, EventArgs e)
 		{
 			lblTimer.Text = DateTime.Now.ToString("HH:mm:ss tt");
@@ -256,7 +256,12 @@ namespace Supermarket_Management
 				//	cm.Parameters.AddWithValue("@cashier", lblUsername.Text);
 				//	cm.ExecuteNonQuery();
 				//}
+				if (cn.State == ConnectionState.Open)
+				{
+					cn.Close();
+				}
 				cn.Open();
+
 				cm = new SqlCommand("select top 1 transno from Cart where transno like '" + sdate + "%' order by id desc", cn);
 				dr = cm.ExecuteReader();
 				dr.Read();
@@ -290,6 +295,7 @@ namespace Supermarket_Management
 				{
 					string _pcode;
 					double _price;
+					int _qty;
 
 					using (SqlCommand cm = new SqlCommand("select * from Product where Barcode like '" + txtBarcode.Text + "'", cn))
 					{
@@ -300,6 +306,8 @@ namespace Supermarket_Management
 							qty = int.Parse(dr["qty"].ToString());
 							_pcode = dr["ProductCode"].ToString();
 							_price = double.Parse(dr["Price"].ToString());
+							_qty = int.Parse(txtQty.Text);
+							AddToCart(_pcode, _price, _qty);
 						}
 					}
 				}
@@ -314,6 +322,94 @@ namespace Supermarket_Management
 			}
 		}
 
+		public void AddToCart(string _pcode, double _price, int _qty)
+		{
+			try
+			{
 
+				if (cn.State == ConnectionState.Open)
+				{
+					cn.Close();
+				}
+				cn.Open();
+
+				string id = "";
+				int cart_qty = 0;
+				bool found = false;
+				using (SqlCommand cm = new SqlCommand("select * Cart where transno = @transno and ProductCode = @ProductCode", cn))
+				{
+					cm.Parameters.AddWithValue("@transno", lblTransNo.Text);
+					cm.Parameters.AddWithValue("@ProductCode", _pcode);
+					dr = cm.ExecuteReader();
+
+					if (dr.HasRows)
+					{
+						dr.Read();
+						id = dr["id"].ToString();
+						cart_qty = int.Parse(dr["qty"].ToString());
+						found = true;
+					}
+					else
+					{
+						found = false;
+					}
+
+					dr.Close();
+				}
+
+				if (found)
+				{
+					if (cn.State == ConnectionState.Open)
+					{
+						cn.Close();
+					}
+					cn.Open();
+
+					if (qty < (int.Parse(txtQty.Text) + cart_qty))
+					{
+						MessageBox.Show("Unable to proceed. Remaining qty on hand is" + qty, "Insufficient stock", MessageBoxButtons.OK, MessageBoxIcon.Error);
+						return;
+					}
+
+					using (SqlCommand cm = new SqlCommand("update Cart set qty = (qty + " + _qty + ") where id = '" + id + "'", cn))
+					{
+
+						cm.ExecuteNonQuery();
+						txtBarcode.SelectionStart = 0;
+						txtBarcode.SelectionLength = txtBarcode.Text.Length;
+						LoadCart();
+					}
+				}
+
+				else
+				{
+					if (qty < (int.Parse(txtQty.Text) + cart_qty))
+					{
+						MessageBox.Show("Unable to proceed. Remaining qty on hand is" + qty, "Insufficient stock", MessageBoxButtons.OK, MessageBoxIcon.Error);
+						return;
+					}
+
+					using (SqlCommand cm = new SqlCommand("insert into Cart(transno, ProductCode, Price, qty, sdate, cashier) values (@transno, @ProductCode, @Price, @qty, @sdate, @cashier", cn))
+					{
+						cm.Parameters.AddWithValue("@transno", lblTransNo.Text);
+						cm.Parameters.AddWithValue("@ProductCode", _pcode);
+						cm.Parameters.AddWithValue("@Price", _price);
+						cm.Parameters.AddWithValue("@qty", _qty);
+						cm.Parameters.AddWithValue("@sdate", DateTime.Now);
+						cm.Parameters.AddWithValue("@cashier", lblUsername.Text);
+						cm.ExecuteNonQuery();
+					}
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+			}
+			finally
+			{
+				LoadCart();
+			}
+
+		}
 	}
 }
