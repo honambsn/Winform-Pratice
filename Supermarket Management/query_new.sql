@@ -368,3 +368,6 @@ INNER JOIN
     dbo.StockIn ON dbo.Product.ProductCode = dbo.StockIn.ProductCode 
 INNER JOIN 
     dbo.Supplier ON dbo.StockIn.supplierID = dbo.Supplier.id
+
+
+select * from cart

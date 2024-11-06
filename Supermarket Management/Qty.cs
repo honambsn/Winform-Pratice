@@ -148,7 +148,7 @@ namespace Supermarket_Management
 							cm.Parameters.AddWithValue("@transno", transno);
 							cm.Parameters.AddWithValue("@ProductCode", pcode);
 							cm.Parameters.AddWithValue("@Price", price);
-							cm.Parameters.AddWithValue("@qty", qty);
+							cm.Parameters.AddWithValue("@qty", int.Parse(txtQty.Text));
 							cm.Parameters.AddWithValue("@sdate", DateTime.Now);
 							cm.Parameters.AddWithValue("@cashier", cashier.lblUsername.Text);
 							cm.ExecuteNonQuery();
@@ -169,5 +169,6 @@ namespace Supermarket_Management
 				}
 			}
 		}
+
 	}
 }

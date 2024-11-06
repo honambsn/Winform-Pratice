@@ -86,6 +86,10 @@ namespace Supermarket_Management
 		private void btnDiscount_Click(object sender, EventArgs e)
 		{
 			slide(btnDiscount);
+			Discount discount = new Discount(this);
+			discount.lblID.Text = id;
+			discount.txtTotalPrice.Text = price;
+			discount.ShowDialog();
 		}
 
 		private void btnPayment_Click(object sender, EventArgs e)
@@ -411,5 +415,14 @@ namespace Supermarket_Management
 			}
 
 		}
+
+		private void dgvCashier_SelectionChanged(object sender, EventArgs e)
+		{
+			int i = dgvCashier.CurrentRow.Index;
+			id = dgvCashier[1, i].Value.ToString();
+			price = dgvCashier[7, i].Value.ToString();
+		}
+
+
 	}
 }

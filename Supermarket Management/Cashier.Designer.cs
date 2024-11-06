@@ -29,30 +29,20 @@
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cashier));
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.panel1 = new System.Windows.Forms.Panel();
-			this.btnLogout = new System.Windows.Forms.Button();
-			this.btnChangePass = new System.Windows.Forms.Button();
-			this.btnSales = new System.Windows.Forms.Button();
-			this.btnClearCart = new System.Windows.Forms.Button();
-			this.btnPayment = new System.Windows.Forms.Button();
-			this.btnDiscount = new System.Windows.Forms.Button();
-			this.btnSearchProd = new System.Windows.Forms.Button();
-			this.btnTransaction = new System.Windows.Forms.Button();
 			this.panel2 = new System.Windows.Forms.Panel();
 			this.lblUsername = new System.Windows.Forms.Label();
-			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.panel3 = new System.Windows.Forms.Panel();
 			this.panelSlide = new System.Windows.Forms.Panel();
 			this.lblDisplayTotal = new System.Windows.Forms.Panel();
-			this.picClose = new System.Windows.Forms.PictureBox();
-			this.pictureBox2 = new System.Windows.Forms.PictureBox();
 			this.lblname = new System.Windows.Forms.Label();
 			this.panel5 = new System.Windows.Forms.Panel();
+			this.txtQty = new System.Windows.Forms.TextBox();
 			this.lblTimer = new System.Windows.Forms.Label();
 			this.lblVatable = new System.Windows.Forms.Label();
 			this.lblVat = new System.Windows.Forms.Label();
@@ -70,8 +60,6 @@
 			this.label2 = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
 			this.dgvCashier = new System.Windows.Forms.DataGridView();
-			this.lblTimerr = new System.Windows.Forms.Timer(this.components);
-			this.txtQty = new System.Windows.Forms.TextBox();
 			this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -80,18 +68,33 @@
 			this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.lblTimerr = new System.Windows.Forms.Timer(this.components);
+			this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+			this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+			this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
 			this.colAdd = new System.Windows.Forms.DataGridViewImageColumn();
 			this.colReduce = new System.Windows.Forms.DataGridViewImageColumn();
 			this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
+			this.picClose = new System.Windows.Forms.PictureBox();
+			this.pictureBox2 = new System.Windows.Forms.PictureBox();
+			this.btnLogout = new System.Windows.Forms.Button();
+			this.btnChangePass = new System.Windows.Forms.Button();
+			this.btnSales = new System.Windows.Forms.Button();
+			this.btnClearCart = new System.Windows.Forms.Button();
+			this.btnPayment = new System.Windows.Forms.Button();
+			this.btnDiscount = new System.Windows.Forms.Button();
+			this.btnSearchProd = new System.Windows.Forms.Button();
+			this.btnTransaction = new System.Windows.Forms.Button();
+			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.panel1.SuspendLayout();
 			this.panel2.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.panel3.SuspendLayout();
 			this.lblDisplayTotal.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.picClose)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
 			this.panel5.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dgvCashier)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.picClose)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// panel1
@@ -112,158 +115,6 @@
 			this.panel1.Size = new System.Drawing.Size(200, 711);
 			this.panel1.TabIndex = 0;
 			// 
-			// btnLogout
-			// 
-			this.btnLogout.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.btnLogout.FlatAppearance.BorderSize = 0;
-			this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnLogout.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnLogout.ForeColor = System.Drawing.Color.White;
-			this.btnLogout.Image = ((System.Drawing.Image)(resources.GetObject("btnLogout.Image")));
-			this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.btnLogout.Location = new System.Drawing.Point(0, 666);
-			this.btnLogout.Name = "btnLogout";
-			this.btnLogout.Size = new System.Drawing.Size(200, 45);
-			this.btnLogout.TabIndex = 11;
-			this.btnLogout.Text = " Logout";
-			this.btnLogout.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.btnLogout.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-			this.btnLogout.UseVisualStyleBackColor = true;
-			this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
-			// 
-			// btnChangePass
-			// 
-			this.btnChangePass.Dock = System.Windows.Forms.DockStyle.Top;
-			this.btnChangePass.FlatAppearance.BorderSize = 0;
-			this.btnChangePass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnChangePass.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnChangePass.ForeColor = System.Drawing.Color.White;
-			this.btnChangePass.Image = ((System.Drawing.Image)(resources.GetObject("btnChangePass.Image")));
-			this.btnChangePass.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.btnChangePass.Location = new System.Drawing.Point(0, 452);
-			this.btnChangePass.Name = "btnChangePass";
-			this.btnChangePass.Size = new System.Drawing.Size(200, 45);
-			this.btnChangePass.TabIndex = 10;
-			this.btnChangePass.Text = " Change Password";
-			this.btnChangePass.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.btnChangePass.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-			this.btnChangePass.UseVisualStyleBackColor = true;
-			this.btnChangePass.Click += new System.EventHandler(this.btnChangePass_Click);
-			// 
-			// btnSales
-			// 
-			this.btnSales.Dock = System.Windows.Forms.DockStyle.Top;
-			this.btnSales.FlatAppearance.BorderSize = 0;
-			this.btnSales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnSales.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnSales.ForeColor = System.Drawing.Color.White;
-			this.btnSales.Image = ((System.Drawing.Image)(resources.GetObject("btnSales.Image")));
-			this.btnSales.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.btnSales.Location = new System.Drawing.Point(0, 407);
-			this.btnSales.Name = "btnSales";
-			this.btnSales.Size = new System.Drawing.Size(200, 45);
-			this.btnSales.TabIndex = 9;
-			this.btnSales.Text = " Daily Sales";
-			this.btnSales.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.btnSales.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-			this.btnSales.UseVisualStyleBackColor = true;
-			this.btnSales.Click += new System.EventHandler(this.btnSales_Click);
-			// 
-			// btnClearCart
-			// 
-			this.btnClearCart.Dock = System.Windows.Forms.DockStyle.Top;
-			this.btnClearCart.FlatAppearance.BorderSize = 0;
-			this.btnClearCart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnClearCart.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnClearCart.ForeColor = System.Drawing.Color.White;
-			this.btnClearCart.Image = ((System.Drawing.Image)(resources.GetObject("btnClearCart.Image")));
-			this.btnClearCart.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.btnClearCart.Location = new System.Drawing.Point(0, 362);
-			this.btnClearCart.Name = "btnClearCart";
-			this.btnClearCart.Size = new System.Drawing.Size(200, 45);
-			this.btnClearCart.TabIndex = 8;
-			this.btnClearCart.Text = " Clear Cart";
-			this.btnClearCart.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.btnClearCart.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-			this.btnClearCart.UseVisualStyleBackColor = true;
-			this.btnClearCart.Click += new System.EventHandler(this.btnClearCart_Click);
-			// 
-			// btnPayment
-			// 
-			this.btnPayment.Dock = System.Windows.Forms.DockStyle.Top;
-			this.btnPayment.FlatAppearance.BorderSize = 0;
-			this.btnPayment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnPayment.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnPayment.ForeColor = System.Drawing.Color.White;
-			this.btnPayment.Image = ((System.Drawing.Image)(resources.GetObject("btnPayment.Image")));
-			this.btnPayment.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.btnPayment.Location = new System.Drawing.Point(0, 317);
-			this.btnPayment.Name = "btnPayment";
-			this.btnPayment.Size = new System.Drawing.Size(200, 45);
-			this.btnPayment.TabIndex = 7;
-			this.btnPayment.Text = " Settle Payment";
-			this.btnPayment.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.btnPayment.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-			this.btnPayment.UseVisualStyleBackColor = true;
-			this.btnPayment.Click += new System.EventHandler(this.btnPayment_Click);
-			// 
-			// btnDiscount
-			// 
-			this.btnDiscount.Dock = System.Windows.Forms.DockStyle.Top;
-			this.btnDiscount.FlatAppearance.BorderSize = 0;
-			this.btnDiscount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnDiscount.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnDiscount.ForeColor = System.Drawing.Color.White;
-			this.btnDiscount.Image = ((System.Drawing.Image)(resources.GetObject("btnDiscount.Image")));
-			this.btnDiscount.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.btnDiscount.Location = new System.Drawing.Point(0, 272);
-			this.btnDiscount.Name = "btnDiscount";
-			this.btnDiscount.Size = new System.Drawing.Size(200, 45);
-			this.btnDiscount.TabIndex = 6;
-			this.btnDiscount.Text = " Add Discount";
-			this.btnDiscount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.btnDiscount.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-			this.btnDiscount.UseVisualStyleBackColor = true;
-			this.btnDiscount.Click += new System.EventHandler(this.btnDiscount_Click);
-			// 
-			// btnSearchProd
-			// 
-			this.btnSearchProd.Dock = System.Windows.Forms.DockStyle.Top;
-			this.btnSearchProd.FlatAppearance.BorderSize = 0;
-			this.btnSearchProd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnSearchProd.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnSearchProd.ForeColor = System.Drawing.Color.White;
-			this.btnSearchProd.Image = ((System.Drawing.Image)(resources.GetObject("btnSearchProd.Image")));
-			this.btnSearchProd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.btnSearchProd.Location = new System.Drawing.Point(0, 227);
-			this.btnSearchProd.Name = "btnSearchProd";
-			this.btnSearchProd.Size = new System.Drawing.Size(200, 45);
-			this.btnSearchProd.TabIndex = 5;
-			this.btnSearchProd.Text = " Search Product";
-			this.btnSearchProd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.btnSearchProd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-			this.btnSearchProd.UseVisualStyleBackColor = true;
-			this.btnSearchProd.Click += new System.EventHandler(this.btnSearchProd_Click);
-			// 
-			// btnTransaction
-			// 
-			this.btnTransaction.Dock = System.Windows.Forms.DockStyle.Top;
-			this.btnTransaction.FlatAppearance.BorderSize = 0;
-			this.btnTransaction.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnTransaction.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnTransaction.ForeColor = System.Drawing.Color.White;
-			this.btnTransaction.Image = ((System.Drawing.Image)(resources.GetObject("btnTransaction.Image")));
-			this.btnTransaction.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.btnTransaction.Location = new System.Drawing.Point(0, 182);
-			this.btnTransaction.Name = "btnTransaction";
-			this.btnTransaction.Size = new System.Drawing.Size(200, 45);
-			this.btnTransaction.TabIndex = 4;
-			this.btnTransaction.Text = " New Transaction";
-			this.btnTransaction.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.btnTransaction.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-			this.btnTransaction.UseVisualStyleBackColor = true;
-			this.btnTransaction.Click += new System.EventHandler(this.btnTransaction_Click);
-			// 
 			// panel2
 			// 
 			this.panel2.Controls.Add(this.lblUsername);
@@ -282,16 +133,6 @@
 			this.lblUsername.Size = new System.Drawing.Size(83, 20);
 			this.lblUsername.TabIndex = 4;
 			this.lblUsername.Text = "Username";
-			// 
-			// pictureBox1
-			// 
-			this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-			this.pictureBox1.Location = new System.Drawing.Point(46, 24);
-			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(100, 100);
-			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-			this.pictureBox1.TabIndex = 4;
-			this.pictureBox1.TabStop = false;
 			// 
 			// panel3
 			// 
@@ -322,29 +163,6 @@
 			this.lblDisplayTotal.Name = "lblDisplayTotal";
 			this.lblDisplayTotal.Size = new System.Drawing.Size(1099, 53);
 			this.lblDisplayTotal.TabIndex = 2;
-			// 
-			// picClose
-			// 
-			this.picClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.picClose.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.picClose.Image = ((System.Drawing.Image)(resources.GetObject("picClose.Image")));
-			this.picClose.Location = new System.Drawing.Point(1073, 0);
-			this.picClose.Name = "picClose";
-			this.picClose.Size = new System.Drawing.Size(26, 25);
-			this.picClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-			this.picClose.TabIndex = 5;
-			this.picClose.TabStop = false;
-			this.picClose.Click += new System.EventHandler(this.picClose_Click);
-			// 
-			// pictureBox2
-			// 
-			this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-			this.pictureBox2.Location = new System.Drawing.Point(3, 3);
-			this.pictureBox2.Name = "pictureBox2";
-			this.pictureBox2.Size = new System.Drawing.Size(45, 45);
-			this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-			this.pictureBox2.TabIndex = 4;
-			this.pictureBox2.TabStop = false;
 			// 
 			// lblname
 			// 
@@ -380,6 +198,15 @@
 			this.panel5.Name = "panel5";
 			this.panel5.Size = new System.Drawing.Size(205, 658);
 			this.panel5.TabIndex = 3;
+			// 
+			// txtQty
+			// 
+			this.txtQty.Location = new System.Drawing.Point(153, 252);
+			this.txtQty.Name = "txtQty";
+			this.txtQty.Size = new System.Drawing.Size(34, 26);
+			this.txtQty.TabIndex = 16;
+			this.txtQty.Text = "1";
+			this.txtQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			// 
 			// lblTimer
 			// 
@@ -563,20 +390,7 @@
 			this.dgvCashier.RowHeadersVisible = false;
 			this.dgvCashier.Size = new System.Drawing.Size(894, 658);
 			this.dgvCashier.TabIndex = 4;
-			// 
-			// lblTimerr
-			// 
-			this.lblTimerr.Enabled = true;
-			this.lblTimerr.Tick += new System.EventHandler(this.lblTimerr_Tick);
-			// 
-			// txtQty
-			// 
-			this.txtQty.Location = new System.Drawing.Point(153, 252);
-			this.txtQty.Name = "txtQty";
-			this.txtQty.Size = new System.Drawing.Size(34, 26);
-			this.txtQty.TabIndex = 16;
-			this.txtQty.Text = "1";
-			this.txtQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			this.dgvCashier.SelectionChanged += new System.EventHandler(this.dgvCashier_SelectionChanged);
 			// 
 			// Column1
 			// 
@@ -612,8 +426,8 @@
 			// Column7
 			// 
 			this.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-			this.Column7.DefaultCellStyle = dataGridViewCellStyle1;
+			dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+			this.Column7.DefaultCellStyle = dataGridViewCellStyle5;
 			this.Column7.HeaderText = "Price";
 			this.Column7.Name = "Column7";
 			this.Column7.ReadOnly = true;
@@ -622,8 +436,8 @@
 			// Column5
 			// 
 			this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-			this.Column5.DefaultCellStyle = dataGridViewCellStyle2;
+			dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			this.Column5.DefaultCellStyle = dataGridViewCellStyle6;
 			this.Column5.HeaderText = "Qty";
 			this.Column5.Name = "Column5";
 			this.Column5.ReadOnly = true;
@@ -632,8 +446,8 @@
 			// Column6
 			// 
 			this.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-			this.Column6.DefaultCellStyle = dataGridViewCellStyle3;
+			dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+			this.Column6.DefaultCellStyle = dataGridViewCellStyle7;
 			this.Column6.HeaderText = "Discount";
 			this.Column6.Name = "Column6";
 			this.Column6.ReadOnly = true;
@@ -642,12 +456,44 @@
 			// Column8
 			// 
 			this.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-			this.Column8.DefaultCellStyle = dataGridViewCellStyle4;
+			dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+			this.Column8.DefaultCellStyle = dataGridViewCellStyle8;
 			this.Column8.HeaderText = "Total";
 			this.Column8.Name = "Column8";
 			this.Column8.ReadOnly = true;
 			this.Column8.Width = 67;
+			// 
+			// lblTimerr
+			// 
+			this.lblTimerr.Enabled = true;
+			this.lblTimerr.Tick += new System.EventHandler(this.lblTimerr_Tick);
+			// 
+			// dataGridViewImageColumn1
+			// 
+			this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.dataGridViewImageColumn1.HeaderText = "";
+			this.dataGridViewImageColumn1.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn1.Image")));
+			this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+			this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+			this.dataGridViewImageColumn1.Width = 5;
+			// 
+			// dataGridViewImageColumn2
+			// 
+			this.dataGridViewImageColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.dataGridViewImageColumn2.HeaderText = "";
+			this.dataGridViewImageColumn2.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn2.Image")));
+			this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+			this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+			this.dataGridViewImageColumn2.Width = 5;
+			// 
+			// dataGridViewImageColumn3
+			// 
+			this.dataGridViewImageColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.dataGridViewImageColumn3.HeaderText = "";
+			this.dataGridViewImageColumn3.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn3.Image")));
+			this.dataGridViewImageColumn3.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+			this.dataGridViewImageColumn3.Name = "dataGridViewImageColumn3";
+			this.dataGridViewImageColumn3.Width = 5;
 			// 
 			// colAdd
 			// 
@@ -679,6 +525,191 @@
 			this.Delete.ReadOnly = true;
 			this.Delete.Width = 5;
 			// 
+			// picClose
+			// 
+			this.picClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.picClose.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.picClose.Image = ((System.Drawing.Image)(resources.GetObject("picClose.Image")));
+			this.picClose.Location = new System.Drawing.Point(1073, 0);
+			this.picClose.Name = "picClose";
+			this.picClose.Size = new System.Drawing.Size(26, 25);
+			this.picClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.picClose.TabIndex = 5;
+			this.picClose.TabStop = false;
+			this.picClose.Click += new System.EventHandler(this.picClose_Click);
+			// 
+			// pictureBox2
+			// 
+			this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+			this.pictureBox2.Location = new System.Drawing.Point(3, 3);
+			this.pictureBox2.Name = "pictureBox2";
+			this.pictureBox2.Size = new System.Drawing.Size(45, 45);
+			this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+			this.pictureBox2.TabIndex = 4;
+			this.pictureBox2.TabStop = false;
+			// 
+			// btnLogout
+			// 
+			this.btnLogout.Dock = System.Windows.Forms.DockStyle.Bottom;
+			this.btnLogout.FlatAppearance.BorderSize = 0;
+			this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnLogout.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnLogout.ForeColor = System.Drawing.Color.White;
+			this.btnLogout.Image = ((System.Drawing.Image)(resources.GetObject("btnLogout.Image")));
+			this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btnLogout.Location = new System.Drawing.Point(0, 666);
+			this.btnLogout.Name = "btnLogout";
+			this.btnLogout.Size = new System.Drawing.Size(200, 45);
+			this.btnLogout.TabIndex = 11;
+			this.btnLogout.Text = " Logout";
+			this.btnLogout.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.btnLogout.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.btnLogout.UseVisualStyleBackColor = true;
+			this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+			// 
+			// btnChangePass
+			// 
+			this.btnChangePass.Dock = System.Windows.Forms.DockStyle.Top;
+			this.btnChangePass.FlatAppearance.BorderSize = 0;
+			this.btnChangePass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnChangePass.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnChangePass.ForeColor = System.Drawing.Color.White;
+			this.btnChangePass.Image = ((System.Drawing.Image)(resources.GetObject("btnChangePass.Image")));
+			this.btnChangePass.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btnChangePass.Location = new System.Drawing.Point(0, 452);
+			this.btnChangePass.Name = "btnChangePass";
+			this.btnChangePass.Size = new System.Drawing.Size(200, 45);
+			this.btnChangePass.TabIndex = 10;
+			this.btnChangePass.Text = " Change Password";
+			this.btnChangePass.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.btnChangePass.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.btnChangePass.UseVisualStyleBackColor = true;
+			this.btnChangePass.Click += new System.EventHandler(this.btnChangePass_Click);
+			// 
+			// btnSales
+			// 
+			this.btnSales.Dock = System.Windows.Forms.DockStyle.Top;
+			this.btnSales.FlatAppearance.BorderSize = 0;
+			this.btnSales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnSales.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnSales.ForeColor = System.Drawing.Color.White;
+			this.btnSales.Image = ((System.Drawing.Image)(resources.GetObject("btnSales.Image")));
+			this.btnSales.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btnSales.Location = new System.Drawing.Point(0, 407);
+			this.btnSales.Name = "btnSales";
+			this.btnSales.Size = new System.Drawing.Size(200, 45);
+			this.btnSales.TabIndex = 9;
+			this.btnSales.Text = " Daily Sales";
+			this.btnSales.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.btnSales.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.btnSales.UseVisualStyleBackColor = true;
+			this.btnSales.Click += new System.EventHandler(this.btnSales_Click);
+			// 
+			// btnClearCart
+			// 
+			this.btnClearCart.Dock = System.Windows.Forms.DockStyle.Top;
+			this.btnClearCart.FlatAppearance.BorderSize = 0;
+			this.btnClearCart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnClearCart.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnClearCart.ForeColor = System.Drawing.Color.White;
+			this.btnClearCart.Image = ((System.Drawing.Image)(resources.GetObject("btnClearCart.Image")));
+			this.btnClearCart.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btnClearCart.Location = new System.Drawing.Point(0, 362);
+			this.btnClearCart.Name = "btnClearCart";
+			this.btnClearCart.Size = new System.Drawing.Size(200, 45);
+			this.btnClearCart.TabIndex = 8;
+			this.btnClearCart.Text = " Clear Cart";
+			this.btnClearCart.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.btnClearCart.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.btnClearCart.UseVisualStyleBackColor = true;
+			this.btnClearCart.Click += new System.EventHandler(this.btnClearCart_Click);
+			// 
+			// btnPayment
+			// 
+			this.btnPayment.Dock = System.Windows.Forms.DockStyle.Top;
+			this.btnPayment.FlatAppearance.BorderSize = 0;
+			this.btnPayment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnPayment.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnPayment.ForeColor = System.Drawing.Color.White;
+			this.btnPayment.Image = ((System.Drawing.Image)(resources.GetObject("btnPayment.Image")));
+			this.btnPayment.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btnPayment.Location = new System.Drawing.Point(0, 317);
+			this.btnPayment.Name = "btnPayment";
+			this.btnPayment.Size = new System.Drawing.Size(200, 45);
+			this.btnPayment.TabIndex = 7;
+			this.btnPayment.Text = " Settle Payment";
+			this.btnPayment.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.btnPayment.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.btnPayment.UseVisualStyleBackColor = true;
+			this.btnPayment.Click += new System.EventHandler(this.btnPayment_Click);
+			// 
+			// btnDiscount
+			// 
+			this.btnDiscount.Dock = System.Windows.Forms.DockStyle.Top;
+			this.btnDiscount.FlatAppearance.BorderSize = 0;
+			this.btnDiscount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnDiscount.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnDiscount.ForeColor = System.Drawing.Color.White;
+			this.btnDiscount.Image = ((System.Drawing.Image)(resources.GetObject("btnDiscount.Image")));
+			this.btnDiscount.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btnDiscount.Location = new System.Drawing.Point(0, 272);
+			this.btnDiscount.Name = "btnDiscount";
+			this.btnDiscount.Size = new System.Drawing.Size(200, 45);
+			this.btnDiscount.TabIndex = 6;
+			this.btnDiscount.Text = " Add Discount";
+			this.btnDiscount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.btnDiscount.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.btnDiscount.UseVisualStyleBackColor = true;
+			this.btnDiscount.Click += new System.EventHandler(this.btnDiscount_Click);
+			// 
+			// btnSearchProd
+			// 
+			this.btnSearchProd.Dock = System.Windows.Forms.DockStyle.Top;
+			this.btnSearchProd.FlatAppearance.BorderSize = 0;
+			this.btnSearchProd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnSearchProd.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnSearchProd.ForeColor = System.Drawing.Color.White;
+			this.btnSearchProd.Image = ((System.Drawing.Image)(resources.GetObject("btnSearchProd.Image")));
+			this.btnSearchProd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btnSearchProd.Location = new System.Drawing.Point(0, 227);
+			this.btnSearchProd.Name = "btnSearchProd";
+			this.btnSearchProd.Size = new System.Drawing.Size(200, 45);
+			this.btnSearchProd.TabIndex = 5;
+			this.btnSearchProd.Text = " Search Product";
+			this.btnSearchProd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.btnSearchProd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.btnSearchProd.UseVisualStyleBackColor = true;
+			this.btnSearchProd.Click += new System.EventHandler(this.btnSearchProd_Click);
+			// 
+			// btnTransaction
+			// 
+			this.btnTransaction.Dock = System.Windows.Forms.DockStyle.Top;
+			this.btnTransaction.FlatAppearance.BorderSize = 0;
+			this.btnTransaction.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnTransaction.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnTransaction.ForeColor = System.Drawing.Color.White;
+			this.btnTransaction.Image = ((System.Drawing.Image)(resources.GetObject("btnTransaction.Image")));
+			this.btnTransaction.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btnTransaction.Location = new System.Drawing.Point(0, 182);
+			this.btnTransaction.Name = "btnTransaction";
+			this.btnTransaction.Size = new System.Drawing.Size(200, 45);
+			this.btnTransaction.TabIndex = 4;
+			this.btnTransaction.Text = " New Transaction";
+			this.btnTransaction.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.btnTransaction.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.btnTransaction.UseVisualStyleBackColor = true;
+			this.btnTransaction.Click += new System.EventHandler(this.btnTransaction_Click);
+			// 
+			// pictureBox1
+			// 
+			this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+			this.pictureBox1.Location = new System.Drawing.Point(46, 24);
+			this.pictureBox1.Name = "pictureBox1";
+			this.pictureBox1.Size = new System.Drawing.Size(100, 100);
+			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.pictureBox1.TabIndex = 4;
+			this.pictureBox1.TabStop = false;
+			// 
 			// Cashier
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -699,15 +730,15 @@
 			this.panel1.ResumeLayout(false);
 			this.panel2.ResumeLayout(false);
 			this.panel2.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.panel3.ResumeLayout(false);
 			this.lblDisplayTotal.ResumeLayout(false);
 			this.lblDisplayTotal.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.picClose)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
 			this.panel5.ResumeLayout(false);
 			this.panel5.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dgvCashier)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.picClose)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.ResumeLayout(false);
 
 		}
@@ -763,5 +794,8 @@
 		private System.Windows.Forms.DataGridViewImageColumn colAdd;
 		private System.Windows.Forms.DataGridViewImageColumn colReduce;
 		private System.Windows.Forms.DataGridViewImageColumn Delete;
+		private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+		private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
+		private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn3;
 	}
 }
