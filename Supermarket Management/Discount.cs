@@ -41,6 +41,16 @@ namespace Supermarket_Management
 			{
 				this.Dispose();
 			}
+
+			if (e.KeyCode == Keys.Escape)
+			{
+				this.Dispose();
+			}
+			else if (e.KeyCode == Keys.Enter)
+			{
+				//btnEnter_Click(sender, e);
+				btnSave.PerformClick();
+			}
 		}
 
 		private void txtDiscount_TextChanged(object sender, EventArgs e)

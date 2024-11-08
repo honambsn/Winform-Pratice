@@ -268,10 +268,6 @@
 		}
 
 		#endregion
-
-		private System.Windows.Forms.TextBox txtSale;
-		private System.Windows.Forms.TextBox txtCash;
-		private System.Windows.Forms.TextBox txtChange;
 		private System.Windows.Forms.Button btnSeven;
 		private System.Windows.Forms.Button btnEight;
 		private System.Windows.Forms.Button btnNine;
@@ -285,5 +281,8 @@
 		private System.Windows.Forms.Button btnTwo;
 		private System.Windows.Forms.Button btnOne;
 		private System.Windows.Forms.Button btnEnter;
+		public System.Windows.Forms.TextBox txtSale;
+		public System.Windows.Forms.TextBox txtCash;
+		public System.Windows.Forms.TextBox txtChange;
 	}
 }

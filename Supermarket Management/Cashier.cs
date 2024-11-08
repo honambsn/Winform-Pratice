@@ -95,6 +95,9 @@ namespace Supermarket_Management
 		private void btnPayment_Click(object sender, EventArgs e)
 		{
 			slide(btnPayment);
+			Settle settle = new Settle(this);
+			settle.txtSale.Text = lblDisplayTotal.Text;
+			settle.ShowDialog();
 		}
 
 		private void btnSales_Click(object sender, EventArgs e)
@@ -115,7 +118,22 @@ namespace Supermarket_Management
 		private void btnClearCart_Click(object sender, EventArgs e)
 		{
 			slide(btnClearCart);
+			if (MessageBox.Show("Are you sure you want to clear the cart?", "Clear Cart", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+			{
+				if (cn.State == ConnectionState.Open)
+				{
+					cn.Close();
+				}
+				cn.Open();
+				using (SqlCommand cm = new SqlCommand("delete from Cart where transno like @transno", cn))
+				{
+					cm.Parameters.AddWithValue("@transno", lblTransNo.Text);
+					cm.ExecuteNonQuery();
+					LoadCart();
+				}
+			}
 		}
+			
 		#endregion button
 
 		//public void LoadCart()
@@ -300,6 +318,10 @@ namespace Supermarket_Management
 					string _pcode;
 					double _price;
 					int _qty;
+					if (cn.State == ConnectionState.Closed)
+					{
+						cn.Open();
+					}
 
 					using (SqlCommand cm = new SqlCommand("select * from Product where Barcode like '" + txtBarcode.Text + "'", cn))
 					{
@@ -340,7 +362,7 @@ namespace Supermarket_Management
 				string id = "";
 				int cart_qty = 0;
 				bool found = false;
-				using (SqlCommand cm = new SqlCommand("select * Cart where transno = @transno and ProductCode = @ProductCode", cn))
+				using (SqlCommand cm = new SqlCommand("select * from Cart where transno = @transno and ProductCode = @ProductCode", cn))
 				{
 					cm.Parameters.AddWithValue("@transno", lblTransNo.Text);
 					cm.Parameters.AddWithValue("@ProductCode", _pcode);
@@ -393,7 +415,7 @@ namespace Supermarket_Management
 						return;
 					}
 
-					using (SqlCommand cm = new SqlCommand("insert into Cart(transno, ProductCode, Price, qty, sdate, cashier) values (@transno, @ProductCode, @Price, @qty, @sdate, @cashier", cn))
+					using (SqlCommand cm = new SqlCommand("insert into Cart(transno, ProductCode, Price, qty, sdate, cashier) values (@transno, @ProductCode, @Price, @qty, @sdate, @cashier)", cn))
 					{
 						cm.Parameters.AddWithValue("@transno", lblTransNo.Text);
 						cm.Parameters.AddWithValue("@ProductCode", _pcode);
@@ -402,6 +424,7 @@ namespace Supermarket_Management
 						cm.Parameters.AddWithValue("@sdate", DateTime.Now);
 						cm.Parameters.AddWithValue("@cashier", lblUsername.Text);
 						cm.ExecuteNonQuery();
+						
 					}
 				}
 			}

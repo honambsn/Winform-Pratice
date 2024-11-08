@@ -69,7 +69,7 @@
 			this.label5 = new System.Windows.Forms.Label();
 			this.lblTransNo = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
-			this.label1 = new System.Windows.Forms.Label();
+			this.labelDisplaytotal = new System.Windows.Forms.Label();
 			this.dgvCashier = new System.Windows.Forms.DataGridView();
 			this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -377,7 +377,7 @@
 			this.panel5.Controls.Add(this.label5);
 			this.panel5.Controls.Add(this.lblTransNo);
 			this.panel5.Controls.Add(this.label2);
-			this.panel5.Controls.Add(this.label1);
+			this.panel5.Controls.Add(this.labelDisplaytotal);
 			this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
 			this.panel5.Location = new System.Drawing.Point(1114, 53);
 			this.panel5.Name = "panel5";
@@ -534,18 +534,18 @@
 			this.label2.TabIndex = 1;
 			this.label2.Text = "Transaction No";
 			// 
-			// label1
+			// labelDisplaytotal
 			// 
-			this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-			this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-			this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label1.ForeColor = System.Drawing.Color.White;
-			this.label1.Location = new System.Drawing.Point(0, 0);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(205, 26);
-			this.label1.TabIndex = 0;
-			this.label1.Text = "0.00";
-			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.labelDisplaytotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+			this.labelDisplaytotal.Dock = System.Windows.Forms.DockStyle.Top;
+			this.labelDisplaytotal.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.labelDisplaytotal.ForeColor = System.Drawing.Color.White;
+			this.labelDisplaytotal.Location = new System.Drawing.Point(0, 0);
+			this.labelDisplaytotal.Name = "labelDisplaytotal";
+			this.labelDisplaytotal.Size = new System.Drawing.Size(205, 26);
+			this.labelDisplaytotal.TabIndex = 0;
+			this.labelDisplaytotal.Text = "0.00";
+			this.labelDisplaytotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
 			// dgvCashier
 			// 
@@ -763,7 +763,6 @@
 		private System.Windows.Forms.Label lblDate;
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.Label label2;
-		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Label lblVatable;
 		private System.Windows.Forms.Label lblVat;
 		private System.Windows.Forms.Label lblDiscount;
@@ -794,5 +793,6 @@
 		private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
 		private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn3;
 		public System.Windows.Forms.DataGridView dgvCashier;
+		public System.Windows.Forms.Label labelDisplaytotal;
 	}
 }

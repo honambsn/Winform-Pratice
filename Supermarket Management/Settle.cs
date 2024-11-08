@@ -107,15 +107,25 @@ namespace Supermarket_Management
 						cn.Open();
 
 						//using(SqlCommand cm = new SqlCommand("update Cart set status = 'Sold', cash = @cash, change = @change where id = @id", cn))
-						using (SqlCommand cm = new SqlCommand("update Product set qty = qty - " + int.Parse(cashier.dgvCashier.Rows[i].Cells[3].Value.ToString()) + " where pcode = '" + cashier.dgvCashier.Rows[i].Cells[5].Value.ToString()
-							+ "where ProductCode = @ProductCode '" + cashier.dgvCashier.Rows[i].Cells[2].Value.ToString() + "'", cn))
+						//using (SqlCommand cm = new SqlCommand("update Product set qty = qty - " + int.Parse(cashier.dgvCashier.Rows[i].Cells[3].Value.ToString()) + " where pcode = '" + cashier.dgvCashier.Rows[i].Cells[5].Value.ToString()
+						//	+ "where ProductCode = @ProductCode '" + cashier.dgvCashier.Rows[i].Cells[2].Value.ToString() + "'", cn))
+						using (SqlCommand cm = new SqlCommand("update Product set qty = qty - " + int.Parse(cashier.dgvCashier.Rows[i].Cells[5].Value.ToString()) + 
+							"where ProductCode = '" + cashier.dgvCashier.Rows[i].Cells[2].Value.ToString() + "'", cn)){
+							
+							cm.ExecuteNonQuery();
+						}				
+
+						using (SqlCommand cm = new SqlCommand("update Cart set status = 'Sold' where id = '" + cashier.dgvCashier.Rows[i].Cells[1].Value.ToString() + "'", cn))
 						{
-							//cm.Parameters.AddWithValue("@cash", double.Parse(txtCash.Text));
-							//cm.Parameters.AddWithValue("@change", double.Parse(txtChange.Text));
-							//cm.Parameters.AddWithValue("@id", int.Parse(cashier.dgvCashier.Rows[i].Cells[0].Value.ToString()));
+
 							cm.ExecuteNonQuery();
 						}
 					}
+
+					MessageBox.Show("Transaction Completed", "Transaction", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					cashier.GetTranNo();
+					cashier.LoadCart();
+					this.Dispose();
 				}
 			}
 			catch (Exception ex)
@@ -135,36 +145,29 @@ namespace Supermarket_Management
 				double sale = 0;
 				double cash = 0;
 
-				
 				string saleText = txtSale.Text.Replace(',', '.');
 				string cashText = txtCash.Text.Replace(',', '.');
 
-				
-				if (!string.IsNullOrEmpty(saleText) && double.TryParse(saleText, out sale))
+				// Ensure sale and cash are valid numbers before proceeding
+				bool isSaleValid = double.TryParse(saleText, out sale);
+				bool isCashValid = double.TryParse(cashText, out cash);
+
+				// Only perform calculation if both sale and cash are valid
+				if (isSaleValid && isCashValid)
 				{
-					if (!string.IsNullOrEmpty(cashText) && double.TryParse(cashText, out cash))
-					{
-						double charge = cash - sale;
-						txtChange.Text = charge.ToString("#,##0.00");
-					}
-					else
-					{
-						txtChange.Text = "0.00";
-					}
+					double change = cash - sale;
+					txtChange.Text = change.ToString("#,##0.00");
 				}
 				else
 				{
-					txtChange.Text = "0.00";
+					txtChange.Text = "0.00"; // Set default to 0.00 if any input is invalid
 				}
 			}
 			catch (Exception ex)
 			{
+				// Fallback on error, set change to 0.00 and show the error message
 				txtChange.Text = "0.00";
-				MessageBox.Show(ex.Message);
-			}
-			finally
-			{
-
+				MessageBox.Show("Error: " + ex.Message);
 			}
 		}
 
