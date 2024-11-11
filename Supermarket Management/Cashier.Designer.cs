@@ -39,7 +39,7 @@
 			this.btnChangePass = new System.Windows.Forms.Button();
 			this.btnSales = new System.Windows.Forms.Button();
 			this.btnClearCart = new System.Windows.Forms.Button();
-			this.btnPayment = new System.Windows.Forms.Button();
+			this.btnSettle = new System.Windows.Forms.Button();
 			this.btnDiscount = new System.Windows.Forms.Button();
 			this.btnSearchProd = new System.Windows.Forms.Button();
 			this.btnTransaction = new System.Windows.Forms.Button();
@@ -71,6 +71,10 @@
 			this.label2 = new System.Windows.Forms.Label();
 			this.labelDisplaytotal = new System.Windows.Forms.Label();
 			this.dgvCashier = new System.Windows.Forms.DataGridView();
+			this.lblTimerr = new System.Windows.Forms.Timer(this.components);
+			this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+			this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+			this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
 			this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -82,10 +86,6 @@
 			this.colAdd = new System.Windows.Forms.DataGridViewImageColumn();
 			this.colReduce = new System.Windows.Forms.DataGridViewImageColumn();
 			this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
-			this.lblTimerr = new System.Windows.Forms.Timer(this.components);
-			this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-			this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
-			this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
 			this.panel1.SuspendLayout();
 			this.panel2.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -104,7 +104,7 @@
 			this.panel1.Controls.Add(this.btnChangePass);
 			this.panel1.Controls.Add(this.btnSales);
 			this.panel1.Controls.Add(this.btnClearCart);
-			this.panel1.Controls.Add(this.btnPayment);
+			this.panel1.Controls.Add(this.btnSettle);
 			this.panel1.Controls.Add(this.btnDiscount);
 			this.panel1.Controls.Add(this.btnSearchProd);
 			this.panel1.Controls.Add(this.btnTransaction);
@@ -175,6 +175,7 @@
 			// btnClearCart
 			// 
 			this.btnClearCart.Dock = System.Windows.Forms.DockStyle.Top;
+			this.btnClearCart.Enabled = false;
 			this.btnClearCart.FlatAppearance.BorderSize = 0;
 			this.btnClearCart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.btnClearCart.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -191,28 +192,30 @@
 			this.btnClearCart.UseVisualStyleBackColor = true;
 			this.btnClearCart.Click += new System.EventHandler(this.btnClearCart_Click);
 			// 
-			// btnPayment
+			// btnSettle
 			// 
-			this.btnPayment.Dock = System.Windows.Forms.DockStyle.Top;
-			this.btnPayment.FlatAppearance.BorderSize = 0;
-			this.btnPayment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnPayment.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnPayment.ForeColor = System.Drawing.Color.White;
-			this.btnPayment.Image = ((System.Drawing.Image)(resources.GetObject("btnPayment.Image")));
-			this.btnPayment.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.btnPayment.Location = new System.Drawing.Point(0, 317);
-			this.btnPayment.Name = "btnPayment";
-			this.btnPayment.Size = new System.Drawing.Size(200, 45);
-			this.btnPayment.TabIndex = 7;
-			this.btnPayment.Text = " Settle Payment";
-			this.btnPayment.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.btnPayment.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-			this.btnPayment.UseVisualStyleBackColor = true;
-			this.btnPayment.Click += new System.EventHandler(this.btnPayment_Click);
+			this.btnSettle.Dock = System.Windows.Forms.DockStyle.Top;
+			this.btnSettle.Enabled = false;
+			this.btnSettle.FlatAppearance.BorderSize = 0;
+			this.btnSettle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnSettle.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnSettle.ForeColor = System.Drawing.Color.White;
+			this.btnSettle.Image = ((System.Drawing.Image)(resources.GetObject("btnSettle.Image")));
+			this.btnSettle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btnSettle.Location = new System.Drawing.Point(0, 317);
+			this.btnSettle.Name = "btnSettle";
+			this.btnSettle.Size = new System.Drawing.Size(200, 45);
+			this.btnSettle.TabIndex = 7;
+			this.btnSettle.Text = " Settle Payment";
+			this.btnSettle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.btnSettle.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.btnSettle.UseVisualStyleBackColor = true;
+			this.btnSettle.Click += new System.EventHandler(this.btnPayment_Click);
 			// 
 			// btnDiscount
 			// 
 			this.btnDiscount.Dock = System.Windows.Forms.DockStyle.Top;
+			this.btnDiscount.Enabled = false;
 			this.btnDiscount.FlatAppearance.BorderSize = 0;
 			this.btnDiscount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.btnDiscount.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -575,7 +578,37 @@
 			this.dgvCashier.RowHeadersVisible = false;
 			this.dgvCashier.Size = new System.Drawing.Size(894, 658);
 			this.dgvCashier.TabIndex = 4;
+			this.dgvCashier.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCashier_CellContentClick);
 			this.dgvCashier.SelectionChanged += new System.EventHandler(this.dgvCashier_SelectionChanged);
+			// 
+			// lblTimerr
+			// 
+			this.lblTimerr.Enabled = true;
+			this.lblTimerr.Tick += new System.EventHandler(this.lblTimerr_Tick);
+			// 
+			// dataGridViewImageColumn1
+			// 
+			this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.dataGridViewImageColumn1.HeaderText = "";
+			this.dataGridViewImageColumn1.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn1.Image")));
+			this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+			this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+			// 
+			// dataGridViewImageColumn2
+			// 
+			this.dataGridViewImageColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.dataGridViewImageColumn2.HeaderText = "";
+			this.dataGridViewImageColumn2.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn2.Image")));
+			this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+			this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+			// 
+			// dataGridViewImageColumn3
+			// 
+			this.dataGridViewImageColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.dataGridViewImageColumn3.HeaderText = "";
+			this.dataGridViewImageColumn3.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn3.Image")));
+			this.dataGridViewImageColumn3.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+			this.dataGridViewImageColumn3.Name = "dataGridViewImageColumn3";
 			// 
 			// Column1
 			// 
@@ -678,35 +711,6 @@
 			this.Delete.ReadOnly = true;
 			this.Delete.Width = 5;
 			// 
-			// lblTimerr
-			// 
-			this.lblTimerr.Enabled = true;
-			this.lblTimerr.Tick += new System.EventHandler(this.lblTimerr_Tick);
-			// 
-			// dataGridViewImageColumn1
-			// 
-			this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			this.dataGridViewImageColumn1.HeaderText = "";
-			this.dataGridViewImageColumn1.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn1.Image")));
-			this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-			this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-			// 
-			// dataGridViewImageColumn2
-			// 
-			this.dataGridViewImageColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			this.dataGridViewImageColumn2.HeaderText = "";
-			this.dataGridViewImageColumn2.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn2.Image")));
-			this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-			this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
-			// 
-			// dataGridViewImageColumn3
-			// 
-			this.dataGridViewImageColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			this.dataGridViewImageColumn3.HeaderText = "";
-			this.dataGridViewImageColumn3.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn3.Image")));
-			this.dataGridViewImageColumn3.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-			this.dataGridViewImageColumn3.Name = "dataGridViewImageColumn3";
-			// 
 			// Cashier
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -754,7 +758,7 @@
 		private System.Windows.Forms.Button btnChangePass;
 		private System.Windows.Forms.Button btnSales;
 		private System.Windows.Forms.Button btnClearCart;
-		private System.Windows.Forms.Button btnPayment;
+		private System.Windows.Forms.Button btnSettle;
 		private System.Windows.Forms.PictureBox pictureBox1;
 		private System.Windows.Forms.Label lblname;
 		private System.Windows.Forms.PictureBox pictureBox2;
@@ -778,6 +782,11 @@
 		public System.Windows.Forms.Label lblTransNo;
 		private System.Windows.Forms.TextBox txtQty;
 		public System.Windows.Forms.TextBox txtBarcode;
+		private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+		private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
+		private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn3;
+		public System.Windows.Forms.DataGridView dgvCashier;
+		public System.Windows.Forms.Label labelDisplaytotal;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
@@ -789,10 +798,5 @@
 		private System.Windows.Forms.DataGridViewImageColumn colAdd;
 		private System.Windows.Forms.DataGridViewImageColumn colReduce;
 		private System.Windows.Forms.DataGridViewImageColumn Delete;
-		private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
-		private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
-		private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn3;
-		public System.Windows.Forms.DataGridView dgvCashier;
-		public System.Windows.Forms.Label labelDisplaytotal;
 	}
 }

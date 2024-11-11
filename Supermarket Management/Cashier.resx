@@ -171,7 +171,7 @@
         8RyB+6swUU/Vq3yMiwhazLdCb0g3pjeQg4B43i8dIqCSgubfgQAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="btnPayment.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnSettle.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
         DAAACwwBP0AiyAAAAY1JREFUSEvt1U8rBVEYx/HxpxCSQhZKKVnYiaWy8AJI1rJSlLWNslSUtVCy8Q5Q

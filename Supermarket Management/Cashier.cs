@@ -94,7 +94,7 @@ namespace Supermarket_Management
 
 		private void btnPayment_Click(object sender, EventArgs e)
 		{
-			slide(btnPayment);
+			slide(btnSettle);
 			Settle settle = new Settle(this);
 			settle.txtSale.Text = lblDisplayTotal.Text;
 			settle.ShowDialog();
@@ -193,6 +193,7 @@ namespace Supermarket_Management
 				}
 				cn.Open();
 
+				Boolean hascart = false;
 				int i = 0;
 				double total = 0;
 				double discount = 0;
@@ -223,6 +224,8 @@ namespace Supermarket_Management
 							itemDisc.ToString("#,##0.00"),
 							itemTotal.ToString("#,##0.00")
 						);
+
+						hascart = true;
 					}
 					dr.Close();
 					lblSaleTotal.Text = total.ToString("#,##0.00");
@@ -231,6 +234,18 @@ namespace Supermarket_Management
 					//MessageBox.Show("Total dis: " + lblDiscount.Text);
 					GetCartTotal();
 					
+					if (hascart)
+					{
+						btnClearCart.Enabled = true;
+						btnSettle.Enabled = true;
+						btnDiscount.Enabled = true;
+					}
+					else
+					{
+						btnClearCart.Enabled = false;
+						btnSettle.Enabled = false;
+						btnDiscount.Enabled = false;
+					}
 				}
 			}
 			catch (Exception ex)
@@ -446,6 +461,128 @@ namespace Supermarket_Management
 			price = dgvCashier[7, i].Value.ToString();
 		}
 
+		private void dgvCashier_CellContentClick(object sender, DataGridViewCellEventArgs e)
+		{
+			string colName = dgvCashier.Columns[e.ColumnIndex].Name;
 
+			if (colName == "Delete")
+			{
+				if (MessageBox.Show("Are you sure you want to delete this item?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+				{
+					try
+					{
+						if (cn.State == ConnectionState.Open)
+						{
+							cn.Close();
+						}
+						cn.Open();
+
+
+						//using (SqlCommand cm = new SqlCommand("delete from Cart where id =  @id", cn))
+						//{
+						//	cm.Parameters.AddWithValue("@id", dgvCashier.Rows[e.RowIndex].Cells[1].Value.ToString());
+						//	cm.ExecuteNonQuery();
+
+						//	if (cm.ExecuteNonQuery() > 0)
+						//	{
+						//		MessageBox.Show("Item has been deleted successfully", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Information);
+						//	}
+						//	else
+						//	{
+						//		MessageBox.Show("Item not found or could not be deleted", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+						//	}
+						//}
+
+						dbcon.ExecuteQueryMultiParams("delete from Cart where id = @id", new SqlParameter("@id", dgvCashier.Rows[e.RowIndex].Cells[1].Value.ToString()));
+						MessageBox.Show("Item has been deleted successfully", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					}
+					catch (Exception ex)
+					{
+						MessageBox.Show(ex.Message);
+					}
+					finally
+					{
+						LoadCart();
+					}
+				}
+			}
+			else if (colName == "colAdd")
+			{
+				try
+				{
+					int i = 0;
+					if (cn.State == ConnectionState.Open)
+					{
+						cn.Close();
+					}
+
+					cn.Open();
+
+					using (SqlCommand cm = new SqlCommand("select sum(qty) as qty from Product where ProductCode like '" + dgvCashier.Rows[e.RowIndex].Cells[2].Value.ToString()
+								+ "' group by ProductCode", cn))
+					{
+						i = int.Parse(cm.ExecuteScalar().ToString());
+
+					}
+
+
+					if (int.Parse(dgvCashier.Rows[e.RowIndex].Cells[5].Value.ToString()) < i)
+					{
+						dbcon.ExcuteQuery("update Cart set  qty = qty + " + int.Parse(txtQty.Text) + "where transno like '" +
+							lblTransNo.Text + "' and ProductCode like '" + dgvCashier.Rows[e.RowIndex].Cells[2].Value.ToString() + "'");
+					}
+					else
+					{
+						MessageBox.Show("Remaining qty on hand is" + i, "Insufficient stock", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					}
+				}
+				catch (Exception ex)
+				{
+					MessageBox.Show(ex.Message);
+				}
+				finally
+				{
+					LoadCart();
+				}
+			}
+			else if (colName == "colReduce")
+			{
+				try
+				{
+					int i = 0;
+					if (cn.State == ConnectionState.Open)
+					{
+						cn.Close();
+					}
+
+					cn.Open();
+
+					using (SqlCommand cm = new SqlCommand("select sum(qty) as qty from Cart where ProductCode like '" + dgvCashier.Rows[e.RowIndex].Cells[2].Value.ToString()
+								+ "' group by ProductCode", cn))
+					{
+						i = int.Parse(cm.ExecuteScalar().ToString());
+
+					}
+
+					if (i > 1)
+					{
+						dbcon.ExcuteQuery("update Cart set  qty = qty - " + int.Parse(txtQty.Text) + "where transno like '" +
+							lblTransNo.Text + "' and ProductCode like '" + dgvCashier.Rows[e.RowIndex].Cells[2].Value.ToString() + "'");
+					}
+					else
+					{
+						MessageBox.Show("Remaining qty on hand is: " + i, "Insufficient stock", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					}
+				}
+				catch (Exception ex)
+				{
+					MessageBox.Show(ex.Message);
+				}
+				finally
+				{
+					LoadCart();
+				}
+			}
+		}
 	}
 }

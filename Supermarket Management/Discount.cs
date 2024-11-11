@@ -25,6 +25,7 @@ namespace Supermarket_Management
 			cn = new SqlConnection(dbcon.myConnection());
 			this.cashier = cash;
 			txtDiscount.Focus();
+			this.KeyPreview = true;
 		}
 
 		private void picClose_Click(object sender, EventArgs e)
