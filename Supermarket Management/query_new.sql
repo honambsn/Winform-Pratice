@@ -371,3 +371,23 @@ INNER JOIN
 
 
 select * from cart
+
+
+select * from users
+
+
+-- Inserting a user with the role 'Cashier'
+INSERT INTO [dbo].[Users] (username, password, role, name, isactive)
+VALUES ('john_doe', 'password123', 'Cashier', 'John Doe', 'true');
+
+-- Inserting a user with the role 'Administrator'
+INSERT INTO [dbo].[Users] (username, password, role, name, isactive)
+VALUES ('admin_user', 'admin123', 'Administrator', 'Admin User', 'true');
+
+-- Another example with 'Cashier' role
+INSERT INTO [dbo].[Users] (username, password, role, name, isactive)
+VALUES ('jane_smith', 'securePass789', 'Cashier', 'Jane Smith', 'true');
+
+-- Another example with 'Administrator' role
+INSERT INTO [dbo].[Users] (username, password, role, name, isactive)
+VALUES ('super_admin', 'supersecure123', 'Administrator', 'Super Admin', 'true');

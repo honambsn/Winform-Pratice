@@ -195,6 +195,14 @@ namespace Supermarket_Management
 		private void btn_Logout_Click(object sender, EventArgs e)
 		{
 			hideSubMenu();
+			if (MessageBox.Show("Are you sure you want to Logout?", "Log Out", MessageBoxButtons.YesNo) == DialogResult.Yes)
+			{
+				//this.Dispose();
+				//Application.Exit();
+				this.Hide();
+				Login login = new Login();
+				login.ShowDialog();
+			}
 		}
 	}
 }

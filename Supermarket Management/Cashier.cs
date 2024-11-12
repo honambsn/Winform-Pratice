@@ -43,9 +43,9 @@ namespace Supermarket_Management
 			yPos = this.lblUsername.Location.Y;
 			this.lblUsername.Location = new Point(xPos, yPos);
 
-			yPos = (this.lblname.Height - this.lblname.Height) / 2;
-			xPos = this.lblname.Location.X;
-			this.lblname.Location = new Point(xPos, yPos);
+		///	yPos = (this.lblName.Height - this.lblName.Height) / 2;
+			//xPos = this.lblName.Location.X;
+			//this.lblName.Location = new Point(xPos, yPos);
 
 			yPos = (this.pictureBox2.Height - this.pictureBox2.Height) / 2;
 			xPos = this.pictureBox2.Location.X;
@@ -113,6 +113,17 @@ namespace Supermarket_Management
 		private void btnLogout_Click(object sender, EventArgs e)
 		{
 			slide(btnLogout);
+			if (dgvCashier.Rows.Count > 0)
+			{
+				MessageBox.Show("Unable to logout. Please settle the transaction first.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				return;
+			}
+			if (MessageBox.Show("Are you sure you want to logout?", "Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+			{
+				this.Hide();
+				Login login = new Login();
+				login.ShowDialog();
+			}
 		}
 
 		private void btnClearCart_Click(object sender, EventArgs e)

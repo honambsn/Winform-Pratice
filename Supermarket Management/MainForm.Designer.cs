@@ -51,7 +51,7 @@
 			this.btn_Product = new System.Windows.Forms.Button();
 			this.btn_Dashboard = new System.Windows.Forms.Button();
 			this.panelLogo = new System.Windows.Forms.Panel();
-			this.label1 = new System.Windows.Forms.Label();
+			this.lblName = new System.Windows.Forms.Label();
 			this.lbl_Username = new System.Windows.Forms.Label();
 			this.lbl_Role = new System.Windows.Forms.Label();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -420,7 +420,7 @@
 			// 
 			// panelLogo
 			// 
-			this.panelLogo.Controls.Add(this.label1);
+			this.panelLogo.Controls.Add(this.lblName);
 			this.panelLogo.Controls.Add(this.lbl_Username);
 			this.panelLogo.Controls.Add(this.lbl_Role);
 			this.panelLogo.Controls.Add(this.pictureBox1);
@@ -430,14 +430,14 @@
 			this.panelLogo.Size = new System.Drawing.Size(213, 213);
 			this.panelLogo.TabIndex = 1;
 			// 
-			// label1
+			// lblName
 			// 
-			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(12, 123);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(27, 21);
-			this.label1.TabIndex = 2;
-			this.label1.Text = "Ln";
+			this.lblName.AutoSize = true;
+			this.lblName.Location = new System.Drawing.Point(12, 123);
+			this.lblName.Name = "lblName";
+			this.lblName.Size = new System.Drawing.Size(27, 21);
+			this.lblName.TabIndex = 2;
+			this.lblName.Text = "Ln";
 			// 
 			// lbl_Username
 			// 
@@ -540,8 +540,6 @@
 		private System.Windows.Forms.Button btn_Logout;
 		private System.Windows.Forms.Label lbl_Role;
 		private System.Windows.Forms.PictureBox pictureBox1;
-		private System.Windows.Forms.Label lbl_Username;
-		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Label lbl_Title;
 		private System.Windows.Forms.Panel panelSubRecord;
 		private System.Windows.Forms.Button Record_POS;
@@ -556,6 +554,8 @@
 		private System.Windows.Forms.Button Setting_User;
 		private System.Windows.Forms.Button btn_Setting;
 		private System.Windows.Forms.Button btn_Supplier;
+		public System.Windows.Forms.Label lbl_Username;
+		public System.Windows.Forms.Label lblName;
 	}
 }
 
