@@ -30,10 +30,10 @@
 		{
 			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cashier));
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.btnLogout = new System.Windows.Forms.Button();
 			this.btnChangePass = new System.Windows.Forms.Button();
@@ -71,6 +71,10 @@
 			this.label2 = new System.Windows.Forms.Label();
 			this.labelDisplaytotal = new System.Windows.Forms.Label();
 			this.dgvCashier = new System.Windows.Forms.DataGridView();
+			this.lblTimerr = new System.Windows.Forms.Timer(this.components);
+			this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+			this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+			this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
 			this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -82,10 +86,6 @@
 			this.colAdd = new System.Windows.Forms.DataGridViewImageColumn();
 			this.colReduce = new System.Windows.Forms.DataGridViewImageColumn();
 			this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
-			this.lblTimerr = new System.Windows.Forms.Timer(this.components);
-			this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-			this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
-			this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
 			this.panel1.SuspendLayout();
 			this.panel2.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -583,6 +583,35 @@
 			this.dgvCashier.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCashier_CellContentClick);
 			this.dgvCashier.SelectionChanged += new System.EventHandler(this.dgvCashier_SelectionChanged);
 			// 
+			// lblTimerr
+			// 
+			this.lblTimerr.Enabled = true;
+			this.lblTimerr.Tick += new System.EventHandler(this.lblTimerr_Tick);
+			// 
+			// dataGridViewImageColumn1
+			// 
+			this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.dataGridViewImageColumn1.HeaderText = "";
+			this.dataGridViewImageColumn1.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn1.Image")));
+			this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+			this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+			// 
+			// dataGridViewImageColumn2
+			// 
+			this.dataGridViewImageColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.dataGridViewImageColumn2.HeaderText = "";
+			this.dataGridViewImageColumn2.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn2.Image")));
+			this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+			this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+			// 
+			// dataGridViewImageColumn3
+			// 
+			this.dataGridViewImageColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.dataGridViewImageColumn3.HeaderText = "";
+			this.dataGridViewImageColumn3.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn3.Image")));
+			this.dataGridViewImageColumn3.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+			this.dataGridViewImageColumn3.Name = "dataGridViewImageColumn3";
+			// 
 			// Column1
 			// 
 			this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -597,6 +626,7 @@
 			this.Column9.HeaderText = "ID";
 			this.Column9.Name = "Column9";
 			this.Column9.ReadOnly = true;
+			this.Column9.Visible = false;
 			this.Column9.Width = 50;
 			// 
 			// Column2
@@ -617,8 +647,8 @@
 			// Column7
 			// 
 			this.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-			this.Column7.DefaultCellStyle = dataGridViewCellStyle13;
+			dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+			this.Column7.DefaultCellStyle = dataGridViewCellStyle1;
 			this.Column7.HeaderText = "Price";
 			this.Column7.Name = "Column7";
 			this.Column7.ReadOnly = true;
@@ -627,8 +657,8 @@
 			// Column5
 			// 
 			this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-			this.Column5.DefaultCellStyle = dataGridViewCellStyle14;
+			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			this.Column5.DefaultCellStyle = dataGridViewCellStyle2;
 			this.Column5.HeaderText = "Qty";
 			this.Column5.Name = "Column5";
 			this.Column5.ReadOnly = true;
@@ -637,8 +667,8 @@
 			// Column6
 			// 
 			this.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-			this.Column6.DefaultCellStyle = dataGridViewCellStyle15;
+			dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+			this.Column6.DefaultCellStyle = dataGridViewCellStyle3;
 			this.Column6.HeaderText = "Discount";
 			this.Column6.Name = "Column6";
 			this.Column6.ReadOnly = true;
@@ -647,8 +677,8 @@
 			// Column8
 			// 
 			this.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-			this.Column8.DefaultCellStyle = dataGridViewCellStyle16;
+			dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+			this.Column8.DefaultCellStyle = dataGridViewCellStyle4;
 			this.Column8.HeaderText = "Total";
 			this.Column8.Name = "Column8";
 			this.Column8.ReadOnly = true;
@@ -683,35 +713,6 @@
 			this.Delete.Name = "Delete";
 			this.Delete.ReadOnly = true;
 			this.Delete.Width = 5;
-			// 
-			// lblTimerr
-			// 
-			this.lblTimerr.Enabled = true;
-			this.lblTimerr.Tick += new System.EventHandler(this.lblTimerr_Tick);
-			// 
-			// dataGridViewImageColumn1
-			// 
-			this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			this.dataGridViewImageColumn1.HeaderText = "";
-			this.dataGridViewImageColumn1.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn1.Image")));
-			this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-			this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-			// 
-			// dataGridViewImageColumn2
-			// 
-			this.dataGridViewImageColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			this.dataGridViewImageColumn2.HeaderText = "";
-			this.dataGridViewImageColumn2.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn2.Image")));
-			this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-			this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
-			// 
-			// dataGridViewImageColumn3
-			// 
-			this.dataGridViewImageColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			this.dataGridViewImageColumn3.HeaderText = "";
-			this.dataGridViewImageColumn3.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn3.Image")));
-			this.dataGridViewImageColumn3.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-			this.dataGridViewImageColumn3.Name = "dataGridViewImageColumn3";
 			// 
 			// Cashier
 			// 
@@ -788,6 +789,7 @@
 		private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn3;
 		public System.Windows.Forms.DataGridView dgvCashier;
 		public System.Windows.Forms.Label labelDisplaytotal;
+		public System.Windows.Forms.Label lblName;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
@@ -799,6 +801,5 @@
 		private System.Windows.Forms.DataGridViewImageColumn colAdd;
 		private System.Windows.Forms.DataGridViewImageColumn colReduce;
 		private System.Windows.Forms.DataGridViewImageColumn Delete;
-		public System.Windows.Forms.Label lblName;
 	}
 }

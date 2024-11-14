@@ -391,3 +391,94 @@ VALUES ('jane_smith', 'securePass789', 'Cashier', 'Jane Smith', 'true');
 -- Another example with 'Administrator' role
 INSERT INTO [dbo].[Users] (username, password, role, name, isactive)
 VALUES ('super_admin', 'supersecure123', 'Administrator', 'Super Admin', 'true');
+
+
+SELECT username FROM Users WHERE role = 'Cashier';
+
+select * from users
+
+
+-- 1. Cashier
+INSERT INTO [dbo].[Users] (username, password, role, name, isactive)
+VALUES ('emma_jones', 'emmapass123', 'Cashier', 'Emma Jones', 'true');
+
+-- 2. Administrator
+INSERT INTO [dbo].[Users] (username, password, role, name, isactive)
+VALUES ('michael_admin', 'michaeladmin123', 'Administrator', 'Michael Admin', 'true');
+
+-- 3. Cashier
+INSERT INTO [dbo].[Users] (username, password, role, name, isactive)
+VALUES ('lucas_white', 'lucaspass456', 'Cashier', 'Lucas White', 'true');
+
+-- 4. Administrator
+INSERT INTO [dbo].[Users] (username, password, role, name, isactive)
+VALUES ('elizabeth_smith', 'elizabethadmin789', 'Administrator', 'Elizabeth Smith', 'true');
+
+-- 5. Cashier
+INSERT INTO [dbo].[Users] (username, password, role, name, isactive)
+VALUES ('mia_brown', 'miabrown2024', 'Cashier', 'Mia Brown', 'true');
+
+-- 6. Administrator
+INSERT INTO [dbo].[Users] (username, password, role, name, isactive)
+VALUES ('charles_admin', 'charlesadmin987', 'Administrator', 'Charles Admin', 'true');
+
+-- 7. Cashier
+INSERT INTO [dbo].[Users] (username, password, role, name, isactive)
+VALUES ('ava_smith', 'avasmith001', 'Cashier', 'Ava Smith', 'true');
+
+-- 8. Administrator
+INSERT INTO [dbo].[Users] (username, password, role, name, isactive)
+VALUES ('olivia_jones', 'oliviaadmin1001', 'Administrator', 'Olivia Jones', 'true');
+
+-- 9. Cashier
+INSERT INTO [dbo].[Users] (username, password, role, name, isactive)
+VALUES ('william_baker', 'willbake123', 'Cashier', 'William Baker', 'true');
+
+-- 10. Administrator
+INSERT INTO [dbo].[Users] (username, password, role, name, isactive)
+VALUES ('david_white', 'davidadmin999', 'Administrator', 'David White', 'true');
+
+-- 11. Cashier
+INSERT INTO [dbo].[Users] (username, password, role, name, isactive)
+VALUES ('zoe_davis', 'zoedavis2024', 'Cashier', 'Zoe Davis', 'true');
+
+-- 12. Administrator
+INSERT INTO [dbo].[Users] (username, password, role, name, isactive)
+VALUES ('joseph_admin', 'josephadmin999', 'Administrator', 'Joseph Admin', 'true');
+
+-- 13. Cashier
+INSERT INTO [dbo].[Users] (username, password, role, name, isactive)
+VALUES ('lucy_clark', 'lucy123pass', 'Cashier', 'Lucy Clark', 'true');
+
+-- 14. Administrator
+INSERT INTO [dbo].[Users] (username, password, role, name, isactive)
+VALUES ('henry_smith', 'henryadmin321', 'Administrator', 'Henry Smith', 'true');
+
+-- 15. Cashier
+INSERT INTO [dbo].[Users] (username, password, role, name, isactive)
+VALUES ('jackson_miller', 'jacksonmill12', 'Cashier', 'Jackson Miller', 'true');
+
+-- 16. Administrator
+INSERT INTO [dbo].[Users] (username, password, role, name, isactive)
+VALUES ('sophia_brown', 'sophiabrown321', 'Administrator', 'Sophia Brown', 'true');
+
+-- 17. Cashier
+INSERT INTO [dbo].[Users] (username, password, role, name, isactive)
+VALUES ('ethan_wilson', 'ethanwilson456', 'Cashier', 'Ethan Wilson', 'true');
+
+-- 18. Administrator
+INSERT INTO [dbo].[Users] (username, password, role, name, isactive)
+VALUES ('ella_johnson', 'ellaadmin234', 'Administrator', 'Ella Johnson', 'true');
+
+-- 19. Cashier
+INSERT INTO [dbo].[Users] (username, password, role, name, isactive)
+VALUES ('mason_harris', 'mason1234pass', 'Cashier', 'Mason Harris', 'true');
+
+-- 20. Administrator
+INSERT INTO [dbo].[Users] (username, password, role, name, isactive)
+VALUES ('isabella_garcia', 'isabellapass987', 'Administrator', 'Isabella Garcia', 'true');
+
+
+select * from users
+
+select * from cart

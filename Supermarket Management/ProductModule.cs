@@ -73,7 +73,8 @@ namespace Supermarket_Management
 			{
 				if(MessageBox.Show("Are u sure u want to save this product?", "Save product", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
 				{
-					cn.Open();
+					if (cn.State != ConnectionState.Open)
+						cn.Open();
 					try
 					{
 						using (SqlCommand cm = new SqlCommand("INSERT INTO Product (ProductCode, Barcode, Description, BrandID, CategoryID, Price, ReOrder) VALUES(@ProductCode, @Barcode, @Description, @BrandID, @CategoryID, @Price, @ReOrder)", cn))
