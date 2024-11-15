@@ -30,12 +30,12 @@
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Discount));
 			this.panel1 = new System.Windows.Forms.Panel();
+			this.picClose = new System.Windows.Forms.PictureBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this.lblID = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
 			this.btnSave = new System.Windows.Forms.Button();
 			this.txtTotalPrice = new System.Windows.Forms.TextBox();
-			this.picClose = new System.Windows.Forms.PictureBox();
 			this.label3 = new System.Windows.Forms.Label();
 			this.txtDiscount = new System.Windows.Forms.TextBox();
 			this.label4 = new System.Windows.Forms.Label();
@@ -54,6 +54,19 @@
 			this.panel1.Name = "panel1";
 			this.panel1.Size = new System.Drawing.Size(750, 50);
 			this.panel1.TabIndex = 7;
+			// 
+			// picClose
+			// 
+			this.picClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.picClose.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.picClose.Image = ((System.Drawing.Image)(resources.GetObject("picClose.Image")));
+			this.picClose.Location = new System.Drawing.Point(721, 3);
+			this.picClose.Name = "picClose";
+			this.picClose.Size = new System.Drawing.Size(26, 25);
+			this.picClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.picClose.TabIndex = 1;
+			this.picClose.TabStop = false;
+			this.picClose.Click += new System.EventHandler(this.picClose_Click);
 			// 
 			// label1
 			// 
@@ -110,19 +123,6 @@
 			this.txtTotalPrice.Name = "txtTotalPrice";
 			this.txtTotalPrice.Size = new System.Drawing.Size(572, 26);
 			this.txtTotalPrice.TabIndex = 8;
-			// 
-			// picClose
-			// 
-			this.picClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.picClose.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.picClose.Image = ((System.Drawing.Image)(resources.GetObject("picClose.Image")));
-			this.picClose.Location = new System.Drawing.Point(721, 3);
-			this.picClose.Name = "picClose";
-			this.picClose.Size = new System.Drawing.Size(26, 25);
-			this.picClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-			this.picClose.TabIndex = 1;
-			this.picClose.TabStop = false;
-			this.picClose.Click += new System.EventHandler(this.picClose_Click);
 			// 
 			// label3
 			// 

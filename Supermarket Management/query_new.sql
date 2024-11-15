@@ -141,6 +141,11 @@ INSERT INTO Product (ProductCode, Barcode, Description, BrandID, CategoryID, Pri
 ('SO-PSP-001', '123456848', 'Sony PlayStation Plus Subscription', 4, 4, 59.99, 100, 50),
 ('GO-NWR-001', '123456849', 'Google Nest Wifi Router', 5, 4, 149.99, 25, 5);
 
+INSERT INTO Product (ProductCode, Barcode, Description, BrandID, CategoryID, Price, qty, ReOrder) VALUES
+('tcode', '1', 'tprod', 1, 2 , 100, 1000,10 );
+INSERT INTO Product (ProductCode, Barcode, Description, BrandID, CategoryID, Price, qty, ReOrder) VALUES
+('tcode2', '1', 'tprod2', 1, 2 , 100, 1000,10 );
+
 go
 create trigger [dbo].[ComputTotal]
 on [dbo].[Cart]
@@ -478,7 +483,11 @@ VALUES ('mason_harris', 'mason1234pass', 'Cashier', 'Mason Harris', 'true');
 INSERT INTO [dbo].[Users] (username, password, role, name, isactive)
 VALUES ('isabella_garcia', 'isabellapass987', 'Administrator', 'Isabella Garcia', 'true');
 
+INSERT INTO [dbo].[Users] (username, password, role, name, isactive)
+values ('a', '1', 'Cashier', 'A', 'true');
 
 select * from users
 
 select * from cart
+
+select * from Product

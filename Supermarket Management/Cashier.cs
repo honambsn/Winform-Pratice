@@ -103,6 +103,8 @@ namespace Supermarket_Management
 		private void btnSales_Click(object sender, EventArgs e)
 		{
 			slide(btnSales);
+			DailySale dailySale = new DailySale();
+			dailySale.ShowDialog();
 		}
 
 		private void btnChangePass_Click(object sender, EventArgs e)
@@ -273,7 +275,7 @@ namespace Supermarket_Management
 		public void GetCartTotal()
 		{
 			double discount = double.Parse(lblDiscount.Text);
-			double sales = double.Parse(lblSaleTotal.Text) - discount;
+			double sales = double.Parse(lblSaleTotal.Text);
 			double vat = sales * 0.12;
 			double vatable = sales - vat;
 

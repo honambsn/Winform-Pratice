@@ -77,97 +77,209 @@ namespace Supermarket_Management
 
 		}
 
+		#region Old code
+		//public void LoadSold()
+		//{
+		//	int i = 0;
+		//	double total = 0;
+		//	dgvSold.Rows.Clear();
+		//	if (cn.State != ConnectionState.Open)
+		//		cn.Open();
+
+		//	#region Old code
+		//	//if (cbCashier.Text == "All Cashier")
+		//	//{
+		//	//	try
+		//	//	{
+		//	//		using (SqlCommand cm = new SqlCommand(
+		//	//			"SELECT c.id, c.transno, c.ProductCode, p.Description, c.Price, c.qty, c.disc, c.total " +
+		//	//			"FROM Cart AS c " +
+		//	//			"INNER JOIN Product AS p ON c.ProductCode = p.ProductCode " +
+		//	//			"WHERE status = 'Sold' and sdate between @dtFrom and @dtTo", cn))
+		//	//		{
+		//	//			cm.Parameters.AddWithValue("@dtFrom", dtFrom.Value);
+		//	//			cm.Parameters.AddWithValue("@dtTo", dtTo.Value);
+
+		//	//			using (SqlDataReader dr = cm.ExecuteReader())
+		//	//			{
+		//	//				while (dr.Read())
+		//	//				{
+		//	//					i++;
+		//	//					total += double.Parse(dr["total"].ToString());
+		//	//					dgvSold.Rows.Add(i, dr["id"].ToString(), dr["transno"].ToString(), dr["ProductCode"].ToString(), dr["Description"].ToString(), dr["Price"].ToString(), dr["Qty"].ToString(), dr["Disc"].ToString(), dr["Total"].ToString());
+		//	//				}
+		//	//			}
+		//	//		}
+		//	//	}
+		//	//	catch (Exception ex)
+		//	//	{
+		//	//		MessageBox.Show("Error: " + ex.Message);
+		//	//	}
+		//	//}
+		//	//else
+		//	//{
+		//	//	try
+		//	//	{
+		//	//		using (SqlCommand cm = new SqlCommand(
+		//	//			"SELECT c.id, c.transno, c.ProductCode, p.Description, c.Price, c.qty, c.disc, c.total " +
+		//	//			"FROM Cart AS c " +
+		//	//			"INNER JOIN Product AS p ON c.ProductCode = p.ProductCode " +
+		//	//			"WHERE status = 'Sold' and sdate between @dtFrom and @dtTo and cashier like @cashier", cn))
+		//	//		{
+		//	//			cm.Parameters.AddWithValue("@dtFrom", dtFrom.Value);
+		//	//			cm.Parameters.AddWithValue("@dtTo", dtTo.Value);
+		//	//			cm.Parameters.AddWithValue("@cashier", cbCashier.Text);
+
+		//	//			using (SqlDataReader dr = cm.ExecuteReader())
+		//	//			{
+		//	//				while (dr.Read())
+		//	//				{
+		//	//					i++;
+		//	//					total += double.Parse(dr["total"].ToString());
+		//	//					dgvSold.Rows.Add(i, dr["id"].ToString(), dr["transno"].ToString(), dr["ProductCode"].ToString(), dr["Description"].ToString(), dr["Price"].ToString(), dr["Qty"].ToString(), dr["Disc"].ToString(), dr["Total"].ToString());
+		//	//				}
+		//	//			}
+		//	//		}
+		//	//	}
+		//	//	catch (Exception ex)
+		//	//	{
+		//	//		MessageBox.Show("Error: " + ex.Message);
+		//	//	}
+		//	//}
+
+		//	#endregion
+
+		//	if (cbCashier.Text == "All Cashier")
+		//	{
+		//		cm = new SqlCommand("select c.id, c.transno, c.ProductCode, p.Description, c.Price, c.qty, c.disc, c.total from Cart as c inner join Product as p on c.ProductCode = p.ProductCode where status = 'Sold' and sdate between @dtFrom and @dtTo", cn);
+		//	}
+		//	else 
+		//	{
+		//		cm = new SqlCommand("select c.id, c.transno, c.ProductCode, p.Description, c.Price, c.qty, c.disc, c.total from Cart as c inner join Product as p on c.ProductCode = p.ProductCode where status = 'Sold' and sdate between @dtFrom and @dtTo and cashier like @cashier", cn);
+		//	}
+		//	dr = cm.ExecuteReader();
+		//	while (dr.Read())
+		//	{
+		//		i++;
+		//		total += double.Parse(dr["total"].ToString());
+		//		dgvSold.Rows.Add(i, dr["id"].ToString(), dr["transno"].ToString(), dr["ProductCode"].ToString(), dr["Description"].ToString(), dr["Price"].ToString(), dr["Qty"].ToString(), dr["Disc"].ToString(), dr["Total"].ToString());
+		//	}
+		//	dr.Close();
+		//	cn.Close();
+		//	lblTotal.Text = total.ToString("#,##0.00");
+
+		//}
+		#endregion
+
+
 		public void LoadSold()
 		{
 			int i = 0;
 			double total = 0;
 			dgvSold.Rows.Clear();
+
 			if (cn.State != ConnectionState.Open)
 				cn.Open();
 
-			#region Old code
-			//if (cbCashier.Text == "All Cashier")
-			//{
-			//	try
-			//	{
-			//		using (SqlCommand cm = new SqlCommand(
-			//			"SELECT c.id, c.transno, c.ProductCode, p.Description, c.Price, c.qty, c.disc, c.total " +
-			//			"FROM Cart AS c " +
-			//			"INNER JOIN Product AS p ON c.ProductCode = p.ProductCode " +
-			//			"WHERE status = 'Sold' and sdate between @dtFrom and @dtTo", cn))
-			//		{
-			//			cm.Parameters.AddWithValue("@dtFrom", dtFrom.Value);
-			//			cm.Parameters.AddWithValue("@dtTo", dtTo.Value);
-
-			//			using (SqlDataReader dr = cm.ExecuteReader())
-			//			{
-			//				while (dr.Read())
-			//				{
-			//					i++;
-			//					total += double.Parse(dr["total"].ToString());
-			//					dgvSold.Rows.Add(i, dr["id"].ToString(), dr["transno"].ToString(), dr["ProductCode"].ToString(), dr["Description"].ToString(), dr["Price"].ToString(), dr["Qty"].ToString(), dr["Disc"].ToString(), dr["Total"].ToString());
-			//				}
-			//			}
-			//		}
-			//	}
-			//	catch (Exception ex)
-			//	{
-			//		MessageBox.Show("Error: " + ex.Message);
-			//	}
-			//}
-			//else
-			//{
-			//	try
-			//	{
-			//		using (SqlCommand cm = new SqlCommand(
-			//			"SELECT c.id, c.transno, c.ProductCode, p.Description, c.Price, c.qty, c.disc, c.total " +
-			//			"FROM Cart AS c " +
-			//			"INNER JOIN Product AS p ON c.ProductCode = p.ProductCode " +
-			//			"WHERE status = 'Sold' and sdate between @dtFrom and @dtTo and cashier like @cashier", cn))
-			//		{
-			//			cm.Parameters.AddWithValue("@dtFrom", dtFrom.Value);
-			//			cm.Parameters.AddWithValue("@dtTo", dtTo.Value);
-			//			cm.Parameters.AddWithValue("@cashier", cbCashier.Text);
-
-			//			using (SqlDataReader dr = cm.ExecuteReader())
-			//			{
-			//				while (dr.Read())
-			//				{
-			//					i++;
-			//					total += double.Parse(dr["total"].ToString());
-			//					dgvSold.Rows.Add(i, dr["id"].ToString(), dr["transno"].ToString(), dr["ProductCode"].ToString(), dr["Description"].ToString(), dr["Price"].ToString(), dr["Qty"].ToString(), dr["Disc"].ToString(), dr["Total"].ToString());
-			//				}
-			//			}
-			//		}
-			//	}
-			//	catch (Exception ex)
-			//	{
-			//		MessageBox.Show("Error: " + ex.Message);
-			//	}
-			//}
-
-			#endregion
-
-			if (cbCashier.Text == "All Cashier")
+			try
 			{
-				cm = new SqlCommand("select c.id, c.transno, c.ProductCode, p.Description, c.Price, c.qty, c.disc, c.total from Cart as c inner join Product as p on c.ProductCode = p.ProductCode where status = 'Sold' and sdate between @dtFrom and @dtTo", cn);
-			}
-			else 
-			{
-				cm = new SqlCommand("select c.id, c.transno, c.ProductCode, p.Description, c.Price, c.qty, c.disc, c.total from Cart as c inner join Product as p on c.ProductCode = p.ProductCode where status = 'Sold' and sdate between @dtFrom and @dtTo and cashier like @cashier", cn);
-			}
-			dr = cm.ExecuteReader();
-			while (dr.Read())
-			{
-				i++;
-				total += double.Parse(dr["total"].ToString());
-				dgvSold.Rows.Add(i, dr["id"].ToString(), dr["transno"].ToString(), dr["ProductCode"].ToString(), dr["Description"].ToString(), dr["Price"].ToString(), dr["Qty"].ToString(), dr["Disc"].ToString(), dr["Total"].ToString());
-			}
-			dr.Close();
-			cn.Close();
-			lblTotal.Text = total.ToString("#,##0.00");
+				// Prepare the SQL query
+				string query = @"
+            SELECT c.id, c.transno, c.ProductCode, p.Description, c.Price, c.qty, c.disc, c.total 
+            FROM Cart AS c 
+            INNER JOIN Product AS p ON c.ProductCode = p.ProductCode 
+            WHERE c.status = 'Sold' AND c.sdate BETWEEN @dtFrom AND @dtTo";
 
+				// If a specific cashier is selected, add the cashier filter
+				if (cbCashier.Text != "All Cashier")
+				{
+					query += " AND c.cashier LIKE @cashier";
+				}
+
+				using (SqlCommand cm = new SqlCommand(query, cn))
+				{
+					// Add parameters for the date range
+					cm.Parameters.AddWithValue("@dtFrom", dtFrom.Value.Date); // Assuming dtpFrom is a DateTimePicker control
+					cm.Parameters.AddWithValue("@dtTo", dtTo.Value.Date); // Assuming dtpTo is a DateTimePicker control
+
+					// Add the cashier parameter if a cashier is selected
+					if (cbCashier.Text != "All Cashier")
+					{
+						cm.Parameters.AddWithValue("@cashier", "%" + cbCashier.Text + "%");
+					}
+
+					// Execute the query and read the data
+					using (SqlDataReader dr = cm.ExecuteReader())
+					{
+						while (dr.Read())
+						{
+							i++;
+
+							// Initialize values with defaults
+							double rowTotal = 0;
+							decimal price = 0;
+							int qty = 0;
+							decimal disc = 0;
+
+							// Safely read the 'total' field and handle DBNull
+							
+							if (!dr.IsDBNull(dr.GetOrdinal("total")))
+							{
+								rowTotal = (double)dr.GetDecimal(dr.GetOrdinal("total"));
+							}
+								
+
+							// Accumulate the total
+							total += rowTotal;
+
+							// Safely read the 'Price', 'Qty', and 'Disc' fields
+							if (!dr.IsDBNull(dr.GetOrdinal("Price")))
+							{
+								price = dr.GetDecimal(dr.GetOrdinal("Price"));
+							}
+
+							if (!dr.IsDBNull(dr.GetOrdinal("qty")))
+							{
+								qty = dr.GetInt32(dr.GetOrdinal("qty"));
+							}
+
+							if (!dr.IsDBNull(dr.GetOrdinal("disc")))
+							{
+								disc = dr.GetDecimal(dr.GetOrdinal("disc"));
+							}
+
+							// Add the data to the DataGridView, making sure to format numbers
+							dgvSold.Rows.Add(
+								i,
+								dr["id"].ToString(),
+								dr["transno"].ToString(),
+								dr["ProductCode"].ToString(),
+								dr["Description"].ToString(),
+								price.ToString("#,##0.00"),  // Format price as currency
+								qty.ToString(),  // Just show qty as integer
+								disc.ToString("#,##0.00"),  // Format discount as currency
+								rowTotal.ToString("#,##0.00") // Format total as currency
+							);
+						}
+					}
+				}
+
+				// Set the total sum of all items
+				lblTotal.Text = total.ToString("#,##0.00"); // Format total as currency
+			}
+			catch (Exception ex)
+			{
+				// Handle any errors (e.g., log them, display a message to the user, etc.)
+				MessageBox.Show("Error: " + ex.Message);
+			}
+			finally
+			{
+				// Ensure the connection is always closed
+				cn.Close();
+			}
 		}
+
+
 
 		private void cbCashier_SelectedIndexChanged(object sender, EventArgs e)
 		{

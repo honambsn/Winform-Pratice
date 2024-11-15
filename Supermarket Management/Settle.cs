@@ -184,7 +184,7 @@ namespace Supermarket_Management
 			}
 			else if (e.KeyCode == Keys.D1)
 			{
-				txtCash.Text += 1;
+				txtCash.Text += 0;
 			}
 			
 		}

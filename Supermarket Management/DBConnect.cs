@@ -36,6 +36,11 @@ namespace Supermarket_Management
 		{
 			try
 			{
+				
+				if (cn.State == ConnectionState.Open)
+				{
+					cn.Close();
+				}
 				cn.ConnectionString = myConnection();
 				cn.Open();
 				cm = new SqlCommand(query, cn);

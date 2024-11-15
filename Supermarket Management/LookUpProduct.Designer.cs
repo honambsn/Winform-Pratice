@@ -166,12 +166,12 @@
             this.Column7,
             this.Column8,
             this.Select});
-			this.dgvProduct.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.dgvProduct.Dock = System.Windows.Forms.DockStyle.Top;
 			this.dgvProduct.Location = new System.Drawing.Point(0, 0);
 			this.dgvProduct.Name = "dgvProduct";
 			this.dgvProduct.ReadOnly = true;
 			this.dgvProduct.RowHeadersVisible = false;
-			this.dgvProduct.Size = new System.Drawing.Size(1000, 600);
+			this.dgvProduct.Size = new System.Drawing.Size(1000, 527);
 			this.dgvProduct.TabIndex = 5;
 			this.dgvProduct.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProduct_CellContentClick);
 			this.dgvProduct.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvProduct_KeyDown);
