@@ -29,13 +29,13 @@
 		private void InitializeComponent()
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DailySale));
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.panel1 = new System.Windows.Forms.Panel();
-			this.label1 = new System.Windows.Forms.Label();
 			this.picClose = new System.Windows.Forms.PictureBox();
+			this.label1 = new System.Windows.Forms.Label();
 			this.dgvSold = new System.Windows.Forms.DataGridView();
 			this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,17 +69,6 @@
 			this.panel1.Size = new System.Drawing.Size(867, 50);
 			this.panel1.TabIndex = 8;
 			// 
-			// label1
-			// 
-			this.label1.AutoSize = true;
-			this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label1.ForeColor = System.Drawing.Color.White;
-			this.label1.Location = new System.Drawing.Point(12, 16);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(86, 19);
-			this.label1.TabIndex = 0;
-			this.label1.Text = "Sold Items";
-			// 
 			// picClose
 			// 
 			this.picClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -92,6 +81,17 @@
 			this.picClose.TabIndex = 1;
 			this.picClose.TabStop = false;
 			this.picClose.Click += new System.EventHandler(this.picClose_Click);
+			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label1.ForeColor = System.Drawing.Color.White;
+			this.label1.Location = new System.Drawing.Point(12, 16);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(86, 19);
+			this.label1.TabIndex = 0;
+			this.label1.Text = "Sold Items";
 			// 
 			// dgvSold
 			// 
@@ -120,6 +120,7 @@
 			this.dgvSold.RowHeadersVisible = false;
 			this.dgvSold.Size = new System.Drawing.Size(867, 377);
 			this.dgvSold.TabIndex = 9;
+			this.dgvSold.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSold_CellContentClick);
 			// 
 			// Column1
 			// 
@@ -136,7 +137,6 @@
 			this.Column9.Name = "Column9";
 			this.Column9.ReadOnly = true;
 			this.Column9.Visible = false;
-			this.Column9.Width = 50;
 			// 
 			// Column3
 			// 
@@ -164,8 +164,8 @@
 			// Column7
 			// 
 			this.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-			this.Column7.DefaultCellStyle = dataGridViewCellStyle21;
+			dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+			this.Column7.DefaultCellStyle = dataGridViewCellStyle1;
 			this.Column7.HeaderText = "Price";
 			this.Column7.Name = "Column7";
 			this.Column7.ReadOnly = true;
@@ -174,8 +174,8 @@
 			// Column5
 			// 
 			this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-			this.Column5.DefaultCellStyle = dataGridViewCellStyle22;
+			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			this.Column5.DefaultCellStyle = dataGridViewCellStyle2;
 			this.Column5.HeaderText = "Qty";
 			this.Column5.Name = "Column5";
 			this.Column5.ReadOnly = true;
@@ -184,8 +184,8 @@
 			// Column6
 			// 
 			this.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-			this.Column6.DefaultCellStyle = dataGridViewCellStyle23;
+			dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+			this.Column6.DefaultCellStyle = dataGridViewCellStyle3;
 			this.Column6.HeaderText = "Discount";
 			this.Column6.Name = "Column6";
 			this.Column6.ReadOnly = true;
@@ -194,8 +194,8 @@
 			// Column8
 			// 
 			this.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-			this.Column8.DefaultCellStyle = dataGridViewCellStyle24;
+			dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+			this.Column8.DefaultCellStyle = dataGridViewCellStyle4;
 			this.Column8.HeaderText = "Total";
 			this.Column8.Name = "Column8";
 			this.Column8.ReadOnly = true;

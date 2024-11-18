@@ -18,6 +18,7 @@ namespace Supermarket_Management
 		DBConnect dbcon = new DBConnect();
 		SqlDataReader dr;
 
+		public string solduser;
 		public DailySale()
 		{
 			InitializeComponent();
@@ -301,6 +302,25 @@ namespace Supermarket_Management
 			if(e.KeyCode == Keys.Escape)
 			{
 				this.Dispose();
+			}
+		}
+
+		private void dgvSold_CellContentClick(object sender, DataGridViewCellEventArgs e)
+		{
+			string colName = dgvSold.Columns[e.ColumnIndex].Name;
+			if (colName == "Cancel")
+			{
+				CancelOrder cancelOrder = new CancelOrder(this);
+				cancelOrder.txtId.Text = dgvSold.Rows[e.RowIndex].Cells[1].Value.ToString();
+				cancelOrder.txtTransno.Text = dgvSold.Rows[e.RowIndex].Cells[2].Value.ToString();
+				cancelOrder.txtPCode.Text = dgvSold.Rows[e.RowIndex].Cells[3].Value.ToString();
+				cancelOrder.txtDesc.Text = dgvSold.Rows[e.RowIndex].Cells[4].Value.ToString();
+				cancelOrder.txtPrice.Text = dgvSold.Rows[e.RowIndex].Cells[5].Value.ToString();
+				cancelOrder.txtQty.Text = dgvSold.Rows[e.RowIndex].Cells[6].Value.ToString();
+				cancelOrder.txtDisc.Text = dgvSold.Rows[e.RowIndex].Cells[7].Value.ToString();
+				cancelOrder.txtTotal.Text = dgvSold.Rows[e.RowIndex].Cells[8].Value.ToString();
+				cancelOrder.txtCancelBy.Text = solduser;
+				cancelOrder.ShowDialog();
 			}
 		}
 	}

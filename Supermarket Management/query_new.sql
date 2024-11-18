@@ -491,3 +491,20 @@ select * from users
 select * from cart
 
 select * from Product
+
+
+
+create table Cancel
+(
+	id int primary key identity(1,1) not null,
+    transno varchar(255) null,
+    ProductCode varchar(255) null,
+    Price decimal(18,2) null,
+    qty int null,
+    total decimal(18,2) null,
+    sdate date null,
+    voidby varchar(255) null,
+    cancelledby varchar(255) null,
+    reason text null,
+    action varchar(255) null
+)
