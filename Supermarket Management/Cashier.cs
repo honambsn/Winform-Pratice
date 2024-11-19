@@ -111,6 +111,8 @@ namespace Supermarket_Management
 		private void btnChangePass_Click(object sender, EventArgs e)
 		{
 			slide(btnChangePass);
+			ChangePassword changePassword = new ChangePassword(this);
+			changePassword.ShowDialog();
 		}
 
 		private void btnLogout_Click(object sender, EventArgs e)

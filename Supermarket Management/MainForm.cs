@@ -179,6 +179,8 @@ namespace Supermarket_Management
 		private void Setting_Store_Click(object sender, EventArgs e)
 		{
 			hideSubMenu();
+			Store store = new Store();
+			store.ShowDialog();
 		}
 
 		private void btn_Supplier_Click(object sender, EventArgs e)

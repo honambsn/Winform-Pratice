@@ -36,7 +36,7 @@ namespace Supermarket_Management
 		{
 			try
 			{
-				
+
 				if (cn.State == ConnectionState.Open)
 				{
 					cn.Close();
@@ -53,7 +53,7 @@ namespace Supermarket_Management
 			}
 		}
 
-	
+
 		public DataTable ExecuteQueryMultiParams(string query, params SqlParameter[] parameters)
 		{
 			try
@@ -84,6 +84,36 @@ namespace Supermarket_Management
 				MessageBox.Show(ex.Message);
 				return null;
 			}
+		}
+
+		public String getPassword(string username)
+		{
+			string password = "";
+			try
+			{
+				if (cn.State == ConnectionState.Open)
+				{
+					cn.Close();
+				}
+				cn.ConnectionString = myConnection();
+				cn.Open();
+				cm = new SqlCommand("select password from Users where username = @username", cn);
+				cm.Parameters.AddWithValue("@username", username);
+				SqlDataReader dr = cm.ExecuteReader();
+				dr.Read();
+				if (dr.HasRows)
+				{
+					password = dr["password"].ToString();
+				}
+				dr.Close();
+				cn.Close();
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+			}
+
+			return password;
 		}
 	}
 }

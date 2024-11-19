@@ -508,3 +508,12 @@ create table Cancel
     reason text null,
     action varchar(255) null
 )
+
+
+create table Store
+(
+    store varchar(255) not null,
+    address varchar(max) null,
+)
+
+select * from Store
