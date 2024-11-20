@@ -100,6 +100,7 @@ namespace Supermarket_Management
 							MainForm main = new MainForm();
 							main.lbl_Username.Text = _username;
 							main.lblName.Text = _name;
+							main._pass = _pass;
 							main.ShowDialog();
 
 						}

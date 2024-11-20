@@ -16,7 +16,7 @@ namespace Supermarket_Management
 		SqlConnection con = new SqlConnection();
 		SqlCommand cmd = new SqlCommand();
 		DBConnect dbcon = new DBConnect();
-
+		public string _pass;
 		public MainForm()
 		{
 			InitializeComponent();
@@ -172,7 +172,7 @@ namespace Supermarket_Management
 
 		private void Setting_User_Click(object sender, EventArgs e)
 		{
-			openChildForm(new UserAccount());
+			openChildForm(new UserAccount(this));
 			hideSubMenu();
 		}
 
