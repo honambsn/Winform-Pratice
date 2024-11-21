@@ -30,6 +30,8 @@
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserAccount));
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
 			this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
 			this.label1 = new System.Windows.Forms.Label();
@@ -49,6 +51,8 @@
 			this.txtCreateUsrname = new System.Windows.Forms.TextBox();
 			this.label2 = new System.Windows.Forms.Label();
 			this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
+			this.lblUsername = new System.Windows.Forms.Label();
+			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.btnChangeCancel = new System.Windows.Forms.Button();
 			this.btnChangeSave = new System.Windows.Forms.Button();
 			this.txtChangeRePass = new System.Windows.Forms.TextBox();
@@ -58,31 +62,29 @@
 			this.txtChangeNewPass = new System.Windows.Forms.TextBox();
 			this.txtChangeCurPass = new System.Windows.Forms.TextBox();
 			this.metroTabPage3 = new MetroFramework.Controls.MetroTabPage();
-			this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
-			this.dataGridViewImageColumn4 = new System.Windows.Forms.DataGridViewImageColumn();
-			this.lbUsername = new System.Windows.Forms.Label();
-			this.pictureBox1 = new System.Windows.Forms.PictureBox();
-			this.btnRemove = new System.Windows.Forms.Button();
-			this.btnProperties = new System.Windows.Forms.Button();
+			this.dgvUser = new System.Windows.Forms.DataGridView();
 			this.gbUser = new System.Windows.Forms.GroupBox();
+			this.btnResetPass = new System.Windows.Forms.Button();
 			this.lblAccNote = new System.Windows.Forms.Label();
 			this.pictureBox2 = new System.Windows.Forms.PictureBox();
-			this.button1 = new System.Windows.Forms.Button();
-			this.dgvUser = new System.Windows.Forms.DataGridView();
-			this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.btnProperties = new System.Windows.Forms.Button();
+			this.btnRemove = new System.Windows.Forms.Button();
+			this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
+			this.dataGridViewImageColumn4 = new System.Windows.Forms.DataGridViewImageColumn();
+			this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.panel1.SuspendLayout();
 			this.metroTabControl1.SuspendLayout();
 			this.metroTabPage1.SuspendLayout();
 			this.metroTabPage2.SuspendLayout();
-			this.metroTabPage3.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+			this.metroTabPage3.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.dgvUser)).BeginInit();
 			this.gbUser.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.dgvUser)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// dataGridViewImageColumn2
@@ -119,9 +121,10 @@
 			// 
 			// panel1
 			// 
+			this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(70)))), ((int)(((byte)(160)))));
 			this.panel1.Controls.Add(this.label1);
-			this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
 			this.panel1.Location = new System.Drawing.Point(0, 623);
 			this.panel1.Name = "panel1";
 			this.panel1.Size = new System.Drawing.Size(984, 67);
@@ -158,7 +161,7 @@
 			this.metroTabPage1.Controls.Add(this.label2);
 			this.metroTabPage1.HorizontalScrollbarBarColor = true;
 			this.metroTabPage1.HorizontalScrollbarHighlightOnWheel = false;
-			this.metroTabPage1.HorizontalScrollbarSize = 6;
+			this.metroTabPage1.HorizontalScrollbarSize = 3;
 			this.metroTabPage1.Location = new System.Drawing.Point(4, 38);
 			this.metroTabPage1.Name = "metroTabPage1";
 			this.metroTabPage1.Size = new System.Drawing.Size(952, 543);
@@ -166,7 +169,7 @@
 			this.metroTabPage1.Text = "Create Account";
 			this.metroTabPage1.VerticalScrollbarBarColor = true;
 			this.metroTabPage1.VerticalScrollbarHighlightOnWheel = false;
-			this.metroTabPage1.VerticalScrollbarSize = 7;
+			this.metroTabPage1.VerticalScrollbarSize = 3;
 			// 
 			// btnCreateCancel
 			// 
@@ -306,7 +309,7 @@
 			// 
 			// metroTabPage2
 			// 
-			this.metroTabPage2.Controls.Add(this.lbUsername);
+			this.metroTabPage2.Controls.Add(this.lblUsername);
 			this.metroTabPage2.Controls.Add(this.pictureBox1);
 			this.metroTabPage2.Controls.Add(this.btnChangeCancel);
 			this.metroTabPage2.Controls.Add(this.btnChangeSave);
@@ -318,7 +321,7 @@
 			this.metroTabPage2.Controls.Add(this.txtChangeCurPass);
 			this.metroTabPage2.HorizontalScrollbarBarColor = true;
 			this.metroTabPage2.HorizontalScrollbarHighlightOnWheel = false;
-			this.metroTabPage2.HorizontalScrollbarSize = 6;
+			this.metroTabPage2.HorizontalScrollbarSize = 3;
 			this.metroTabPage2.Location = new System.Drawing.Point(4, 38);
 			this.metroTabPage2.Name = "metroTabPage2";
 			this.metroTabPage2.Size = new System.Drawing.Size(952, 543);
@@ -326,7 +329,28 @@
 			this.metroTabPage2.Text = "Change Password";
 			this.metroTabPage2.VerticalScrollbarBarColor = true;
 			this.metroTabPage2.VerticalScrollbarHighlightOnWheel = false;
-			this.metroTabPage2.VerticalScrollbarSize = 7;
+			this.metroTabPage2.VerticalScrollbarSize = 3;
+			// 
+			// lblUsername
+			// 
+			this.lblUsername.AutoSize = true;
+			this.lblUsername.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblUsername.ForeColor = System.Drawing.Color.Black;
+			this.lblUsername.Location = new System.Drawing.Point(233, 76);
+			this.lblUsername.Name = "lblUsername";
+			this.lblUsername.Size = new System.Drawing.Size(82, 18);
+			this.lblUsername.TabIndex = 22;
+			this.lblUsername.Text = "Username";
+			// 
+			// pictureBox1
+			// 
+			this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+			this.pictureBox1.Location = new System.Drawing.Point(57, 44);
+			this.pictureBox1.Name = "pictureBox1";
+			this.pictureBox1.Size = new System.Drawing.Size(50, 50);
+			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.pictureBox1.TabIndex = 21;
+			this.pictureBox1.TabStop = false;
 			// 
 			// btnChangeCancel
 			// 
@@ -430,7 +454,7 @@
 			this.metroTabPage3.Controls.Add(this.btnRemove);
 			this.metroTabPage3.HorizontalScrollbarBarColor = true;
 			this.metroTabPage3.HorizontalScrollbarHighlightOnWheel = false;
-			this.metroTabPage3.HorizontalScrollbarSize = 6;
+			this.metroTabPage3.HorizontalScrollbarSize = 3;
 			this.metroTabPage3.Location = new System.Drawing.Point(4, 38);
 			this.metroTabPage3.Name = "metroTabPage3";
 			this.metroTabPage3.Size = new System.Drawing.Size(952, 543);
@@ -438,85 +462,87 @@
 			this.metroTabPage3.Text = "Activate/UnActivate Account";
 			this.metroTabPage3.VerticalScrollbarBarColor = true;
 			this.metroTabPage3.VerticalScrollbarHighlightOnWheel = false;
-			this.metroTabPage3.VerticalScrollbarSize = 7;
+			this.metroTabPage3.VerticalScrollbarSize = 3;
 			// 
-			// dataGridViewImageColumn3
+			// dgvUser
 			// 
-			this.dataGridViewImageColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			this.dataGridViewImageColumn3.HeaderText = "";
-			this.dataGridViewImageColumn3.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn3.Image")));
-			this.dataGridViewImageColumn3.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-			this.dataGridViewImageColumn3.Name = "dataGridViewImageColumn3";
-			// 
-			// dataGridViewImageColumn4
-			// 
-			this.dataGridViewImageColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			this.dataGridViewImageColumn4.HeaderText = "";
-			this.dataGridViewImageColumn4.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn4.Image")));
-			this.dataGridViewImageColumn4.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-			this.dataGridViewImageColumn4.Name = "dataGridViewImageColumn4";
-			// 
-			// lbUsername
-			// 
-			this.lbUsername.AutoSize = true;
-			this.lbUsername.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lbUsername.ForeColor = System.Drawing.Color.Black;
-			this.lbUsername.Location = new System.Drawing.Point(233, 76);
-			this.lbUsername.Name = "lbUsername";
-			this.lbUsername.Size = new System.Drawing.Size(82, 18);
-			this.lbUsername.TabIndex = 22;
-			this.lbUsername.Text = "Username";
-			// 
-			// pictureBox1
-			// 
-			this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-			this.pictureBox1.Location = new System.Drawing.Point(57, 44);
-			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(50, 50);
-			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-			this.pictureBox1.TabIndex = 21;
-			this.pictureBox1.TabStop = false;
-			// 
-			// btnRemove
-			// 
-			this.btnRemove.BackColor = System.Drawing.Color.DimGray;
-			this.btnRemove.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.btnRemove.FlatAppearance.BorderSize = 0;
-			this.btnRemove.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnRemove.ForeColor = System.Drawing.Color.Black;
-			this.btnRemove.Location = new System.Drawing.Point(734, 308);
-			this.btnRemove.Name = "btnRemove";
-			this.btnRemove.Size = new System.Drawing.Size(100, 35);
-			this.btnRemove.TabIndex = 10;
-			this.btnRemove.Text = "Remove";
-			this.btnRemove.UseVisualStyleBackColor = false;
-			// 
-			// btnProperties
-			// 
-			this.btnProperties.BackColor = System.Drawing.Color.DimGray;
-			this.btnProperties.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.btnProperties.FlatAppearance.BorderSize = 0;
-			this.btnProperties.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnProperties.ForeColor = System.Drawing.Color.Black;
-			this.btnProperties.Location = new System.Drawing.Point(852, 308);
-			this.btnProperties.Name = "btnProperties";
-			this.btnProperties.Size = new System.Drawing.Size(100, 35);
-			this.btnProperties.TabIndex = 11;
-			this.btnProperties.Text = "Properties";
-			this.btnProperties.UseVisualStyleBackColor = false;
+			this.dgvUser.AllowUserToAddRows = false;
+			this.dgvUser.AllowUserToDeleteRows = false;
+			this.dgvUser.AllowUserToResizeColumns = false;
+			this.dgvUser.AllowUserToResizeRows = false;
+			this.dgvUser.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.dgvUser.BackgroundColor = System.Drawing.Color.PaleTurquoise;
+			this.dgvUser.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+			dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+			dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+			dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+			dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+			dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.dgvUser.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+			this.dgvUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dgvUser.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5});
+			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle2.BackColor = System.Drawing.Color.MediumSeaGreen;
+			dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+			dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+			dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.dgvUser.DefaultCellStyle = dataGridViewCellStyle2;
+			this.dgvUser.Location = new System.Drawing.Point(1, 23);
+			this.dgvUser.Name = "dgvUser";
+			this.dgvUser.ReadOnly = true;
+			dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle3.BackColor = System.Drawing.Color.MediumSeaGreen;
+			dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+			dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+			dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.dgvUser.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+			this.dgvUser.RowHeadersVisible = false;
+			this.dgvUser.Size = new System.Drawing.Size(949, 252);
+			this.dgvUser.TabIndex = 14;
+			this.dgvUser.SelectionChanged += new System.EventHandler(this.dgvUser_SelectionChanged);
 			// 
 			// gbUser
 			// 
+			this.gbUser.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.gbUser.BackColor = System.Drawing.Color.White;
-			this.gbUser.Controls.Add(this.button1);
+			this.gbUser.Controls.Add(this.btnResetPass);
 			this.gbUser.Controls.Add(this.lblAccNote);
 			this.gbUser.Controls.Add(this.pictureBox2);
-			this.gbUser.Location = new System.Drawing.Point(1, 371);
+			this.gbUser.Location = new System.Drawing.Point(0, 439);
 			this.gbUser.Name = "gbUser";
-			this.gbUser.Size = new System.Drawing.Size(949, 170);
+			this.gbUser.Size = new System.Drawing.Size(950, 104);
 			this.gbUser.TabIndex = 12;
 			this.gbUser.TabStop = false;
 			this.gbUser.Text = "Password For Username";
+			// 
+			// btnResetPass
+			// 
+			this.btnResetPass.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.btnResetPass.BackColor = System.Drawing.Color.DimGray;
+			this.btnResetPass.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.btnResetPass.FlatAppearance.BorderSize = 0;
+			this.btnResetPass.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnResetPass.ForeColor = System.Drawing.Color.Black;
+			this.btnResetPass.Location = new System.Drawing.Point(734, 47);
+			this.btnResetPass.Name = "btnResetPass";
+			this.btnResetPass.Size = new System.Drawing.Size(185, 35);
+			this.btnResetPass.TabIndex = 15;
+			this.btnResetPass.Text = "Reset Password...";
+			this.btnResetPass.UseVisualStyleBackColor = false;
+			this.btnResetPass.Click += new System.EventHandler(this.btnResetPass_Click);
 			// 
 			// lblAccNote
 			// 
@@ -539,78 +565,91 @@
 			this.pictureBox2.TabIndex = 14;
 			this.pictureBox2.TabStop = false;
 			// 
-			// button1
+			// btnProperties
 			// 
-			this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.button1.BackColor = System.Drawing.Color.DimGray;
-			this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.button1.FlatAppearance.BorderSize = 0;
-			this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button1.ForeColor = System.Drawing.Color.Black;
-			this.button1.Location = new System.Drawing.Point(733, 113);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(185, 35);
-			this.button1.TabIndex = 15;
-			this.button1.Text = "Reset Password...";
-			this.button1.UseVisualStyleBackColor = false;
+			this.btnProperties.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.btnProperties.BackColor = System.Drawing.Color.DimGray;
+			this.btnProperties.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.btnProperties.FlatAppearance.BorderSize = 0;
+			this.btnProperties.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnProperties.ForeColor = System.Drawing.Color.Black;
+			this.btnProperties.Location = new System.Drawing.Point(852, 308);
+			this.btnProperties.Name = "btnProperties";
+			this.btnProperties.Size = new System.Drawing.Size(100, 35);
+			this.btnProperties.TabIndex = 11;
+			this.btnProperties.Text = "Properties";
+			this.btnProperties.UseVisualStyleBackColor = false;
 			// 
-			// dgvUser
+			// btnRemove
 			// 
-			this.dgvUser.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.dgvUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dgvUser.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column6,
-            this.Column7,
-            this.Column8,
-            this.Column9,
-            this.Column10});
-			dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-			dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-			dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-			dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-			dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.dgvUser.DefaultCellStyle = dataGridViewCellStyle1;
-			this.dgvUser.Location = new System.Drawing.Point(0, 30);
-			this.dgvUser.Name = "dgvUser";
-			this.dgvUser.Size = new System.Drawing.Size(952, 194);
-			this.dgvUser.TabIndex = 13;
+			this.btnRemove.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.btnRemove.BackColor = System.Drawing.Color.DimGray;
+			this.btnRemove.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.btnRemove.FlatAppearance.BorderSize = 0;
+			this.btnRemove.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnRemove.ForeColor = System.Drawing.Color.Black;
+			this.btnRemove.Location = new System.Drawing.Point(734, 308);
+			this.btnRemove.Name = "btnRemove";
+			this.btnRemove.Size = new System.Drawing.Size(100, 35);
+			this.btnRemove.TabIndex = 10;
+			this.btnRemove.Text = "Remove";
+			this.btnRemove.UseVisualStyleBackColor = false;
+			this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
 			// 
-			// Column6
+			// dataGridViewImageColumn3
 			// 
-			this.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			this.Column6.HeaderText = "No";
-			this.Column6.Name = "Column6";
-			this.Column6.Width = 55;
+			this.dataGridViewImageColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.dataGridViewImageColumn3.HeaderText = "";
+			this.dataGridViewImageColumn3.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn3.Image")));
+			this.dataGridViewImageColumn3.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+			this.dataGridViewImageColumn3.Name = "dataGridViewImageColumn3";
 			// 
-			// Column7
+			// dataGridViewImageColumn4
 			// 
-			this.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			this.Column7.HeaderText = "User Name";
-			this.Column7.Name = "Column7";
-			this.Column7.Width = 114;
+			this.dataGridViewImageColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.dataGridViewImageColumn4.HeaderText = "";
+			this.dataGridViewImageColumn4.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn4.Image")));
+			this.dataGridViewImageColumn4.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+			this.dataGridViewImageColumn4.Name = "dataGridViewImageColumn4";
 			// 
-			// Column8
+			// Column1
 			// 
-			this.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.Column8.HeaderText = "Full Name";
-			this.Column8.Name = "Column8";
+			this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.Column1.HeaderText = "No";
+			this.Column1.Name = "Column1";
+			this.Column1.ReadOnly = true;
+			this.Column1.Width = 55;
 			// 
-			// Column9
+			// Column2
 			// 
-			this.Column9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			this.Column9.HeaderText = "Account Status";
-			this.Column9.Name = "Column9";
-			this.Column9.Width = 132;
+			this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.Column2.HeaderText = "User Name";
+			this.Column2.Name = "Column2";
+			this.Column2.ReadOnly = true;
+			this.Column2.Width = 114;
 			// 
-			// Column10
+			// Column3
 			// 
-			this.Column10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			this.Column10.HeaderText = "Role";
-			this.Column10.Name = "Column10";
-			this.Column10.Width = 66;
+			this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.Column3.HeaderText = "Full Name";
+			this.Column3.Name = "Column3";
+			this.Column3.ReadOnly = true;
+			// 
+			// Column4
+			// 
+			this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.Column4.HeaderText = "Account Activate";
+			this.Column4.Name = "Column4";
+			this.Column4.ReadOnly = true;
+			this.Column4.Width = 151;
+			// 
+			// Column5
+			// 
+			this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.Column5.HeaderText = "Role";
+			this.Column5.Name = "Column5";
+			this.Column5.ReadOnly = true;
+			this.Column5.Width = 66;
 			// 
 			// UserAccount
 			// 
@@ -635,12 +674,12 @@
 			this.metroTabPage1.PerformLayout();
 			this.metroTabPage2.ResumeLayout(false);
 			this.metroTabPage2.PerformLayout();
-			this.metroTabPage3.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+			this.metroTabPage3.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.dgvUser)).EndInit();
 			this.gbUser.ResumeLayout(false);
 			this.gbUser.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.dgvUser)).EndInit();
 			this.ResumeLayout(false);
 
 		}
@@ -677,19 +716,19 @@
 		public System.Windows.Forms.Button btnChangeSave;
 		private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn3;
 		private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn4;
-		private System.Windows.Forms.Label lbUsername;
+		private System.Windows.Forms.Label lblUsername;
 		private System.Windows.Forms.PictureBox pictureBox1;
 		private System.Windows.Forms.GroupBox gbUser;
 		public System.Windows.Forms.Button btnProperties;
 		public System.Windows.Forms.Button btnRemove;
-		public System.Windows.Forms.Button button1;
+		public System.Windows.Forms.Button btnResetPass;
 		private System.Windows.Forms.Label lblAccNote;
 		private System.Windows.Forms.PictureBox pictureBox2;
 		private System.Windows.Forms.DataGridView dgvUser;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
 	}
 }

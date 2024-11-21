@@ -18,6 +18,10 @@ namespace Supermarket_Management
 		DBConnect dbcon = new DBConnect();
 		SqlDataReader dr;
 		MainForm main;
+		public string username;
+		string name;
+		string role;
+		string accstatus;
 		public UserAccount(MainForm mn)
 		{
 			InitializeComponent();
@@ -40,7 +44,9 @@ namespace Supermarket_Management
 			while (dr.Read())
 			{
 				i++;
-				dgvUser.Rows.Add(i, dr[0].ToString(), dr[2].ToString(), dr[4].ToString(), dr[3].ToString());
+				dgvUser.Rows.Add(i, dr[0].ToString(), dr[3].ToString(), dr[4].ToString(), dr[2].ToString());
+				//username, fullname, accstatus, role
+				//dgvLoad.Rows.Add(i, dr[0].ToString(), dr[2].ToString(), dr[4].ToString(), dr[3].ToString());
 			}
 
 			dr.Close();
@@ -111,7 +117,7 @@ namespace Supermarket_Management
 				using (SqlCommand cm = new SqlCommand("UPDATE Users SET password = @password WHERE username = @username", cn))
 				{
 					cm.Parameters.AddWithValue("@password", txtChangeNewPass.Text);
-					cm.Parameters.AddWithValue("@username", lbUsername.Text);
+					cm.Parameters.AddWithValue("@username", lblUsername.Text);
 					cm.ExecuteNonQuery();
 
 					MessageBox.Show("Password has been successfully changed", "User Account", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -125,7 +131,7 @@ namespace Supermarket_Management
 
 		private void UserAccount_Load(object sender, EventArgs e)
 		{
-			lbUsername.Text = main.lbl_Username.Text;
+			lblUsername.Text = main.lbl_Username.Text;
 		}
 
 		private void btnChangeCancel_Click(object sender, EventArgs e)
@@ -138,6 +144,64 @@ namespace Supermarket_Management
 			txtChangeCurPass.Clear();
 			txtChangeNewPass.Clear();
 			txtChangeRePass.Clear();
+		}
+
+		private void dgvUser_SelectionChanged(object sender, EventArgs e)
+		{
+			int i = dgvUser.CurrentRow.Index;
+			username = dgvUser[1, i].Value.ToString();
+			name = dgvUser[2, i].Value.ToString();
+			role = dgvUser[4, i].Value.ToString();
+			accstatus = dgvUser[3, i].Value.ToString();
+
+			//dgvUser.Rows.Add(i, dr[0].ToString(), dr[3].ToString(), dr[4].ToString(), dr[2].ToString());
+			//no username fullname accstatus role
+
+			if (lblUsername.Text == username)
+			{
+				btnRemove.Enabled = false;
+				btnResetPass.Enabled = false;
+				lblAccNote.Text = "To change your password, go to change password Page";
+			}
+			else
+			{
+				btnRemove.Enabled = true;
+				btnResetPass.Enabled = true;
+				lblAccNote.Text = "To change the password for " + username + " - " + name + " please click Reset Password.";
+			}
+			gbUser.Text = "Password for " + username + " - " + name;
+			
+		}
+
+		private void btnRemove_Click(object sender, EventArgs e)
+		{
+			if ((MessageBox.Show("Are you sure you want to remove this user: " +username + " - " + role +"?", "User Account", MessageBoxButtons.YesNo, MessageBoxIcon.Question)) == DialogResult.Yes)
+			{
+				try
+				{
+					if (ConnectionState.Closed == cn.State) cn.Open();
+					using (SqlCommand cm = new SqlCommand("DELETE FROM Users WHERE username = @username", cn))
+					{
+						cm.Parameters.AddWithValue("@username", username);
+						cm.ExecuteNonQuery();
+					}
+					MessageBox.Show("User has been successfully removed", "User Account", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				}
+				catch (Exception ex)
+				{
+					MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				}
+				finally
+				{
+					LoadUser();
+				}
+			}
+		}
+
+		private void btnResetPass_Click(object sender, EventArgs e)
+		{
+			ResetPassword reset = new ResetPassword(this);
+			reset.ShowDialog();
 		}
 	}
 }

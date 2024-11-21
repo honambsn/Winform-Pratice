@@ -19,7 +19,7 @@ namespace Supermarket_Management
 		SqlDataReader dr;
 
 		public string _pass = "";
-		public bool _isactive;
+		public bool _isactivate;
 		public Login()
 		{
 			InitializeComponent();
@@ -65,7 +65,7 @@ namespace Supermarket_Management
 						_name = dr["name"].ToString();
 						_role = dr["role"].ToString();
 						_pass = dr["password"].ToString();
-						_isactive = bool.Parse(dr["isactive"].ToString());
+						_isactivate = bool.Parse(dr["isactivate"].ToString());
 					}
 					else
 					{
@@ -75,9 +75,9 @@ namespace Supermarket_Management
 
 					if (found)
 					{
-						if (!_isactive)
+						if (!_isactivate)
 						{
-							MessageBox.Show("Your account is inactive. Please contact the administrator.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+							MessageBox.Show("Your account is deactive. Please contact the administrator.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 							return;
 						}
 						if (_role == "Cashier")
@@ -93,7 +93,7 @@ namespace Supermarket_Management
 						}
 						else
 						{
-							MessageBox.Show("Your account is inactive. Please contact the administrator.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+							MessageBox.Show("You are administrator.", "Welcome", MessageBoxButtons.OK, MessageBoxIcon.Information);
 							txtName.Clear() ;
 							txtPass.Clear();
 							this.Hide();

@@ -46,7 +46,7 @@ CREATE TABLE Users (
     password VARCHAR(255) NOT NULL,
     role VARCHAR(255) NOT NULL,
     name VARCHAR(255) NOT NULL,
-    isactive VARCHAR(50) NOT NULL DEFAULT 'true' -- Default value set to 'true'
+    status VARCHAR(50) NOT NULL DEFAULT 'Activate' -- Default value set to 'true'
 );
 
 create table Cart
@@ -516,4 +516,8 @@ create table Store
     address varchar(max) null,
 )
 
+
 select * from Store
+
+
+select * from Users
