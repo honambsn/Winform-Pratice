@@ -29,9 +29,9 @@
 		private void InitializeComponent()
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserAccount));
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
 			this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
 			this.label1 = new System.Windows.Forms.Label();
@@ -63,6 +63,11 @@
 			this.txtChangeCurPass = new System.Windows.Forms.TextBox();
 			this.metroTabPage3 = new MetroFramework.Controls.MetroTabPage();
 			this.dgvUser = new System.Windows.Forms.DataGridView();
+			this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.gbUser = new System.Windows.Forms.GroupBox();
 			this.btnResetPass = new System.Windows.Forms.Button();
 			this.lblAccNote = new System.Windows.Forms.Label();
@@ -71,11 +76,6 @@
 			this.btnRemove = new System.Windows.Forms.Button();
 			this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
 			this.dataGridViewImageColumn4 = new System.Windows.Forms.DataGridViewImageColumn();
-			this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.panel1.SuspendLayout();
 			this.metroTabControl1.SuspendLayout();
 			this.metroTabPage1.SuspendLayout();
@@ -140,7 +140,7 @@
 			this.metroTabControl1.Controls.Add(this.metroTabPage3);
 			this.metroTabControl1.Location = new System.Drawing.Point(12, 12);
 			this.metroTabControl1.Name = "metroTabControl1";
-			this.metroTabControl1.SelectedIndex = 2;
+			this.metroTabControl1.SelectedIndex = 0;
 			this.metroTabControl1.Size = new System.Drawing.Size(960, 585);
 			this.metroTabControl1.TabIndex = 7;
 			this.metroTabControl1.UseSelectable = true;
@@ -161,7 +161,7 @@
 			this.metroTabPage1.Controls.Add(this.label2);
 			this.metroTabPage1.HorizontalScrollbarBarColor = true;
 			this.metroTabPage1.HorizontalScrollbarHighlightOnWheel = false;
-			this.metroTabPage1.HorizontalScrollbarSize = 3;
+			this.metroTabPage1.HorizontalScrollbarSize = 2;
 			this.metroTabPage1.Location = new System.Drawing.Point(4, 38);
 			this.metroTabPage1.Name = "metroTabPage1";
 			this.metroTabPage1.Size = new System.Drawing.Size(952, 543);
@@ -169,7 +169,7 @@
 			this.metroTabPage1.Text = "Create Account";
 			this.metroTabPage1.VerticalScrollbarBarColor = true;
 			this.metroTabPage1.VerticalScrollbarHighlightOnWheel = false;
-			this.metroTabPage1.VerticalScrollbarSize = 3;
+			this.metroTabPage1.VerticalScrollbarSize = 2;
 			// 
 			// btnCreateCancel
 			// 
@@ -321,7 +321,7 @@
 			this.metroTabPage2.Controls.Add(this.txtChangeCurPass);
 			this.metroTabPage2.HorizontalScrollbarBarColor = true;
 			this.metroTabPage2.HorizontalScrollbarHighlightOnWheel = false;
-			this.metroTabPage2.HorizontalScrollbarSize = 3;
+			this.metroTabPage2.HorizontalScrollbarSize = 2;
 			this.metroTabPage2.Location = new System.Drawing.Point(4, 38);
 			this.metroTabPage2.Name = "metroTabPage2";
 			this.metroTabPage2.Size = new System.Drawing.Size(952, 543);
@@ -329,7 +329,7 @@
 			this.metroTabPage2.Text = "Change Password";
 			this.metroTabPage2.VerticalScrollbarBarColor = true;
 			this.metroTabPage2.VerticalScrollbarHighlightOnWheel = false;
-			this.metroTabPage2.VerticalScrollbarSize = 3;
+			this.metroTabPage2.VerticalScrollbarSize = 2;
 			// 
 			// lblUsername
 			// 
@@ -454,7 +454,7 @@
 			this.metroTabPage3.Controls.Add(this.btnRemove);
 			this.metroTabPage3.HorizontalScrollbarBarColor = true;
 			this.metroTabPage3.HorizontalScrollbarHighlightOnWheel = false;
-			this.metroTabPage3.HorizontalScrollbarSize = 3;
+			this.metroTabPage3.HorizontalScrollbarSize = 2;
 			this.metroTabPage3.Location = new System.Drawing.Point(4, 38);
 			this.metroTabPage3.Name = "metroTabPage3";
 			this.metroTabPage3.Size = new System.Drawing.Size(952, 543);
@@ -462,7 +462,7 @@
 			this.metroTabPage3.Text = "Activate/UnActivate Account";
 			this.metroTabPage3.VerticalScrollbarBarColor = true;
 			this.metroTabPage3.VerticalScrollbarHighlightOnWheel = false;
-			this.metroTabPage3.VerticalScrollbarSize = 3;
+			this.metroTabPage3.VerticalScrollbarSize = 2;
 			// 
 			// dgvUser
 			// 
@@ -474,14 +474,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.dgvUser.BackgroundColor = System.Drawing.Color.PaleTurquoise;
 			this.dgvUser.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-			dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-			dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-			dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-			dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-			dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.dgvUser.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+			dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.ActiveCaption;
+			dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+			dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+			dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+			dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.dgvUser.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
 			this.dgvUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dgvUser.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -489,29 +489,68 @@
             this.Column3,
             this.Column4,
             this.Column5});
-			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle2.BackColor = System.Drawing.Color.MediumSeaGreen;
-			dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-			dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-			dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.dgvUser.DefaultCellStyle = dataGridViewCellStyle2;
+			dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle8.BackColor = System.Drawing.Color.MediumSeaGreen;
+			dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+			dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+			dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
+			dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.dgvUser.DefaultCellStyle = dataGridViewCellStyle8;
 			this.dgvUser.Location = new System.Drawing.Point(1, 23);
 			this.dgvUser.Name = "dgvUser";
 			this.dgvUser.ReadOnly = true;
-			dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle3.BackColor = System.Drawing.Color.MediumSeaGreen;
-			dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-			dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-			dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-			dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.dgvUser.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+			dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle9.BackColor = System.Drawing.Color.MediumSeaGreen;
+			dataGridViewCellStyle9.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
+			dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+			dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.dgvUser.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
 			this.dgvUser.RowHeadersVisible = false;
 			this.dgvUser.Size = new System.Drawing.Size(949, 252);
 			this.dgvUser.TabIndex = 14;
 			this.dgvUser.SelectionChanged += new System.EventHandler(this.dgvUser_SelectionChanged);
+			// 
+			// Column1
+			// 
+			this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.Column1.HeaderText = "No";
+			this.Column1.Name = "Column1";
+			this.Column1.ReadOnly = true;
+			this.Column1.Width = 55;
+			// 
+			// Column2
+			// 
+			this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.Column2.HeaderText = "User Name";
+			this.Column2.Name = "Column2";
+			this.Column2.ReadOnly = true;
+			this.Column2.Width = 105;
+			// 
+			// Column3
+			// 
+			this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.Column3.HeaderText = "Full Name";
+			this.Column3.Name = "Column3";
+			this.Column3.ReadOnly = true;
+			// 
+			// Column4
+			// 
+			this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.Column4.HeaderText = "Account Activate";
+			this.Column4.Name = "Column4";
+			this.Column4.ReadOnly = true;
+			this.Column4.Width = 151;
+			// 
+			// Column5
+			// 
+			this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.Column5.HeaderText = "Role";
+			this.Column5.Name = "Column5";
+			this.Column5.ReadOnly = true;
+			this.Column5.Width = 66;
 			// 
 			// gbUser
 			// 
@@ -579,6 +618,7 @@
 			this.btnProperties.TabIndex = 11;
 			this.btnProperties.Text = "Properties";
 			this.btnProperties.UseVisualStyleBackColor = false;
+			this.btnProperties.Click += new System.EventHandler(this.btnProperties_Click);
 			// 
 			// btnRemove
 			// 
@@ -611,45 +651,6 @@
 			this.dataGridViewImageColumn4.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn4.Image")));
 			this.dataGridViewImageColumn4.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
 			this.dataGridViewImageColumn4.Name = "dataGridViewImageColumn4";
-			// 
-			// Column1
-			// 
-			this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			this.Column1.HeaderText = "No";
-			this.Column1.Name = "Column1";
-			this.Column1.ReadOnly = true;
-			this.Column1.Width = 55;
-			// 
-			// Column2
-			// 
-			this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			this.Column2.HeaderText = "User Name";
-			this.Column2.Name = "Column2";
-			this.Column2.ReadOnly = true;
-			this.Column2.Width = 114;
-			// 
-			// Column3
-			// 
-			this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.Column3.HeaderText = "Full Name";
-			this.Column3.Name = "Column3";
-			this.Column3.ReadOnly = true;
-			// 
-			// Column4
-			// 
-			this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			this.Column4.HeaderText = "Account Activate";
-			this.Column4.Name = "Column4";
-			this.Column4.ReadOnly = true;
-			this.Column4.Width = 151;
-			// 
-			// Column5
-			// 
-			this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			this.Column5.HeaderText = "Role";
-			this.Column5.Name = "Column5";
-			this.Column5.ReadOnly = true;
-			this.Column5.Width = 66;
 			// 
 			// UserAccount
 			// 

@@ -91,6 +91,7 @@ namespace Supermarket_Management
 			}
 			finally
 			{
+				LoadUser();
 				Clear();
 			}
 		}
@@ -202,6 +203,17 @@ namespace Supermarket_Management
 		{
 			ResetPassword reset = new ResetPassword(this);
 			reset.ShowDialog();
+		}
+
+		private void btnProperties_Click(object sender, EventArgs e)
+		{
+			UserProperties properties = new UserProperties(this);
+			properties.Text = name + " \\" + username + " Properties";
+			properties.txtName.Text = name;
+			properties.cbRole.Text = role;
+			properties.cbActivate.Text = accstatus;
+			properties.username = username;
+			properties.ShowDialog();
 		}
 	}
 }
