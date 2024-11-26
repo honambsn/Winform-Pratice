@@ -147,6 +147,7 @@ namespace Supermarket_Management
 
 		private void Stock_Adjusment_Click(object sender, EventArgs e)
 		{
+			openChildForm(new Adjustments(this));
 			hideSubMenu();
 		}
 
