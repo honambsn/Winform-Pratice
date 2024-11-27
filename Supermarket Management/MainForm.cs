@@ -158,6 +158,7 @@ namespace Supermarket_Management
 
 		private void Record_Sale_Click(object sender, EventArgs e)
 		{
+			openChildForm(new DailySale());
 			hideSubMenu();
 		}
 

@@ -521,3 +521,20 @@ select * from Store
 
 
 select * from Users
+
+
+
+SELECT c.id, c.transno, c.ProductCode, p.Description, c.Price, c.qty, c.disc, c.total 
+            FROM Cart AS c 
+            INNER JOIN Product AS p ON c.ProductCode = p.ProductCode 
+            WHERE c.status = 'Sold' AND c.sdate BETWEEN '1-1-2000' AND '28-11-2024'
+
+
+SELECT c.id, c.transno, c.ProductCode, p.Description, c.Price, c.qty, c.disc, c.total
+FROM Cart AS c
+INNER JOIN Product AS p ON c.ProductCode = p.ProductCode
+WHERE c.status = 'Sold' 
+  AND c.sdate BETWEEN '2000-01-01' AND '2024-11-28'
+
+
+SELECT username FROM Users WHERE role = 'Cashier'

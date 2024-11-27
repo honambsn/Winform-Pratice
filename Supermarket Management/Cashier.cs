@@ -105,6 +105,8 @@ namespace Supermarket_Management
 			slide(btnSales);
 			DailySale dailySale = new DailySale();
 			dailySale.solduser = lblUsername.Text;
+			dailySale.picClose.Visible = true;
+			dailySale.lblTitle.Visible = true;
 			dailySale.ShowDialog();
 		}
 

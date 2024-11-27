@@ -30,25 +30,25 @@
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Adjustments));
 			this.panel1 = new System.Windows.Forms.Panel();
+			this.btnSave = new System.Windows.Forms.Button();
+			this.txtSearch = new MetroFramework.Controls.MetroTextBox();
 			this.btnAdd = new System.Windows.Forms.Button();
 			this.label1 = new System.Windows.Forms.Label();
-			this.txtSearch = new MetroFramework.Controls.MetroTextBox();
-			this.btnSave = new System.Windows.Forms.Button();
 			this.panel2 = new System.Windows.Forms.Panel();
-			this.pictureBox1 = new System.Windows.Forms.PictureBox();
-			this.lblUsername = new System.Windows.Forms.Label();
-			this.label2 = new System.Windows.Forms.Label();
-			this.label3 = new System.Windows.Forms.Label();
-			this.label4 = new System.Windows.Forms.Label();
-			this.lblRefNo = new System.Windows.Forms.Label();
-			this.lblDesc = new System.Windows.Forms.Label();
-			this.lblProdCode = new System.Windows.Forms.Label();
-			this.label5 = new System.Windows.Forms.Label();
-			this.label6 = new System.Windows.Forms.Label();
-			this.label7 = new System.Windows.Forms.Label();
-			this.cbAction = new System.Windows.Forms.ComboBox();
-			this.txtQty = new System.Windows.Forms.TextBox();
 			this.txtRemark = new System.Windows.Forms.TextBox();
+			this.txtQty = new System.Windows.Forms.TextBox();
+			this.cbAction = new System.Windows.Forms.ComboBox();
+			this.label7 = new System.Windows.Forms.Label();
+			this.label6 = new System.Windows.Forms.Label();
+			this.label5 = new System.Windows.Forms.Label();
+			this.lblProdCode = new System.Windows.Forms.Label();
+			this.lblDesc = new System.Windows.Forms.Label();
+			this.lblRefNo = new System.Windows.Forms.Label();
+			this.label4 = new System.Windows.Forms.Label();
+			this.label3 = new System.Windows.Forms.Label();
+			this.label2 = new System.Windows.Forms.Label();
+			this.lblUsername = new System.Windows.Forms.Label();
+			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.dgvAdjustment = new System.Windows.Forms.DataGridView();
 			this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -78,31 +78,22 @@
 			this.panel1.Size = new System.Drawing.Size(984, 61);
 			this.panel1.TabIndex = 5;
 			// 
-			// btnAdd
+			// btnSave
 			// 
-			this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.btnAdd.FlatAppearance.BorderSize = 0;
-			this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnAdd.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
-			this.btnAdd.Location = new System.Drawing.Point(990, 21);
-			this.btnAdd.Name = "btnAdd";
-			this.btnAdd.Size = new System.Drawing.Size(54, 31);
-			this.btnAdd.TabIndex = 1;
-			this.btnAdd.UseVisualStyleBackColor = true;
-			// 
-			// label1
-			// 
-			this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label1.ForeColor = System.Drawing.Color.White;
-			this.label1.Image = ((System.Drawing.Image)(resources.GetObject("label1.Image")));
-			this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.label1.Location = new System.Drawing.Point(20, 10);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(196, 42);
-			this.label1.TabIndex = 0;
-			this.label1.Text = "Stock Adjustment";
-			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.btnSave.BackColor = System.Drawing.Color.Red;
+			this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.btnSave.Enabled = false;
+			this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnSave.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnSave.ForeColor = System.Drawing.Color.White;
+			this.btnSave.Location = new System.Drawing.Point(857, 14);
+			this.btnSave.Name = "btnSave";
+			this.btnSave.Size = new System.Drawing.Size(100, 35);
+			this.btnSave.TabIndex = 11;
+			this.btnSave.Text = "Save";
+			this.btnSave.UseVisualStyleBackColor = false;
+			this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
 			// 
 			// txtSearch
 			// 
@@ -141,22 +132,31 @@
 			this.txtSearch.WaterMarkFont = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
 			// 
-			// btnSave
+			// btnAdd
 			// 
-			this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.btnSave.BackColor = System.Drawing.Color.Red;
-			this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.btnSave.Enabled = false;
-			this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnSave.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnSave.ForeColor = System.Drawing.Color.White;
-			this.btnSave.Location = new System.Drawing.Point(857, 14);
-			this.btnSave.Name = "btnSave";
-			this.btnSave.Size = new System.Drawing.Size(100, 35);
-			this.btnSave.TabIndex = 11;
-			this.btnSave.Text = "Save";
-			this.btnSave.UseVisualStyleBackColor = false;
-			this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+			this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.btnAdd.FlatAppearance.BorderSize = 0;
+			this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnAdd.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
+			this.btnAdd.Location = new System.Drawing.Point(990, 21);
+			this.btnAdd.Name = "btnAdd";
+			this.btnAdd.Size = new System.Drawing.Size(54, 31);
+			this.btnAdd.TabIndex = 1;
+			this.btnAdd.UseVisualStyleBackColor = true;
+			// 
+			// label1
+			// 
+			this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label1.ForeColor = System.Drawing.Color.White;
+			this.label1.Image = ((System.Drawing.Image)(resources.GetObject("label1.Image")));
+			this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.label1.Location = new System.Drawing.Point(20, 10);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(196, 42);
+			this.label1.TabIndex = 0;
+			this.label1.Text = "Stock Adjustment";
+			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
 			// panel2
 			// 
@@ -180,118 +180,19 @@
 			this.panel2.Size = new System.Drawing.Size(984, 142);
 			this.panel2.TabIndex = 6;
 			// 
-			// pictureBox1
+			// txtRemark
 			// 
-			this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-			this.pictureBox1.Location = new System.Drawing.Point(12, 12);
-			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(35, 35);
-			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-			this.pictureBox1.TabIndex = 0;
-			this.pictureBox1.TabStop = false;
+			this.txtRemark.Location = new System.Drawing.Point(651, 94);
+			this.txtRemark.Name = "txtRemark";
+			this.txtRemark.Size = new System.Drawing.Size(306, 26);
+			this.txtRemark.TabIndex = 13;
 			// 
-			// lblUsername
+			// txtQty
 			// 
-			this.lblUsername.AutoSize = true;
-			this.lblUsername.Location = new System.Drawing.Point(66, 22);
-			this.lblUsername.Name = "lblUsername";
-			this.lblUsername.Size = new System.Drawing.Size(83, 20);
-			this.lblUsername.TabIndex = 1;
-			this.lblUsername.Text = "Username";
-			this.lblUsername.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// label2
-			// 
-			this.label2.AutoSize = true;
-			this.label2.Location = new System.Drawing.Point(11, 60);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(116, 20);
-			this.label2.TabIndex = 2;
-			this.label2.Text = "Reference No:";
-			this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// label3
-			// 
-			this.label3.AutoSize = true;
-			this.label3.Location = new System.Drawing.Point(12, 96);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(95, 20);
-			this.label3.TabIndex = 3;
-			this.label3.Text = "Description:";
-			this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// label4
-			// 
-			this.label4.AutoSize = true;
-			this.label4.Location = new System.Drawing.Point(234, 60);
-			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(117, 20);
-			this.label4.TabIndex = 4;
-			this.label4.Text = "Product Code:";
-			this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// lblRefNo
-			// 
-			this.lblRefNo.AutoSize = true;
-			this.lblRefNo.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblRefNo.Location = new System.Drawing.Point(133, 60);
-			this.lblRefNo.Name = "lblRefNo";
-			this.lblRefNo.Size = new System.Drawing.Size(54, 20);
-			this.lblRefNo.TabIndex = 5;
-			this.lblRefNo.Text = "RefNo";
-			this.lblRefNo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// lblDesc
-			// 
-			this.lblDesc.AutoSize = true;
-			this.lblDesc.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblDesc.Location = new System.Drawing.Point(133, 96);
-			this.lblDesc.Name = "lblDesc";
-			this.lblDesc.Size = new System.Drawing.Size(113, 20);
-			this.lblDesc.TabIndex = 6;
-			this.lblDesc.Text = "Product Detail";
-			this.lblDesc.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// lblProdCode
-			// 
-			this.lblProdCode.AutoSize = true;
-			this.lblProdCode.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblProdCode.Location = new System.Drawing.Point(357, 60);
-			this.lblProdCode.Name = "lblProdCode";
-			this.lblProdCode.Size = new System.Drawing.Size(113, 20);
-			this.lblProdCode.TabIndex = 7;
-			this.lblProdCode.Text = "Product Code";
-			this.lblProdCode.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// label5
-			// 
-			this.label5.AutoSize = true;
-			this.label5.Location = new System.Drawing.Point(563, 22);
-			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(61, 20);
-			this.label5.TabIndex = 8;
-			this.label5.Text = "Action:";
-			this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// label6
-			// 
-			this.label6.AutoSize = true;
-			this.label6.Location = new System.Drawing.Point(563, 59);
-			this.label6.Name = "label6";
-			this.label6.Size = new System.Drawing.Size(39, 20);
-			this.label6.TabIndex = 9;
-			this.label6.Text = "Qty:";
-			this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// label7
-			// 
-			this.label7.AutoSize = true;
-			this.label7.Location = new System.Drawing.Point(564, 97);
-			this.label7.Name = "label7";
-			this.label7.Size = new System.Drawing.Size(74, 20);
-			this.label7.TabIndex = 10;
-			this.label7.Text = "Remarks:";
-			this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.txtQty.Location = new System.Drawing.Point(651, 57);
+			this.txtQty.Name = "txtQty";
+			this.txtQty.Size = new System.Drawing.Size(306, 26);
+			this.txtQty.TabIndex = 12;
 			// 
 			// cbAction
 			// 
@@ -304,19 +205,118 @@
 			this.cbAction.Size = new System.Drawing.Size(306, 28);
 			this.cbAction.TabIndex = 11;
 			// 
-			// txtQty
+			// label7
 			// 
-			this.txtQty.Location = new System.Drawing.Point(651, 57);
-			this.txtQty.Name = "txtQty";
-			this.txtQty.Size = new System.Drawing.Size(306, 26);
-			this.txtQty.TabIndex = 12;
+			this.label7.AutoSize = true;
+			this.label7.Location = new System.Drawing.Point(564, 97);
+			this.label7.Name = "label7";
+			this.label7.Size = new System.Drawing.Size(74, 20);
+			this.label7.TabIndex = 10;
+			this.label7.Text = "Remarks:";
+			this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
-			// txtRemark
+			// label6
 			// 
-			this.txtRemark.Location = new System.Drawing.Point(651, 94);
-			this.txtRemark.Name = "txtRemark";
-			this.txtRemark.Size = new System.Drawing.Size(306, 26);
-			this.txtRemark.TabIndex = 13;
+			this.label6.AutoSize = true;
+			this.label6.Location = new System.Drawing.Point(563, 59);
+			this.label6.Name = "label6";
+			this.label6.Size = new System.Drawing.Size(39, 20);
+			this.label6.TabIndex = 9;
+			this.label6.Text = "Qty:";
+			this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// label5
+			// 
+			this.label5.AutoSize = true;
+			this.label5.Location = new System.Drawing.Point(563, 22);
+			this.label5.Name = "label5";
+			this.label5.Size = new System.Drawing.Size(61, 20);
+			this.label5.TabIndex = 8;
+			this.label5.Text = "Action:";
+			this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// lblProdCode
+			// 
+			this.lblProdCode.AutoSize = true;
+			this.lblProdCode.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblProdCode.Location = new System.Drawing.Point(357, 60);
+			this.lblProdCode.Name = "lblProdCode";
+			this.lblProdCode.Size = new System.Drawing.Size(113, 20);
+			this.lblProdCode.TabIndex = 7;
+			this.lblProdCode.Text = "Product Code";
+			this.lblProdCode.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// lblDesc
+			// 
+			this.lblDesc.AutoSize = true;
+			this.lblDesc.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblDesc.Location = new System.Drawing.Point(133, 96);
+			this.lblDesc.Name = "lblDesc";
+			this.lblDesc.Size = new System.Drawing.Size(113, 20);
+			this.lblDesc.TabIndex = 6;
+			this.lblDesc.Text = "Product Detail";
+			this.lblDesc.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// lblRefNo
+			// 
+			this.lblRefNo.AutoSize = true;
+			this.lblRefNo.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblRefNo.Location = new System.Drawing.Point(133, 60);
+			this.lblRefNo.Name = "lblRefNo";
+			this.lblRefNo.Size = new System.Drawing.Size(54, 20);
+			this.lblRefNo.TabIndex = 5;
+			this.lblRefNo.Text = "RefNo";
+			this.lblRefNo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// label4
+			// 
+			this.label4.AutoSize = true;
+			this.label4.Location = new System.Drawing.Point(234, 60);
+			this.label4.Name = "label4";
+			this.label4.Size = new System.Drawing.Size(117, 20);
+			this.label4.TabIndex = 4;
+			this.label4.Text = "Product Code:";
+			this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// label3
+			// 
+			this.label3.AutoSize = true;
+			this.label3.Location = new System.Drawing.Point(12, 96);
+			this.label3.Name = "label3";
+			this.label3.Size = new System.Drawing.Size(95, 20);
+			this.label3.TabIndex = 3;
+			this.label3.Text = "Description:";
+			this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// label2
+			// 
+			this.label2.AutoSize = true;
+			this.label2.Location = new System.Drawing.Point(11, 60);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(116, 20);
+			this.label2.TabIndex = 2;
+			this.label2.Text = "Reference No:";
+			this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// lblUsername
+			// 
+			this.lblUsername.AutoSize = true;
+			this.lblUsername.Location = new System.Drawing.Point(66, 22);
+			this.lblUsername.Name = "lblUsername";
+			this.lblUsername.Size = new System.Drawing.Size(83, 20);
+			this.lblUsername.TabIndex = 1;
+			this.lblUsername.Text = "Username";
+			this.lblUsername.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// pictureBox1
+			// 
+			this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+			this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+			this.pictureBox1.Name = "pictureBox1";
+			this.pictureBox1.Size = new System.Drawing.Size(35, 35);
+			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+			this.pictureBox1.TabIndex = 0;
+			this.pictureBox1.TabStop = false;
 			// 
 			// dgvAdjustment
 			// 
@@ -325,6 +325,7 @@
 			this.dgvAdjustment.AllowUserToResizeColumns = false;
 			this.dgvAdjustment.AllowUserToResizeRows = false;
 			this.dgvAdjustment.BackgroundColor = System.Drawing.Color.PaleTurquoise;
+			this.dgvAdjustment.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.dgvAdjustment.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
 			this.dgvAdjustment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dgvAdjustment.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -337,12 +338,12 @@
             this.Column7,
             this.Column8,
             this.Select});
-			this.dgvAdjustment.Dock = System.Windows.Forms.DockStyle.Top;
+			this.dgvAdjustment.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.dgvAdjustment.Location = new System.Drawing.Point(0, 142);
 			this.dgvAdjustment.Name = "dgvAdjustment";
 			this.dgvAdjustment.ReadOnly = true;
 			this.dgvAdjustment.RowHeadersVisible = false;
-			this.dgvAdjustment.Size = new System.Drawing.Size(984, 252);
+			this.dgvAdjustment.Size = new System.Drawing.Size(984, 258);
 			this.dgvAdjustment.TabIndex = 7;
 			this.dgvAdjustment.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAdjustment_CellContentClick);
 			// 

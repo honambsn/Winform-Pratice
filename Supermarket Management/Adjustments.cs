@@ -35,7 +35,7 @@ namespace Supermarket_Management
 			lblRefNo.Text = rnd.Next().ToString();
 		}
 
-		public void LoadStock()
+		public void LoadStock2()
 		{
 			int i = 0;
 			dgvAdjustment.Rows.Clear();
@@ -56,6 +56,47 @@ namespace Supermarket_Management
 			dr.Close();
 			cn.Close();
 		}
+
+		public void LoadStock()
+		{
+			int i = 0;
+			dgvAdjustment.Rows.Clear();
+
+
+			// SQL query with parameterized search
+			string query = "select p.ProductCode, p.Barcode, p.Description, b.BrandName, c.CategoryName, p.Price, p.qty " +
+						   "from Product as p " +
+						   "inner join Brand as b on b.id = p.BrandID " +
+						   "inner join Category as c on c.id = p.CategoryID " +
+						   "where concat(p.Description, b.BrandName, c.CategoryName, p.ProductCode) like @SearchTerm";
+
+			using (SqlCommand cm = new SqlCommand(query, cn))
+			{
+				cm.Parameters.AddWithValue("@SearchTerm", "%" + txtSearch.Text + "%");
+
+				if (cn.State == ConnectionState.Closed)
+					cn.Open();
+
+				using (SqlDataReader dr = cm.ExecuteReader())
+				{
+					while (dr.Read())
+					{
+						i++;
+						dgvAdjustment.Rows.Add(i,
+											   dr["ProductCode"].ToString(),
+											   dr["Barcode"].ToString(),
+											   dr["Description"].ToString(),
+											   dr["BrandName"].ToString(),
+											   dr["CategoryName"].ToString(),
+											   dr["Price"].ToString(),
+											   dr["qty"].ToString());
+					}
+				}
+			}
+
+			cn.Close();
+		}
+
 
 		private void dgvAdjustment_CellContentClick(object sender, DataGridViewCellEventArgs e)
 		{

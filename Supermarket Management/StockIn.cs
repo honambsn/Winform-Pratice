@@ -103,7 +103,7 @@ namespace Supermarket_Management
 						{
 							i++;
 							//dgvStockIn.Rows.Add(i, dr["refNo"].ToString(), dr["pcode"].ToString(), dr["pname"].ToString(), dr["price"].ToString(), dr["qty"].ToString(), dr["sdate"].ToString(), dr["supplier"].ToString(), dr["address"].ToString(), dr["contact"].ToString());
-							dgvStockIn.Rows.Add(i, dr[0].ToString(), dr[1].ToString(), dr[2].ToString(), dr[3].ToString(), dr[4].ToString(), dr[5].ToString(), dr[6].ToString(), dr[7].ToString());
+							dgvStockIn.Rows.Add(i, dr[0].ToString(), dr[1].ToString(), dr[2].ToString(), dr[3].ToString(), dr[4].ToString(), dr[5].ToString(), dr[6].ToString(), dr["supplierName"].ToString());
 						}
 					}
 				}
@@ -265,6 +265,43 @@ namespace Supermarket_Management
 						LoadStockIn();
 					}
 				}
+			}
+		}
+
+		private void btnLoad_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				int i = 0;
+				dgvInStockHistory.Rows.Clear();
+				if (cn.State != ConnectionState.Open)
+					cn.Open();
+
+				using (SqlCommand cm = new SqlCommand("SELECT * FROM vwStockIn WHERE cast(sdate as date) between @fromdate and @todate and status = 'Done'", cn))				
+				{
+					//cm.Parameters.AddWithValue("@fromdate", dtFrom.Value.ToShortDateString());
+					//cm.Parameters.AddWithValue("@todate", dtTo.Value.ToShortDateString());
+					cm.Parameters.AddWithValue("@fromdate", dtFrom.Value.ToString("yyyy-MM-dd"));
+					cm.Parameters.AddWithValue("@todate", dtTo.Value.ToString("yyyy-MM-dd"));
+					using (SqlDataReader dr = cm.ExecuteReader())
+					{
+						
+						while (dr.Read())
+						{
+							i++;
+							//dgvStockIn.Rows.Add(i, dr["refNo"].ToString(), dr["pcode"].ToString(), dr["pname"].ToString(), dr["price"].ToString(), dr["qty"].ToString(), dr["sdate"].ToString(), dr["supplier"].ToString(), dr["address"].ToString(), dr["contact"].ToString());
+							dgvInStockHistory.Rows.Add(i, dr[0].ToString(), dr[1].ToString(), dr[2].ToString(), dr[3].ToString(), dr[4].ToString(), DateTime.Parse(dr[5].ToString()).ToShortTimeString(), dr[6].ToString(), dr["supplierName"].ToString());
+						}
+					}
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show("An error occurred while loading stock in: " + ex.Message);
+			}
+			finally
+			{
+				
 			}
 		}
 	}

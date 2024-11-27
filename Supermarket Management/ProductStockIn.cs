@@ -83,7 +83,7 @@ namespace Supermarket_Management
 					MessageBox.Show("Please enter stock in by", "POS", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 					stockIn.txtStockInBy.Focus();
 					this.Dispose();
-					//return;
+					return;
 				}
 
 				if (MessageBox.Show("Add this item?", "POS", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
