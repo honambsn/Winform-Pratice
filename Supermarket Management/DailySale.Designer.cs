@@ -153,10 +153,10 @@
 			// Column2
 			// 
 			this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			this.Column2.HeaderText = "PCode";
+			this.Column2.HeaderText = "Product Code";
 			this.Column2.Name = "Column2";
 			this.Column2.ReadOnly = true;
-			this.Column2.Width = 85;
+			this.Column2.Width = 138;
 			// 
 			// Column4
 			// 
@@ -238,6 +238,7 @@
 			this.cbCashier.Size = new System.Drawing.Size(137, 28);
 			this.cbCashier.TabIndex = 22;
 			this.cbCashier.Text = "Select Cashier";
+			this.cbCashier.SelectedIndexChanged += new System.EventHandler(this.cbCashier_SelectedIndexChanged);
 			// 
 			// dtTo
 			// 
@@ -247,6 +248,7 @@
 			this.dtTo.Name = "dtTo";
 			this.dtTo.Size = new System.Drawing.Size(117, 26);
 			this.dtTo.TabIndex = 21;
+			this.dtTo.ValueChanged += new System.EventHandler(this.dtTo_ValueChanged);
 			// 
 			// lblTotal
 			// 
@@ -288,6 +290,7 @@
 			this.dtFrom.Name = "dtFrom";
 			this.dtFrom.Size = new System.Drawing.Size(117, 26);
 			this.dtFrom.TabIndex = 17;
+			this.dtFrom.ValueChanged += new System.EventHandler(this.dtFrom_ValueChanged);
 			// 
 			// DailySale
 			// 
@@ -319,6 +322,15 @@
 		#endregion
 		private System.Windows.Forms.Panel panel1;
 		public System.Windows.Forms.DataGridView dgvSold;
+		public System.Windows.Forms.PictureBox picClose;
+		public System.Windows.Forms.Label lblTitle;
+		private System.Windows.Forms.Panel panel2;
+		private System.Windows.Forms.ComboBox cbCashier;
+		private System.Windows.Forms.DateTimePicker dtTo;
+		private System.Windows.Forms.Label lblTotal;
+		private System.Windows.Forms.Label label3;
+		private System.Windows.Forms.Label label2;
+		private System.Windows.Forms.DateTimePicker dtFrom;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
@@ -329,14 +341,5 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
 		private System.Windows.Forms.DataGridViewImageColumn Cancel;
-		public System.Windows.Forms.PictureBox picClose;
-		public System.Windows.Forms.Label lblTitle;
-		private System.Windows.Forms.Panel panel2;
-		private System.Windows.Forms.ComboBox cbCashier;
-		private System.Windows.Forms.DateTimePicker dtTo;
-		private System.Windows.Forms.Label lblTotal;
-		private System.Windows.Forms.Label label3;
-		private System.Windows.Forms.Label label2;
-		private System.Windows.Forms.DateTimePicker dtFrom;
 	}
 }

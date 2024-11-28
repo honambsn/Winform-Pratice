@@ -538,3 +538,15 @@ WHERE c.status = 'Sold'
 
 
 SELECT username FROM Users WHERE role = 'Cashier'
+
+
+select * from Cart
+
+select c.id, c.transno, c.ProductCode, p.Description, c.Price, c.qty, c.disc, c.total 
+from Cart as c inner join Product as p on c.ProductCode = p.ProductCode 
+where status = 'Sold' and sdate between '2000-01-01' AND '2024-11-28' --and cashiser = @cashier"
+
+select c.id, c.transno, c.ProductCode, p.Description, c.Price, c.qty, c.disc, c.total from Cart as c inner join Product as p on c.ProductCode = p.ProductCode where status = 'Sold' and sdate between '2000-01-01' AND '2024-11-28' --and cashiser = @cashier"
+
+
+select c.id, c.transno, c.ProductCode, p.Description, c.Price, c.qty, c.disc, c.total from Cart as c inner join Product as p on c.ProductCode = p.ProductCode where status = 'Sold' and sdate between'2000-01-01' AND '2024-11-28' and cashier = 'a'
