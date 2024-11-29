@@ -103,7 +103,7 @@ namespace Supermarket_Management
 		private void btnSales_Click(object sender, EventArgs e)
 		{
 			slide(btnSales);
-			DailySale dailySale = new DailySale();
+			DailySale dailySale = new DailySale(new MainForm());
 			dailySale.solduser = lblUsername.Text;
 			dailySale.picClose.Visible = true;
 			dailySale.lblTitle.Visible = true;

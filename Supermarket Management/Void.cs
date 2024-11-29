@@ -31,7 +31,7 @@ namespace Supermarket_Management
 		{
 			try
 			{
-				if (txtUsername.Text == cancelOrder.txtCancelBy.Text)
+				if (txtUsername.Text.ToLower() == cancelOrder.txtCancelBy.Text.ToLower())
 				{
 					MessageBox.Show("Void by name and cancelled by name cannot be the same!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 					return;
@@ -62,7 +62,7 @@ namespace Supermarket_Management
 						{
 							dbcon.ExcuteQuery("update Product set qty = qty + " + cancelOrder.udCancelQty.Value + " where pcode = '"+cancelOrder.txtPCode.Text+ "'");
 						}
-						dbcon.ExcuteQuery("update Cart set qty = qty + " + cancelOrder.udCancelQty.Value + " where id lile '" + cancelOrder.txtId.Text + "'");
+						dbcon.ExcuteQuery("update Cart set qty = qty + " + cancelOrder.udCancelQty.Value + " where id like '" + cancelOrder.txtId.Text + "'");
 						MessageBox.Show("Order transaction succesfully cancelled!", "Cancel Order", MessageBoxButtons.OK, MessageBoxIcon.Information);
 						this.Dispose();
 						cancelOrder.ReloadSoldList();
@@ -91,7 +91,7 @@ namespace Supermarket_Management
 
 				cn.Open();
 
-				using(SqlCommand cm = new SqlCommand("insert into Cancel(transno, ProductCode, Price, qty, total, sdate, voidby, cancelledby, reason, action) values (@transno, @ProductCode, @Price, @qty, @total, @sdate, @voidby, @cancelledby, @reason, @action", cn))
+				using(SqlCommand cm = new SqlCommand("insert into Cancel(transno, ProductCode, Price, qty, total, sdate, voidby, cancelledby, reason, action) values (@transno, @ProductCode, @Price, @qty, @total, @sdate, @voidby, @cancelledby, @reason, @action)", cn))
 				{
 					cm.Parameters.AddWithValue("@transno", cancelOrder.txtTransno.Text);
 					cm.Parameters.AddWithValue("@ProductCode", cancelOrder.txtPCode.Text);

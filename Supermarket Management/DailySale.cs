@@ -17,12 +17,13 @@ namespace Supermarket_Management
 		SqlCommand cm = new SqlCommand();
 		DBConnect dbcon = new DBConnect();
 		SqlDataReader dr;
-
+		MainForm main;
 		public string solduser;
-		public DailySale()
+		public DailySale(MainForm mn)
 		{
 			InitializeComponent();
 			cn = new SqlConnection(dbcon.myConnection());
+			main = mn;
 			LoadCashier();
 			//LoadSold();
 		}
@@ -510,7 +511,10 @@ namespace Supermarket_Management
 				cancelOrder.txtQty.Text = dgvSold.Rows[e.RowIndex].Cells[6].Value.ToString();
 				cancelOrder.txtDisc.Text = dgvSold.Rows[e.RowIndex].Cells[7].Value.ToString();
 				cancelOrder.txtTotal.Text = dgvSold.Rows[e.RowIndex].Cells[8].Value.ToString();
-				cancelOrder.txtCancelBy.Text = solduser;
+				if (lblTitle.Visible == false)
+					cancelOrder.txtCancelBy.Text = main.lbl_Username.Text;
+				else
+					cancelOrder.txtCancelBy.Text = solduser;
 				cancelOrder.ShowDialog();
 			}
 		}
