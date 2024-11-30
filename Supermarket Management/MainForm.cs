@@ -164,6 +164,7 @@ namespace Supermarket_Management
 
 		private void Record_POS_Click(object sender, EventArgs e)
 		{
+			openChildForm(new Record());
 			hideSubMenu();
 		}
 

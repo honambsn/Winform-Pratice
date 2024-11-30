@@ -163,6 +163,12 @@
       <DependentUpon>ProductStockIn.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
+    <Compile Include="Record.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Record.Designer.cs">
+      <DependentUpon>Record.cs</DependentUpon>
+    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="UserProperties.cs">
       <SubType>Form</SubType>
@@ -273,6 +279,9 @@
     <EmbeddedResource Include="ProductStockIn.resx">
       <DependentUpon>ProductStockIn.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Record.resx">
+      <DependentUpon>Record.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserProperties.resx">
       <DependentUpon>UserProperties.cs</DependentUpon>
     </EmbeddedResource>
@@ -368,6 +377,7 @@
     <Content Include="Icons\icons8-bin-30.png" />
     <Content Include="Icons\icons8-buy-30.png" />
     <Content Include="Icons\icons8-cart-30.png" />
+    <Content Include="Icons\icons8-database-administrator-30.png" />
     <Content Include="Icons\icons8-discount-30.png" />
     <Content Include="Icons\icons8-logout-30.png" />
     <Content Include="Icons\icons8-minus-30.png" />
