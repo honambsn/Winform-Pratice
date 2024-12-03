@@ -22,6 +22,7 @@ namespace Supermarket_Management
 			InitializeComponent();
 			cn = new SqlConnection(dbcon.myConnection());
 			LoadCriticalItems();
+			LoadInventoryList();
 		}
 
 		public void LoadTopSelling()
@@ -86,10 +87,10 @@ namespace Supermarket_Management
 					cn.Open();
 				}
 
-				using(SqlCommand cm = new SqlCommand("select c.ProductCode, p.Description, c.Price, sum(c.qty) as qty, sum(c.disc) as disc, sum(c.total) as total from Cart as c " +
+				using (SqlCommand cm = new SqlCommand("select c.ProductCode, p.Description, c.Price, sum(c.qty) as qty, sum(c.disc) as disc, sum(c.total) as total from Cart as c " +
 					"inner join Product as p on c.ProductCode = p.ProductCode " +
 					"where status = @status and sdate between @fromDate and @toDate " +
-					"group by c.ProductCode, p.Description, c.Price" , cn))
+					"group by c.ProductCode, p.Description, c.Price", cn))
 				{
 					cm.Parameters.AddWithValue("@status", "Sold");
 					cm.Parameters.AddWithValue("@fromDate", dtFromSoldItems.Value);
@@ -103,7 +104,7 @@ namespace Supermarket_Management
 					dr.Close();
 				}
 
-				using(SqlCommand cm = new SqlCommand("select isnull(sum(total), 0) as total from Cart " +
+				using (SqlCommand cm = new SqlCommand("select isnull(sum(total), 0) as total from Cart " +
 					"where status = @status and sdate between @fromDate and @toDate", cn))
 				{
 					cm.Parameters.AddWithValue("@status", "Sold");
@@ -160,6 +161,108 @@ namespace Supermarket_Management
 			{
 				MessageBox.Show(ex.Message);
 			}
+		}
+
+		public void LoadInventoryList()
+		{
+			try
+			{
+				dgvInventoryList.Rows.Clear();
+				int i = 0;
+				if (cn.State == ConnectionState.Closed)
+				{
+					cn.Open();
+				}
+
+				using (SqlCommand cm = new SqlCommand("select * from vwInventoryList", cn))
+				{
+					dr = cm.ExecuteReader();
+					while (dr.Read())
+					{
+						i++;
+						dgvInventoryList.Rows.Add(i, dr["ProductCode"].ToString(), dr["Barcode"].ToString(), dr["Description"].ToString(), dr["BrandName"].ToString(), dr["CategoryName"].ToString(), double.Parse(dr["Price"].ToString()).ToString("#,#0,00"), dr["qty"].ToString(), dr["ReOrder"].ToString());
+						//dgvCriticalItems.Rows.Add(i, dr[0].ToString(), dr[1].ToString(), dr[2].ToString(), dr[3].ToString(), dr[4].ToString(), dr[5].ToString(), dr[6].ToString(), dr[7].ToString());
+					}
+					dr.Close();
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+			}
+		}
+
+		public void LoadCancelItems()
+		{
+			try
+			{
+				int i = 0;
+				dgvCancel.Rows.Clear();
+				if (cn.State == ConnectionState.Closed)
+				{
+					cn.Open();
+				}
+				//using (SqlCommand cm = new SqlCommand("select top 10 ProductCode, Description, isnull(sum(qty), 0) as qty, isnull(sum(total), 0)
+				//as total from vwTopSelling where sdate between @fromDate and @toDate and status = 'Sold' group by ProductCode, Description order by total DESC", cn))
+				using (SqlCommand cm = new SqlCommand("select * from vwCancelItems where sdate between @dtfrom and @dtTo", cn))
+				{
+					cm.Parameters.AddWithValue("@dtfrom", dtFromCancel.Value);
+					cm.Parameters.AddWithValue("@dtTo", dtToCancel.Value);
+					dr = cm.ExecuteReader();
+					while (dr.Read())
+					{
+						i++;
+						dgvCancel.Rows.Add(i, dr["transno"].ToString(), dr["ProductCode"].ToString(), dr["Description"].ToString(), double.Parse(dr["Price"].ToString()).ToString("#,#0,00"), dr["qty"].ToString(), dr["total"].ToString(), DateTime.Parse(dr["sdate"].ToString()).ToShortDateString(), dr["voidby"].ToString(), dr["cancelledby"].ToString(), dr["reason"].ToString(), dr["action"].ToString());
+					}
+					dr.Close();
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+			}
+		}
+
+		private void btnLoadCancel_Click(object sender, EventArgs e)
+		{
+			LoadCancelItems();
+		}
+
+		public void LoadStockInHistory()
+		{
+			try
+			{
+				int i = 0;
+				dgvStockIn.Rows.Clear();
+				if (cn.State == ConnectionState.Closed)
+				{
+					cn.Open();
+				}
+				using (SqlCommand cm = new SqlCommand("select * from vwStockIn where cast(sdate as date) between @dtfrom and @dtTo and status = @status", cn))
+				{
+					cm.Parameters.AddWithValue("@dtfrom", dtFromStockIn.Value);
+					cm.Parameters.AddWithValue("@dtTo", dtToStockIn.Value);
+					cm.Parameters.AddWithValue("@status", "Done");
+					//cm.Parameters.AddWithValue("@status", "Done");
+					dr = cm.ExecuteReader();
+					
+					while (dr.Read())
+					{
+						i++;
+						dgvStockIn.Rows.Add(i, dr["id"].ToString(), dr["refno"].ToString(), dr["ProductCode"].ToString(), dr["Description"].ToString(), dr["qty"].ToString(), dr["sdate"].ToString() , dr["stockinby"].ToString());
+					}
+					dr.Close();
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+			}
+		}
+
+		private void btnLoadStockIn_Click(object sender, EventArgs e)
+		{
+			LoadStockInHistory();
 		}
 	}
 }
