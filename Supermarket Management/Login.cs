@@ -101,6 +101,7 @@ namespace Supermarket_Management
 							main.lbl_Username.Text = _username;
 							main.lblName.Text = _name;
 							main._pass = _pass;
+							//main.btn_Dashboard.PerformClick();
 							main.ShowDialog();
 
 						}

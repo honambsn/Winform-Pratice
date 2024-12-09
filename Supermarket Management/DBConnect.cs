@@ -115,5 +115,55 @@ namespace Supermarket_Management
 
 			return password;
 		}
+
+		public double ExtractData(string sql)
+		{
+			double data = 0.0;
+
+			// Ensure the connection is open
+			if (cn.State == ConnectionState.Open)
+			{
+				cn.Close();
+			}
+			cn.ConnectionString = myConnection();
+			cn.Open();
+
+			try
+			{
+				using (SqlCommand cm = new SqlCommand(sql, cn))
+				{
+					// Execute the scalar query and get the result
+					object result = cm.ExecuteScalar();
+
+					// Check if the result is not null and convert to double
+					if (result != null && double.TryParse(result.ToString(), out data))
+					{
+						return data;
+					}
+					else
+					{
+						// Handle the case when the result is null or not a valid double
+						throw new InvalidOperationException("The query did not return a valid double value.");
+					}
+				}
+			}
+			catch (Exception ex)
+			{
+				// Log or handle the exception as necessary
+				Console.WriteLine($"Error executing SQL query: {ex.Message}");
+				// Return 0 or handle as needed
+				return 0.0;
+			}
+			finally
+			{
+				// Ensure connection is closed after execution
+				if (cn.State == ConnectionState.Open)
+				{
+					cn.Close();
+				}
+			}
+		}
+
+
 	}
 }

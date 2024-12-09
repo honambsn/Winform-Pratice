@@ -23,6 +23,7 @@ namespace Supermarket_Management
 			drawCenter();
 			customizeDesign();
 			con = new SqlConnection(dbcon.myConnection());
+			//btn_Dashboard.PerformClick();
 			con.Open();
 			MessageBox.Show("Connection Established");
 		}
@@ -194,6 +195,7 @@ namespace Supermarket_Management
 
 		private void btn_Dashboard_Click(object sender, EventArgs e)
 		{
+			openChildForm(new Dashboard());
 			hideSubMenu();
 		}
 
@@ -208,6 +210,11 @@ namespace Supermarket_Management
 				Login login = new Login();
 				login.ShowDialog();
 			}
+		}
+
+		private void MainForm_Load(object sender, EventArgs e)
+		{
+			btn_Dashboard.PerformClick();
 		}
 	}
 }

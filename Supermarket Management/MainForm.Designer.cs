@@ -512,6 +512,7 @@
 			this.Name = "MainForm";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Point Of Sales";
+			this.Load += new System.EventHandler(this.MainForm_Load);
 			this.panelSlide.ResumeLayout(false);
 			this.panelSubSetting.ResumeLayout(false);
 			this.panelSubRecord.ResumeLayout(false);
@@ -534,7 +535,6 @@
 		private System.Windows.Forms.Panel panelSubProduct;
 		private System.Windows.Forms.Button Product_List;
 		private System.Windows.Forms.Button btn_Product;
-		private System.Windows.Forms.Button btn_Dashboard;
 		private System.Windows.Forms.Button Product_Brand;
 		private System.Windows.Forms.Button Product_Category;
 		private System.Windows.Forms.Button btn_Logout;
@@ -556,6 +556,7 @@
 		private System.Windows.Forms.Button btn_Supplier;
 		public System.Windows.Forms.Label lbl_Username;
 		public System.Windows.Forms.Label lblName;
+		public System.Windows.Forms.Button btn_Dashboard;
 	}
 }
 

@@ -119,6 +119,12 @@
     <Compile Include="DailySale.Designer.cs">
       <DependentUpon>DailySale.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dashboard.Designer.cs">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="DBConnect.cs" />
     <Compile Include="Discount.cs">
       <SubType>Form</SubType>
@@ -258,6 +264,9 @@
     <EmbeddedResource Include="DailySale.resx">
       <DependentUpon>DailySale.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Discount.resx">
       <DependentUpon>Discount.cs</DependentUpon>
     </EmbeddedResource>
@@ -373,6 +382,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icons8-supermarket-100.ico" />
+    <Content Include="Icons\computer-inventory.png" />
     <Content Include="Icons\icons8-adjustment-64.png" />
     <Content Include="Icons\icons8-bin-30.png" />
     <Content Include="Icons\icons8-buy-30.png" />
@@ -399,6 +409,9 @@
     <Content Include="Icons\icons8-trolley-30.png" />
     <Content Include="Icons\icons8-trolley-50.png" />
     <Content Include="Icons\icons8-user-20.png" />
+    <Content Include="Icons\sale-tag.png" />
+    <Content Include="Icons\stock-market.png" />
+    <Content Include="Icons\warning.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

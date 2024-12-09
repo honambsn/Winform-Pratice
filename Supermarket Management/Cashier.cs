@@ -29,6 +29,7 @@ namespace Supermarket_Management
 			dgvCashier.ColumnHeadersDefaultCellStyle.BackColor = Color.Red;
 			GetTranNo();
 			dgvCashier.Refresh();
+			lblDate.Text = DateTime.Now.ToShortDateString();
 
 		}
 

@@ -554,3 +554,7 @@ select c.id, c.transno, c.ProductCode, p.Description, c.Price, c.qty, c.disc, c.
 
 UPDATE Product
 SET ReOrder = 1000;
+
+
+select isnull(sum(total), 0) as total from Cart where status = 'Sold' and sdate between '2000-01-01' AND '2024-11-28'
+select isnull(sum(total), 0) as total from Cart where status = 'Pending' and sdate between '2000-01-01' AND '2024-11-28'

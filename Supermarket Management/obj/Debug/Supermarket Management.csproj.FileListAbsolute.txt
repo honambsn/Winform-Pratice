@@ -21,6 +21,7 @@ D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Supermarket Management\obj\Deb
 D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Supermarket Management\obj\Debug\Supermarket_Management.CategoryModule.resources
 D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Supermarket Management\obj\Debug\Supermarket_Management.ChangePassword.resources
 D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Supermarket Management\obj\Debug\Supermarket_Management.DailySale.resources
+D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Supermarket Management\obj\Debug\Supermarket_Management.Dashboard.resources
 D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Supermarket Management\obj\Debug\Supermarket_Management.Discount.resources
 D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Supermarket Management\obj\Debug\Supermarket_Management.Login.resources
 D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Supermarket Management\obj\Debug\Supermarket_Management.LookUpProduct.resources
