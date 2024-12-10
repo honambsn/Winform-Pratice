@@ -603,5 +603,39 @@ namespace Supermarket_Management
 				}
 			}
 		}
+
+		public void Notify()
+		{
+			int i = 0;
+			if (cn.State == ConnectionState.Closed)
+				cn.Open();
+
+			using (SqlCommand cm = new SqlCommand("select * from vwCriticalItems", cn))
+			{
+				dr = cm.ExecuteReader();
+				while (dr.Read())
+				{
+					i++;
+					Alert alert = new Alert(new MainForm());
+					alert.lblPCode.Text = dr["ProductCode"].ToString();
+					//alert.btnReOrder.Enabled = false;
+					alert.showAlert(i + ". " + dr["Description"].ToString() + " - " + dr["qty"].ToString());
+				}
+				dr.Close();
+			}
+		}
+
+		private void Cashier_Load(object sender, EventArgs e)
+		{
+			Notify();
+		}
+
+		private void Cashier_KeyDown(object sender, KeyEventArgs e)
+		{
+			if (e.KeyCode == Keys.F8)
+			{
+
+			}
+		}
 	}
 }

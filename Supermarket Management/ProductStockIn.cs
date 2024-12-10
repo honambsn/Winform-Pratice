@@ -88,34 +88,62 @@ namespace Supermarket_Management
 
 				if (MessageBox.Show("Add this item?", "POS", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
 				{
-					try
-					{
-						if (cn.State == ConnectionState.Closed)
-							cn.Open();
-						using (SqlCommand cm = new SqlCommand("INSERT INTO StockIn (refno, ProductCode, sdate, stockinby, supplierID) VALUES (@refno, @ProductCode, @sdate, @stockinby, @supplierID)", cn))
-						{
-							cm.Parameters.Add("@refno", SqlDbType.VarChar).Value = stockIn.txtRefNo.Text;
-							var productCode = dgvProduct.Rows[e.RowIndex].Cells[1].Value;
-							if (productCode == null)
-							{
-								MessageBox.Show("Product code is not available.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-								return;
-							}
-							cm.Parameters.Add("@ProductCode", SqlDbType.VarChar).Value = productCode.ToString();
-							cm.Parameters.Add("@sdate", SqlDbType.DateTime).Value = stockIn.dtStockIn.Value;
-							cm.Parameters.Add("@stockinby", SqlDbType.VarChar).Value = stockIn.txtStockInBy.Text;
-							cm.Parameters.Add("@supplierID", SqlDbType.Int).Value = int.Parse(stockIn.labelID.Text);
+					//try
+					//{
+					//	if (cn.State == ConnectionState.Closed)
+					//		cn.Open();
+					//	using (SqlCommand cm = new SqlCommand("INSERT INTO StockIn (refno, ProductCode, sdate, stockinby, supplierID) VALUES (@refno, @ProductCode, @sdate, @stockinby, @supplierID)", cn))
+					//	{
+					//		cm.Parameters.Add("@refno", SqlDbType.VarChar).Value = stockIn.txtRefNo.Text;
+					//		var productCode = dgvProduct.Rows[e.RowIndex].Cells[1].Value;
+					//		if (productCode == null)
+					//		{
+					//			MessageBox.Show("Product code is not available.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					//			return;
+					//		}
+					//		cm.Parameters.Add("@ProductCode", SqlDbType.VarChar).Value = productCode.ToString();
+					//		cm.Parameters.Add("@sdate", SqlDbType.DateTime).Value = stockIn.dtStockIn.Value;
+					//		cm.Parameters.Add("@stockinby", SqlDbType.VarChar).Value = stockIn.txtStockInBy.Text;
+					//		cm.Parameters.Add("@supplierID", SqlDbType.Int).Value = int.Parse(stockIn.labelID.Text);
 
-							cm.ExecuteNonQuery();
-							MessageBox.Show("Product successfully added to stock in", "POS", MessageBoxButtons.OK, MessageBoxIcon.Information);
-							stockIn.LoadStockIn(); // Load data after successful insertion
-						}
-					}
-					catch (Exception ex)
-					{
-						MessageBox.Show(ex.Message);
-					}
+					//		cm.ExecuteNonQuery();
+					//		MessageBox.Show("Product successfully added to stock in", "POS", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					//		stockIn.LoadStockIn(); // Load data after successful insertion
+					//	}
+					//}
+					//catch (Exception ex)
+					//{
+					//	MessageBox.Show(ex.Message);
+					//}
+
+					addStockIn(dgvProduct.Rows[e.RowIndex].Cells[1].Value.ToString());
+					MessageBox.Show("Product successfully added to stock in", "POS", MessageBoxButtons.OK, MessageBoxIcon.Information);
 				}
+			}
+		}
+
+		public void addStockIn(string pcode)
+		{
+			try
+			{
+				if (cn.State == ConnectionState.Closed)
+					cn.Open();
+				using (SqlCommand cm = new SqlCommand("INSERT INTO StockIn (refno, ProductCode, sdate, stockinby, supplierID) VALUES (@refno, @ProductCode, @sdate, @stockinby, @supplierID)", cn))
+				{
+					cm.Parameters.Add("@refno", stockIn.txtRefNo.Text);
+					cm.Parameters.Add("@ProductCode", pcode);
+					cm.Parameters.Add("@sdate", stockIn.dtStockIn.Value);
+					cm.Parameters.Add("@stockinby", stockIn.txtStockInBy.Text);
+					cm.Parameters.Add("@supplierID", stockIn.labelID.Text);
+
+					cm.ExecuteNonQuery();
+					//MessageBox.Show("Product successfully added to stock in", "POS", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					stockIn.LoadStockIn(); // Load data after successful insertion
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message);
 			}
 		}
 

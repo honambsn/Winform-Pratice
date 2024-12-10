@@ -13,8 +13,9 @@ namespace Supermarket_Management
 {
 	public partial class MainForm : Form
 	{
-		SqlConnection con = new SqlConnection();
-		SqlCommand cmd = new SqlCommand();
+		SqlConnection cn = new SqlConnection();
+		SqlCommand cm = new SqlCommand();
+		SqlDataReader dr;
 		DBConnect dbcon = new DBConnect();
 		public string _pass;
 		public MainForm()
@@ -22,9 +23,9 @@ namespace Supermarket_Management
 			InitializeComponent();
 			drawCenter();
 			customizeDesign();
-			con = new SqlConnection(dbcon.myConnection());
+			cn = new SqlConnection(dbcon.myConnection());
 			//btn_Dashboard.PerformClick();
-			con.Open();
+			cn.Open();
 			MessageBox.Show("Connection Established");
 		}
 
@@ -215,6 +216,34 @@ namespace Supermarket_Management
 		private void MainForm_Load(object sender, EventArgs e)
 		{
 			btn_Dashboard.PerformClick();
+			Notify();
+		}
+
+		public void Notify()
+		{
+			int i = 0;
+			if (cn.State == ConnectionState.Closed)
+				cn.Open();
+
+			using (SqlCommand cm = new SqlCommand("select * from vwCriticalItems",cn))
+			{
+				dr = cm.ExecuteReader();
+				while (dr.Read())
+				{
+					i++;
+					Alert alert = new Alert(this);
+					alert.lblPCode.Text = dr["ProductCode"].ToString();
+					alert.btnReOrder.Enabled = true;
+					alert.showAlert(i + ". " + dr["Description"].ToString() + " - " + dr["qty"].ToString());
+				}
+				dr.Close();
+			}
+		}
+
+		private void btnBarcode_Click(object sender, EventArgs e)
+		{
+			openChildForm(new Barcode());
+			hideSubMenu();
 		}
 	}
 }

@@ -84,6 +84,35 @@ namespace Supermarket_Management
 			}
 		}
 
+		public void ProductForSupplier(string pcode)
+		{
+			try
+			{
+				if (cn.State != ConnectionState.Open)
+					cn.Open();
+
+				string supplier = "";
+				using (SqlCommand cm = new SqlCommand("SELECT * FROM vwStockIn WHERE ProductCode = @pcode", cn))
+				{
+					cm.Parameters.AddWithValue("@pcode", pcode);
+
+					using (SqlDataReader dr = cm.ExecuteReader())
+					{
+						if (dr.Read()) // Check if there are rows
+						{
+							supplier= dr["supplierName"].ToString(); // Use the correct column name
+						}
+						dr.Close();
+						cbSupplier.Text = supplier;
+					}
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show("An error occurred while loading products: " + ex.Message);
+			}
+
+		}
 		public void LoadStockIn()
 		{
 			try
@@ -114,30 +143,6 @@ namespace Supermarket_Management
 			}
 		}
 
-
-		private void cbSupplier_SelectedIndexChanged(object sender, EventArgs e)
-		{
-			if (cbSupplier.SelectedItem != null) // Ensure an item is selected
-			{
-				if (cn.State != ConnectionState.Open)
-					cn.Open();
-
-				using (SqlCommand cm = new SqlCommand("SELECT * FROM Supplier WHERE supplierName = @supplierName", cn))
-				{
-					cm.Parameters.AddWithValue("@supplierName", cbSupplier.Text);
-
-					using (SqlDataReader dr = cm.ExecuteReader())
-					{
-						if (dr.Read()) // Check if there are rows
-						{
-							labelID.Text = dr["id"].ToString(); // Use the correct column name
-							txtConPerson.Text = dr["contact"].ToString(); // Use the correct column name
-							txtAddress.Text = dr["address"].ToString();
-						}
-					}
-				}
-			}
-		}
 
 		private void cbSupplier_KeyPress(object sender, KeyPressEventArgs e)
 		{
@@ -302,6 +307,30 @@ namespace Supermarket_Management
 			finally
 			{
 				
+			}
+		}
+
+		private void cbSupplier_TextChanged(object sender, EventArgs e)
+		{
+			if (cbSupplier.SelectedItem != null) // Ensure an item is selected
+			{
+				if (cn.State != ConnectionState.Open)
+					cn.Open();
+
+				using (SqlCommand cm = new SqlCommand("SELECT * FROM Supplier WHERE supplierName = @supplierName", cn))
+				{
+					cm.Parameters.AddWithValue("@supplierName", cbSupplier.Text);
+
+					using (SqlDataReader dr = cm.ExecuteReader())
+					{
+						if (dr.Read()) // Check if there are rows
+						{
+							labelID.Text = dr["id"].ToString(); // Use the correct column name
+							txtConPerson.Text = dr["contact"].ToString(); // Use the correct column name
+							txtAddress.Text = dr["address"].ToString();
+						}
+					}
+				}
 			}
 		}
 	}

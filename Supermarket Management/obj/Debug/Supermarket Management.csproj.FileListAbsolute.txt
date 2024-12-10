@@ -6,13 +6,26 @@ D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Supermarket Management\bin\Deb
 D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Supermarket Management\bin\Debug\Supermarket Management.exe
 D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Supermarket Management\bin\Debug\Supermarket Management.pdb
 D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Supermarket Management\bin\Debug\dje-NE\Supermarket Management.resources.dll
+D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Supermarket Management\bin\Debug\AForge.dll
+D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Supermarket Management\bin\Debug\AForge.Video.DirectShow.dll
+D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Supermarket Management\bin\Debug\AForge.Video.dll
 D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Supermarket Management\bin\Debug\MetroFramework.Design.dll
 D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Supermarket Management\bin\Debug\MetroFramework.dll
 D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Supermarket Management\bin\Debug\MetroFramework.Fonts.dll
 D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Supermarket Management\bin\Debug\Microsoft.SqlServer.Types.dll
+D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Supermarket Management\bin\Debug\Zen.Barcode.Core.dll
+D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Supermarket Management\bin\Debug\zxing.dll
+D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Supermarket Management\bin\Debug\zxing.presentation.dll
+D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Supermarket Management\bin\Debug\AForge.xml
+D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Supermarket Management\bin\Debug\AForge.Video.xml
+D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Supermarket Management\bin\Debug\AForge.Video.DirectShow.xml
+D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Supermarket Management\bin\Debug\zxing.xml
+D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Supermarket Management\bin\Debug\zxing.presentation.xml
 D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Supermarket Management\obj\Debug\Supermarket Management.csproj.AssemblyReference.cache
 D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Supermarket Management\obj\Debug\Supermarket Management.g.resources
 D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Supermarket Management\obj\Debug\Supermarket_Management.Adjustments.resources
+D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Supermarket Management\obj\Debug\Supermarket_Management.Alert.resources
+D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Supermarket Management\obj\Debug\Supermarket_Management.Barcode.resources
 D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Supermarket Management\obj\Debug\Supermarket_Management.Brand.resources
 D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Supermarket Management\obj\Debug\Supermarket_Management.BrandModule.resources
 D:\Ba Nam\Own project\Practice\c#\Winform Pratice\Supermarket Management\obj\Debug\Supermarket_Management.CancelOrder.resources

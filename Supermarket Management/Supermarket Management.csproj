@@ -40,6 +40,15 @@
     </StartupObject>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AForge, Version=2.2.5.0, Culture=neutral, PublicKeyToken=c1db6ff4eaa06aeb, processorArchitecture=MSIL">
+      <HintPath>packages\AForge.2.2.5\lib\AForge.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video, Version=2.2.5.0, Culture=neutral, PublicKeyToken=cbfb6e07d173c401, processorArchitecture=MSIL">
+      <HintPath>packages\AForge.Video.2.2.5\lib\AForge.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.DirectShow, Version=2.2.5.0, Culture=neutral, PublicKeyToken=61ea4348d43881b7, processorArchitecture=MSIL">
+      <HintPath>packages\AForge.Video.DirectShow.2.2.5\lib\AForge.Video.DirectShow.dll</HintPath>
+    </Reference>
     <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <HintPath>packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
     </Reference>
@@ -63,6 +72,15 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="Zen.Barcode.Core, Version=3.1.0.0, Culture=neutral, PublicKeyToken=b5ae55aa76d2d9de, processorArchitecture=MSIL">
+      <HintPath>packages\Zen.Barcode.Rendering.Framework.3.1.10729.1\lib\Zen.Barcode.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing, Version=0.16.9.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>packages\ZXing.Net.0.16.9\lib\net48\zxing.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing.presentation, Version=0.16.9.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>packages\ZXing.Net.0.16.9\lib\net48\zxing.presentation.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Adjustments.cs">
@@ -70,6 +88,18 @@
     </Compile>
     <Compile Include="Adjustments.Designer.cs">
       <DependentUpon>Adjustments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Alert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Alert.Designer.cs">
+      <DependentUpon>Alert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Barcode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Barcode.Designer.cs">
+      <DependentUpon>Barcode.cs</DependentUpon>
     </Compile>
     <Compile Include="Brand.cs">
       <SubType>Form</SubType>
@@ -176,6 +206,7 @@
       <DependentUpon>Record.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="ThemeColor.cs" />
     <Compile Include="UserProperties.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -239,6 +270,12 @@
     </Compile>
     <EmbeddedResource Include="Adjustments.resx">
       <DependentUpon>Adjustments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Alert.resx">
+      <DependentUpon>Alert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Barcode.resx">
+      <DependentUpon>Barcode.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Brand.resx">
       <DependentUpon>Brand.cs</DependentUpon>
@@ -382,8 +419,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icons8-supermarket-100.ico" />
+    <Content Include="Icons\barcode.png" />
     <Content Include="Icons\computer-inventory.png" />
     <Content Include="Icons\icons8-adjustment-64.png" />
+    <Content Include="Icons\icons8-barcode-50.png" />
     <Content Include="Icons\icons8-bin-30.png" />
     <Content Include="Icons\icons8-buy-30.png" />
     <Content Include="Icons\icons8-cart-30.png" />
@@ -397,6 +436,7 @@
     <Content Include="Icons\icons8-payment-30.png" />
     <Content Include="Icons\icons8-plus-30.png" />
     <Content Include="Icons\icons8-purchase-64.png" />
+    <Content Include="Icons\icons8-refresh-50.png" />
     <Content Include="Icons\icons8-sale-30.png" />
     <Content Include="Icons\icons8-search-product-30.png" />
     <Content Include="Icons\icons8-search2-30.png" />
@@ -409,9 +449,12 @@
     <Content Include="Icons\icons8-trolley-30.png" />
     <Content Include="Icons\icons8-trolley-50.png" />
     <Content Include="Icons\icons8-user-20.png" />
+    <Content Include="Icons\reload-arrow.png" />
     <Content Include="Icons\sale-tag.png" />
     <Content Include="Icons\stock-market.png" />
     <Content Include="Icons\warning.png" />
+    <Content Include="query.sql" />
+    <Content Include="query_new.sql" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

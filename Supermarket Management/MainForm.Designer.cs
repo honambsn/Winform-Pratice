@@ -58,6 +58,7 @@
 			this.panelTitle = new System.Windows.Forms.Panel();
 			this.lbl_Title = new System.Windows.Forms.Label();
 			this.panelMain = new System.Windows.Forms.Panel();
+			this.btnBarcode = new System.Windows.Forms.Button();
 			this.panelSlide.SuspendLayout();
 			this.panelSubSetting.SuspendLayout();
 			this.panelSubRecord.SuspendLayout();
@@ -97,7 +98,7 @@
 			this.btn_Supplier.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
 			this.btn_Supplier.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btn_Supplier.ForeColor = System.Drawing.Color.White;
-			this.btn_Supplier.Location = new System.Drawing.Point(0, 844);
+			this.btn_Supplier.Location = new System.Drawing.Point(0, 888);
 			this.btn_Supplier.Name = "btn_Supplier";
 			this.btn_Supplier.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
 			this.btn_Supplier.Size = new System.Drawing.Size(213, 45);
@@ -109,12 +110,13 @@
 			// 
 			// panelSubSetting
 			// 
+			this.panelSubSetting.Controls.Add(this.btnBarcode);
 			this.panelSubSetting.Controls.Add(this.Setting_Store);
 			this.panelSubSetting.Controls.Add(this.Setting_User);
 			this.panelSubSetting.Dock = System.Windows.Forms.DockStyle.Top;
 			this.panelSubSetting.Location = new System.Drawing.Point(0, 754);
 			this.panelSubSetting.Name = "panelSubSetting";
-			this.panelSubSetting.Size = new System.Drawing.Size(213, 90);
+			this.panelSubSetting.Size = new System.Drawing.Size(213, 134);
 			this.panelSubSetting.TabIndex = 12;
 			// 
 			// Setting_Store
@@ -307,7 +309,7 @@
 			this.btn_Logout.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
 			this.btn_Logout.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btn_Logout.ForeColor = System.Drawing.Color.White;
-			this.btn_Logout.Location = new System.Drawing.Point(0, 889);
+			this.btn_Logout.Location = new System.Drawing.Point(0, 933);
 			this.btn_Logout.Name = "btn_Logout";
 			this.btn_Logout.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
 			this.btn_Logout.Size = new System.Drawing.Size(213, 45);
@@ -495,6 +497,24 @@
 			this.panelMain.Size = new System.Drawing.Size(1154, 601);
 			this.panelMain.TabIndex = 3;
 			// 
+			// btnBarcode
+			// 
+			this.btnBarcode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(70)))), ((int)(((byte)(200)))));
+			this.btnBarcode.Dock = System.Windows.Forms.DockStyle.Top;
+			this.btnBarcode.FlatAppearance.BorderSize = 0;
+			this.btnBarcode.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+			this.btnBarcode.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnBarcode.ForeColor = System.Drawing.Color.White;
+			this.btnBarcode.Location = new System.Drawing.Point(0, 90);
+			this.btnBarcode.Name = "btnBarcode";
+			this.btnBarcode.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
+			this.btnBarcode.Size = new System.Drawing.Size(213, 45);
+			this.btnBarcode.TabIndex = 5;
+			this.btnBarcode.Text = "Barcode";
+			this.btnBarcode.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btnBarcode.UseVisualStyleBackColor = false;
+			this.btnBarcode.Click += new System.EventHandler(this.btnBarcode_Click);
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
@@ -557,6 +577,7 @@
 		public System.Windows.Forms.Label lbl_Username;
 		public System.Windows.Forms.Label lblName;
 		public System.Windows.Forms.Button btn_Dashboard;
+		private System.Windows.Forms.Button btnBarcode;
 	}
 }
 
